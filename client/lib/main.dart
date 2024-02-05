@@ -31,7 +31,38 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+<<<<<<< Updated upstream
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+=======
+      home: const SplashScreen(),
+    );
+  }
+}
+
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Expanded(
+            flex: 3,
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      "assets/undraw_taking_notes_re_bnaf (1) 1.png"),
+                  fit: BoxFit.scaleDown,
+                ),
+              ),
+            ),
+          ),
+          const Expanded(child: Column())
+        ],
+      ),
+>>>>>>> Stashed changes
     );
   }
 }
