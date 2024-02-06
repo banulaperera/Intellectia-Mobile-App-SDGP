@@ -1,3 +1,4 @@
+import 'package:client/constats.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,32 +7,106 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Intellectia',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        // brightness: Brightness.light,
+        // primaryColor: kPrimaryColor,
+        // scaffoldBackgroundColor: kBackgroundColor,
         useMaterial3: true,
       ),
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const SplashScreen(),
+    );
+  }
+}
+
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.only(left: 30, right: 30),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        "assets/undraw_taking_notes_re_bnaf (1) 1.png"),
+                    fit: BoxFit.scaleDown,
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: const TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Intellectia\n",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 28,
+                            fontFamily: 'Poppins',
+                            letterSpacing: 5,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        WidgetSpan(child: SizedBox(height: 50)),
+                        TextSpan(
+                          text: "'Where education made effortless and fun'",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontFamily: 'Poppins',
+                            letterSpacing: 4,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  FittedBox(
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 70),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 90),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: kPrimaryColor,
+                      ),
+                      child: const Row(
+                        children: [
+                          Text(
+                            "Get Started",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                              letterSpacing: 3,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
