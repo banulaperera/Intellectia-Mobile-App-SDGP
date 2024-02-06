@@ -38,7 +38,7 @@ class SplashScreen extends StatelessWidget {
                             fontSize: 28,
                             fontFamily: 'Poppins',
                             letterSpacing: 5,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                         WidgetSpan(child: SizedBox(height: 50)),
@@ -63,6 +63,15 @@ class SplashScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         color: kPrimaryColor,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: const Offset(
+                                0, 4), // changes position of shadow
+                          ),
+                        ],
                       ),
                       child: const Row(
                         children: [
