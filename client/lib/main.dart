@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Intellectia',
       theme: ThemeData(
-        brightness: Brightness.light,
-        primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: kBackgroundColor,
+        // brightness: Brightness.light,
+        // primaryColor: kPrimaryColor,
+        // scaffoldBackgroundColor: kBackgroundColor,
         useMaterial3: true,
       ),
       home: const SplashScreen(),
@@ -33,7 +33,7 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -46,6 +46,7 @@ class SplashScreen extends StatelessWidget {
             ),
             Expanded(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   RichText(
                     textAlign: TextAlign.center,
@@ -58,22 +59,48 @@ class SplashScreen extends StatelessWidget {
                             fontSize: 28,
                             fontFamily: 'Poppins',
                             letterSpacing: 5,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                        WidgetSpan(child: SizedBox(height: 30)),
+                        WidgetSpan(child: SizedBox(height: 50)),
                         TextSpan(
                           text: "'Where education made effortless and fun'",
                           style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 13,
-                              fontFamily: 'Poppins',
-                              letterSpacing: 4,
-                              fontStyle: FontStyle.italic),
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontFamily: 'Poppins',
+                            letterSpacing: 4,
+                            fontStyle: FontStyle.italic,
+                          ),
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  FittedBox(
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 70),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 90),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: kPrimaryColor,
+                      ),
+                      child: const Row(
+                        children: [
+                          Text(
+                            "Get Started",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                              letterSpacing: 3,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
