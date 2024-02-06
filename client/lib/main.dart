@@ -28,21 +28,23 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            flex: 3,
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                      "assets/undraw_taking_notes_re_bnaf (1) 1.png"),
-                  fit: BoxFit.scaleDown,
+      body: Padding(
+        padding: const EdgeInsets.only(left: 30, right: 30),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 3,
+              child: Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        "assets/undraw_taking_notes_re_bnaf (1) 1.png"),
+                    fit: BoxFit.scaleDown,
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
+            Expanded(
               child: Column(
                 children: [
                   RichText(
@@ -52,12 +54,14 @@ class SplashScreen extends StatelessWidget {
                         TextSpan(
                           text: "Intellectia\n",
                           style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 28,
-                              fontFamily: 'Poppins',
-                              letterSpacing: 5,
-                              fontWeight: FontWeight.w500),
+                            color: Colors.black,
+                            fontSize: 28,
+                            fontFamily: 'Poppins',
+                            letterSpacing: 5,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
+                        WidgetSpan(child: SizedBox(height: 30)),
                         TextSpan(
                           text: "'Where education made effortless and fun'",
                           style: TextStyle(
@@ -66,13 +70,15 @@ class SplashScreen extends StatelessWidget {
                               fontFamily: 'Poppins',
                               letterSpacing: 4,
                               fontStyle: FontStyle.italic),
-                        )
+                        ),
                       ],
                     ),
                   )
                 ],
-              ))
-        ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
