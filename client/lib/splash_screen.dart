@@ -1,4 +1,5 @@
-import 'package:client/constats.dart';
+import 'package:client/constants.dart';
+import 'package:client/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -56,36 +57,41 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ),
                   FittedBox(
-                    child: Container(
-                      margin: const EdgeInsets.only(bottom: 70),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 90),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: kPrimaryColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: const Offset(
-                                0, 4), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      child: const Row(
-                        children: [
-                          Text(
-                            "Get Started",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18,
-                              letterSpacing: 3,
+                    child: GestureDetector(
+                      onTap: (){
+                         Navigator.push(context, MaterialPageRoute(builder: (context){return const LoginPage();},),);
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(bottom: 70),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 20, horizontal: 90),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: kPrimaryColor,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: const Offset(
+                                  0, 4), // changes position of shadow
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
+                        child: const Row(
+                          children: [
+                            Text(
+                              "Get Started",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w700,
+                                fontSize: 18,
+                                letterSpacing: 3,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
