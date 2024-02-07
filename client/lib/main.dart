@@ -1,3 +1,4 @@
+import 'package:client/constants.dart';
 import 'package:client/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Intellectia',
       theme: ThemeData(
+        scaffoldBackgroundColor: kBackgroundColor,
         useMaterial3: true,
       ),
       home: const SplashScreen(),

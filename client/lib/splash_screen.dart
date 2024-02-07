@@ -58,8 +58,15 @@ class SplashScreen extends StatelessWidget {
                   ),
                   FittedBox(
                     child: GestureDetector(
-                      onTap: (){
-                         Navigator.push(context, MaterialPageRoute(builder: (context){return const LoginPage();},),);
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const LoginPage();
+                            },
+                          ),
+                        );
                       },
                       child: Container(
                         margin: const EdgeInsets.only(bottom: 70),
@@ -74,7 +81,9 @@ class SplashScreen extends StatelessWidget {
                               spreadRadius: 5,
                               blurRadius: 7,
                               offset: const Offset(
-                                  0, 4), // changes position of shadow
+                                0,
+                                4,
+                              ), // changes position of shadow
                             ),
                           ],
                         ),
