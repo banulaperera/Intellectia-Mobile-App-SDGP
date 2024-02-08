@@ -1,3 +1,4 @@
+import 'package:client/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:client/constants.dart';
 import 'package:flutter/gestures.dart';
@@ -56,6 +57,7 @@ class LoginPage extends StatelessWidget {
                                     ),
                                     borderRadius: BorderRadius.circular(60),
                                   ),
+                                  focusedBorder: focusedBoarder(),
                                   contentPadding: const EdgeInsets.only(
                                       left: 25, bottom: 15, top: 15),
                                 ),
@@ -85,6 +87,7 @@ class LoginPage extends StatelessWidget {
                                   color: Colors.black, style: BorderStyle.none),
                               borderRadius: BorderRadius.circular(60),
                             ),
+                            focusedBorder: focusedBoarder(),
                             contentPadding: const EdgeInsets.only(
                                 left: 25, bottom: 15, top: 15),
                           ),
@@ -186,6 +189,12 @@ class LoginPage extends StatelessWidget {
                           GestureDetector(
                             onTap: () {
                               // Handle link tap here
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SignupPage(),
+                                ),
+                              );
                               // You can navigate to another screen or open a URL here
                             },
                             child: const Text(
