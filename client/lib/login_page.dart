@@ -17,7 +17,7 @@ class LoginPage extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.4,
                 child: Image.asset(
-                  "assets/logo_image.jpeg",
+                  "assets/logo_image_crop.jpeg",
                   fit: BoxFit.contain,
                 ),
               ),
