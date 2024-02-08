@@ -1,5 +1,4 @@
 import 'package:client/constants.dart';
-import 'package:client/signup_page.dart';
 import 'package:client/splash_screen.dart';
 import 'package:flutter/material.dart';
 
