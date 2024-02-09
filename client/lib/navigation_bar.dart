@@ -2,21 +2,28 @@ import 'package:client/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-class NavigationBar extends StatefulWidget {
-  const NavigationBar({super.key});
+class BottomNavigation extends StatefulWidget {
+  const BottomNavigation({super.key});
 
   @override
-  State<NavigationBar> createState() => _NavigationBar();
+  State<BottomNavigation> createState() => _BottomNavigation();
 }
 
-class _NavigationBar extends State<NavigationBar> {
+class _BottomNavigation extends State<BottomNavigation> {
+  int _currentNavigationIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
+      currentIndex: _currentNavigationIndex,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.white70,
+      selectedFontSize: 13,
+      // unselectedFontSize: 11,
+      selectedIconTheme: const IconThemeData(size: 30, shadows: <Shadow>[Shadow(color: Colors.white, blurRadius: 25.0)],),
+      unselectedIconTheme: const IconThemeData(size: 23),
       backgroundColor: kPrimaryColor,
       elevation: 10,
       items: const <BottomNavigationBarItem>[
@@ -37,6 +44,11 @@ class _NavigationBar extends State<NavigationBar> {
           label: 'Profile',
         ),
       ],
+      onTap: (index) {
+        setState(() {
+          _currentNavigationIndex = index;
+        });
+      },
     ));
   }
 }
