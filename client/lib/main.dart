@@ -1,5 +1,4 @@
 import 'package:client/constants.dart';
-import 'package:client/navigation_bar.dart';
 import 'package:client/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kBackgroundColor,
         useMaterial3: true,
       ),
-      home: const UserProfilePage(),
+      home: const SplashScreen(),
     );
   }
 }

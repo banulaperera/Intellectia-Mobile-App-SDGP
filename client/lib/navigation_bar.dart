@@ -2,14 +2,14 @@ import 'package:client/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-class UserProfilePage extends StatefulWidget {
-  const UserProfilePage({super.key});
+class NavigationBar extends StatefulWidget {
+  const NavigationBar({super.key});
 
   @override
-  State<UserProfilePage> createState() => _UserProfilePageState();
+  State<NavigationBar> createState() => _NavigationBar();
 }
 
-class _UserProfilePageState extends State<UserProfilePage> {
+class _NavigationBar extends State<NavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
