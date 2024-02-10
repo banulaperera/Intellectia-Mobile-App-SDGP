@@ -1,6 +1,10 @@
 import 'package:client/constants.dart';
+import 'package:client/signup_page.dart';
+import 'package:client/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+
+import 'login_page.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -12,9 +16,17 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigation extends State<BottomNavigation> {
   int _currentNavigationIndex = 0;
 
+  //Testing data
+  final pages = [
+    LoginPage(),
+    SignupPage(),
+    SplashScreen(),
+    Text('data')
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: pages[_currentNavigationIndex],
         bottomNavigationBar: BottomNavigationBar(
       currentIndex: _currentNavigationIndex,
       type: BottomNavigationBarType.fixed,
