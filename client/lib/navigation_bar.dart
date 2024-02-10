@@ -33,7 +33,6 @@ class _BottomNavigation extends State<BottomNavigation> {
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.white70,
       selectedFontSize: 13,
-      // unselectedFontSize: 11,
       selectedIconTheme: const IconThemeData(size: 30, shadows: <Shadow>[Shadow(color: Colors.white, blurRadius: 25.0)],),
       unselectedIconTheme: const IconThemeData(size: 23),
       backgroundColor: kPrimaryColor,
