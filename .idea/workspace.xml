@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="updated the UI" />
+    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="updated the UI">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/login_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/navigation_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/navigation_bar.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +43,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "IN-4-login__page",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia",
     "settings.editor.selected.configurable": "dart.settings",

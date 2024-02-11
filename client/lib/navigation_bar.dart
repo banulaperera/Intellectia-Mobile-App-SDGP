@@ -18,10 +18,10 @@ class _BottomNavigation extends State<BottomNavigation> {
 
   //Testing data
   final pages = [
-    LoginPage(),
-    SignupPage(),
-    SplashScreen(),
-    Text('data')
+    const LoginPage(),
+    const SignupPage(),
+    const SplashScreen(),
+    const Text('data')
   ];
   @override
   Widget build(BuildContext context) {
