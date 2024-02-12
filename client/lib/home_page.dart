@@ -4,7 +4,7 @@ import 'package:client/constants.dart';
 
 import 'package:client/models/note_model.dart';
 
-import 'package:client/new_note_editior.dart';
+import 'package:client/note_editor.dart';
 
 import 'package:flutter/material.dart';
 

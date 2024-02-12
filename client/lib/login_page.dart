@@ -1,3 +1,4 @@
+import 'package:client/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:client/constants.dart';
 import 'package:client/signup_page.dart';
@@ -101,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => const SignupPage()),
+                    MaterialPageRoute(builder: (_) => const BottomNavigation()),
                   );
                 },
               ),
