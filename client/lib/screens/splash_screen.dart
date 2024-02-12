@@ -1,5 +1,5 @@
 import 'package:client/constants.dart';
-import 'package:client/login_page.dart';
+import 'package:client/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {

@@ -1,7 +1,9 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
-import 'package:client/home_page.dart';
+import 'package:client/screens/home_page.dart';
 import 'package:flutter/material.dart';
+
+import 'notification_page.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -16,13 +18,8 @@ class _BottomNavigation extends State<BottomNavigation> {
 
   final pages = [
     const HomePage(),
-
     const Text('data'),
-
-    const Text('data'),
-
-// const NotificationScreen(),
-
+    const NotificationScreen(),
     const Text('data'),
   ];
   @override
