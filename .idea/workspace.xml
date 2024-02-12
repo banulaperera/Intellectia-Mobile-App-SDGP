@@ -4,26 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="updated the login page password page with obscured">
-      <change afterPath="$PROJECT_DIR$/client/assets/fire 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/assets/target 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/assets/youtube 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/screens/notification_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/widget/custom_button.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/widget/custom_text_field.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="Enhace the code and initial commit to the notification UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/login_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/navigation_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/note_editor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/note_editor.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/signup_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/signup_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/splash_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707661997004</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Enhace the code and initial commit to the notification UI">
+      <option name="closed" value="true" />
+      <created>1707750602634</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707750602634</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +127,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated the UI" />
     <MESSAGE value="updated the login page password page with obscured" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated the login page password page with obscured" />
+    <MESSAGE value="Enhace the code and initial commit to the notification UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enhace the code and initial commit to the notification UI" />
   </component>
 </project>
