@@ -77,16 +77,17 @@ class _HomePageState extends State<HomePage> {
               decoration: InputDecoration(
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 12.0, horizontal: 15),
-
                 hintText: "Search",
-
                 suffixIcon: const Icon(Icons.search),
-
-// prefix: Icon(Icons.search),
-
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30.0),
                   borderSide: const BorderSide(),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                  borderSide: const BorderSide(
+                    color: kPrimaryColor,
+                  ),
                 ),
               ),
             ),
