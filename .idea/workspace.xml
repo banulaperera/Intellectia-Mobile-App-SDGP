@@ -6,27 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="final commit of UI of notification screen.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/OFL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/OFL.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-Black.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-BlackItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-BlackItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-BoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-ExtraBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-ExtraBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-ExtraBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-ExtraBoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-ExtraLight.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-ExtraLight.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-ExtraLightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-ExtraLightItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-Italic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-LightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-LightItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-MediumItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-MediumItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-SemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-SemiBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-SemiBoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-Thin.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-Thin.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/Poppins/Poppins-ThinItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/fonts/Poppins/Poppins-ThinItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="IN-16-bottom_navigation_bar" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -75,8 +62,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/fonts" />
       <recent name="$PROJECT_DIR$/client/assets" />
+      <recent name="$PROJECT_DIR$/client/fonts" />
       <recent name="$PROJECT_DIR$/client/lib/widget" />
       <recent name="$PROJECT_DIR$/client/lib/screens" />
     </key>
@@ -149,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707823820003</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="code enhancements">
+      <option name="closed" value="true" />
+      <created>1707837117394</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1707837117394</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +164,7 @@
     <MESSAGE value="Enhace the code and initial commit to the notification UI" />
     <MESSAGE value="Initial commit of the notification page" />
     <MESSAGE value="final commit of UI of notification screen." />
-    <option name="LAST_COMMIT_MESSAGE" value="final commit of UI of notification screen." />
+    <MESSAGE value="code enhancements" />
+    <option name="LAST_COMMIT_MESSAGE" value="code enhancements" />
   </component>
 </project>
