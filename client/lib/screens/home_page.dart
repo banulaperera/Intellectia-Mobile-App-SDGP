@@ -1,17 +1,13 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-
 import 'package:client/constants.dart';
-
 import 'package:client/models/note_model.dart';
-
-import 'package:client/note_editor.dart';
-
+import 'package:client/screens/note_editor.dart';
 import 'package:flutter/material.dart';
-
 import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -20,6 +16,7 @@ class _HomePageState extends State<HomePage> {
   List<Note> notes = List.empty(growable: true);
 
   List<Note> filteredNote = List.empty(growable: true);
+
   @override
   void initState() {
     super.initState();

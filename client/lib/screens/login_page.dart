@@ -1,7 +1,11 @@
-import 'package:client/navigation_bar.dart';
+import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:client/screens/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:client/constants.dart';
-import 'package:client/signup_page.dart';
+import 'package:client/screens/signup_page.dart';
+
+import '../widget/custom_button.dart';
+import '../widget/custom_text_field.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,7 +15,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  var _isObscured;
+  var _isObscured = true;
 
   @override
   void initState() {
@@ -36,10 +40,12 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 25),
-              textField(
-                hintText: 'Email',
-                keyboardType: TextInputType.emailAddress,
-              ),
+
+              const LoginSignUpTextField(hintText: 'Email', keyboardType: TextInputType.emailAddress,),
+              // textField(
+              //   hintText: 'Email',
+              //   keyboardType: TextInputType.emailAddress,
+              // ),
               const SizedBox(height: 25),
               TextField(
                 obscureText: _isObscured,
@@ -52,8 +58,8 @@ class _LoginPageState extends State<LoginPage> {
                   suffixIcon: IconButton(
                     padding: const EdgeInsets.only(right: 12),
                     icon: _isObscured
-                        ? const Icon(Icons.visibility_off)
-                        : const Icon(Icons.visibility),
+                        ? const Icon(BootstrapIcons.eye_slash_fill)
+                        : const Icon(BootstrapIcons.eye_fill),
                     onPressed: () {
                       setState(() {
                         _isObscured = !_isObscured;
@@ -97,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              button(
+              LoginScreenButton(
                 label: 'Login',
                 onPressed: () {
                   Navigator.push(

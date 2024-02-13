@@ -1,5 +1,5 @@
 import 'package:client/constants.dart';
-import 'package:client/navigation_bar.dart';
+import 'package:client/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kBackgroundColor,
         useMaterial3: true,
       ),
-      home: const BottomNavigation(),
+      home: const SplashScreen(),
     );
   }
 }

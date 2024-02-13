@@ -1,6 +1,10 @@
-import 'package:client/login_page.dart';
-import 'package:flutter/material.dart';
+import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
+import 'package:client/screens/login_page.dart';
+import 'package:flutter/material.dart';
+
+import '../widget/custom_button.dart';
+import '../widget/custom_text_field.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -10,7 +14,7 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
-  var _isObscured;
+  var _isObscured = true;
 
   @override
   void initState() {
@@ -41,7 +45,7 @@ class _SignupPageState extends State<SignupPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 25),
-                  textField(
+                  const LoginSignUpTextField(
                     hintText: 'Email',
                     keyboardType: TextInputType.emailAddress,
                   ),
@@ -58,8 +62,8 @@ class _SignupPageState extends State<SignupPage> {
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.only(right: 12),
                         icon: _isObscured
-                            ? const Icon(Icons.visibility_off)
-                            : const Icon(Icons.visibility),
+                            ? const Icon(BootstrapIcons.eye_slash_fill)
+                            : const Icon(BootstrapIcons.eye_fill),
                         onPressed: () {
                           setState(() {
                             _isObscured = !_isObscured;
@@ -101,8 +105,8 @@ class _SignupPageState extends State<SignupPage> {
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.only(right: 12),
                         icon: _isObscured
-                            ? const Icon(Icons.visibility_off)
-                            : const Icon(Icons.visibility),
+                            ? const Icon(BootstrapIcons.eye_slash_fill)
+                            : const Icon(BootstrapIcons.eye_fill),
                         onPressed: () {
                           setState(() {
                             _isObscured = !_isObscured;
@@ -132,8 +136,8 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   ),
                   const SizedBox(height: 25),
-                  button(
-                    label: 'Sign Up',
+                  LoginScreenButton(
+                    label: 'Sing Up',
                     onPressed: () {
                       Navigator.push(
                         context,
