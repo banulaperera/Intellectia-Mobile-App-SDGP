@@ -8,6 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="IN-16-bottom_navigation_bar" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -55,8 +64,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/fonts" />
       <recent name="$PROJECT_DIR$/client/assets" />
+      <recent name="$PROJECT_DIR$/client/fonts" />
       <recent name="$PROJECT_DIR$/client/lib/widget" />
       <recent name="$PROJECT_DIR$/client/lib/screens" />
     </key>
@@ -129,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707823820003</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="code enhancements">
+      <option name="closed" value="true" />
+      <created>1707837117394</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1707837117394</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +166,7 @@
     <MESSAGE value="Enhace the code and initial commit to the notification UI" />
     <MESSAGE value="Initial commit of the notification page" />
     <MESSAGE value="final commit of UI of notification screen." />
-    <option name="LAST_COMMIT_MESSAGE" value="final commit of UI of notification screen." />
+    <MESSAGE value="code enhancements" />
+    <option name="LAST_COMMIT_MESSAGE" value="code enhancements" />
   </component>
 </project>

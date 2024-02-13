@@ -19,7 +19,7 @@ class _PerformanceSuggestionNotificationState
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
-              image: AssetImage('assets/fire 2.png'), fit: BoxFit.cover),
+              image: AssetImage('assets/fire.png'), fit: BoxFit.cover),
         ),
       ),
       title: const Row(
