@@ -37,7 +37,6 @@ class SplashScreen extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 28,
-                            fontFamily: 'Poppins',
                             letterSpacing: 5,
                             fontWeight: FontWeight.bold,
                           ),
@@ -48,7 +47,6 @@ class SplashScreen extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 13,
-                            fontFamily: 'Poppins',
                             letterSpacing: 4,
                             fontStyle: FontStyle.italic,
                           ),
@@ -93,7 +91,6 @@ class SplashScreen extends StatelessWidget {
                               "Get Started",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w700,
                                 fontSize: 18,
                                 letterSpacing: 3,

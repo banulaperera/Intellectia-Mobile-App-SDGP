@@ -11,9 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Intellectia',
       theme: ThemeData(
         scaffoldBackgroundColor: kBackgroundColor,
+        fontFamily: 'Poppins',
         useMaterial3: true,
       ),
       home: const SplashScreen(),
