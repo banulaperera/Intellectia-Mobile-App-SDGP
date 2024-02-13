@@ -19,14 +19,33 @@ class _YouTubeSuggestNotificationState
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
-              image: AssetImage('assets/youtube 1.png'),
-              fit: BoxFit.cover
-          ),
+              image: AssetImage('assets/youtube 1.png'), fit: BoxFit.cover),
         ),
       ),
-      title: const Text('Suggestions', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
-      subtitle: const Text('New suggestion. Check out this video on Database Management.', style: TextStyle(color: Colors.black45, fontStyle: FontStyle.italic),),
-      onTap: (){},
+      title: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            'Suggestions',
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+          ),
+          Text(
+            '2h Ago',
+            style: TextStyle(fontSize: 12,color: Colors.black45, fontStyle: FontStyle.italic),
+          ),
+        ],
+      ),
+      subtitle: const Text(
+        'New suggestion. Check out this video on Database Management.',
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(),
+      ),
+      // trailing: const Text(
+      //   '12.00A.M',
+      //   style: TextStyle(color: Colors.black26),
+      // ),
+      onTap: () {},
       enabled: true,
     );
   }

@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="Enhace the code and initial commit to the notification UI">
+    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="Initial commit of the notification page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/screens/notification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/notification_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707750602634</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Initial commit of the notification page">
+      <option name="closed" value="true" />
+      <created>1707810565219</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707810565219</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +141,7 @@
     <MESSAGE value="updated the UI" />
     <MESSAGE value="updated the login page password page with obscured" />
     <MESSAGE value="Enhace the code and initial commit to the notification UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enhace the code and initial commit to the notification UI" />
+    <MESSAGE value="Initial commit of the notification page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit of the notification page" />
   </component>
 </project>
