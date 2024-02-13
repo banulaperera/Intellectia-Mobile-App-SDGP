@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="final commit of UI of notification screen.">
+      <change afterPath="$PROJECT_DIR$/client/lib/models/notification_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/lib/widget/notification_title.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/notification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/notification_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,18 +56,19 @@
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "IN-16-bottom__navigation__bar",
+    "git-widget-placeholder": "IN-17-notification__page",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "dart.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/lib/widget" />
       <recent name="$PROJECT_DIR$/client/assets" />
       <recent name="$PROJECT_DIR$/client/fonts" />
-      <recent name="$PROJECT_DIR$/client/lib/widget" />
       <recent name="$PROJECT_DIR$/client/lib/screens" />
     </key>
   </component>
@@ -77,6 +79,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter.main.dart" />
+        <item itemvalue="Flutter.main.dart" />
+        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Flutter.main.dart" />
       </list>
     </recent_temporary>

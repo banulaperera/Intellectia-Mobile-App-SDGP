@@ -1,26 +1,30 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/widget/performance_suggest_notification.dart';
-import 'package:client/widget/quiz_suggest_notification.dart';
-import 'package:client/widget/youtube_suggest_notification_widget.dart';
+import 'package:client/widget/notification_title.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-class NotificationScreen extends StatelessWidget {
-  NotificationScreen({super.key});
+import '../models/notification_model.dart';
 
-  final List newMsg = [
-    const PerformanceSuggestionNotification(),
-    const YouTubeSuggestNotification(),
-    const QuizSuggestNotification()
-  ];
-  final List older = [
-    const YouTubeSuggestNotification(),
-    const YouTubeSuggestNotification(),
-    const QuizSuggestNotification(),
-    const YouTubeSuggestNotification(),
-    const QuizSuggestNotification(),
-    const PerformanceSuggestionNotification()
-  ];
+
+class NotificationScreen extends StatefulWidget {
+  const NotificationScreen({super.key});
+
+  @override
+  State<NotificationScreen> createState() => _NotificationScreenState();
+}
+
+class _NotificationScreenState extends State<NotificationScreen> {
+
+  List<Notifications> newList = [];
+  List<Notifications> oldList = [];
+
+  @override
+  void initState(){
+    newList = Notifications.listOfNotifications();
+    oldList = newList;
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +36,7 @@ class NotificationScreen extends StatelessWidget {
             style: TextStyle(
                 fontSize: 25, fontWeight: FontWeight.w500, letterSpacing: 2),
           ),
+          scrolledUnderElevation: 0.0,
           centerTitle: true,
           backgroundColor: Colors.white,
         ),
@@ -63,10 +68,10 @@ class NotificationScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      child: newMsg[index],
+                      child: NotificationTitle(newList[index],)
                     );
                   },
-                  itemCount: newMsg.length,
+                  itemCount: newList.length,
                   separatorBuilder: (BuildContext context, int index) {
                     return const Divider();
                   },
@@ -96,10 +101,10 @@ class NotificationScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      child: older[index],
+                      child: NotificationTitle(oldList[index],),
                     );
                   },
-                  itemCount: older.length,
+                  itemCount: oldList.length,
                   separatorBuilder: (BuildContext context, int index) {
                     return const Divider();
                   },

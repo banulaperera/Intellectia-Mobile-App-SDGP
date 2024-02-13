@@ -19,7 +19,7 @@ class _BottomNavigation extends State<BottomNavigation> {
   final pages = [
     const HomePage(),
     const Text('data'),
-    NotificationScreen(),
+    const NotificationScreen(),
     const Text('data'),
   ];
   @override
