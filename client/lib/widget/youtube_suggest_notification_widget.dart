@@ -19,7 +19,7 @@ class _YouTubeSuggestNotificationState
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
-              image: AssetImage('assets/youtube 1.png'), fit: BoxFit.cover),
+              image: AssetImage('assets/youtube.png'), fit: BoxFit.cover),
         ),
       ),
       title: const Row(

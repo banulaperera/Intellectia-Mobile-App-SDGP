@@ -18,7 +18,7 @@ class _QuizSuggestNotificationState extends State<QuizSuggestNotification> {
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
-              image: AssetImage('assets/target 1.png'), fit: BoxFit.cover),
+              image: AssetImage('assets/target.png'), fit: BoxFit.cover),
         ),
       ),
       title: const Row(
