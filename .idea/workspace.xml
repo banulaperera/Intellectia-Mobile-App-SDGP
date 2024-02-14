@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="final commit of UI of notification screen.">
-      <change afterPath="$PROJECT_DIR$/client/lib/models/notification_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/widget/notification_title.dart" afterDir="false" />
+    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/SDGP_PT_Y3_03_Intellectia.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/notification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/notification_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dart File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -43,27 +45,41 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2bziRcebiRhi3BTrJFUNKwr0xpZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "IN-17-notification__page",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "dart.settings",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;IN-14-login__page__user__authentication&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/avishkapramuditha/Desktop/SDGP_PT_Y3_03_Intellectia&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/lib/widget" />
@@ -77,14 +93,6 @@
       <option name="filePath" value="$PROJECT_DIR$/client/lib/main.dart" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Flutter.main.dart" />
-        <item itemvalue="Flutter.main.dart" />
-        <item itemvalue="Flutter.main.dart" />
-        <item itemvalue="Flutter.main.dart" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,6 +102,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707224301492</updated>
+      <workItem from="1707896022437" duration="22842000" />
+      <workItem from="1707938744370" duration="1321000" />
     </task>
     <task id="LOCAL-00001" summary="updated the UI">
       <option name="closed" value="true" />
@@ -153,6 +163,9 @@
     </task>
     <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
