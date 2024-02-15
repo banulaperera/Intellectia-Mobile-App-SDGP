@@ -34,12 +34,15 @@ class UserService{
     static async getUserDetails(userid){
         try {
             const user=await User.findOne({_id:userid});
-            return {
-                firstName:user.firstName,
-                lastName:user.lastName,
-                email:user.email,
-                level:user.level
+            if (user){
+                return {
+                    firstName:user.firstName,
+                    lastName:user.lastName,
+                    email:user.email,
+                    level:user.level
+                }
             }
+
         }catch (e) {
             throw e
         }

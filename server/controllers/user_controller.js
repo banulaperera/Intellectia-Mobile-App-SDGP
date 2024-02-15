@@ -25,8 +25,9 @@ exports.login=async (req,res)=>{
         if (user){
           const isMatch=await user.checkPassword(password);
           if (isMatch===true){
-              const token=jwt.sign({userID:user._id},process.env.ACCESS_TOKEN_KEY);
-              res.json({status:200,success:"logged successfully",token})
+              const accessToken=jwt.sign({userID:user._id},process.env.ACCESS_TOKEN_KEY,{expiresIn: "5m"});
+              const refreshToken=jwt.sign({userID:user._id},process.env.REFRESH_TOKEN_KEY,{expiresIn: "7d"});
+              res.json({status:200,success:"logged successfully",accessToken,refreshToken});
           }else{
               res.json({status:409,success:"Invalid Password"})
           }
@@ -39,6 +40,29 @@ exports.login=async (req,res)=>{
         throw error;
     }
 }
+
+exports.newToken=async (req,res)=> {
+    try {
+      const refreshToken=req.body.refreshToken;
+      if (refreshToken==null){
+          res.sendStatus(401);
+      }else {
+          jwt.verify(refreshToken,process.env.REFRESH_TOKEN_KEY,(error,user)=>{
+              if (error){
+                  res.sendStatus(401);
+              }else {
+                  const accessToken=jwt.sign({userID:user.userID},process.env.ACCESS_TOKEN_KEY,{expiresIn: "5m"});
+                  res.send({accessToken});
+              }
+          })
+      }
+
+    } catch (e) {
+        throw e;
+    }
+}
+
+
 
 exports.updateUserName=async (req,res)=> {
     try {
