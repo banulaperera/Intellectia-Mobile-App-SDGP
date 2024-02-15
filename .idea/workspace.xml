@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="final commit of UI of notification screen.">
-      <change afterPath="$PROJECT_DIR$/client/lib/models/notification_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/widget/notification_title.dart" afterDir="false" />
+    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/navigation_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/notification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/notification_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/widget/performance_suggest_notification.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/widget/quiz_suggest_notification.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/widget/youtube_suggest_notification_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/user_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/user_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/user_service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dart File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -43,25 +40,40 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2bziRcebiRhi3BTrJFUNKwr0xpZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "IN-17-notification__page",
+    "git-widget-placeholder": "IN-14-login__page__user__authentication",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia",
+    "last_opened_file_path": "/Users/avishkapramuditha/Desktop/SDGP_PT_Y3_03_Intellectia",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "dart.settings",
-    "show.migrate.to.gradle.popup": "false"
+    "show.migrate.to.gradle.popup": "false",
+    "ts.external.directory.path": "/Users/avishkapramuditha/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -77,14 +89,6 @@
       <option name="filePath" value="$PROJECT_DIR$/client/lib/main.dart" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Flutter.main.dart" />
-        <item itemvalue="Flutter.main.dart" />
-        <item itemvalue="Flutter.main.dart" />
-        <item itemvalue="Flutter.main.dart" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,6 +98,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707224301492</updated>
+      <workItem from="1707896022437" duration="22842000" />
+      <workItem from="1707938744370" duration="1321000" />
+      <workItem from="1707997606283" duration="19000" />
+      <workItem from="1707997649634" duration="11000" />
+      <workItem from="1707997672053" duration="13551000" />
     </task>
     <task id="LOCAL-00001" summary="updated the UI">
       <option name="closed" value="true" />
@@ -153,6 +162,21 @@
     </task>
     <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/operations.js" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/operations.js.map" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/core.js" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/core.js.map" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/utils.js" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/utils.js.map" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/index.js" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/index.js.map" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
