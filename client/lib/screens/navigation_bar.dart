@@ -1,6 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:client/screens/home_page.dart';
+import 'package:client/screens/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'notification_page.dart';
@@ -20,7 +21,7 @@ class _BottomNavigation extends State<BottomNavigation> {
     const HomePage(),
     const Text('data'),
     const NotificationScreen(),
-    const Text('data'),
+    const UserProfile(),
   ];
   @override
   Widget build(BuildContext context) {
