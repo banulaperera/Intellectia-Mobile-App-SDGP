@@ -2,7 +2,6 @@ const mongoose=require('mongoose');
 const bcrypt=require('bcrypt')
 
 const userSchema=new mongoose.Schema({
-    //userID:{type:String,required:true},
     firstName:{type:String},
     lastName:{type:String},
     email:{type:String,required:true},
@@ -10,6 +9,7 @@ const userSchema=new mongoose.Schema({
     level:{type:Number},
     noTakenQuiz:{type:Number},
     noMissedQuiz:{type:Number}
+
 })
 
 userSchema.pre('save',async function(){

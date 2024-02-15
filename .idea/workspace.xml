@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/SDGP_PT_Y3_03_Intellectia.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +96,8 @@
       <updated>1707224301492</updated>
       <workItem from="1707896022437" duration="22842000" />
       <workItem from="1707938744370" duration="1321000" />
+      <workItem from="1707997606283" duration="19000" />
+      <workItem from="1707997649634" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="updated the UI">
       <option name="closed" value="true" />
@@ -166,6 +160,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/operations.js" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/operations.js.map" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/core.js" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/core.js.map" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/utils.js" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/utils.js.map" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/index.js" />
+        <option value="$PROJECT_DIR$/server/node_modules/sift/src/index.js.map" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

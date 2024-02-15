@@ -1,5 +1,6 @@
 const UserService=require('../services/user_service');
-//const jwt=require('jsonwebtoken');
+const jwt=require('jsonwebtoken');
+require('dotenv').config();
 
  exports.registerUser=async (req,res)=>{
       try{
@@ -24,7 +25,8 @@ exports.login=async (req,res)=>{
         if (user){
           const isMatch=await user.checkPassword(password);
           if (isMatch===true){
-              res.json({status:200,success:"logged successfully"})
+              const token=jwt.sign({userID:user._id},process.env.ACCESS_TOKEN_KEY);
+              res.json({status:200,success:"logged successfully",token})
           }else{
               res.json({status:409,success:"Invalid Password"})
           }
@@ -38,12 +40,22 @@ exports.login=async (req,res)=>{
     }
 }
 
-exports.updateUserName=async (req,res)=>{
-     try {
-         const {firstName,lastName}=req.body
-         await UserService.updateFirstLastName("65cd03337c7feb7185372b76",firstName,lastName);
-         res.json({status:200,Message:"User names updated Successfully"})
-     }catch (e) {
-         throw e;
-     }
+exports.updateUserName=async (req,res)=> {
+    try {
+        const {userID}=req.user;
+        const {firstName, lastName} = req.body
+        await UserService.updateFirstLastName(userID, firstName, lastName);
+        res.json({status: 200, Message: "User names updated Successfully"})
+    } catch (e) {
+        throw e;
+    }
+}
+    exports.getUserDetails=async (req,res)=>{
+         try {
+             const {userID}=req.user;
+             const user=await UserService.getUserDetails(userID);
+             res.json(user);
+        }catch (e) {
+            throw e;
+        }
 }

@@ -18,15 +18,7 @@ class UserService{
              throw error;
          }
      }
-     static async setLevel(userid,level){
-          try {
-              const user=await User.findOne({_id:userid});
-              user.level=level;
-              await user.save();
-          }catch (e) {
-              throw e
-          }
-     }
+
 
     static async updateFirstLastName(userid,firstName,lastName){
         try {
@@ -34,6 +26,20 @@ class UserService{
             user.firstName=firstName;
             user.lastName=lastName;
             await user.save();
+        }catch (e) {
+            throw e
+        }
+    }
+
+    static async getUserDetails(userid){
+        try {
+            const user=await User.findOne({_id:userid});
+            return {
+                firstName:user.firstName,
+                lastName:user.lastName,
+                email:user.email,
+                level:user.level
+            }
         }catch (e) {
             throw e
         }
