@@ -1,5 +1,6 @@
 const mongoose=require('mongoose');
-const bcrypt=require('bcrypt')
+const bcrypt=require('bcrypt');
+const Note=require('./Note')
 
 const userSchema=new mongoose.Schema({
     firstName:{type:String},
@@ -8,7 +9,9 @@ const userSchema=new mongoose.Schema({
     password:{type:String},
     level:{type:Number},
     noTakenQuiz:{type:Number},
-    noMissedQuiz:{type:Number}
+    noMissedQuiz:{type:Number},
+
+    notes:[Note]
 
 })
 
