@@ -1,7 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:client/models/note_model.dart';
-import 'package:client/screens/note_editor.dart';
+import 'package:client/screens/home_page/home_page_components/note_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                 const Text(
                   'Notes',
                   style: TextStyle(
-                      fontSize: 25,
+                      fontSize: appBarTitleSize,
                       fontWeight: FontWeight.w500,
                       letterSpacing: 2),
                 ),

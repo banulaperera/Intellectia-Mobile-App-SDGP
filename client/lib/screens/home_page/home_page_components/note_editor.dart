@@ -13,9 +13,10 @@ class CreateNote extends StatefulWidget {
 }
 
 class _CreateNoteState extends State<CreateNote> {
-  TextEditingController titleController = TextEditingController();
 
+  TextEditingController titleController = TextEditingController();
   TextEditingController bodyController = TextEditingController();
+
   @override
   void initState() {
     if (widget.notes != null) {
@@ -23,7 +24,6 @@ class _CreateNoteState extends State<CreateNote> {
 
       bodyController = TextEditingController(text: widget.notes!.body);
     }
-
     super.initState();
   }
 
@@ -41,9 +41,8 @@ class _CreateNoteState extends State<CreateNote> {
               TextFormField(
                 controller: titleController,
                 maxLines: null,
-                style: const TextStyle(
-                  fontSize: 25,
-                ),
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                 decoration: const InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Title',
@@ -55,6 +54,9 @@ class _CreateNoteState extends State<CreateNote> {
               TextFormField(
                 controller: bodyController,
                 maxLines: null,
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
                 decoration: const InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Type something...',

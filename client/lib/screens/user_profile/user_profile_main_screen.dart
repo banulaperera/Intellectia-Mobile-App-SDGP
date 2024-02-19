@@ -24,7 +24,7 @@ class _UserProfileState extends State<UserProfile> {
         title: const Text(
           'My Profile',
           style: TextStyle(
-            fontSize: 22,
+            fontSize: appBarTitleSize,
             fontWeight: FontWeight.w500,
             letterSpacing: 2,
           ),

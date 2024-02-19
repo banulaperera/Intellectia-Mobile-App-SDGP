@@ -1,10 +1,10 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/widget/notification_title.dart';
+import 'package:client/constants.dart';
+import 'package:client/screens/home_page/home_page_components/notification_title.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../models/notification_model.dart';
-
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -14,17 +14,15 @@ class NotificationScreen extends StatefulWidget {
 }
 
 class _NotificationScreenState extends State<NotificationScreen> {
-
   List<Notifications> newList = [];
   List<Notifications> oldList = [];
 
   @override
-  void initState(){
+  void initState() {
     newList = Notifications.listOfNotifications();
     oldList = newList;
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +32,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
           title: const Text(
             'Notification',
             style: TextStyle(
-                fontSize: 25, fontWeight: FontWeight.w500, letterSpacing: 2),
+                fontSize: appBarTitleSize,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 2),
           ),
           scrolledUnderElevation: 0.0,
           centerTitle: true,
@@ -48,7 +48,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               children: [
                 const Text(
                   'New',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
                 ),
                 ListView.separated(
                   shrinkWrap: true,
@@ -56,20 +56,21 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   padding: EdgeInsets.zero,
                   itemBuilder: (context, index) {
                     return Slidable(
-                      endActionPane: ActionPane(
-                        extentRatio: .2,
-                        motion: const ScrollMotion(),
-                        children: [
-                          SlidableAction(
-                            onPressed: (context) {},
-                            icon: BootstrapIcons.trash3_fill,
-                            foregroundColor: Colors.white,
-                            backgroundColor: Colors.red,
-                          )
-                        ],
-                      ),
-                      child: NotificationTitle(newList[index],)
-                    );
+                        endActionPane: ActionPane(
+                          extentRatio: .2,
+                          motion: const ScrollMotion(),
+                          children: [
+                            SlidableAction(
+                              onPressed: (context) {},
+                              icon: BootstrapIcons.trash3_fill,
+                              foregroundColor: Colors.white,
+                              backgroundColor: Colors.red,
+                            )
+                          ],
+                        ),
+                        child: NotificationTitle(
+                          newList[index],
+                        ));
                   },
                   itemCount: newList.length,
                   separatorBuilder: (BuildContext context, int index) {
@@ -81,7 +82,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 ),
                 const Text(
                   'Last Week',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
                 ),
                 ListView.separated(
                   shrinkWrap: true,
@@ -101,7 +102,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           )
                         ],
                       ),
-                      child: NotificationTitle(oldList[index],),
+                      child: NotificationTitle(
+                        oldList[index],
+                      ),
                     );
                   },
                   itemCount: oldList.length,
