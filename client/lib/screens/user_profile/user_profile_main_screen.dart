@@ -1,5 +1,6 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
+import 'package:client/screens/setting_screen/account_setting.dart';
 import 'package:client/screens/user_profile/user_profile_components/exp_bar_graph.dart';
 import 'package:client/screens/user_profile/user_profile_components/pie_chart_container.dart';
 import 'package:client/screens/user_profile/user_profile_components/user_profile_header.dart';
@@ -33,7 +34,13 @@ class _UserProfileState extends State<UserProfile> {
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AccountSetting()),
+                );
+              },
               child: const Row(
                 children: [
                   Icon(
