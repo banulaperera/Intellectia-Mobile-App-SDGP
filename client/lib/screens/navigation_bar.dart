@@ -1,6 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:client/screens/home_page/home_page.dart';
+import 'package:client/screens/quiz/welcome/welcome_screen.dart';
 import 'package:client/screens/user_profile/user_profile_main_screen.dart';
 import 'package:flutter/material.dart';
 import 'notification_page/notification_page.dart';
@@ -18,7 +19,7 @@ class _BottomNavigation extends State<BottomNavigation> {
 
   final pages = [
     const HomePage(),
-    const Text('data'),
+    const WelcomeScreen(),
     const NotificationScreen(),
     const UserProfile(),
   ];
