@@ -1,4 +1,3 @@
-import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:client/screens/setting_screen/setting_screen_components/input_textfield_widget.dart';
 import 'package:client/screens/setting_screen/setting_screen_components/profile_image.dart';
