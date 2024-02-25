@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:client/controllers/question_controller.dart';
 // import 'package:flutter_svg/svg.dart';
- 
+
 import '../../../../../constants.dart';
- 
+
 class ProgressBar extends StatelessWidget {
   const ProgressBar({
     required Key key,
   }) : super(key: key);
- 
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,7 +46,10 @@ class ProgressBar extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("${(controller.animation.value * 60).round()} sec"),
+                      Text(
+                        "${(controller.animation.value * 60).round()} sec",
+                        style: const TextStyle(color: Colors.white),
+                      ),
                       // SvgPicture.asset("assets/icons/clock.svg"),
                     ],
                   ),

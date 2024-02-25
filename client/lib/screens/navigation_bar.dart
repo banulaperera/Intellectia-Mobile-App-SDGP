@@ -45,7 +45,7 @@ class _BottomNavigation extends State<BottomNavigation> {
             ),
             BottomNavigationBarItem(
               icon: Icon(BootstrapIcons.bullseye),
-              label: 'Goal',
+              label: 'Quiz',
             ),
             BottomNavigationBarItem(
               icon: Icon(BootstrapIcons.bell_fill),

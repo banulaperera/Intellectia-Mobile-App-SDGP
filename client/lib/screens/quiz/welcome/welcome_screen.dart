@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
 // import 'package:get/get.dart';
 import 'package:client/constants.dart';
- 
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +23,7 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   const Spacer(flex: 2), //2/6
                   Text(
+                    textAlign: TextAlign.center,
                     "Are you ready for the quiz?",
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                         color: const Color.fromARGB(255, 6, 6, 6),
@@ -39,39 +42,45 @@ class WelcomeScreen extends StatelessWidget {
                   //   ),
                   // ),
                   const Spacer(), // 1/6
-                  // InkWell(
-                  //   onTap: () => Get.to(const QuizScreen()),
-                  //   child: Container(
-                  //     width: double.infinity,
-                  //     alignment: Alignment.center,
-                  //     padding:
-                  //         const EdgeInsets.all(kDefaultPadding * 0.75), // 15
-                  //     decoration: const BoxDecoration(
-                  //       gradient: kPrimaryGradient,
-                  //       borderRadius: BorderRadius.all(Radius.circular(12)),
-                  //     ),
-                  //     child: Text(
-                  //       "Let's Start Quiz",
-                  //       style: Theme.of(context)
-                  //           .textTheme
-                  //           .labelLarge
-                  //           ?.copyWith(color: Colors.black),
-                  //     ),
-                  //   ),
-                  // ),
-                  FloatingActionButton(
-                    onPressed: () {
+                  InkWell(
+                    onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const QuizScreen()),
                       );
                     },
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.black,
-                    hoverColor: Colors.blueGrey,
-                    child: const Text('Start'),
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding:
+                          const EdgeInsets.all(kDefaultPadding * 0.75), // 15
+                      decoration: const BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      ),
+                      child: Text(
+                        "Let's Start Quiz",
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelLarge
+                            ?.copyWith(color: kBackgroundColor),
+                      ),
+                    ),
                   ),
+                  // FloatingActionButton(
+                  //   onPressed: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => const QuizScreen()),
+                  // );
+                  //   },
+                  //   backgroundColor: Colors.blue,
+                  //   foregroundColor: Colors.black,
+                  //   hoverColor: Colors.blueGrey,
+                  //   child: const Text('Start'),
+                  // ),
                   const Spacer(flex: 2), // it will take 2/6 spaces
                 ],
               ),
