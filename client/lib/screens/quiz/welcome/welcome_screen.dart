@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
 // import 'package:get/get.dart';
 import 'package:client/constants.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -56,7 +54,7 @@ class WelcomeScreen extends StatelessWidget {
                       padding:
                           const EdgeInsets.all(kDefaultPadding * 0.75), // 15
                       decoration: const BoxDecoration(
-                        color: Colors.blue,
+                        color: kPrimaryColor,
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ),
                       child: Text(

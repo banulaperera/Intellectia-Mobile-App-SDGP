@@ -1,3 +1,4 @@
+import 'package:client/constants.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,7 +23,7 @@ class QuizScreen extends StatelessWidget {
             padding: const EdgeInsets.only(right: 20, bottom: 10),
             child: FloatingActionButton.large(
               elevation: 3,
-              backgroundColor: Colors.blue,
+              backgroundColor: kPrimaryColor,
               onPressed: controller.nextQuestion,
               child: const Text(
                 "Skip",
