@@ -41,7 +41,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 25),
 
-              const LoginSignUpTextField(hintText: 'Email', keyboardType: TextInputType.emailAddress,),
+              const LoginSignUpTextField(
+                hintText: 'Email',
+                keyboardType: TextInputType.emailAddress,
+              ),
               // textField(
               //   hintText: 'Email',
               //   keyboardType: TextInputType.emailAddress,
