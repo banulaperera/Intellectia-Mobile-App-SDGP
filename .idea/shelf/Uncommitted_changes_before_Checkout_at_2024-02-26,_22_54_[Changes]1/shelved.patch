@@ -1,0 +1,65 @@
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13,_22_07_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13,_22_07_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13,_22_07_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13,_22_07_[Changes]/shelved.patch	
++++ /dev/null	
+@@ -1,46 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"NONE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"f3b124d4-4e1d-470c-9324-f40fe413d782\" name=\"Changes\" comment=\"final commit of UI of notification screen.\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/client/lib/screens/home_page.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/client/lib/screens/home_page.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/client/lib/screens/navigation_bar.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/client/lib/screens/navigation_bar.dart\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ClangdSettings\">\n    <option name=\"formatViaClangd\" value=\"false\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Dart File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2bziRcebiRhi3BTrJFUNKwr0xpZ\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.cidr.known.project.marker\": \"true\",\n    \"cf.first.check.clang-format\": \"false\",\n    \"cidr.known.project.marker\": \"true\",\n    \"com.google.services.firebase.aqiPopupShown\": \"true\",\n    \"dart.analysis.tool.window.visible\": \"false\",\n    \"git-widget-placeholder\": \"IN-16-bottom__navigation__bar\",\n    \"io.flutter.reload.alreadyRun\": \"true\",\n    \"last_opened_file_path\": \"/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia\",\n    \"settings.editor.selected.configurable\": \"dart.settings\",\n    \"show.migrate.to.gradle.popup\": \"false\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/client/fonts\" />\n      <recent name=\"$PROJECT_DIR$/client/assets\" />\n      <recent name=\"$PROJECT_DIR$/client/lib/widget\" />\n      <recent name=\"$PROJECT_DIR$/client/lib/screens\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"main.dart\" type=\"FlutterRunConfigurationType\" factoryName=\"Flutter\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"filePath\" value=\"$PROJECT_DIR$/client/lib/main.dart\" />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Flutter.main.dart\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"f3b124d4-4e1d-470c-9324-f40fe413d782\" name=\"Changes\" comment=\"\" />\n      <created>1707224301492</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1707224301492</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"updated the UI\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707496195114</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707496195114</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"updated the UI\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707570081766</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707570081766</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"updated the login page password page with obscured\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707661997003</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707661997004</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Enhace the code and initial commit to the notification UI\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707750602634</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707750602634</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Initial commit of the notification page\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707810565219</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707810565219</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"final commit of UI of notification screen.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707823820003</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707823820003</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"updated the UI\" />\n    <MESSAGE value=\"updated the login page password page with obscured\" />\n    <MESSAGE value=\"Enhace the code and initial commit to the notification UI\" />\n    <MESSAGE value=\"Initial commit of the notification page\" />\n    <MESSAGE value=\"final commit of UI of notification screen.\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"final commit of UI of notification screen.\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision fbbf32242a477ab687ae8594a2da68bc2a4cae9a)
+-+++ b/.idea/workspace.xml	(date 1707838376668)
+-@@ -38,21 +38,21 @@
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-   </component>
+--  <component name="PropertiesComponent"><![CDATA[{
+--  "keyToString": {
+--    "RunOnceActivity.ShowReadmeOnStart": "true",
+--    "RunOnceActivity.cidr.known.project.marker": "true",
+--    "cf.first.check.clang-format": "false",
+--    "cidr.known.project.marker": "true",
+--    "com.google.services.firebase.aqiPopupShown": "true",
+--    "dart.analysis.tool.window.visible": "false",
+--    "git-widget-placeholder": "IN-16-bottom__navigation__bar",
+--    "io.flutter.reload.alreadyRun": "true",
+--    "last_opened_file_path": "/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia",
+--    "settings.editor.selected.configurable": "dart.settings",
+--    "show.migrate.to.gradle.popup": "false"
+-+  <component name="PropertiesComponent">{
+-+  &quot;keyToString&quot;: {
+-+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+-+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+-+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+-+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+-+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+-+    &quot;git-widget-placeholder&quot;: &quot;IN-16-bottom__navigation__bar&quot;,
+-+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+-+    &quot;last_opened_file_path&quot;: &quot;/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia&quot;,
+-+    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
+-+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+-   }
+--}]]></component>
+-+}</component>
+-   <component name="RecentsManager">
+-     <key name="MoveFile.RECENT_KEYS">
+-       <recent name="$PROJECT_DIR$/client/fonts" />
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13__22_07__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13__22_07__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13__22_07__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13__22_07__Changes_.xml	
++++ /dev/null	
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_2024-02-13,_22_07_[Changes]" date="1707842355428" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13,_22_07_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2024-02-13, 22:07 [Changes]" />
+-</changelist>
+\ No newline at end of file

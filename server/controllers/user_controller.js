@@ -14,7 +14,7 @@ require('dotenv').config();
               res.json({status:409,Message:"Email Address is already taken"})
           }
       }catch (error){
-          throw error;
+
       }
 }
 
@@ -25,7 +25,7 @@ exports.login=async (req,res)=>{
         if (user){
           const isMatch=await user.checkPassword(password);
           if (isMatch===true){
-              const accessToken=jwt.sign({userID:user._id},process.env.ACCESS_TOKEN_KEY,{expiresIn: "5m"});
+              const accessToken=jwt.sign({userID:user._id},process.env.ACCESS_TOKEN_KEY,/*{expiresIn: "5m"}*/);
               const refreshToken=jwt.sign({userID:user._id},process.env.REFRESH_TOKEN_KEY,{expiresIn: "7d"});
               res.json({status:200,success:"logged successfully",accessToken,refreshToken});
           }else{
@@ -37,7 +37,7 @@ exports.login=async (req,res)=>{
         }
 
     }catch (error){
-        throw error;
+
     }
 }
 
@@ -58,7 +58,7 @@ exports.newToken=async (req,res)=> {
       }
 
     } catch (e) {
-        throw e;
+
     }
 }
 
@@ -71,7 +71,7 @@ exports.updateUserName=async (req,res)=> {
         await UserService.updateFirstLastName(userID, firstName, lastName);
         res.json({status: 200, Message: "User names updated Successfully"})
     } catch (e) {
-        throw e;
+
     }
 }
     exports.getUserDetails=async (req,res)=>{
@@ -80,6 +80,6 @@ exports.updateUserName=async (req,res)=> {
              const user=await UserService.getUserDetails(userID);
              res.json(user);
         }catch (e) {
-            throw e;
+
         }
 }
