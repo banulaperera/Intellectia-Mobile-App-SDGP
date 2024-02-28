@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
+
+    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="code enhancements">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13,_22_07_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-13__22_07__Changes_.xml" beforeDir="false" />
+
+
     <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="">
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/user_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user_routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/user_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/user_service.js" afterDir="false" />
     </list>
-=======
+
     <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="final commit of UI of notification screen." />
->>>>>>> Stashed changes
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,22 +58,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.note_service.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;IN-21-Note__Crud__Operation&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/avishkapramuditha/Desktop/SDGP_PT_Y3_03_Intellectia&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/avishkapramuditha/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-<<<<<<< Updated upstream
+
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-=======
+
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
->>>>>>> Stashed changes
+
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-<<<<<<< Updated upstream
+
     "git-widget-placeholder": "IN-14-login__page__user__authentication",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "/Users/avishkapramuditha/Desktop/SDGP_PT_Y3_03_Intellectia",
@@ -84,16 +113,16 @@
     "show.migrate.to.gradle.popup": "false",
     "ts.external.directory.path": "/Users/avishkapramuditha/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
-=======
+
     "git-widget-placeholder": "IN-8-user__profile",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "dart.settings",
     "show.migrate.to.gradle.popup": "false"
->>>>>>> Stashed changes
+
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/lib/widget" />
@@ -121,6 +150,10 @@
       <workItem from="1707997606283" duration="19000" />
       <workItem from="1707997649634" duration="11000" />
       <workItem from="1707997672053" duration="13551000" />
+      <workItem from="1708245477593" duration="4109000" />
+      <workItem from="1708254954944" duration="11890000" />
+      <workItem from="1708271066017" duration="397000" />
+      <workItem from="1708271602809" duration="9884000" />
     </task>
     <task id="LOCAL-00001" summary="updated the UI">
       <option name="closed" value="true" />
@@ -215,5 +248,16 @@
     <MESSAGE value="final commit of UI of notification screen." />
     <MESSAGE value="code enhancements" />
     <option name="LAST_COMMIT_MESSAGE" value="code enhancements" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/note_service.js</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

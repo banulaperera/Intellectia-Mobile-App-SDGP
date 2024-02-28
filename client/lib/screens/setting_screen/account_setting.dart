@@ -1,6 +1,7 @@
-import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:client/screens/setting_screen/setting_screen_components/input_textfield_widget.dart';
+import 'package:client/screens/setting_screen/setting_screen_components/profile_image.dart';
+import 'package:client/screens/user_profile/user_profile_main_screen.dart';
 import 'package:flutter/Material.dart';
 
 class AccountSetting extends StatefulWidget {
@@ -40,53 +41,8 @@ class _AccountSettingState extends State<AccountSetting> {
           },
           child: ListView(
             children: [
-              Center(
-                child: Stack(
-                  children: [
-                    Container(
-                      width: 130,
-                      height: 130,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            width: 4,
-                            color: Theme.of(context).scaffoldBackgroundColor),
-                        boxShadow: [
-                          BoxShadow(
-                            spreadRadius: 2,
-                            blurRadius: 10,
-                            color: Colors.black.withOpacity(0.1),
-                            offset: const Offset(0, 10),
-                          ),
-                        ],
-                        shape: BoxShape.circle,
-                        image: const DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage('assets/logo_image.jpeg'),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              width: 4,
-                              color: Theme.of(context).scaffoldBackgroundColor),
-                          shape: BoxShape.circle,
-                          color: kPrimaryColor,
-                        ),
-                        child: Icon(
-                          BootstrapIcons.pencil_fill,
-                          size: 17,
-                          color: Theme.of(context).scaffoldBackgroundColor,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              const Center(
+                child: ProfileImage(),
               ),
               const SizedBox(
                 height: 35,
@@ -122,36 +78,39 @@ class _AccountSettingState extends State<AccountSetting> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 40),
-                        elevation: 5),
-                    onPressed: () {},
-                    child: const Text(
-                      'CANCEL',
-                      style: TextStyle(
-                          fontSize: 14, letterSpacing: 2, color: Colors.black),
-                    ),
-                  ),
-                  OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                        backgroundColor: kPrimaryColor,
-                        padding: const EdgeInsets.symmetric(horizontal: 50),
-                        elevation: 5),
-                    onPressed: () {},
-                    child: const Text(
-                      'SAVE',
-                      style: TextStyle(
-                          fontSize: 14,
-                          letterSpacing: 2,
-                          color: kBackgroundColor),
-                    ),
-                  ),
+                  bottomButton(kBackgroundColor, 'CANCEL', Colors.black),
+                  bottomButton(kPrimaryColor, ' SAVE ', kBackgroundColor),
                 ],
               )
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  OutlinedButton bottomButton(
+      Color backgroundColor, String text, Color textColor) {
+    return OutlinedButton(
+      style: OutlinedButton.styleFrom(
+          backgroundColor: backgroundColor,
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          elevation: 5),
+      onPressed: () {
+        if (text == 'CANCEL') {
+          Navigator.pop(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const UserProfile();
+              },
+            ),
+          );
+        }
+      },
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 14, letterSpacing: 2, color: textColor),
       ),
     );
   }
