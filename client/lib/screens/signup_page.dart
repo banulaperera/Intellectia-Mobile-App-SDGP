@@ -62,8 +62,8 @@ class _SignupPageState extends State<SignupPage> {
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.only(right: 12),
                         icon: _isObscured
-                            ? const Icon(BootstrapIcons.eye_slash_fill)
-                            : const Icon(BootstrapIcons.eye_fill),
+                            ? const Icon(BootstrapIcons.eye_fill)
+                            : const Icon(BootstrapIcons.eye_slash_fill),
                         onPressed: () {
                           setState(() {
                             _isObscured = !_isObscured;
@@ -105,8 +105,8 @@ class _SignupPageState extends State<SignupPage> {
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.only(right: 12),
                         icon: _isObscured
-                            ? const Icon(BootstrapIcons.eye_slash_fill)
-                            : const Icon(BootstrapIcons.eye_fill),
+                            ? const Icon(BootstrapIcons.eye_fill)
+                            : const Icon(BootstrapIcons.eye_slash_fill),
                         onPressed: () {
                           setState(() {
                             _isObscured = !_isObscured;
@@ -137,11 +137,10 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 25),
                   LoginScreenButton(
-                    label: 'Sing Up',
+                    label: 'Sign Up',
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const SignupPage()),
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        showSnackBar(),
                       );
                     },
                   ),
@@ -153,6 +152,50 @@ class _SignupPageState extends State<SignupPage> {
           ],
         ),
       ),
+    );
+  }
+
+  SnackBar showSnackBar() {
+    return SnackBar(
+      content: Container(
+        // padding: EdgeInsets.all(12),
+        height: 60,
+        decoration: const BoxDecoration(
+          color: Color(0xFFC72C41),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+        ),
+        child: const Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              weight: 150,
+              BootstrapIcons.x_circle,
+              color: Colors.white,
+              size: 25,
+            ),
+            SizedBox(width: 25),
+            Text(
+              'Password miss match',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w700
+              ),
+            ),
+          ],
+        ),
+      ),
+      // content: AwesomeSnackbarContent(
+      //   title: 'Oops!',
+      //   message: 'Password miss match',
+      //
+      //   /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
+      //   contentType: ContentType.failure,
+      // ),
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
     );
   }
 
