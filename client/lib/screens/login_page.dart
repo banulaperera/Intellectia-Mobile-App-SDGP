@@ -7,6 +7,8 @@ import 'package:client/screens/signup_page.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
+import 'package:client/repository/user_repository.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -109,6 +111,7 @@ class _LoginPageState extends State<LoginPage> {
               LoginScreenButton(
                 label: 'Login',
                 onPressed: () {
+                  UserRepository().signIn("u1@gmail.com","u1");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (_) => const BottomNavigation()),

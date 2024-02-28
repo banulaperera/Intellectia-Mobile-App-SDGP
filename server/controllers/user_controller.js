@@ -24,18 +24,19 @@ exports.login=async (req,res)=>{
     try{
         const {email,password}=req.body;
         const user=await UserService.checkUserEmail(email);
+
         if (user){
           const isMatch=await passwordUtil.checkPassword(user,password);
           if (isMatch===true){
               const accessToken=jwt.sign({userID:user._id},process.env.ACCESS_TOKEN_KEY,/*{expiresIn: "5m"}*/);
               const refreshToken=jwt.sign({userID:user._id},process.env.REFRESH_TOKEN_KEY,{expiresIn: "7d"});
-              res.json({status:200,Message:"logged successfully",accessToken,refreshToken});
+              res.status(200).json({Message:"logged successfully",accessToken,refreshToken});
           }else{
-              res.json({status:409,Message:"Invalid Password"})
+              res.status(409).json({Message:"Invalid Password"})
           }
 
         }else {
-          res.json({status:409,Message:"Invalid Email"});
+            res.status(409).json({Message:"Invalid Email"});
         }
 
     }catch (error){

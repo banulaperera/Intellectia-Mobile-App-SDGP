@@ -1,5 +1,4 @@
 const mongoose=require('mongoose');
-const bcrypt=require('bcrypt');
 const Note=require('./Note')
 
 const userSchema=new mongoose.Schema({

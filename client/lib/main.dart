@@ -2,6 +2,7 @@ import 'package:client/constants.dart';
 import 'package:client/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
