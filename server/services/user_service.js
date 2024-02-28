@@ -1,9 +1,11 @@
 const User=require('../model/User');
+const passwordUtil=require('../util/password_util');
 
 class UserService{
       static async userRegistration(email,password){
          try{
-             let  firstName=getDefaultName(email);
+             let firstName=getDefaultName(email);
+             password=await passwordUtil.getEncryptPassword(password);
              const user=new User({firstName,email,password});
              return await user.save();
          }catch (error){
@@ -55,5 +57,6 @@ class UserService{
 function getDefaultName(email){
     return email.split("@")[0];
 }
+
 
 module.exports=UserService;

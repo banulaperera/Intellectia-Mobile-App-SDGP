@@ -1,4 +1,5 @@
 const UserService=require('../services/user_service');
+const passwordUtil=require('../util/password_util');
 const jwt=require('jsonwebtoken');
 require('dotenv').config();
 
@@ -9,12 +10,13 @@ require('dotenv').config();
 
           if (!user){
               await UserService.userRegistration(email,password);
-              res.json({status:200,Message:"User Registered Successfully"})
+              res.json({status:200,Message:"User Registered Successfully"});
           }else{
               res.json({status:409,Message:"Email Address is already taken"})
           }
       }catch (error){
 
+          res.status(400).json({ Message: "The request is not completed "})
       }
 }
 
@@ -23,45 +25,24 @@ exports.login=async (req,res)=>{
         const {email,password}=req.body;
         const user=await UserService.checkUserEmail(email);
         if (user){
-          const isMatch=await user.checkPassword(password);
+          const isMatch=await passwordUtil.checkPassword(user,password);
           if (isMatch===true){
               const accessToken=jwt.sign({userID:user._id},process.env.ACCESS_TOKEN_KEY,/*{expiresIn: "5m"}*/);
               const refreshToken=jwt.sign({userID:user._id},process.env.REFRESH_TOKEN_KEY,{expiresIn: "7d"});
-              res.json({status:200,success:"logged successfully",accessToken,refreshToken});
+              res.json({status:200,Message:"logged successfully",accessToken,refreshToken});
           }else{
-              res.json({status:409,success:"Invalid Password"})
+              res.json({status:409,Message:"Invalid Password"})
           }
 
         }else {
-          res.json({status:409,success:"Invalid Email"});
+          res.json({status:409,Message:"Invalid Email"});
         }
 
     }catch (error){
-
+        console.log(error)
+        res.status(400).json({ Message: "The request is not completed "})
     }
 }
-
-exports.newToken=async (req,res)=> {
-    try {
-      const refreshToken=req.body.refreshToken;
-      if (refreshToken==null){
-          res.sendStatus(401);
-      }else {
-          jwt.verify(refreshToken,process.env.REFRESH_TOKEN_KEY,(error,user)=>{
-              if (error){
-                  res.sendStatus(401);
-              }else {
-                  const accessToken=jwt.sign({userID:user.userID},process.env.ACCESS_TOKEN_KEY,{expiresIn: "5m"});
-                  res.send({accessToken});
-              }
-          })
-      }
-
-    } catch (e) {
-
-    }
-}
-
 
 
 exports.updateUserName=async (req,res)=> {
