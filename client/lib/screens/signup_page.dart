@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
+import 'package:client/repository/user_repository.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -139,6 +140,7 @@ class _SignupPageState extends State<SignupPage> {
                   LoginScreenButton(
                     label: 'Sing Up',
                     onPressed: () {
+                      UserRepository().register("u2@gmail.com","u2");
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (_) => const SignupPage()),

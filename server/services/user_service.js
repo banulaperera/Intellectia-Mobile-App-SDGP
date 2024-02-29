@@ -38,10 +38,15 @@ class UserService{
             const user=await User.findOne({_id:userid});
             if (user){
                 return {
+                    photo:user.photo,
                     firstName:user.firstName,
                     lastName:user.lastName,
                     email:user.email,
-                    level:user.level
+                    level:user.level,
+                    noTakenQuize:user.noTakenQuize,
+                    noMissedQuiz:user.noMissedQuiz
+
+
                 }
             }
 

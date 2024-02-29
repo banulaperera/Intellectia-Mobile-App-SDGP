@@ -110,12 +110,15 @@ class _LoginPageState extends State<LoginPage> {
               ),
               LoginScreenButton(
                 label: 'Login',
-                onPressed: () {
-                  UserRepository().signIn("u1@gmail.com","u1");
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const BottomNavigation()),
-                  );
+                onPressed: () async {
+                  bool pass = await UserRepository().signIn("u1@gmail.com","u1");
+                  if(pass){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const BottomNavigation()),
+                    );
+                  }
+
                 },
               ),
               const SizedBox(height: 60),

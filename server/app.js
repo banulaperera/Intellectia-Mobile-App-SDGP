@@ -15,9 +15,9 @@ app.use(express.json())
 app.use(bodyParser.json());
 
 
-app.use(`/user`,userRoutes);
-app.use('/note',noteRoutes)
-app.use('/newToken',authController.newToken);
+app.use(`/api/v1/user`,userRoutes);
+app.use('/api/v1/note',noteRoutes)
+app.use('/api/v1/newToken',authController.newToken);
 
 
 

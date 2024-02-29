@@ -41,6 +41,10 @@ dependencies:
   fl_chart: ^0.66.2
   get: ^4.6.6
   flutter_svg: ^2.0.10+1
+  http: ^1.2.0
+  shared_preferences: ^2.2.2
+  jwt_decoder: ^2.0.1
+
 
 dev_dependencies:
   flutter_test:
