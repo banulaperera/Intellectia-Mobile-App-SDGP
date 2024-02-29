@@ -33,7 +33,7 @@ class User {
 
   factory User.fromJson(dynamic json) {
       return User(
-        photo:  json['photo'] as String,
+        photo: json['photo'] as String,
         firstName: json['firstName'] as String,
         lastName:json['lastName'] as String,
         email:json['email'] as String,

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 
+import 'package:client/models/user_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:client/util/local_storage.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
@@ -50,7 +51,19 @@ class UserRepository{
       }
   }
 
+  Future<User?> getUserDetails(String userID) async{
+    String accessToken=await localStorage.getAccessToken();
+    var res=await http.get(Uri.parse("$baseUrl/user/details"),
+        headers: <String,String>{'Content-Type':'application/json',
+          "Authorization":"bearer $accessToken"},);
 
+
+    final Map<String,dynamic> data=jsonDecode(res.body);
+    if(res.statusCode==200){
+     return User.fromJson(data);
+    }
+    return null;
+  }
 
 
 }

@@ -43,7 +43,7 @@ class UserService{
                     lastName:user.lastName,
                     email:user.email,
                     level:user.level,
-                    noTakenQuize:user.noTakenQuize,
+                    noTakenQuiz:user.noTakenQuiz,
                     noMissedQuiz:user.noMissedQuiz
 
 
