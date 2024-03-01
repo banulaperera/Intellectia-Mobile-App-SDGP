@@ -17,12 +17,22 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   var _isObscured = true;
 
   @override
   void initState() {
     super.initState();
     _isObscured = true;
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 
   @override
@@ -43,16 +53,14 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 25),
 
-              const LoginSignUpTextField(
+              LoginSignUpTextField(
                 hintText: 'Email',
                 keyboardType: TextInputType.emailAddress,
+                controller: emailController,
               ),
-              // textField(
-              //   hintText: 'Email',
-              //   keyboardType: TextInputType.emailAddress,
-              // ),
               const SizedBox(height: 25),
               TextField(
+                controller: passwordController,
                 obscureText: _isObscured,
                 obscuringCharacter: '*',
                 style: const TextStyle(
@@ -111,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
               LoginScreenButton(
                 label: 'Login',
                 onPressed: () async {
-                  bool pass = await UserRepository().signIn("u1@gmail.com","u1");
+                  bool pass = await UserRepository().signIn(emailController.text, passwordController.text);
                   if(pass){
                     Navigator.push(
                       context,
