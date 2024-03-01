@@ -1,10 +1,11 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
-import 'package:client/screens/setting_screen/account_setting.dart';
 import 'package:client/screens/user_profile/user_profile_components/exp_bar_graph.dart';
 import 'package:client/screens/user_profile/user_profile_components/pie_chart_container.dart';
 import 'package:client/screens/user_profile/user_profile_components/user_profile_header.dart';
 import 'package:flutter/material.dart';
+
+import '../setting_screen/main_setting_page.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({super.key});
@@ -39,7 +40,7 @@ class _UserProfileState extends State<UserProfile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const AccountSetting()),
+                      builder: (context) => const MainSettingPage()),
                 );
               },
               child: const Row(

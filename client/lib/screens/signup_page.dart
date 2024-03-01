@@ -190,6 +190,50 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 
+  SnackBar showSnackBar() {
+    return SnackBar(
+      content: Container(
+        // padding: EdgeInsets.all(12),
+        height: 60,
+        decoration: const BoxDecoration(
+          color: Color(0xFFC72C41),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+        ),
+        child: const Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              weight: 150,
+              BootstrapIcons.x_circle,
+              color: Colors.white,
+              size: 25,
+            ),
+            SizedBox(width: 25),
+            Text(
+              'Password miss match',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w700
+              ),
+            ),
+          ],
+        ),
+      ),
+      // content: AwesomeSnackbarContent(
+      //   title: 'Oops!',
+      //   message: 'Password miss match',
+      //
+      //   /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
+      //   contentType: ContentType.failure,
+      // ),
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+    );
+  }
+
   Widget _buildLoginNavigation(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

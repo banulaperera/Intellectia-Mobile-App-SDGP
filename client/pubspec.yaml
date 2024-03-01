@@ -44,8 +44,8 @@ dependencies:
   http: ^1.2.0
   shared_preferences: ^2.2.2
   jwt_decoder: ^2.0.1
-
-
+  flutter_svg: any
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
