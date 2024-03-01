@@ -10,9 +10,9 @@ require('dotenv').config();
 
           if (!user){
               await UserService.userRegistration(email,password);
-              res.json({status:200,Message:"User Registered Successfully"});
+              res.status(200).json({Message:"User Registered Successfully"});
           }else{
-              res.json({status:409,Message:"Email Address is already taken"})
+              res.status(409).json({Message:"Email Address is already taken"})
           }
       }catch (error){
 
@@ -51,7 +51,7 @@ exports.updateUserName=async (req,res)=> {
         const {userID}=req.user;
         const {firstName, lastName} = req.body
         await UserService.updateFirstLastName(userID, firstName, lastName);
-        res.json({status: 200, Message: "User names updated Successfully"})
+        res.status(200).json({Message: "User names updated Successfully"})
     } catch (e) {
 
     }
