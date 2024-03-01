@@ -38,11 +38,7 @@ class PieChartContainer extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 50),
             child: QuizTile(
-              icon: Icon(
-                BootstrapIcons.check_lg,
-                color: Colors.green,
-                size: 35,
-              ),
+              url: 'animations/Animation - 1709316435378.json',
               name: 'Correct Quizzes',
               quizzes: 20,
             ),
@@ -50,11 +46,7 @@ class PieChartContainer extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
             child: QuizTile(
-              icon: Icon(
-                BootstrapIcons.x_lg,
-                color: Colors.red,
-                size: 30,
-              ),
+              url: 'animations/Animation - 1709316846814.json',
               name: 'Wrong Quizzes',
               quizzes: 5,
             ),

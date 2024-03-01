@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class QuizTile extends StatelessWidget {
-  final Icon icon;
+  final String url;
   final String name;
   final int quizzes;
 
   const QuizTile({
-    required this.icon,
+    required this.url,
     required this.name,
     required this.quizzes,
     super.key,
@@ -31,9 +32,9 @@ class QuizTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              height: 30,
-              width: 30,
-              child: icon,
+              height: 45,
+              width: 45,
+              child: Lottie.asset(url),
             ),
             Text(
               name,

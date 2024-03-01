@@ -4,6 +4,7 @@ import 'package:client/screens/user_profile/user_profile_components/exp_bar_grap
 import 'package:client/screens/user_profile/user_profile_components/pie_chart_container.dart';
 import 'package:client/screens/user_profile/user_profile_components/user_profile_header.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../setting_screen/main_setting_page.dart';
 
@@ -93,13 +94,14 @@ class _UserProfileState extends State<UserProfile> {
                             height: 10,
                           ),
                           SizedBox(
-                            width: 90,
+                            width: 100,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const Icon(
-                                  BootstrapIcons.lightning_fill,
-                                  color: Colors.orangeAccent,
+                                Lottie.asset(
+                                  'animations/Animation - 1709314319942.json',
+                                  width: 35,
+                                  height: 35,
                                 ),
                                 Text(
                                   '21000',
