@@ -1,8 +1,10 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
+import 'package:client/repository/user_repository.dart';
 import 'package:client/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
+import '../util/show_Alert.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
@@ -14,12 +16,23 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
   var _isObscured = true;
 
   @override
   void initState() {
     super.initState();
     _isObscured = true;
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
   }
 
   @override
@@ -45,12 +58,14 @@ class _SignupPageState extends State<SignupPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 25),
-                  const LoginSignUpTextField(
+                  LoginSignUpTextField(
                     hintText: 'Email',
                     keyboardType: TextInputType.emailAddress,
+                    controller: _emailController,
                   ),
                   const SizedBox(height: 25),
                   TextField(
+                    controller: _passwordController,
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: _isObscured,
                     obscuringCharacter: '*',
@@ -94,6 +109,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 25),
                   TextField(
+                    controller: _confirmPasswordController,
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: _isObscured,
                     obscuringCharacter: '*',
@@ -138,10 +154,29 @@ class _SignupPageState extends State<SignupPage> {
                   const SizedBox(height: 25),
                   LoginScreenButton(
                     label: 'Sign Up',
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        showSnackBar(),
-                      );
+                    onPressed: () async {
+                      if(_passwordController.text.isNotEmpty && _emailController.text.isNotEmpty && _confirmPasswordController.text.isNotEmpty){
+                        if (_passwordController.text ==
+                            _confirmPasswordController.text) {
+                          bool pass = await UserRepository().register(
+                              _emailController.text, _passwordController.text);
+                          if (pass) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(
+                                  signUpEmail: _emailController.text,
+                                ),
+                              ),
+                            );
+                          }
+                        } else {
+                          showError('Passwords do not match');
+                        }
+                      }
+                      else{
+                        showError('Please fill all the fields');
+                      }
                     },
                   ),
                   const SizedBox(height: 25),

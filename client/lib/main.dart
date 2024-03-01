@@ -2,6 +2,9 @@ import 'package:client/constants.dart';
 import 'package:client/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
+
+GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 void main() {
   runApp(const MyApp());
 }
@@ -19,6 +22,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SplashScreen(),
+      navigatorKey: navigatorKey,
     );
   }
 }

@@ -2,14 +2,16 @@ import 'package:flutter/Material.dart';
 import '../constants.dart';
 
 class LoginSignUpTextField extends StatelessWidget {
-  const LoginSignUpTextField({super.key, required  this.hintText, required this.keyboardType});
+  const LoginSignUpTextField({super.key, required  this.hintText, required this.keyboardType, required this.controller});
 
   final String hintText;
+  final TextEditingController controller;
   final TextInputType keyboardType;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       style: const TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.bold,

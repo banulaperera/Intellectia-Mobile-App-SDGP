@@ -9,7 +9,6 @@ const auth = require("../middleware/auth");
 
 router.post('/register',UserController.registerUser);
 router.post('/login',UserController.login);
-router.post('/token',UserController.newToken);
 
 router.post('/update-name',auth,UserController.updateUserName);
 router.get('/details',auth,UserController.getUserDetails);

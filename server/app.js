@@ -1,12 +1,13 @@
 const express=require('express');
 const cors=require('cors')
 const bodyParser=require('body-parser');
-let temp=require('./services/note_service')
+const authController=require('./controllers/auth_controller')
+
 
 const db=require('./configs/db_config');
 const userRoutes=require('./routes/user_routes')
 const noteRoutes=require('./routes/note_routes')
-const auth=require('./middleware/auth');
+require('dotenv').config();
 
 const app=express();
 app.use(cors());
@@ -14,8 +15,9 @@ app.use(express.json())
 app.use(bodyParser.json());
 
 
-app.use("/user",userRoutes);
-app.use('/note',noteRoutes)
+app.use(`/api/v1/user`,userRoutes);
+app.use('/api/v1/note',noteRoutes)
+app.use('/api/v1/newToken',authController.newToken);
 
 
 

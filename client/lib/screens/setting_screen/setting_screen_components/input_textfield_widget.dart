@@ -2,11 +2,11 @@ import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:flutter/Material.dart';
 
-class InputTextFeild extends StatefulWidget {
+class InputTextField extends StatefulWidget {
   final String labelText;
   final String hintText;
   final bool obscuredProperty;
-  const InputTextFeild({
+  const InputTextField({
     super.key,
     required this.labelText,
     required this.hintText,
@@ -14,10 +14,10 @@ class InputTextFeild extends StatefulWidget {
   });
 
   @override
-  State<InputTextFeild> createState() => _InputTextFeildState();
+  State<InputTextField> createState() => _InputTextFieldState();
 }
 
-class _InputTextFeildState extends State<InputTextFeild> {
+class _InputTextFieldState extends State<InputTextField> {
   bool isObscured = true;
 
   @override

@@ -19,6 +19,7 @@ class _UserProfileState extends State<UserProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         foregroundColor: Colors.black,
         centerTitle: true,
         backgroundColor: kBackgroundColor,
