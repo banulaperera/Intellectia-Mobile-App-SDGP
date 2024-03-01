@@ -1,27 +1,83 @@
+import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/main.dart';
 import 'package:flutter/material.dart';
 
 
   showError(message){
   final snackBar = SnackBar(
-    content: Text(message,style:TextStyle(color:Colors.white,fontSize:18),textAlign: TextAlign.center,),
-    backgroundColor: Colors.red,
     elevation: 10,
+    content: Container(
+      // padding: EdgeInsets.all(12),
+      height: 45,
+      decoration: const BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(
+            weight: 150,
+            BootstrapIcons.x_circle,
+            color: Colors.white,
+            size: 25,
+          ),
+          const SizedBox(width: 25),
+          Text(
+            message,
+            style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w700
+            ),
+          ),
+        ],
+      ),
+    ),
+    duration: const Duration(seconds: 1),
     behavior: SnackBarBehavior.floating,
-    margin: EdgeInsets.symmetric(vertical:10,horizontal:80),
-    duration:Duration(seconds:1),
+    backgroundColor: Colors.transparent,
+    elevation: 0,
   );
   ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(snackBar);
 }
 
 showSuccess(message){
   final snackBar = SnackBar(
-    content: Text(message,style:TextStyle(color:Colors.black,fontSize:18),textAlign: TextAlign.center,),
-    backgroundColor: Colors.green,
-    elevation: 10,
+    content: Container(
+      // padding: EdgeInsets.all(12),
+      height: 45,
+      decoration: const BoxDecoration(
+        color: Colors.green,
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(
+            weight: 150,
+            BootstrapIcons.check2_circle,
+            color: Colors.white,
+            size: 25,
+          ),
+          const SizedBox(width: 25),
+          Text(
+            message,
+            style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w700
+            ),
+          ),
+        ],
+      ),
+    ),
+    duration: const Duration(seconds: 1),
     behavior: SnackBarBehavior.floating,
-    margin: EdgeInsets.symmetric(vertical:10,horizontal:80),
-    duration:Duration(milliseconds:300),
+    backgroundColor: Colors.transparent,
+    elevation: 0,
   );
   ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(snackBar);
 }

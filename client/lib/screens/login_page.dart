@@ -3,35 +3,37 @@ import 'package:client/screens/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:client/constants.dart';
 import 'package:client/screens/signup_page.dart';
-
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
-
 import 'package:client/repository/user_repository.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+
+  final String ? signUpEmail;
+
+  const LoginPage({super.key, this.signUpEmail});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
 
+  TextEditingController _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   var _isObscured = true;
 
   @override
   void initState() {
     super.initState();
     _isObscured = true;
+    _emailController = TextEditingController(text: widget.signUpEmail);
   }
 
   @override
   void dispose() {
-    emailController.dispose();
-    passwordController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
     super.dispose();
   }
 
@@ -56,11 +58,11 @@ class _LoginPageState extends State<LoginPage> {
               LoginSignUpTextField(
                 hintText: 'Email',
                 keyboardType: TextInputType.emailAddress,
-                controller: emailController,
+                controller: _emailController,
               ),
               const SizedBox(height: 25),
               TextField(
-                controller: passwordController,
+                controller: _passwordController,
                 obscureText: _isObscured,
                 obscuringCharacter: '*',
                 style: const TextStyle(
@@ -71,8 +73,8 @@ class _LoginPageState extends State<LoginPage> {
                   suffixIcon: IconButton(
                     padding: const EdgeInsets.only(right: 12),
                     icon: _isObscured
-                        ? const Icon(BootstrapIcons.eye_slash_fill)
-                        : const Icon(BootstrapIcons.eye_fill),
+                        ? const Icon(BootstrapIcons.eye_fill)
+                        : const Icon(BootstrapIcons.eye_slash_fill),
                     onPressed: () {
                       setState(() {
                         _isObscured = !_isObscured;
@@ -119,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
               LoginScreenButton(
                 label: 'Login',
                 onPressed: () async {
-                  bool pass = await UserRepository().signIn(emailController.text, passwordController.text);
+                  bool pass = await UserRepository().signIn(_emailController.text, _passwordController.text);
                   if(pass){
                     Navigator.push(
                       context,
@@ -138,8 +140,8 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(fontSize: 16),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(
+                    onTap: () async {
+                      final value = await Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const SignupPage()),

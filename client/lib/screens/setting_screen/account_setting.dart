@@ -47,27 +47,27 @@ class _AccountSettingState extends State<AccountSetting> {
               const SizedBox(
                 height: 35,
               ),
-              const InputTextFeild(
+              const InputTextField(
                 labelText: 'First Name',
                 hintText: 'Banula',
                 obscuredProperty: false,
               ),
-              const InputTextFeild(
+              const InputTextField(
                 labelText: 'Last Name',
                 hintText: 'Perera',
                 obscuredProperty: false,
               ),
-              const InputTextFeild(
+              const InputTextField(
                 labelText: 'Email',
                 hintText: 'banulaperera@hc.com',
                 obscuredProperty: false,
               ),
-              const InputTextFeild(
+              const InputTextField(
                 labelText: 'Password',
                 hintText: '************',
                 obscuredProperty: true,
               ),
-              const InputTextFeild(
+              const InputTextField(
                 labelText: 'Confirm Password',
                 hintText: '************',
                 obscuredProperty: true,

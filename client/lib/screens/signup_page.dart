@@ -16,9 +16,9 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  final confirmPasswordController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
   var _isObscured = true;
 
   @override
@@ -29,9 +29,9 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   void dispose() {
-    emailController.dispose();
-    passwordController.dispose();
-    confirmPasswordController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
     super.dispose();
   }
 
@@ -61,11 +61,11 @@ class _SignupPageState extends State<SignupPage> {
                   LoginSignUpTextField(
                     hintText: 'Email',
                     keyboardType: TextInputType.emailAddress,
-                    controller: emailController,
+                    controller: _emailController,
                   ),
                   const SizedBox(height: 25),
                   TextField(
-                    controller: passwordController,
+                    controller: _passwordController,
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: _isObscured,
                     obscuringCharacter: '*',
@@ -77,8 +77,8 @@ class _SignupPageState extends State<SignupPage> {
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.only(right: 12),
                         icon: _isObscured
-                            ? const Icon(BootstrapIcons.eye_slash_fill)
-                            : const Icon(BootstrapIcons.eye_fill),
+                            ? const Icon(BootstrapIcons.eye_fill)
+                            : const Icon(BootstrapIcons.eye_slash_fill),
                         onPressed: () {
                           setState(() {
                             _isObscured = !_isObscured;
@@ -109,7 +109,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 25),
                   TextField(
-                    controller: confirmPasswordController,
+                    controller: _confirmPasswordController,
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: _isObscured,
                     obscuringCharacter: '*',
@@ -121,8 +121,8 @@ class _SignupPageState extends State<SignupPage> {
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.only(right: 12),
                         icon: _isObscured
-                            ? const Icon(BootstrapIcons.eye_slash_fill)
-                            : const Icon(BootstrapIcons.eye_fill),
+                            ? const Icon(BootstrapIcons.eye_fill)
+                            : const Icon(BootstrapIcons.eye_slash_fill),
                         onPressed: () {
                           setState(() {
                             _isObscured = !_isObscured;
@@ -155,19 +155,27 @@ class _SignupPageState extends State<SignupPage> {
                   LoginScreenButton(
                     label: 'Sign Up',
                     onPressed: () async {
-                      if (passwordController.text ==
-                          confirmPasswordController.text) {
-                        bool pass = await UserRepository()
-                            .register(emailController.text, passwordController.text);
-                        if (pass) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const LoginPage()),
-                          );
+                      if(_passwordController.text.isNotEmpty && _emailController.text.isNotEmpty && _confirmPasswordController.text.isNotEmpty){
+                        if (_passwordController.text ==
+                            _confirmPasswordController.text) {
+                          bool pass = await UserRepository().register(
+                              _emailController.text, _passwordController.text);
+                          if (pass) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(
+                                  signUpEmail: _emailController.text,
+                                ),
+                              ),
+                            );
+                          }
+                        } else {
+                          showError('Passwords do not match');
                         }
-                      }else{
-                        showError('Passwords do not match');
+                      }
+                      else{
+                        showError('Please fill all the fields');
                       }
                     },
                   ),
