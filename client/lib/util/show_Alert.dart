@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
   showError(message){
   final snackBar = SnackBar(
-    elevation: 10,
     content: Container(
       // padding: EdgeInsets.all(12),
       height: 45,
