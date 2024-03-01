@@ -14,8 +14,9 @@ class GoalSetting extends StatefulWidget {
 }
 
 class _GoalSettingState extends State<GoalSetting> {
-  // TextEditingController timeinput = TextEditingController();
-  //text editing controller for text field
+  TextEditingController timeinput1 = TextEditingController();
+  TextEditingController timeinput2 = TextEditingController();
+  TextEditingController timeinput3 = TextEditingController();
 
   List<DropdownMenuItem<String>> get moduleDropdownItems {
     List<DropdownMenuItem<String>> moduleMenuItems = [
