@@ -1,4 +1,3 @@
-import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/screens/user_profile/user_profile_components/pie_chart.dart';
 import 'package:client/screens/user_profile/user_profile_components/pie_chart_quiz_tile.dart';
 import 'package:flutter/material.dart';

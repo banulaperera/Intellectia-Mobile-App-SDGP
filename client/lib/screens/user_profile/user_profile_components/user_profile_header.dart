@@ -1,4 +1,3 @@
-import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -43,7 +42,7 @@ class UserProfileHeader extends StatelessWidget {
                       color: kBackgroundColor,
                     ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(
                 'banulaperera@hcl.com',
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(
@@ -67,6 +66,7 @@ class UserProfileHeader extends StatelessWidget {
                       color: kBackgroundColor,
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic,
+                      letterSpacing: 2,
                     ),
                   ),
                 ],
