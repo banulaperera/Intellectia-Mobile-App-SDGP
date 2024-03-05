@@ -28,8 +28,8 @@ exports.login=async (req,res)=>{
         if (user){
           const isMatch=await passwordUtil.checkPassword(user,password);
           if (isMatch===true){
-              const accessToken=jwt.sign({userID:user._id},process.env.ACCESS_TOKEN_KEY,/*{expiresIn: "5m"}*/);
-              const refreshToken=jwt.sign({userID:user._id},process.env.REFRESH_TOKEN_KEY,{expiresIn: "7d"});
+              const accessToken=jwt.sign({userID:user._id},process.env.ACCESS_TOKEN_KEY,{expiresIn: "5m"});
+              const refreshToken=jwt.sign({userID:user._id},process.env.REFRESH_TOKEN_KEY,{expiresIn: "30d"});
               res.status(200).json({Message:"logged successfully",accessToken,refreshToken});
           }else{
               res.status(409).json({Message:"Invalid Password"})

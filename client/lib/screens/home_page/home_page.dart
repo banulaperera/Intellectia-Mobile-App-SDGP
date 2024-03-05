@@ -52,7 +52,8 @@ class _HomePageState extends State<HomePage> {
                       letterSpacing: 2),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () async{
+                  },
                   padding: const EdgeInsets.all(0),
                   icon: Container(
                     width: 40,
@@ -118,6 +119,7 @@ class _HomePageState extends State<HomePage> {
                                 title: value[0],
                                 body: value[1],
                                 modifiedTime: DateTime.now());
+
 
                             filteredNote[firstNote] = Note(
                                 title: value[0],
