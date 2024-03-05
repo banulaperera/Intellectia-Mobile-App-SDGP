@@ -1,5 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
+import 'package:client/screens/setting_screen/account_setting.dart';
+import 'package:client/screens/setting_screen/goal_setting.dart';
 import 'package:client/screens/user_profile/user_profile_components/exp_bar_graph.dart';
 import 'package:client/screens/user_profile/user_profile_components/pie_chart_container.dart';
 import 'package:client/screens/user_profile/user_profile_components/user_profile_header.dart';
@@ -41,7 +43,8 @@ class _UserProfileState extends State<UserProfile> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MainSettingPage()),
+                      // builder: (context) => const AccountSetting()),
+                      builder: (context) => const GoalSetting()),
                 );
               },
               child: const Row(
