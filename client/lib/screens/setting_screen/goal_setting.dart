@@ -16,6 +16,7 @@ class GoalSetting extends StatefulWidget {
 class _GoalSettingState extends State<GoalSetting> {
   TextEditingController moduleController = TextEditingController();
   TextEditingController frequencyController = TextEditingController();
+  TextEditingController time1Controller = TextEditingController();
 
   List<DropdownMenuItem<String>> get moduleDropdownItems {
     List<DropdownMenuItem<String>> moduleMenuItems = [
@@ -40,14 +41,15 @@ class _GoalSettingState extends State<GoalSetting> {
     return frequencyMenuItems;
   }
 
+  String frequencySelectedValue = "Twice a day";
+  String moduleSelectedValue = "Module 1";
+
   String? _selectedTime;
 
   // TimeOfDay selectedTime = TimeOfDay.now();
 
   @override
   Widget build(BuildContext context) {
-    String moduleSelectedValue = "Module 1";
-    String frequencySelectedValue = "Twice a day";
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.black,
@@ -122,14 +124,13 @@ class _GoalSettingState extends State<GoalSetting> {
                 children: [
                   const Text('Preferred Time 1'),
                   // TextButton(
-                  //     onPressed: () => _selectTime(context),
+                  //     onPressed: _show,
+                  //     style: TextButton.styleFrom(
+                  //         backgroundColor: Colors.grey,
+                  //         foregroundColor: Colors.black),
                   //     child: const Text('Select Time'))
-                  TextButton(
-                      onPressed: _show,
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.grey,
-                          foregroundColor: Colors.black),
-                      child: const Text('Select Time'))
+
+                  time1TextButton(time1Controller)
                 ],
               ),
               Center(
@@ -287,5 +288,13 @@ class _GoalSettingState extends State<GoalSetting> {
         _selectedTime = result.format(context);
       });
     }
+  }
+
+  Widget time1TextButton(TextEditingController time1Controller1) {
+    return TextButton(
+        onPressed: _show,
+        style: TextButton.styleFrom(
+            backgroundColor: Colors.grey, foregroundColor: Colors.black),
+        child: const Text('Select Time'));
   }
 }
