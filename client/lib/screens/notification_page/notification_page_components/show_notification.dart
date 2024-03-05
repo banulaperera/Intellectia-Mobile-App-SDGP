@@ -1,6 +1,6 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/models/notification_model.dart';
-import 'package:client/screens/home_page/home_page_components/notification_title.dart';
+import 'package:client/screens/notification_page/notification_page_components/notification_title.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 

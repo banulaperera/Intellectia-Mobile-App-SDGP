@@ -20,7 +20,6 @@ class Body extends StatelessWidget {
     QuestionController questionController = Get.put(QuestionController());
     return Stack(
       children: [
-        SvgPicture.asset("client/assets/fire.png", fit: BoxFit.fill),
         SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),

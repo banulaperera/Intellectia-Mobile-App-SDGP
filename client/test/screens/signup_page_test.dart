@@ -6,7 +6,7 @@ import 'package:client/screens/signup_page.dart';
 void main() {
   testWidgets('SignupPage UI Test', (WidgetTester tester) async {
     // Build the SignupPage widget
-    await tester.pumpWidget(MaterialApp(home: SignupPage()));
+    await tester.pumpWidget(const MaterialApp(home: SignupPage()));
 
     // Verify the presence of important widgets
     expect(find.text('Email'), findsOneWidget);

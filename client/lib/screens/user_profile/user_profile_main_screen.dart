@@ -93,27 +93,24 @@ class _UserProfileState extends State<UserProfile> {
                           const SizedBox(
                             height: 10,
                           ),
-                          SizedBox(
-                            width: 100,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Lottie.asset(
-                                  'animations/Animation - 1709314319942.json',
-                                  width: 35,
-                                  height: 35,
-                                ),
-                                Text(
-                                  '21000',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge!
-                                      .copyWith(
-                                          fontWeight: FontWeight.w700,
-                                          color: Colors.grey.shade700),
-                                ),
-                              ],
-                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Lottie.asset(
+                                'animations/Animation - 1709314319942.json',
+                                width: 35,
+                                height: 35,
+                              ),
+                              Text(
+                                '21000',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge!
+                                    .copyWith(
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.grey.shade700),
+                              ),
+                            ],
                           ),
                           const SizedBox(
                             height: 10,

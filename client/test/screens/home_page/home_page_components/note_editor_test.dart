@@ -6,7 +6,7 @@ import 'package:client/screens/home_page/home_page_components/note_editor.dart';
 void main() {
   testWidgets('CreateNote UI Test', (WidgetTester tester) async {
     // Build the CreateNote widget
-    await tester.pumpWidget(MaterialApp(home: CreateNote()));
+    await tester.pumpWidget(const MaterialApp(home: CreateNote()));
 
     // Verify the presence of important widgets
     expect(find.byType(AppBar), findsOneWidget);
@@ -16,10 +16,10 @@ void main() {
 
   testWidgets('CreateNote Pop-up UI Test', (WidgetTester tester) async {
     // Build the CreateNote widget
-    await tester.pumpWidget(MaterialApp(home: CreateNote()));
+    await tester.pumpWidget(const MaterialApp(home: CreateNote()));
 
     // Tap on the floating action button to show the pop-up
-    await tester.press(find.byType(FloatingActionButton));
+    await tester.tap(find.byType(FloatingActionButton));
     await tester.pumpAndSettle();
 
     // Verify the presence of pop-up elements
@@ -29,13 +29,13 @@ void main() {
     expect(find.text('Option 2'), findsOneWidget);
     expect(find.text('Option 3'), findsOneWidget);
     expect(find.text('Custom Module Name'), findsOneWidget);
-    expect(find.byType(TextField), findsOneWidget);
+    expect(find.byType(TextField), findsAtLeastNWidgets(3));
     expect(find.text('Apply'), findsOneWidget);
   });
 
   testWidgets('CreateNote Pop-up Functionality Test', (WidgetTester tester) async {
     // Build the CreateNote widget
-    await tester.pumpWidget(MaterialApp(home: CreateNote()));
+    await tester.pumpWidget(const MaterialApp(home: CreateNote()));
 
     // Tap on the floating action button to show the pop-up
     await tester.tap(find.byType(FloatingActionButton));

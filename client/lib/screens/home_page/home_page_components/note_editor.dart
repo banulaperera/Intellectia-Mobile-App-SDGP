@@ -1,11 +1,6 @@
-// import 'dart:math';
-
 import 'package:client/constants.dart';
-// import 'package:client/home_page.dart';
-
 import 'package:client/models/note_model.dart';
 import 'package:client/screens/home_page/home_page.dart';
-
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +8,7 @@ class CreateNote extends StatefulWidget {
   final Note? notes;
 
   const CreateNote({super.key, this.notes});
+
   @override
   State<CreateNote> createState() => _CreateNoteState();
 }
@@ -39,35 +35,33 @@ class _CreateNoteState extends State<CreateNote> {
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 40, 16, 0),
-        child: Expanded(
-          child: ListView(
-            children: [
-              TextFormField(
-                controller: titleController,
-                maxLines: null,
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
-                decoration: const InputDecoration(
-                  border: InputBorder.none,
-                  hintText: 'Title',
-                ),
+        child: ListView(
+          children: [
+            TextFormField(
+              controller: titleController,
+              maxLines: null,
+              style:
+                  const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+                hintText: 'Title',
               ),
-              const SizedBox(
-                height: 10,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              controller: bodyController,
+              maxLines: null,
+              style: const TextStyle(
+                fontSize: 16,
               ),
-              TextFormField(
-                controller: bodyController,
-                maxLines: null,
-                style: const TextStyle(
-                  fontSize: 16,
-                ),
-                decoration: const InputDecoration(
-                  border: InputBorder.none,
-                  hintText: 'Type something...',
-                ),
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+                hintText: 'Type something...',
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(

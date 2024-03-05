@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('HomePage UI Test', (WidgetTester tester) async {
     // Build the HomePage widget
-    await tester.pumpWidget(MaterialApp(home: HomePage()));
+    await tester.pumpWidget(const MaterialApp(home: HomePage()));
 
     // Verify the presence of important widgets
     expect(find.text('Notes'), findsOneWidget);
@@ -18,11 +18,11 @@ void main() {
     expect(find.byIcon(BootstrapIcons.plus,), findsOneWidget);
 
     // Tap on the floating action button to add a new note
-    await tester.press(find.byType(FloatingActionButton));
-    await tester.pump();
+    await tester.tap(find.byType(FloatingActionButton));
+    await tester.pumpAndSettle();
 
     // Verify navigation to NoteEditor
-    // expect(find.byWidget(CreateNote()), findsOneWidget);
+    expect(find.byType(CreateNote), findsOneWidget);
 
     // You can add more test cases as needed...
   });
