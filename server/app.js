@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 app.use(`/api/v1/user`,userRoutes);
 app.use('/api/v1/note',noteRoutes)
-app.use('/api/v1/newToken',authController.newToken);
+app.use('/api/v1/auth/newToken',authController.newToken);
 
 
 
