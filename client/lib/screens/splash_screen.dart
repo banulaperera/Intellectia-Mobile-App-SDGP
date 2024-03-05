@@ -26,7 +26,6 @@ class SplashScreen extends StatelessWidget {
             ),
             Expanded(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   RichText(
                     textAlign: TextAlign.center,
@@ -54,6 +53,7 @@ class SplashScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: 40),
                   FittedBox(
                     child: GestureDetector(
                       onTap: () {
@@ -67,7 +67,6 @@ class SplashScreen extends StatelessWidget {
                         );
                       },
                       child: Container(
-                        margin: const EdgeInsets.only(bottom: 70),
                         padding: const EdgeInsets.symmetric(
                             vertical: 20, horizontal: 90),
                         decoration: BoxDecoration(

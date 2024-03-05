@@ -1,15 +1,15 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/screens/navigation_bar.dart';
-import 'package:flutter/material.dart';
 import 'package:client/constants.dart';
+import 'package:client/repository/user_repository.dart';
+import 'package:client/screens/navigation_bar.dart';
 import 'package:client/screens/signup_page.dart';
+import 'package:flutter/material.dart';
+
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
-import 'package:client/repository/user_repository.dart';
 
 class LoginPage extends StatefulWidget {
-
-  final String ? signUpEmail;
+  final String? signUpEmail;
 
   const LoginPage({super.key, this.signUpEmail});
 
@@ -18,7 +18,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   TextEditingController _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   var _isObscured = true;
@@ -54,7 +53,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 25),
-
               LoginSignUpTextField(
                 hintText: 'Email',
                 keyboardType: TextInputType.emailAddress,
@@ -121,46 +119,50 @@ class _LoginPageState extends State<LoginPage> {
               LoginScreenButton(
                 label: 'Login',
                 onPressed: () async {
-                  bool pass = await UserRepository().signIn(_emailController.text, _passwordController.text);
-                  if(pass){
+                  bool pass = await UserRepository()
+                      .signIn(_emailController.text, _passwordController.text);
+                  if (pass) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => const BottomNavigation()),
+                      MaterialPageRoute(
+                          builder: (_) => const BottomNavigation()),
                     );
                   }
-
                 },
               ),
               const SizedBox(height: 60),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Don't have an account? ",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  GestureDetector(
-                    onTap: () async {
-                      final value = await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignupPage()),
-                      );
-                    },
-                    child: const Text(
-                      'Signup',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 16,
-                      ),
-                    ),
-                  )
-                ],
-              ),
+              _buildSignUpNavigation(context),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Row _buildSignUpNavigation(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          "Don't have an account? ",
+          style: TextStyle(fontSize: 16),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SignupPage()),
+            );
+          },
+          child: const Text(
+            'Signup',
+            style: TextStyle(
+              color: Colors.blue,
+              fontSize: 16,
+            ),
+          ),
+        )
+      ],
     );
   }
 }
