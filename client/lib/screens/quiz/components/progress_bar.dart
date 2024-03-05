@@ -17,8 +17,7 @@ class ProgressBar extends StatelessWidget {
       height: 35,
       decoration: BoxDecoration(
         // border: Border.all(color: const Color(0xFF3F4768), width: 3),
-        border: Border.all(
-            color: const Color.fromARGB(255, 86, 141, 217), width: 3),
+        border: Border.all(color: kPrimaryColor, width: 3),
         borderRadius: BorderRadius.circular(50),
       ),
       child: GetBuilder<QuestionController>(
@@ -34,7 +33,7 @@ class ProgressBar extends StatelessWidget {
                   width: constraints.maxWidth * controller.animation.value,
                   decoration: BoxDecoration(
                     //
-                    color: Colors.blue,
+                    color: kPrimaryColor,
                     borderRadius: BorderRadius.circular(50),
                   ),
                 ),

@@ -1,0 +1,337 @@
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-19,_12_38_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-19,_12_38_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-19,_12_38_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-19,_12_38_[Changes]/shelved.patch	(revision 2f2f451290346cbdcbdf7d659d4870eb6ed4a145)
++++ /dev/null	(revision 2f2f451290346cbdcbdf7d659d4870eb6ed4a145)
+@@ -1,42 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"NONE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"f3b124d4-4e1d-470c-9324-f40fe413d782\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/server/controllers/user_controller.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/server/controllers/user_controller.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/server/routes/user_routes.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/server/routes/user_routes.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/server/services/user_service.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/server/services/user_service.js\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ClangdSettings\">\n    <option name=\"formatViaClangd\" value=\"false\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Dart File\" />\n        <option value=\"JavaScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"IN-16-bottom_navigation_bar\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 1\n}</component>\n  <component name=\"ProjectId\" id=\"2bziRcebiRhi3BTrJFUNKwr0xpZ\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.cidr.known.project.marker\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"cf.first.check.clang-format\": \"false\",\n    \"cidr.known.project.marker\": \"true\",\n    \"com.google.services.firebase.aqiPopupShown\": \"true\",\n    \"dart.analysis.tool.window.visible\": \"false\",\n    \"git-widget-placeholder\": \"IN-14-login__page__user__authentication\",\n    \"io.flutter.reload.alreadyRun\": \"true\",\n    \"last_opened_file_path\": \"/Users/avishkapramuditha/Desktop/SDGP_PT_Y3_03_Intellectia\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"run.code.analysis.last.selected.profile\": \"pProject Default\",\n    \"settings.editor.selected.configurable\": \"dart.settings\",\n    \"show.migrate.to.gradle.popup\": \"false\",\n    \"ts.external.directory.path\": \"/Users/avishkapramuditha/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/client/lib/widget\" />\n      <recent name=\"$PROJECT_DIR$/client/assets\" />\n      <recent name=\"$PROJECT_DIR$/client/fonts\" />\n      <recent name=\"$PROJECT_DIR$/client/lib/screens\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"main.dart\" type=\"FlutterRunConfigurationType\" factoryName=\"Flutter\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"filePath\" value=\"$PROJECT_DIR$/client/lib/main.dart\" />\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"f3b124d4-4e1d-470c-9324-f40fe413d782\" name=\"Changes\" comment=\"\" />\n      <created>1707224301492</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1707224301492</updated>\n      <workItem from=\"1707896022437\" duration=\"22842000\" />\n      <workItem from=\"1707938744370\" duration=\"1321000\" />\n      <workItem from=\"1707997606283\" duration=\"19000\" />\n      <workItem from=\"1707997649634\" duration=\"11000\" />\n      <workItem from=\"1707997672053\" duration=\"13551000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"updated the UI\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707496195114</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707496195114</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"updated the UI\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707570081766</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707570081766</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"updated the login page password page with obscured\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707661997003</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707661997004</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Enhace the code and initial commit to the notification UI\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707750602634</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707750602634</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Initial commit of the notification page\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707810565219</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707810565219</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"final commit of UI of notification screen.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707823820003</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707823820003</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"code enhancements\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1707837117394</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1707837117394</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"8\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n    <option name=\"exactExcludedFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/server/node_modules/sift/src/operations.js\" />\n        <option value=\"$PROJECT_DIR$/server/node_modules/sift/src/operations.js.map\" />\n        <option value=\"$PROJECT_DIR$/server/node_modules/sift/src/core.js\" />\n        <option value=\"$PROJECT_DIR$/server/node_modules/sift/src/core.js.map\" />\n        <option value=\"$PROJECT_DIR$/server/node_modules/sift/src/utils.js\" />\n        <option value=\"$PROJECT_DIR$/server/node_modules/sift/src/utils.js.map\" />\n        <option value=\"$PROJECT_DIR$/server/node_modules/sift/src/index.js\" />\n        <option value=\"$PROJECT_DIR$/server/node_modules/sift/src/index.js.map\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"updated the UI\" />\n    <MESSAGE value=\"updated the login page password page with obscured\" />\n    <MESSAGE value=\"Enhace the code and initial commit to the notification UI\" />\n    <MESSAGE value=\"Initial commit of the notification page\" />\n    <MESSAGE value=\"final commit of UI of notification screen.\" />\n    <MESSAGE value=\"code enhancements\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"code enhancements\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 4d531af19be101a8041745c2280f3473056d3377)
+-+++ b/.idea/workspace.xml	(date 1708326517639)
+-@@ -4,12 +4,7 @@
+-     <option name="autoReloadType" value="NONE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="">
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/server/controllers/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user_controller.js" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/server/routes/user_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user_routes.js" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/server/services/user_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/user_service.js" afterDir="false" />
+--    </list>
+-+    <list default="true" id="f3b124d4-4e1d-470c-9324-f40fe413d782" name="Changes" comment="" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -29,7 +24,7 @@
+-   <component name="Git.Settings">
+-     <option name="RECENT_BRANCH_BY_REPOSITORY">
+-       <map>
+--        <entry key="$PROJECT_DIR$" value="IN-16-bottom_navigation_bar" />
+-+        <entry key="$PROJECT_DIR$" value="IN-8-user_profile" />
+-       </map>
+-     </option>
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-@@ -61,7 +56,7 @@
+-     "cidr.known.project.marker": "true",
+-     "com.google.services.firebase.aqiPopupShown": "true",
+-     "dart.analysis.tool.window.visible": "false",
+--    "git-widget-placeholder": "IN-14-login__page__user__authentication",
+-+    "git-widget-placeholder": "dev",
+-     "io.flutter.reload.alreadyRun": "true",
+-     "last_opened_file_path": "/Users/avishkapramuditha/Desktop/SDGP_PT_Y3_03_Intellectia",
+-     "node.js.detected.package.eslint": "true",
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-19__12_38__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-19__12_38__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-19__12_38__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-19__12_38__Changes_.xml	(revision 2f2f451290346cbdcbdf7d659d4870eb6ed4a145)
++++ /dev/null	(revision 2f2f451290346cbdcbdf7d659d4870eb6ed4a145)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_2024-02-19,_12_38_[Changes]" date="1708326560173" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-19,_12_38_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2024-02-19, 12:38 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/libraries/Dart_Packages.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\n  <library name=\"Dart Packages\" type=\"DartPackagesLibraryType\">\n    <properties>\n      <option name=\"packageNameToDirsMap\">\n        <entry key=\"archive\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/archive-3.4.10/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"args\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/args-2.4.2/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"async\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/async-2.11.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"boolean_selector\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"bootstrap_icons\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/bootstrap_icons-1.11.3/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"characters\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/characters-1.3.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"checked_yaml\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/checked_yaml-2.0.3/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"cli_util\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/cli_util-0.4.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"clock\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/clock-1.1.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"collection\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/collection-1.18.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"convert\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/convert-3.1.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"crypto\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/crypto-3.0.3/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"cupertino_icons\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.6/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"equatable\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/equatable-2.0.5/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"fake_async\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/fake_async-1.3.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"fl_chart\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/fl_chart-0.66.2/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"flutter\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/flutter/packages/flutter/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"flutter_launcher_icons\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_launcher_icons-0.13.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"flutter_lints\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_lints-3.0.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"flutter_slidable\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_slidable-3.0.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"flutter_svg\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_svg-2.0.10+1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"flutter_test\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/flutter/packages/flutter_test/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"get\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/get-4.6.6/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"http\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/http-1.2.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"http_parser\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"image\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/image-4.1.7/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"intl\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/intl-0.19.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"js\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/js-0.7.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"json_annotation\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/json_annotation-4.8.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"leak_tracker\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/leak_tracker-10.0.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"leak_tracker_flutter_testing\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/leak_tracker_flutter_testing-2.0.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"leak_tracker_testing\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/leak_tracker_testing-2.0.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"lints\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/lints-3.0.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"matcher\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/matcher-0.12.16+1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"material_color_utilities\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/material_color_utilities-0.8.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"meta\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/meta-1.11.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"path\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/path-1.9.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"path_parsing\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/path_parsing-1.0.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"petitparser\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/petitparser-6.0.2/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"pointycastle\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/pointycastle-3.7.4/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"sky_engine\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"source_span\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/source_span-1.10.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"stack_trace\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/stack_trace-1.11.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"stream_channel\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/stream_channel-2.1.2/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"string_scanner\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/string_scanner-1.2.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"term_glyph\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/term_glyph-1.2.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"test_api\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/test_api-0.6.1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"typed_data\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/typed_data-1.3.2/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"vector_graphics\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics-1.1.11+1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"vector_graphics_codec\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics_codec-1.1.11+1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"vector_graphics_compiler\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.11+1/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"vector_math\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/vector_math-2.1.4/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"vm_service\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/vm_service-13.0.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"web\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/web-0.5.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"xml\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/xml-6.5.0/lib\" />\n            </list>\n          </value>\n        </entry>\n        <entry key=\"yaml\">\n          <value>\n            <list>\n              <option value=\"$USER_HOME$/.pub-cache/hosted/pub.dev/yaml-3.1.2/lib\" />\n            </list>\n          </value>\n        </entry>\n      </option>\n    </properties>\n    <CLASSES>\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/archive-3.4.10/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/args-2.4.2/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/async-2.11.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/bootstrap_icons-1.11.3/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/characters-1.3.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/checked_yaml-2.0.3/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/cli_util-0.4.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/clock-1.1.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/collection-1.18.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/convert-3.1.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/crypto-3.0.3/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.6/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/equatable-2.0.5/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/fake_async-1.3.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/fl_chart-0.66.2/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_launcher_icons-0.13.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_lints-3.0.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_slidable-3.0.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_svg-2.0.10+1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/get-4.6.6/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/http-1.2.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/image-4.1.7/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/intl-0.19.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/js-0.7.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/json_annotation-4.8.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_tracker-10.0.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_tracker_flutter_testing-2.0.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_tracker_testing-2.0.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/lints-3.0.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/matcher-0.12.16+1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/material_color_utilities-0.8.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/meta-1.11.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/path-1.9.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_parsing-1.0.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/petitparser-6.0.2/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/pointycastle-3.7.4/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_span-1.10.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/stack_trace-1.11.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/stream_channel-2.1.2/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/string_scanner-1.2.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/term_glyph-1.2.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/test_api-0.6.1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/typed_data-1.3.2/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics-1.1.11+1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics_codec-1.1.11+1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.11+1/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_math-2.1.4/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/vm_service-13.0.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/web-0.5.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/xml-6.5.0/lib\" />\n      <root url=\"file://$USER_HOME$/.pub-cache/hosted/pub.dev/yaml-3.1.2/lib\" />\n      <root url=\"file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib\" />\n      <root url=\"file://$USER_HOME$/flutter/packages/flutter/lib\" />\n      <root url=\"file://$USER_HOME$/flutter/packages/flutter_test/lib\" />\n    </CLASSES>\n    <JAVADOC />\n    <SOURCES />\n  </library>\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Dart_Packages.xml b/.idea/libraries/Dart_Packages.xml
+--- a/.idea/libraries/Dart_Packages.xml	(revision 2f2f451290346cbdcbdf7d659d4870eb6ed4a145)
++++ b/.idea/libraries/Dart_Packages.xml	(date 1709296616376)
+@@ -107,6 +107,20 @@
+             </list>
+           </value>
+         </entry>
++        <entry key="ffi">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/ffi-2.1.2/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="file">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/file-7.0.0/lib" />
++            </list>
++          </value>
++        </entry>
+         <entry key="fl_chart">
+           <value>
+             <list>
+@@ -156,6 +170,13 @@
+             </list>
+           </value>
+         </entry>
++        <entry key="flutter_web_plugins">
++          <value>
++            <list>
++              <option value="$USER_HOME$/flutter/packages/flutter_web_plugins/lib" />
++            </list>
++          </value>
++        </entry>
+         <entry key="get">
+           <value>
+             <list>
+@@ -205,6 +226,13 @@
+             </list>
+           </value>
+         </entry>
++        <entry key="jwt_decoder">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/jwt_decoder-2.0.1/lib" />
++            </list>
++          </value>
++        </entry>
+         <entry key="leak_tracker">
+           <value>
+             <list>
+@@ -268,10 +296,45 @@
+             </list>
+           </value>
+         </entry>
++        <entry key="path_provider_linux">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="path_provider_platform_interface">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_platform_interface-2.1.2/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="path_provider_windows">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1/lib" />
++            </list>
++          </value>
++        </entry>
+         <entry key="petitparser">
+           <value>
+             <list>
+               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/petitparser-6.0.2/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="platform">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/platform-3.1.4/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="plugin_platform_interface">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.8/lib" />
+             </list>
+           </value>
+         </entry>
+@@ -282,6 +345,55 @@
+             </list>
+           </value>
+         </entry>
++        <entry key="shared_preferences">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences-2.2.2/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="shared_preferences_android">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_android-2.2.1/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="shared_preferences_foundation">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.3.5/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="shared_preferences_linux">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_linux-2.3.2/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="shared_preferences_platform_interface">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_platform_interface-2.3.2/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="shared_preferences_web">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_web-2.3.0/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="shared_preferences_windows">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_windows-2.3.2/lib" />
++            </list>
++          </value>
++        </entry>
+         <entry key="sky_engine">
+           <value>
+             <list>
+@@ -380,6 +492,20 @@
+             </list>
+           </value>
+         </entry>
++        <entry key="win32">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/win32-5.2.0/lib" />
++            </list>
++          </value>
++        </entry>
++        <entry key="xdg_directories">
++          <value>
++            <list>
++              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/xdg_directories-1.0.4/lib" />
++            </list>
++          </value>
++        </entry>
+         <entry key="xml">
+           <value>
+             <list>
+@@ -412,6 +538,8 @@
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.6/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/equatable-2.0.5/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/fake_async-1.3.1/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/ffi-2.1.2/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/file-7.0.0/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/fl_chart-0.66.2/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_launcher_icons-0.13.1/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_lints-3.0.1/lib" />
+@@ -424,6 +552,7 @@
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/intl-0.19.0/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/js-0.7.1/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/json_annotation-4.8.1/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/jwt_decoder-2.0.1/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_tracker-10.0.0/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_tracker_flutter_testing-2.0.1/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/leak_tracker_testing-2.0.1/lib" />
+@@ -433,8 +562,20 @@
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/meta-1.11.0/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path-1.9.0/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_parsing-1.0.1/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_platform_interface-2.1.2/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/petitparser-6.0.2/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/platform-3.1.4/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.8/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/pointycastle-3.7.4/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences-2.2.2/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_android-2.2.1/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.3.5/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_linux-2.3.2/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_platform_interface-2.3.2/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_web-2.3.0/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_windows-2.3.2/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_span-1.10.0/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stack_trace-1.11.1/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stream_channel-2.1.2/lib" />
+@@ -448,11 +589,14 @@
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_math-2.1.4/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vm_service-13.0.0/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/web-0.5.0/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/win32-5.2.0/lib" />
++      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/xdg_directories-1.0.4/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/xml-6.5.0/lib" />
+       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/yaml-3.1.2/lib" />
+       <root url="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib" />
+       <root url="file://$USER_HOME$/flutter/packages/flutter/lib" />
+       <root url="file://$USER_HOME$/flutter/packages/flutter_test/lib" />
++      <root url="file://$USER_HOME$/flutter/packages/flutter_web_plugins/lib" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
+Index: .idea/SDGP_PT_Y3_03_Intellectia.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"WEB_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\n    <exclude-output />\n    <content url=\"file://$MODULE_DIR$\">\n      <excludeFolder url=\"file://$MODULE_DIR$/.tmp\" />\n      <excludeFolder url=\"file://$MODULE_DIR$/temp\" />\n      <excludeFolder url=\"file://$MODULE_DIR$/tmp\" />\n      <excludeFolder url=\"file://$MODULE_DIR$/client/.dart_tool\" />\n      <excludeFolder url=\"file://$MODULE_DIR$/client/.pub\" />\n      <excludeFolder url=\"file://$MODULE_DIR$/client/build\" />\n    </content>\n    <orderEntry type=\"inheritedJdk\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n    <orderEntry type=\"library\" name=\"Dart SDK\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"Dart Packages\" level=\"project\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/SDGP_PT_Y3_03_Intellectia.iml b/.idea/SDGP_PT_Y3_03_Intellectia.iml
+--- a/.idea/SDGP_PT_Y3_03_Intellectia.iml	(revision 2f2f451290346cbdcbdf7d659d4870eb6ed4a145)
++++ b/.idea/SDGP_PT_Y3_03_Intellectia.iml	(date 1709296616366)
+@@ -9,6 +9,30 @@
+       <excludeFolder url="file://$MODULE_DIR$/client/.dart_tool" />
+       <excludeFolder url="file://$MODULE_DIR$/client/.pub" />
+       <excludeFolder url="file://$MODULE_DIR$/client/build" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/.dart_tool" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/.pub" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/build" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/.dart_tool" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/.pub" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/build" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/.dart_tool" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/.pub" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/build" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/.dart_tool" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/.pub" />
++      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/build" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/.dart_tool" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/.pub" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/build" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/.dart_tool" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/.pub" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/build" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/.dart_tool" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/.pub" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/build" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/.dart_tool" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/.pub" />
++      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/build" />
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />

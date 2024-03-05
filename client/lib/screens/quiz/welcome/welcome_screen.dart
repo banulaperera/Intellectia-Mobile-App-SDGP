@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
 // import 'package:get/get.dart';
 import 'package:client/constants.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -19,9 +18,11 @@ class WelcomeScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Spacer(flex: 2), //2/6
+                  const Spacer(flex:2),
+                  Lottie.asset('animations/Animation - 1709312135816.json', height: 300, reverse: true, repeat: true, animate: true,),
+                  const Spacer(), //2/6
                   Text(
                     textAlign: TextAlign.center,
                     "Are you ready for the quiz?",
@@ -51,13 +52,21 @@ class WelcomeScreen extends StatelessWidget {
                       );
                     },
                     child: Container(
-                      width: double.infinity,
+                      width: 300,
                       alignment: Alignment.center,
                       padding:
                           const EdgeInsets.all(kDefaultPadding * 0.75), // 15
-                      decoration: const BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      decoration: BoxDecoration(
+                        color: kPrimaryColor,
+                        borderRadius: const BorderRadius.all(Radius.circular(12)),
+                          boxShadow: [
+                      BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3), // changes position of shadow
+                      ),
+                        ],
                       ),
                       child: Text(
                         "Let's Start Quiz",

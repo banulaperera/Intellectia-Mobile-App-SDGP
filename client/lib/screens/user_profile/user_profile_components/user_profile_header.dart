@@ -1,6 +1,6 @@
-import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class UserProfileHeader extends StatelessWidget {
   const UserProfileHeader({
@@ -11,7 +11,7 @@ class UserProfileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 150,
+      height: 200,
       decoration: const BoxDecoration(
         color: kPrimaryColor,
         borderRadius: BorderRadius.all(
@@ -22,8 +22,8 @@ class UserProfileHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircleAvatar(
-            maxRadius: 50,
-            minRadius: 50,
+            maxRadius: 75,
+            minRadius: 75,
             backgroundColor: Colors.grey.shade800,
             backgroundImage: const AssetImage(
               'assets/logo_image.jpeg',
@@ -38,34 +38,36 @@ class UserProfileHeader extends StatelessWidget {
             children: [
               Text(
                 'Banula Perera',
-                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: kBackgroundColor,
                     ),
               ),
+              const SizedBox(height: 5),
               Text(
                 'banulaperera@hcl.com',
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                      fontSize: 14.0,
+                      fontSize: 16.0,
                       color: kBackgroundColor,
                     ),
               ),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  Lottie.asset('animations/Animation - 1709315159426.json',
+                      width: 90, height: 90, reverse: true, repeat: true),
+                  const SizedBox(
+                    width: 2,
+                  ),
                   Text(
                     'Level 90',
                     style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          fontSize: 14.0,
-                          color: kBackgroundColor,
-                        ),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  const Icon(
-                    BootstrapIcons.fire,
-                    color: Colors.orange,
-                    size: 15,
+                      fontSize: 18.0,
+                      color: kBackgroundColor,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                      letterSpacing: 2,
+                    ),
                   ),
                 ],
               ),

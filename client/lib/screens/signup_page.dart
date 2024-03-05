@@ -1,8 +1,10 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
+import 'package:client/repository/user_repository.dart';
 import 'package:client/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
+import '../util/show_Alert.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
@@ -14,12 +16,23 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
   var _isObscured = true;
 
   @override
   void initState() {
     super.initState();
     _isObscured = true;
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
   }
 
   @override
@@ -45,12 +58,14 @@ class _SignupPageState extends State<SignupPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 25),
-                  const LoginSignUpTextField(
+                  LoginSignUpTextField(
                     hintText: 'Email',
                     keyboardType: TextInputType.emailAddress,
+                    controller: _emailController,
                   ),
                   const SizedBox(height: 25),
                   TextField(
+                    controller: _passwordController,
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: _isObscured,
                     obscuringCharacter: '*',
@@ -62,8 +77,8 @@ class _SignupPageState extends State<SignupPage> {
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.only(right: 12),
                         icon: _isObscured
-                            ? const Icon(BootstrapIcons.eye_slash_fill)
-                            : const Icon(BootstrapIcons.eye_fill),
+                            ? const Icon(BootstrapIcons.eye_fill)
+                            : const Icon(BootstrapIcons.eye_slash_fill),
                         onPressed: () {
                           setState(() {
                             _isObscured = !_isObscured;
@@ -94,6 +109,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 25),
                   TextField(
+                    controller: _confirmPasswordController,
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: _isObscured,
                     obscuringCharacter: '*',
@@ -105,8 +121,8 @@ class _SignupPageState extends State<SignupPage> {
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.only(right: 12),
                         icon: _isObscured
-                            ? const Icon(BootstrapIcons.eye_slash_fill)
-                            : const Icon(BootstrapIcons.eye_fill),
+                            ? const Icon(BootstrapIcons.eye_fill)
+                            : const Icon(BootstrapIcons.eye_slash_fill),
                         onPressed: () {
                           setState(() {
                             _isObscured = !_isObscured;
@@ -137,12 +153,30 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 25),
                   LoginScreenButton(
-                    label: 'Sing Up',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const SignupPage()),
-                      );
+                    label: 'Sign Up',
+                    onPressed: () async {
+                      if(_passwordController.text.isNotEmpty && _emailController.text.isNotEmpty && _confirmPasswordController.text.isNotEmpty){
+                        if (_passwordController.text ==
+                            _confirmPasswordController.text) {
+                          bool pass = await UserRepository().register(
+                              _emailController.text, _passwordController.text);
+                          if (pass) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(
+                                  signUpEmail: _emailController.text,
+                                ),
+                              ),
+                            );
+                          }
+                        } else {
+                          showError('Passwords do not match');
+                        }
+                      }
+                      else{
+                        showError('Please fill all the fields');
+                      }
                     },
                   ),
                   const SizedBox(height: 25),
@@ -153,6 +187,50 @@ class _SignupPageState extends State<SignupPage> {
           ],
         ),
       ),
+    );
+  }
+
+  SnackBar showSnackBar() {
+    return SnackBar(
+      content: Container(
+        // padding: EdgeInsets.all(12),
+        height: 60,
+        decoration: const BoxDecoration(
+          color: Color(0xFFC72C41),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+        ),
+        child: const Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              weight: 150,
+              BootstrapIcons.x_circle,
+              color: Colors.white,
+              size: 25,
+            ),
+            SizedBox(width: 25),
+            Text(
+              'Password miss match',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w700
+              ),
+            ),
+          ],
+        ),
+      ),
+      // content: AwesomeSnackbarContent(
+      //   title: 'Oops!',
+      //   message: 'Password miss match',
+      //
+      //   /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
+      //   contentType: ContentType.failure,
+      // ),
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
     );
   }
 
