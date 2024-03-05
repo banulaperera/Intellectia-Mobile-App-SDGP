@@ -2,7 +2,8 @@ import 'package:client/constants.dart';
 import 'package:client/screens/home_page/home_page.dart';
 import 'package:client/screens/user_profile/user_profile_main_screen.dart';
 import 'package:flutter/Material.dart';
-import 'package:get/get.dart';
+// import 'package:get/get.dart';
+// import 'package:intl/intl.dart';
 // import 'package:flutter/foundation.dart';
 // import 'package:intl/intl.dart';
 
@@ -16,7 +17,6 @@ class GoalSetting extends StatefulWidget {
 class _GoalSettingState extends State<GoalSetting> {
   TextEditingController moduleController = TextEditingController();
   TextEditingController frequencyController = TextEditingController();
-  TextEditingController time1Controller = TextEditingController();
 
   List<DropdownMenuItem<String>> get moduleDropdownItems {
     List<DropdownMenuItem<String>> moduleMenuItems = [
@@ -122,15 +122,13 @@ class _GoalSettingState extends State<GoalSetting> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('Preferred Time 1'),
-                  // TextButton(
-                  //     onPressed: _show,
-                  //     style: TextButton.styleFrom(
-                  //         backgroundColor: Colors.grey,
-                  //         foregroundColor: Colors.black),
-                  //     child: const Text('Select Time'))
-
-                  time1TextButton(time1Controller)
+                  const Text('Preferred Time'),
+                  TextButton(
+                      onPressed: _show,
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.grey,
+                          foregroundColor: Colors.black),
+                      child: const Text('Select Time'))
                 ],
               ),
               Center(
@@ -139,9 +137,10 @@ class _GoalSettingState extends State<GoalSetting> {
                   style: const TextStyle(fontSize: 15),
                 ),
               ),
+
               // Center(
               //     child: TextField(
-              //   controller: timeinput,
+              //   controller: timeInput,
               //   decoration: const InputDecoration(
               //       icon: Icon(Icons.timer), //icon of text field
               //       labelText: "Enter Time" //label text of field
@@ -169,7 +168,7 @@ class _GoalSettingState extends State<GoalSetting> {
               //       //DateFormat() is from intl package, you can format the time on any pattern you need.
 
               //       setState(() {
-              //         timeinput.text =
+              //         timeInput.text =
               //             formattedTime; //set the value of text field.
               //       });
               //     } else {
@@ -177,54 +176,49 @@ class _GoalSettingState extends State<GoalSetting> {
               //     }
               //   },
               // )),
-              const SizedBox(
-                height: 45,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('Preferred Time 2'),
-                  // TextButton(
-                  //     onPressed: () => _selectTime(context),
-                  //     child: const Text('Select Time'))
-                  TextButton(
-                      onPressed: _show,
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.grey,
-                          foregroundColor: Colors.black),
-                      child: const Text('Select Time'))
-                ],
-              ),
-              Center(
-                child: Text(
-                  _selectedTime != null ? _selectedTime! : 'No time selected!',
-                  style: const TextStyle(fontSize: 15),
-                ),
-              ),
-              const SizedBox(
-                height: 45,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('Preferred Time 3'),
-                  // TextButton(
-                  //     onPressed: () => _selectTime(context),
-                  //     child: const Text('Select Time'))
-                  TextButton(
-                      onPressed: _show,
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.grey,
-                          foregroundColor: Colors.black),
-                      child: const Text('Select Time'))
-                ],
-              ),
-              Center(
-                child: Text(
-                  _selectedTime != null ? _selectedTime! : 'No time selected!',
-                  style: const TextStyle(fontSize: 15),
-                ),
-              ),
+
+              // const SizedBox(
+              //   height: 45,
+              // ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     const Text('Preferred Time 2'),
+              //     TextButton(
+              //         onPressed: _show,
+              //         style: TextButton.styleFrom(
+              //             backgroundColor: Colors.grey,
+              //             foregroundColor: Colors.black),
+              //         child: const Text('Select Time'))
+              //   ],
+              // ),
+              // Center(
+              //   child: Text(
+              //     _selectedTime != null ? _selectedTime! : 'No time selected!',
+              //     style: const TextStyle(fontSize: 15),
+              //   ),
+              // ),
+              // const SizedBox(
+              //   height: 45,
+              // ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     const Text('Preferred Time 3'),
+              //     TextButton(
+              //         onPressed: _show,
+              //         style: TextButton.styleFrom(
+              //             backgroundColor: Colors.grey,
+              //             foregroundColor: Colors.black),
+              //         child: const Text('Select Time'))
+              //   ],
+              // ),
+              // Center(
+              //   child: Text(
+              //     _selectedTime != null ? _selectedTime! : 'No time selected!',
+              //     style: const TextStyle(fontSize: 15),
+              //   ),
+              // ),
               const SizedBox(
                 height: 45,
               ),
@@ -263,23 +257,6 @@ class _GoalSettingState extends State<GoalSetting> {
     );
   }
 
-  // Future<void> _selectTime(BuildContext context) async {
-  //   final TimeOfDay? pickedS = await showTimePicker(
-  //       context: context,
-  //       initialTime: selectedTime,
-  //       builder: (BuildContext context, Widget? child) {
-  //         return MediaQuery(
-  //           data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false),
-  //           child: child!,
-  //         );
-  //       });
-  //   if (pickedS != null && pickedS != selectedTime) {
-  //     setState(() {
-  //       selectedTime = pickedS;
-  //     });
-  //   }
-  // }
-
   Future<void> _show() async {
     final TimeOfDay? result =
         await showTimePicker(context: context, initialTime: TimeOfDay.now());
@@ -288,13 +265,5 @@ class _GoalSettingState extends State<GoalSetting> {
         _selectedTime = result.format(context);
       });
     }
-  }
-
-  Widget time1TextButton(TextEditingController time1Controller1) {
-    return TextButton(
-        onPressed: _show,
-        style: TextButton.styleFrom(
-            backgroundColor: Colors.grey, foregroundColor: Colors.black),
-        child: const Text('Select Time'));
   }
 }
