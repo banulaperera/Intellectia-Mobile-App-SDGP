@@ -1,0 +1,165 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"NONE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"f5be0fcf-cbeb-4541-a025-dacddee157e9\" name=\"Changes\" comment=\"BASE URL ADDED\">\n      <change afterPath=\"$PROJECT_DIR$/server/controllers/quiz_controller.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-26,_22_54_[Changes]1/shelved.patch\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-26__22_54__Changes_1.xml\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/server/configs/db_config.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/server/configs/db_config.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/server/node_modules/.package-lock.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/server/node_modules/.package-lock.json\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/server/package-lock.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/server/package-lock.json\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/server/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/server/package.json\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ClangdSettings\">\n    <option name=\"formatViaClangd\" value=\"false\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"JavaScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;customColor&quot;: &quot;&quot;,\n  &quot;associatedIndex&quot;: 3\n}</component>\n  <component name=\"ProjectId\" id=\"2d7BJqwnn8luAcsi1IEdV19SxgA\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Node.js.open_aI_config.js.executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,\n    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,\n    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,\n    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;IN-38-quiz__generating__ChatGPT&quot;,\n    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,\n    &quot;ts.external.directory.path&quot;: &quot;/Users/avishkapramuditha/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RunManager\" selected=\"Node.js.open_aI_config.js\">\n    <configuration name=\"main.dart\" type=\"FlutterRunConfigurationType\" factoryName=\"Flutter\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"filePath\" value=\"$PROJECT_DIR$/client/lib/main.dart\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"open_aI_config.js\" type=\"NodeJSConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\" path-to-js-file=\"open_aI_config.js\" working-dir=\"$PROJECT_DIR$/server/configs\">\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Node.js.open_aI_config.js\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"f5be0fcf-cbeb-4541-a025-dacddee157e9\" name=\"Changes\" comment=\"\" />\n      <created>1709349169974</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1709349169974</updated>\n      <workItem from=\"1709664027870\" duration=\"3394000\" />\n      <workItem from=\"1709701865732\" duration=\"7041000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"CHANGED AUTH ROUTES\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1709704899610</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1709704899610</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"BASE URL ADDED\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1709709349248</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1709709349248</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"UnknownFeatures\">\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"CHANGED AUTH ROUTES\" />\n    <MESSAGE value=\"BASE URL ADDED\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"BASE URL ADDED\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"javascript\">\n          <url>file://$PROJECT_DIR$/server/routes/auth_routes.js</url>\n          <line>2</line>\n          <properties lambdaOrdinal=\"-1\" />\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision cb9d40f0ac8f1e6b28337d061b7e8d2e5162b4c9)
++++ b/.idea/workspace.xml	(date 1709710352854)
+@@ -4,15 +4,10 @@
+     <option name="autoReloadType" value="NONE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="BASE URL ADDED">
+-      <change afterPath="$PROJECT_DIR$/server/controllers/quiz_controller.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-26,_22_54_[Changes]1/shelved.patch" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-26__22_54__Changes_1.xml" beforeDir="false" />
++    <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/server/configs/db_config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/configs/db_config.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/pie_chart_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/pie_chart_container.dart" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/user_profile_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/user_profile_header.dart" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -21,13 +16,6 @@
+   </component>
+   <component name="ClangdSettings">
+     <option name="formatViaClangd" value="false" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="JavaScript File" />
+-      </list>
+-    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -35,46 +23,31 @@
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+-  <component name="ProjectColorInfo">{
+-  &quot;customColor&quot;: &quot;&quot;,
+-  &quot;associatedIndex&quot;: 3
+-}</component>
+   <component name="ProjectId" id="2d7BJqwnn8luAcsi1IEdV19SxgA" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Node.js.open_aI_config.js.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;IN-38-quiz__generating__ChatGPT&quot;,
+-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+-    &quot;ts.external.directory.path&quot;: &quot;/Users/avishkapramuditha/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.cidr.known.project.marker": "true",
++    "cf.first.check.clang-format": "false",
++    "cidr.known.project.marker": "true",
++    "dart.analysis.tool.window.visible": "false",
++    "git-widget-placeholder": "dev",
++    "io.flutter.reload.alreadyRun": "true",
++    "show.migrate.to.gradle.popup": "false"
+   }
+-}</component>
+-  <component name="RunManager" selected="Node.js.open_aI_config.js">
++}]]></component>
++  <component name="RunManager">
+     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+       <option name="filePath" value="$PROJECT_DIR$/client/lib/main.dart" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration name="open_aI_config.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="open_aI_config.js" working-dir="$PROJECT_DIR$/server/configs">
+       <method v="2" />
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Node.js.open_aI_config.js" />
++        <item itemvalue="Flutter.main.dart" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -86,60 +59,7 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1709349169974</updated>
+-      <workItem from="1709664027870" duration="3394000" />
+-      <workItem from="1709701865732" duration="7041000" />
+-    </task>
+-    <task id="LOCAL-00001" summary="CHANGED AUTH ROUTES">
+-      <option name="closed" value="true" />
+-      <created>1709704899610</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1709704899610</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="BASE URL ADDED">
+-      <option name="closed" value="true" />
+-      <created>1709709349248</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1709709349248</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+-  <component name="TypeScriptGeneratedFilesManager">
+-    <option name="version" value="3" />
+-  </component>
+-  <component name="UnknownFeatures">
+-    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+-  </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State />
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-  </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="CHANGED AUTH ROUTES" />
+-    <MESSAGE value="BASE URL ADDED" />
+-    <option name="LAST_COMMIT_MESSAGE" value="BASE URL ADDED" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="javascript">
+-          <url>file://$PROJECT_DIR$/server/routes/auth_routes.js</url>
+-          <line>2</line>
+-          <properties lambdaOrdinal="-1" />
+-          <option name="timeStamp" value="1" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
+-  </component>
+ </project>
+\ No newline at end of file
