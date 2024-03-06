@@ -3,5 +3,4 @@ const dbConnection= mongoose.connect("mongodb+srv://AviDB:AviDB123@ap-db.0zdi85t
         .then(()=>console.log("mongoDB connected"))
         .catch((e)=>console.log(e));
 
-
 module.exports=dbConnection;
