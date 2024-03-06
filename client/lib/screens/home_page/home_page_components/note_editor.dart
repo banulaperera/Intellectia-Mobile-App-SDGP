@@ -1,32 +1,32 @@
-// import 'dart:math';
-
 import 'package:client/constants.dart';
-// import 'package:client/home_page.dart';
-
-import 'package:client/models/note_model.dart';
-import 'package:client/screens/home_page/home_page.dart';
-
+import 'package:client/models/note_dto.dart';
+import 'package:client/repository/note_repository.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
 
+import '../../navigation_bar.dart';
+
 class CreateNote extends StatefulWidget {
-  final Note? notes;
+  final NoteDTO? notes;
 
   const CreateNote({super.key, this.notes});
+
   @override
   State<CreateNote> createState() => _CreateNoteState();
 }
 
 class _CreateNoteState extends State<CreateNote> {
   TextEditingController titleController = TextEditingController();
-  TextEditingController bodyController = TextEditingController();
+  TextEditingController contentController = TextEditingController();
+  TextEditingController customerModuleNameController = TextEditingController();
 
   @override
   void initState() {
     if (widget.notes != null) {
       titleController = TextEditingController(text: widget.notes!.title);
-
-      bodyController = TextEditingController(text: widget.notes!.body);
+      contentController = TextEditingController(text: widget.notes!.content);
+      customerModuleNameController =
+          TextEditingController(text: widget.notes!.moduleName);
     }
     super.initState();
   }
@@ -56,7 +56,7 @@ class _CreateNoteState extends State<CreateNote> {
                 height: 10,
               ),
               TextFormField(
-                controller: bodyController,
+                controller: contentController,
                 maxLines: null,
                 style: const TextStyle(
                   fontSize: 16,
@@ -75,15 +75,16 @@ class _CreateNoteState extends State<CreateNote> {
         backgroundColor: kPrimaryColor,
         shape: const CircleBorder(),
         onPressed: () {
-          // if (titleController.text.isEmpty) {
-          //   return;
-          // }
+          if (titleController.text.isEmpty) {
+            return;
+          }
 
-          // if (bodyController.text.isEmpty) {
-          //   return;
-
-          // Navigator.pop(context, [titleController.text, bodyController.text]);
-          moduleNamePopUp(context);
+          if (contentController.text.isEmpty) {
+            return;
+          }
+          // Navigator.pop(context, [titleController.text, contentController.text]);
+          moduleNamePopUp(
+              context, titleController.text, contentController.text);
         },
         child: const Icon(
           Icons.save,
@@ -93,105 +94,110 @@ class _CreateNoteState extends State<CreateNote> {
     );
   }
 
-  // void moduleNamePopUp(BuildContext context) => showDialog(
-  //     context: context,
-  //     builder: (context) => const AlertDialog(
-  //           title: Text('Module Name'),
-  //           content: TextField(
-  //             decoration: InputDecoration(hintText: 'Custom Module Name'),
-  //           ),
-  //           // actions: [TextButton(onPressed: submit, child: Text('Apply'))],
-  //         ));
-
-  void moduleNamePopUp(BuildContext context) => showDialog(
-      context: context,
-      builder: (context) => SimpleDialog(
-            title: const Text(
-              'Module Name',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            contentPadding: const EdgeInsets.all(25),
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.black),
-                    borderRadius:
-                        const BorderRadius.all(Radius.circular(15.0))),
-                child: SimpleDialogOption(
-                  child: const Text('Option 1'),
-                  onPressed: () {
-                    goBackToHomePage();
-                  },
-                ),
+  void moduleNamePopUp(BuildContext context, String title, String content) {
+    showDialog(
+        context: context,
+        builder: (context) => SimpleDialog(
+              title: const Text(
+                'Module Name',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.black),
-                    borderRadius:
-                        const BorderRadius.all(Radius.circular(15.0))),
-                child: SimpleDialogOption(
-                  onPressed: () {
-                    goBackToHomePage();
-                  },
-                  child: const Text('Option 2'),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.black),
-                    borderRadius:
-                        const BorderRadius.all(Radius.circular(15.0))),
-                child: SimpleDialogOption(
-                  onPressed: () {
-                    goBackToHomePage();
-                  },
-                  child: const Text('Option 3'),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'Custom Module Name',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              const TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter a module name',
-                  // filled: true,
-                  // fillColor: Colors.grey,
-                  // border: OutlineInputBorder(
-                  //     borderSide: BorderSide.none,
-                  //     borderRadius: BorderRadius.circular(10))
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              FloatingActionButton(
-                onPressed: () {
-                  goBackToHomePage();
-                },
-                backgroundColor: kPrimaryColor,
-                child: const Text(
-                  'Apply',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 252, 252, 252),
-                    fontSize: 16,
+              contentPadding: const EdgeInsets.all(25),
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: Colors.black),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(15.0))),
+                  child: SimpleDialogOption(
+                    child: const Text('Option 1'),
+                    onPressed: () {
+                      // goBackToHomePage();
+                    },
                   ),
                 ),
-              )
-            ],
-          ));
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: Colors.black),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(15.0))),
+                  child: SimpleDialogOption(
+                    onPressed: () {
+                      // goBackToHomePage();
+                    },
+                    child: const Text('Option 2'),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: Colors.black),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(15.0))),
+                  child: SimpleDialogOption(
+                    onPressed: () {
+                      // goBackToHomePage();
+                    },
+                    child: const Text('Option 3'),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  'Custom Module Name',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                TextField(
+                  controller: customerModuleNameController,
+                  decoration: const InputDecoration(
+                    hintText: 'Enter a module name',
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                FloatingActionButton(
+                  onPressed: () {
+                    goBackToHomePage(
+                        customerModuleNameController.text, title, content);
+                  },
+                  backgroundColor: kPrimaryColor,
+                  child: const Text(
+                    'Apply',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 252, 252, 252),
+                      fontSize: 16,
+                    ),
+                  ),
+                )
+              ],
+            ));
+  }
 
-  void goBackToHomePage() {
+  void goBackToHomePage(String moduleName, String title, String content) {
+    if (widget.notes != null) {
+      NoteRepository().updateNote(NoteDTO(
+          id: widget.notes!.id,
+          moduleName: moduleName,
+          createdDate: widget.notes!.createdDate,
+          lastModifiedDate: DateTime.now(),
+          title: title,
+          content: content));
+    } else {
+      NoteRepository().addNote(NoteDTO(
+          moduleName: moduleName,
+          createdDate: DateTime.now(),
+          lastModifiedDate: DateTime.now(),
+          title: title,
+          content: content));
+    }
     Navigator.push(
-        context, MaterialPageRoute(builder: (_) => const HomePage()));
+        context, MaterialPageRoute(builder: (_) => const BottomNavigation()));
   }
 }

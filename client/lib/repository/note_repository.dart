@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:client/models/note_dto.dart';
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';
@@ -24,7 +23,7 @@ class NoteRepository {
       List<NoteDTO> notes = [
         ...resData['notes'].map((note) => NoteDTO.fromJson(note))
       ];
-      if(notes.isNotEmpty) return notes;
+      if (notes.isNotEmpty) return notes;
     }
     return null;
   }
@@ -46,7 +45,7 @@ class NoteRepository {
       showSuccess(resData['Message']);
       return true;
     } else {
-      showSuccess(resData['Message']);
+      showError(resData['Message']);
       return false;
     }
   }
@@ -68,7 +67,7 @@ class NoteRepository {
       showSuccess(resData['Message']);
       return true;
     } else {
-      showSuccess(resData['Message']);
+      showError(resData['Message']);
       return false;
     }
   }
@@ -85,13 +84,12 @@ class NoteRepository {
       },
     );
     Map<String, dynamic> resData = jsonDecode(res.body);
-    if(res.statusCode==200){
+    if (res.statusCode == 200) {
       showSuccess(resData['Message']);
       return true;
-    }else{
-      showSuccess(resData['Message']);
+    } else {
+      showError(resData['Message']);
       return false;
     }
-
   }
 }

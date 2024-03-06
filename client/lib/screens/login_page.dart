@@ -8,8 +8,7 @@ import '../widget/custom_text_field.dart';
 import 'package:client/repository/user_repository.dart';
 
 class LoginPage extends StatefulWidget {
-
-  final String ? signUpEmail;
+  final String? signUpEmail;
 
   const LoginPage({super.key, this.signUpEmail});
 
@@ -18,7 +17,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   TextEditingController _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   var _isObscured = true;
@@ -54,7 +52,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 25),
-
               LoginSignUpTextField(
                 hintText: 'Email',
                 keyboardType: TextInputType.emailAddress,
@@ -121,14 +118,15 @@ class _LoginPageState extends State<LoginPage> {
               LoginScreenButton(
                 label: 'Login',
                 onPressed: () async {
-                  bool pass = await UserRepository().signIn(_emailController.text, _passwordController.text);
-                  if(pass){
+                  bool pass = await UserRepository()
+                      .signIn(_emailController.text, _passwordController.text);
+                  if (pass) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => const BottomNavigation()),
+                      MaterialPageRoute(
+                          builder: (_) => const BottomNavigation()),
                     );
                   }
-
                 },
               ),
               const SizedBox(height: 60),
@@ -141,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   GestureDetector(
                     onTap: () async {
-                      final value = await Navigator.push(
+                      await Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const SignupPage()),
