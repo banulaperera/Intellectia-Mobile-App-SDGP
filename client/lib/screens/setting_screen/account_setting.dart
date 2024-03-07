@@ -63,6 +63,11 @@ class _AccountSettingState extends State<AccountSetting> {
                 obscuredProperty: false,
               ),
               const InputTextField(
+                labelText: 'Confirm Password',
+                hintText: '************',
+                obscuredProperty: true,
+              ),
+              const InputTextField(
                 labelText: 'Password',
                 hintText: '************',
                 obscuredProperty: true,
@@ -73,7 +78,7 @@ class _AccountSettingState extends State<AccountSetting> {
                 obscuredProperty: true,
               ),
               const SizedBox(
-                height: 45,
+                height: 15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

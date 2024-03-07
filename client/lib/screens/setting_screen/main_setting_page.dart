@@ -1,4 +1,5 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:client/screens/setting_screen/goal_setting.dart';
 import 'package:flutter/Material.dart';
 
 import '../../constants.dart';
@@ -64,7 +65,7 @@ class _MainSettingPageState extends State<MainSettingPage> {
             buildAccountSettingOption(
                 context, 'Change Password', const AccountSetting()),
             buildAccountSettingOption(
-                context, 'Goal setting', const AccountSetting()),
+                context, 'Goal setting', const GoalSetting()),
             buildAccountSettingOption(
                 context, 'Privacy and security', const AccountSetting()),
             const SizedBox(

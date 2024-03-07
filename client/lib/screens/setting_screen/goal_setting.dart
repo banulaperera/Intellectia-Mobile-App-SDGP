@@ -68,8 +68,8 @@ class _GoalSettingState extends State<GoalSetting> {
       body: Container(
         padding: const EdgeInsets.only(
           top: 25,
-          left: 25,
-          right: 25,
+          left: 35,
+          right: 35,
         ),
         child: GestureDetector(
           onTap: () {
