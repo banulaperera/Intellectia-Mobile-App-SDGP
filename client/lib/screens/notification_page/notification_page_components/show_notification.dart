@@ -28,7 +28,7 @@ class ShowNotification extends StatelessWidget {
                 onPressed: (context) {},
                 icon: BootstrapIcons.trash3_fill,
                 foregroundColor: Colors.white,
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.red.withOpacity(0.5),
               )
             ],
           ),

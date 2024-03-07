@@ -2,6 +2,7 @@ import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:client/models/tile_model.dart';
 import 'package:client/repository/note_repository.dart';
+import 'package:client/screens/home_page/home_page_components/note_editor.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -126,7 +127,14 @@ class _TileViewWidgetState extends State<TileViewWidget> {
                     ),
                   ),
                   onTap: () {
-                    // Add your onTap logic here
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => CreateNote(
+                          notes: note,
+                        ),
+                      ),
+                    );
                   },
                   contentPadding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
