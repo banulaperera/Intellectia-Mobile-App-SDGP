@@ -1,10 +1,11 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
+import 'package:client/models/basic_tile.dart';
 import 'package:client/models/note_dto.dart';
 import 'package:client/repository/note_repository.dart';
+import 'package:client/screens/home_page/home_page_components/basic_tile_widget.dart';
 import 'package:client/screens/home_page/home_page_components/note_editor.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,8 +16,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<NoteDTO> notes = List.empty(growable: true);
-
-  List<NoteDTO> filteredNotes = List.empty(growable: true);
+  List<BasicTile> filteredNotes = List.empty(growable: true);
+  List<BasicTile> tileList = List.empty(growable: true);
+  String moduleName = '';
 
   @override
   void initState() {
@@ -27,17 +29,28 @@ class _HomePageState extends State<HomePage> {
   Future<void> fetchNotes() async {
     final List<NoteDTO> allNotes = await NoteRepository().getAllNotes() ?? [];
     setState(() {
-      notes = allNotes;
-      filteredNotes = notes;
+      Set<String> uniqueModuleNames = <String>{};
+      for (final note in allNotes) {
+        uniqueModuleNames.add(note.moduleName);
+      }
+      tileList.clear();
+      for (final moduleName in uniqueModuleNames) {
+        List<NoteDTO> moduleNotes =
+            allNotes.where((note) => note.moduleName == moduleName).toList();
+        tileList.add(BasicTile(title: moduleName, tiles: moduleNotes));
+      }
+      filteredNotes = tileList;
     });
   }
 
   void search(String text) {
     setState(() {
-      filteredNotes = notes
-          .where((note) =>
-              note.content.toLowerCase().contains(text.toLowerCase()) ||
-              note.title.toLowerCase().contains(text.toLowerCase()))
+      filteredNotes = tileList
+          .where((tile) =>
+              tile.title.toLowerCase().contains(text.toLowerCase()) ||
+              tile.tiles.any((note) =>
+                  note.content.toLowerCase().contains(text.toLowerCase()) ||
+                  note.title.toLowerCase().contains(text.toLowerCase())))
           .toList();
     });
   }
@@ -100,65 +113,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Expanded(
-                child: ListView.separated(
+                child: ListView(
                   padding: const EdgeInsets.only(top: 15),
-                  itemCount: filteredNotes.length,
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(height: 1),
-                  itemBuilder: (context, index) {
-                    final note = filteredNotes[index];
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => CreateNote(
-                              notes: note,
-                            ),
-                          ),
-                        );
-                      },
-                      child: Card(
-                        color: cardColor,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                note.title,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              const SizedBox(height: 5),
-                              Text(
-                                note.content,
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              const SizedBox(height: 2),
-                              Text(
-                                note.createdDate == note.lastModifiedDate
-                                    ? 'Created: ${DateFormat('EEEE MMM d, yyyy h:mm a').format(note.createdDate)}'
-                                    : 'Edited: ${DateFormat('EEEE MMM d, yyyy h:mm a').format(note.lastModifiedDate)}',
-                                style: const TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 11,
-                                  fontStyle: FontStyle.italic,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  },
+                  children: filteredNotes
+                      .map((tile) => BasicTileWidget(tile: tile))
+                      .toList(),
                 ),
               ),
             ],
