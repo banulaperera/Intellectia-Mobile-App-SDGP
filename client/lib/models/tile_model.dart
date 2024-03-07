@@ -1,10 +1,10 @@
 import 'package:client/models/note_dto.dart';
 
-class BasicTile {
+class TileModel {
   final String title;
   final List<NoteDTO> tiles;
 
-  BasicTile({
+  TileModel({
     required this.title,
     this.tiles = const [],
   });

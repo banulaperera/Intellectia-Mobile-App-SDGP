@@ -1,9 +1,9 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
-import 'package:client/models/basic_tile.dart';
+import 'package:client/models/tile_model.dart';
 import 'package:client/models/note_dto.dart';
 import 'package:client/repository/note_repository.dart';
-import 'package:client/screens/home_page/home_page_components/basic_tile_widget.dart';
+import 'package:client/screens/home_page/home_page_components/tile_view_widget.dart';
 import 'package:client/screens/home_page/home_page_components/note_editor.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +16,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<NoteDTO> notes = List.empty(growable: true);
-  List<BasicTile> filteredNotes = List.empty(growable: true);
-  List<BasicTile> tileList = List.empty(growable: true);
+  List<TileModel> filteredNotes = List.empty(growable: true);
+  List<TileModel> tileList = List.empty(growable: true);
   String moduleName = '';
 
   @override
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
       for (final moduleName in uniqueModuleNames) {
         List<NoteDTO> moduleNotes =
             allNotes.where((note) => note.moduleName == moduleName).toList();
-        tileList.add(BasicTile(title: moduleName, tiles: moduleNotes));
+        tileList.add(TileModel(title: moduleName, tiles: moduleNotes));
       }
       filteredNotes = tileList;
     });
@@ -59,40 +59,19 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 40, 16, 0),
+        padding: const EdgeInsets.fromLTRB(16, 60, 16, 0),
         child: RefreshIndicator(
           color: kPrimaryColor,
           onRefresh: fetchNotes,
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Notes',
-                    style: TextStyle(
-                      fontSize: appBarTitleSize,
-                      fontWeight: FontWeight.w500,
-                      letterSpacing: 2,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () async {},
-                    padding: const EdgeInsets.all(0),
-                    icon: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: kPrimaryColor,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Icon(
-                        BootstrapIcons.filter,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
+              const Text(
+                'Notes',
+                style: TextStyle(
+                  fontSize: appBarTitleSize,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 2,
+                ),
               ),
               const SizedBox(height: 20),
               TextField(
@@ -116,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                 child: ListView(
                   padding: const EdgeInsets.only(top: 15),
                   children: filteredNotes
-                      .map((tile) => BasicTileWidget(tile: tile))
+                      .map((tile) => TileViewWidget(tile: tile))
                       .toList(),
                 ),
               ),

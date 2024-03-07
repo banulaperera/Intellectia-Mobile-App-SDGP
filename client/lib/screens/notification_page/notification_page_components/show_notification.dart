@@ -20,21 +20,22 @@ class ShowNotification extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemBuilder: (context, index) {
         return Slidable(
-            endActionPane: ActionPane(
-              extentRatio: .2,
-              motion: const ScrollMotion(),
-              children: [
-                SlidableAction(
-                  onPressed: (context) {},
-                  icon: BootstrapIcons.trash3_fill,
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.red,
-                )
-              ],
-            ),
-            child: NotificationTitle(
-              list[index],
-            ));
+          endActionPane: ActionPane(
+            extentRatio: .2,
+            motion: const ScrollMotion(),
+            children: [
+              SlidableAction(
+                onPressed: (context) {},
+                icon: BootstrapIcons.trash3_fill,
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.red,
+              )
+            ],
+          ),
+          child: NotificationTitle(
+            list[index],
+          ),
+        );
       },
       itemCount: list.length,
       separatorBuilder: (BuildContext context, int index) {
