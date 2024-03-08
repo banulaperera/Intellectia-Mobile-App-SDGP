@@ -22,12 +22,19 @@ class UserService{
      }
 
 
-    static async updateFirstLastName(userid,firstName,lastName){
+    static async updateUserDetails(userid,updatedUser){
         try {
             const user=await User.findOne({_id:userid});
-            user.firstName=firstName;
-            user.lastName=lastName;
-            await user.save();
+                user.photo=updatedUser.photo;
+                user.firstName=updatedUser.firstName;
+                user.lastName=updatedUser.lastName;
+                user.email=updatedUser.email;
+                user.level=updatedUser.level;
+                user.correctedQuestions=updatedUser.correctedQuestions;
+                user.inCorrectedQuestions=updatedUser.inCorrectedQuestions;
+                user.totalXP=updatedUser.totalXP;
+                user.weeklyXP=updatedUser.weeklyXP;
+                await user.save();
         }catch (e) {
             throw e
         }
@@ -43,15 +50,35 @@ class UserService{
                     lastName:user.lastName,
                     email:user.email,
                     level:user.level,
-                    noTakenQuiz:user.noTakenQuiz,
-                    noMissedQuiz:user.noMissedQuiz
-
-
+                    correctedQuestions:user.correctedQuestions,
+                    inCorrectedQuestions:user.inCorrectedQuestions,
+                    totalXP:user.totalXP,
+                    weeklyXP:user.weeklyXP,
                 }
             }
 
         }catch (e) {
             throw e
+        }
+    }
+
+   static async getUserByID(userID){
+          try {
+              const user=await User.findOne({_id:userID});
+              if (user){
+                  return user;
+              }
+          }catch (err){
+              throw err
+          }
+    }
+
+    static async changeUserPassword(user,newPassword){
+        try {
+            user.password=await passwordUtil.getEncryptPassword(newPassword);
+            await user.save();
+        }catch (err){
+            throw err
         }
     }
 
@@ -62,6 +89,5 @@ class UserService{
 function getDefaultName(email){
     return email.split("@")[0];
 }
-
 
 module.exports=UserService;

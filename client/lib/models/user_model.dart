@@ -6,8 +6,11 @@ class User {
   String lastName;
   String email;
   int level;
-  int noTakenQuiz;
-  int noMissedQuiz;
+
+  int correctedQuestions;
+  int inCorrectedQuestions;
+  int totalXP;
+  List<int> weeklyXP;
 
   User({
     required this.photo,
@@ -15,8 +18,10 @@ class User {
     required this.lastName,
     required this.email,
     required this.level,
-    required this.noTakenQuiz,
-    required this.noMissedQuiz,
+    required this.correctedQuestions,
+    required this.inCorrectedQuestions,
+    required this.totalXP,
+    required this.weeklyXP,
     });
 
   Map<String, dynamic> toJson() {
@@ -26,8 +31,11 @@ class User {
           "lastName":lastName,
           "email":email,
           "level":level,
-          "noTakenQuiz":noTakenQuiz,
-          "noMissedQuiz":noMissedQuiz
+          "correctedQuestions":correctedQuestions,
+          "inCorrectedQuestions":inCorrectedQuestions,
+          "totalXp":totalXP,
+          "weeklyXp":weeklyXP,
+
     };
   }
 
@@ -38,8 +46,10 @@ class User {
         lastName:json['lastName'] as String,
         email:json['email'] as String,
         level: json['level'] as int,
-        noTakenQuiz: json['noTakenQuiz'] as int,
-        noMissedQuiz: json['noMissedQuiz'] as int,
+        correctedQuestions: json['correctedQuestion'] as int,
+        inCorrectedQuestions: json['inCorrectedQuestion'] as int,
+        totalXP:json['totalXP'] as int,
+        weeklyXP:List<int>.from(json['weeklyXP'] as List),
       );
 
 
