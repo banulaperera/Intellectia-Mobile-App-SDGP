@@ -24,7 +24,7 @@ class NoteRepository {
       List<NoteDTO> notes = [
         ...resData['notes'].map((note) => NoteDTO.fromJson(note))
       ];
-      if(notes.isNotEmpty) return notes;
+      if (notes.isNotEmpty) return notes;
     }
     return null;
   }

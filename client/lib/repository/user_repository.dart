@@ -62,4 +62,49 @@ class UserRepository {
     }
     return null;
   }
+
+  Future<void> updateUserDetails(User user) async {
+    await refreshToken(await localStorage.getAccessToken());
+    String accessToken = await localStorage.getAccessToken();
+    final res = await http.post(
+      Uri.parse("$baseUrl/user/update"),
+      headers: <String, String>{
+        'Content-Type': 'application/json',
+        "Authorization": "bearer $accessToken"
+      },
+      body: jsonEncode(user.toJson())
+    );
+    final Map<String, dynamic> data = jsonDecode(res.body);
+    if (res.statusCode!=200) {
+      showError(data["Message"]);
+    }
+  }
+
+  Future<void> changeUserPassword(String currentPassword, String newPassword) async {
+    await refreshToken(await localStorage.getAccessToken());
+    String accessToken = await localStorage.getAccessToken();
+    final res = await http.post(
+        Uri.parse("$baseUrl/user/change-password"),
+        headers: <String, String>{
+          'Content-Type': 'application/json',
+          "Authorization": "bearer $accessToken"
+        },
+        body:jsonEncode({"currentPassword":currentPassword,"newPassword":newPassword})
+    );
+    final Map<String, dynamic> data = jsonDecode(res.body);
+    if (res.statusCode==200) {
+      showSuccess(data["Message"]);
+    }else{
+      showError(data["Message"]);
+    }
+  }
+
+
+
+
+
+
+
+
+
 }
