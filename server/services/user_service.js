@@ -90,6 +90,4 @@ function getDefaultName(email){
     return email.split("@")[0];
 }
 
-
-
 module.exports=UserService;
