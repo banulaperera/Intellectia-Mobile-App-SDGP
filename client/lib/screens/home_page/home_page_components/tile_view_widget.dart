@@ -76,8 +76,8 @@ class _TileViewWidgetState extends State<TileViewWidget> {
                                         color: Colors.red,
                                         fontWeight: FontWeight.w700),
                                   ),
-                                  onPressed: () {
-                                    NoteRepository()
+                                  onPressed: () async {
+                                    await NoteRepository()
                                         .deleteNote(note.id.toString());
                                     Navigator.of(context).pop();
                                   },

@@ -16,7 +16,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // List<NoteDTO> notes = List.empty(growable: true);
   List<TileModel> filteredNotes = List.empty(growable: true);
   List<TileModel> tileList = List.empty(growable: true);
   String moduleName = '';
@@ -34,6 +33,7 @@ class _HomePageState extends State<HomePage> {
       for (final note in allNotes) {
         uniqueModuleNames.add(note.moduleName);
       }
+      filteredNotes.clear();
       tileList.clear();
       for (final moduleName in uniqueModuleNames) {
         List<NoteDTO> moduleNotes =
@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             Lottie.asset(
                               'animations/Animation - 1709835838086.json',
-                              height: 300,
+                              height: 250,
                               reverse: true,
                               repeat: true,
                               animate: true,
@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                               padding: const EdgeInsets.all(10),
                               child: Text(
                                 textAlign: TextAlign.center,
-                                'Something went wrong: ${snapshot.error}',
+                                'Network Error. Please check your internet connection and try again.',
                                 style: TextStyle(
                                   color: Colors.grey.shade700,
                                   fontSize: 16,
