@@ -53,12 +53,14 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 25),
               LoginSignUpTextField(
+                key: const Key('username'),
                 hintText: 'Email',
                 keyboardType: TextInputType.emailAddress,
                 controller: _emailController,
               ),
               const SizedBox(height: 25),
               TextField(
+                key: const Key('password'),
                 controller: _passwordController,
                 obscureText: _isObscured,
                 obscuringCharacter: '*',
@@ -116,6 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               LoginScreenButton(
+                key: const Key('loginKey'),
                 label: 'Login',
                 onPressed: () async {
                   bool pass = await UserRepository()
@@ -146,6 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                       );
                     },
                     child: const Text(
+                      key: Key('signupKey'),
                       'Signup',
                       style: TextStyle(
                         color: Colors.blue,

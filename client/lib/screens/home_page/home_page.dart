@@ -92,6 +92,7 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 20),
               TextField(
+                key: const Key('searchKey'),
                 onChanged: search,
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
@@ -156,14 +157,6 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-              // Expanded(
-              //   child: ListView(
-              //     padding: const EdgeInsets.only(top: 15),
-              //     children: filteredNotes
-              //         .map((tile) => TileViewWidget(tile: tile))
-              //         .toList(),
-              //   ),
-              // ),
             ],
           ),
         ),
