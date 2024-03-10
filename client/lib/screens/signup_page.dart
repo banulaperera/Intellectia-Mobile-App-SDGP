@@ -59,6 +59,7 @@ class _SignupPageState extends State<SignupPage> {
                 children: [
                   const SizedBox(height: 25),
                   LoginSignUpTextField(
+                    key: const ValueKey('signupEmail'),
                     hintText: 'Email',
                     keyboardType: TextInputType.emailAddress,
                     controller: _emailController,
@@ -155,7 +156,9 @@ class _SignupPageState extends State<SignupPage> {
                   LoginScreenButton(
                     label: 'Sign Up',
                     onPressed: () async {
-                      if(_passwordController.text.isNotEmpty && _emailController.text.isNotEmpty && _confirmPasswordController.text.isNotEmpty){
+                      if (_passwordController.text.isNotEmpty &&
+                          _emailController.text.isNotEmpty &&
+                          _confirmPasswordController.text.isNotEmpty) {
                         if (_passwordController.text ==
                             _confirmPasswordController.text) {
                           bool pass = await UserRepository().register(
@@ -173,8 +176,7 @@ class _SignupPageState extends State<SignupPage> {
                         } else {
                           showError('Passwords do not match');
                         }
-                      }
-                      else{
+                      } else {
                         showError('Please fill all the fields');
                       }
                     },
@@ -213,10 +215,9 @@ class _SignupPageState extends State<SignupPage> {
             Text(
               'Password miss match',
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w700
-              ),
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700),
             ),
           ],
         ),

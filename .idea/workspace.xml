@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="BASE URL ADDED">
-      <change afterPath="$PROJECT_DIR$/server/controllers/quiz_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-26,_22_54_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-26__22_54__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-03-01,_18_08_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-03-01__18_08__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/configs/db_config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/configs/db_config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/note_editor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/note_editor.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/login_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/signup_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/signup_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;IN-37-note__editor__backend__intergration&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;IN-34-intergration__testing__flutter&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -65,38 +68,41 @@
       <recent name="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.main.dart">
+  <component name="RunManager" selected="Flutter Test.testing">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/client/lib/main.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in exp_bar_graph_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/exp_bar_graph_test.dart" />
-      <option name="useRegexp" value="false" />
+    <configuration name="Go to the sign up page from the login page" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Go to the sign up page from the login page" />
+      <option name="testFile" value="$PROJECT_DIR$/client/integration_test/app_test.dart" />
+      <option name="useRegexp" value="true" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in login_page_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/login_page_test.dart" />
-      <option name="useRegexp" value="false" />
+    <configuration name="test whether the user can navigate to the different tabs in the application after logging in" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="test whether the user can navigate to the different tabs in the application after logging in" />
+      <option name="testFile" value="$PROJECT_DIR$/client/integration_test/app_test.dart" />
+      <option name="useRegexp" value="true" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in quiz_screen_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/quiz/quiz_screen_test.dart" />
-      <option name="useRegexp" value="false" />
+    <configuration name="testing" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="testing" />
+      <option name="testFile" value="$PROJECT_DIR$/client/integration_test/app_test.dart" />
+      <option name="useRegexp" value="true" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in welcome_screen_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/quiz/welcome/welcome_screen_test.dart" />
+    <configuration name="tests in app_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/integration_test/app_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter Test.testing" />
+        <item itemvalue="Flutter Test.test whether the user can navigate to the different tabs in the application after logging in" />
         <item itemvalue="Flutter.main.dart" />
-        <item itemvalue="Flutter Test.tests in login_page_test.dart" />
-        <item itemvalue="Flutter Test.tests in welcome_screen_test.dart" />
-        <item itemvalue="Flutter Test.tests in quiz_screen_test.dart" />
-        <item itemvalue="Flutter Test.tests in exp_bar_graph_test.dart" />
+        <item itemvalue="Flutter Test.tests in app_test.dart" />
+        <item itemvalue="Flutter Test.Go to the sign up page from the login page" />
       </list>
     </recent_temporary>
   </component>

@@ -43,6 +43,7 @@ class _CreateNoteState extends State<CreateNote> {
           child: ListView(
             children: [
               TextFormField(
+                key: const Key('title'),
                 controller: titleController,
                 maxLines: null,
                 style:
@@ -56,6 +57,7 @@ class _CreateNoteState extends State<CreateNote> {
                 height: 10,
               ),
               TextFormField(
+                key: const Key('content'),
                 controller: contentController,
                 maxLines: null,
                 style: const TextStyle(
@@ -199,5 +201,13 @@ class _CreateNoteState extends State<CreateNote> {
     }
     Navigator.push(
         context, MaterialPageRoute(builder: (_) => const BottomNavigation()));
+  }
+
+  @override
+  void dispose() {
+    titleController.dispose();
+    contentController.dispose();
+    customerModuleNameController.dispose();
+    super.dispose();
   }
 }
