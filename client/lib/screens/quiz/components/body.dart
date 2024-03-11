@@ -56,10 +56,8 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 const Divider(thickness: 1.5),
-                const SizedBox(height: kDefaultPadding),
                 Expanded(
                   child: PageView.builder(
-                    // Block swipe to next qn
                     physics: const NeverScrollableScrollPhysics(),
                     controller: questionController.pageController,
                     onPageChanged: questionController.updateTheQnNum,

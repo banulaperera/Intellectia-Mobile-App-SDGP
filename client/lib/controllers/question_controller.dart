@@ -4,6 +4,9 @@ import 'package:client/screens/quiz/score/score_screen.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
+import '../models/note_dto.dart';
+import '../repository/note_repository.dart';
+
 class QuestionController extends GetxController
     with GetSingleTickerProviderStateMixin {
   late AnimationController _animationController;
@@ -20,23 +23,18 @@ class QuestionController extends GetxController
   List<Question> get questions => _questions;
 
   bool _isAnswered = false;
-
   bool get isAnswered => _isAnswered;
 
   late int _correctAns;
   int get correctAns => _correctAns;
 
   late int _selectedAns;
-
   int get selectedAns => _selectedAns;
 
-  // for more about obs please check documentation
   final RxInt _questionNumber = 1.obs;
-
   RxInt get questionNumber => _questionNumber;
 
   int _numOfCorrectAns = 0;
-
   int get numOfCorrectAns => _numOfCorrectAns;
 
   // called immediately after the widget is allocated memory
@@ -67,7 +65,6 @@ class QuestionController extends GetxController
   }
 
   void checkAns(Question question, int selectedIndex) {
-    // because once user press any option then it will run
     _isAnswered = true;
     //need to add
     for (int i = 0; i < question.options.length; i++) {
@@ -98,7 +95,6 @@ class QuestionController extends GetxController
       _animationController.reset();
       _animationController.forward().whenComplete(nextQuestion);
     } else {
-      _correctAns = 0;
       // Get package provide us simple way to navigate another page
       Get.to(const ScoreScreen());
     }
@@ -109,8 +105,13 @@ class QuestionController extends GetxController
   }
 
   fetchQuestions() async {
-    _questions = (await QuizRepository().generateQuiz(
-        'Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Pythons simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.'))!
-        .toList();
+    final List<NoteDTO> allNotes = await NoteRepository().getAllNotes() ?? [];
+    if (allNotes.isNotEmpty) {
+      allNotes.sort((a, b) => b.createdDate.compareTo(a.createdDate));
+      String latestCreatedDate = allNotes.first.content;
+      _questions = (await QuizRepository().generateQuiz(
+          latestCreatedDate))!
+          .toList();
+    }
   }
 }

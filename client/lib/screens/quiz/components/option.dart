@@ -48,11 +48,15 @@ class Option extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    // "${index + 1}. $text",
-                    text,
-                    style: const TextStyle(color: Colors.black, fontSize: 16),
+                  Expanded(
+                    // Use Expanded to allow the text to wrap
+                    child: Text(
+                      text,
+                      style: const TextStyle(color: Colors.black, fontSize: 16),
+                      softWrap: true, // Enable soft wrapping
+                    ),
                   ),
+                  // SizedBox(width: 5,),
                   Container(
                     height: 26,
                     width: 26,
@@ -71,6 +75,7 @@ class Option extends StatelessWidget {
               ),
             ),
           );
+
         });
   }
 }

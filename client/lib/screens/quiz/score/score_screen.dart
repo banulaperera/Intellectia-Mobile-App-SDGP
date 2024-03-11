@@ -1,4 +1,3 @@
-import 'package:client/screens/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:client/constants.dart';
@@ -19,7 +18,7 @@ class ScoreScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Get.to(const BottomNavigation()),
         ),
       ),
@@ -35,24 +34,24 @@ class ScoreScreen extends StatelessWidget {
                 repeat: true,
                 animate: true,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 "Score",
                 style: Theme.of(context)
                     .textTheme
-                    .headline6
+                    .titleLarge
                     ?.copyWith(color: Colors.black),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
-                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
                 decoration: BoxDecoration(
                   color: Colors.grey[200],
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
                   "${qnController.correctAns * 20}/${qnController.questions.length * 20}",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: kSecondaryColor,
