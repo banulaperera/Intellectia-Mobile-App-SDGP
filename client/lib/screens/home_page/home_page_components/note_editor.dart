@@ -1,5 +1,5 @@
 import 'package:client/constants.dart';
-import 'package:client/models/note_dto.dart';
+import 'package:client/models/note.dart';
 import 'package:client/repository/note_repository.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../navigation_bar.dart';
 
 class CreateNote extends StatefulWidget {
-  final NoteDTO? notes;
+  final Note? notes;
 
   const CreateNote({super.key, this.notes});
 
@@ -184,7 +184,7 @@ class _CreateNoteState extends State<CreateNote> {
 
   void goBackToHomePage(String moduleName, String title, String content) {
     if (widget.notes != null) {
-      NoteRepository().updateNote(NoteDTO(
+      NoteRepository().updateNote(Note(
           id: widget.notes!.id,
           moduleName: moduleName,
           createdDate: widget.notes!.createdDate,
@@ -192,7 +192,7 @@ class _CreateNoteState extends State<CreateNote> {
           title: title,
           content: content));
     } else {
-      NoteRepository().addNote(NoteDTO(
+      NoteRepository().addNote(Note(
           moduleName: moduleName,
           createdDate: DateTime.now(),
           lastModifiedDate: DateTime.now(),

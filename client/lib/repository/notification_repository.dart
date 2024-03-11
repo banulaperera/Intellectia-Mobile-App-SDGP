@@ -10,7 +10,7 @@ import 'package:client/util/refresh_token.dart';
 class NotificationRepository{
   LocalStorage localStorage= LocalStorage();
 
-  Future<List<Notification>?> getAllNotification() async{
+  Future<List<NotificationM>?> getAllNotification() async{
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
     final res=await http.get(Uri.parse('$baseUrl/notification/all'),
@@ -21,15 +21,15 @@ class NotificationRepository{
 
     if (res.statusCode == 200) {
       final resData = jsonDecode(res.body);
-      List<Notification> notes = [
-        ...resData['notifications'].map((notification) => Notification.fromJson(notification))
+      List<NotificationM> notes = [
+        ...resData['notifications'].map((notification) => NotificationM.fromJson(notification))
       ];
       if (notes.isNotEmpty) return notes;
     }
     return null;
   }
 
-  Future<void> addNotification(Notification notification) async {
+  Future<void> addNotification(NotificationM notification) async {
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
     final res = await http.post(Uri.parse('$baseUrl/notification/add'),

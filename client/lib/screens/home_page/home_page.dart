@@ -1,7 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:client/models/tile_model.dart';
-import 'package:client/models/note_dto.dart';
+import 'package:client/models/note.dart';
 import 'package:client/repository/note_repository.dart';
 import 'package:client/screens/home_page/home_page_components/tile_view_widget.dart';
 import 'package:client/screens/home_page/home_page_components/note_editor.dart';
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> fetchNotes() async {
-    final List<NoteDTO> allNotes = await NoteRepository().getAllNotes() ?? [];
+    final List<Note> allNotes = await NoteRepository().getAllNotes() ?? [];
     setState(() {
       Set<String> uniqueModuleNames = <String>{};
       for (final note in allNotes) {
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
       filteredNotes.clear();
       tileList.clear();
       for (final moduleName in uniqueModuleNames) {
-        List<NoteDTO> moduleNotes =
+        List<Note> moduleNotes =
             allNotes.where((note) => note.moduleName == moduleName).toList();
         tileList.add(TileModel(title: moduleName, tiles: moduleNotes));
       }

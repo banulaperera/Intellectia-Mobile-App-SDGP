@@ -1,4 +1,4 @@
-class NoteDTO{
+class Note{
   String? id;
   String moduleName;
   DateTime createdDate;
@@ -6,7 +6,7 @@ class NoteDTO{
   String title;
   String content;
 
-  NoteDTO({this.id,required this.moduleName,required this.createdDate, required this.lastModifiedDate,required this.title,required this.content});
+  Note({this.id,required this.moduleName,required this.createdDate, required this.lastModifiedDate,required this.title,required this.content});
 
   Map<String,dynamic> toJsonWithID(){
     return {
@@ -29,8 +29,8 @@ class NoteDTO{
     };
   }
 
- factory NoteDTO.fromJson(Map<String,dynamic> json){
-    return NoteDTO(
+ factory Note.fromJson(Map<String,dynamic> json){
+    return Note(
         id:json['_id'] as String,
         moduleName: json['moduleName'] as String,
         createdDate:DateTime.parse(json['createdDate'] as String).toLocal(),

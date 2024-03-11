@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:client/models/note_dto.dart';
+import 'package:client/models/note.dart';
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';
 import 'package:client/util/refresh_token.dart';
@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 class NoteRepository {
   LocalStorage localStorage = LocalStorage();
 
-  Future<List<NoteDTO>?> getAllNotes() async {
+  Future<List<Note>?> getAllNotes() async {
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
     final res = await http.get(Uri.parse('$baseUrl/note/all'),
@@ -20,15 +20,15 @@ class NoteRepository {
 
     if (res.statusCode == 200) {
       final resData = jsonDecode(res.body);
-      List<NoteDTO> notes = [
-        ...resData['notes'].map((note) => NoteDTO.fromJson(note))
+      List<Note> notes = [
+        ...resData['notes'].map((note) => Note.fromJson(note))
       ];
       if (notes.isNotEmpty) return notes;
     }
     return null;
   }
 
-  Future<bool> addNote(NoteDTO note) async {
+  Future<bool> addNote(Note note) async {
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
 
@@ -50,7 +50,7 @@ class NoteRepository {
     }
   }
 
-  Future<bool> updateNote(NoteDTO note) async {
+  Future<bool> updateNote(Note note) async {
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
 

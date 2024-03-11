@@ -1,11 +1,11 @@
-class Notification {
+class NotificationM {
   String? id;
   String title;
   String body;
   String type;
   DateTime date;
 
-  Notification({
+  NotificationM({
     this.id,
     required this.title,
     required this.body,
@@ -24,8 +24,8 @@ class Notification {
 
 
 
-  factory Notification.fromJson(Map<String, dynamic> json){
-    return Notification(
+  factory NotificationM.fromJson(Map<String, dynamic> json){
+    return NotificationM(
         id:json['_id'] as String,
         title: json['title'] as String,
         body:json['body'] as String,
