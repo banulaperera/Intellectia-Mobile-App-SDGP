@@ -4,7 +4,7 @@ import 'package:client/repository/user_repository.dart';
 import 'package:client/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
-import '../util/show_Alert.dart';
+import '../util/show_alert.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
@@ -164,6 +164,7 @@ class _SignupPageState extends State<SignupPage> {
                           bool pass = await UserRepository().register(
                               _emailController.text, _passwordController.text);
                           if (pass) {
+                            if (!context.mounted) return;
                             Navigator.push(
                               context,
                               MaterialPageRoute(

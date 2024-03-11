@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:client/constants.dart';
 import 'package:client/controllers/question_controller.dart';
+import 'package:lottie/lottie.dart';
+
+import '../../navigation_bar.dart';
 // import 'package:flutter_svg/svg.dart';
  
 class ScoreScreen extends StatelessWidget {
@@ -11,33 +14,55 @@ class ScoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     QuestionController qnController = Get.put(QuestionController());
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Get.to(const BottomNavigation()),
+        ),
+      ),
       body: Stack(
         fit: StackFit.expand,
         children: [
-          // SvgPicture.asset("assets/icons/bg.svg", fit: BoxFit.fill),
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Spacer(flex: 3),
+              Lottie.asset(
+                'animations/Animation - 1710146206609.json',
+                height: 250,
+                repeat: true,
+                animate: true,
+              ),
+              const SizedBox(height: 20),
               Text(
                 "Score",
                 style: Theme.of(context)
                     .textTheme
-                    .displaySmall
-                    ?.copyWith(color: kSecondaryColor),
+                    .titleLarge
+                    ?.copyWith(color: Colors.black),
               ),
-              const Spacer(),
-              Text(
-                "${qnController.correctAns * 10}/${qnController.questions.length * 10}",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium
-                    ?.copyWith(color: kSecondaryColor),
+              const SizedBox(height: 10),
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(
+                  "${qnController.correctAns * 20}/${qnController.questions.length * 20}",
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: kSecondaryColor,
+                  ),
+                ),
               ),
-              const Spacer(flex: 3),
             ],
-          )
+          ),
         ],
       ),
     );
   }
+
 }

@@ -124,6 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                   bool pass = await UserRepository()
                       .signIn(_emailController.text, _passwordController.text);
                   if (pass) {
+                    if (!context.mounted) return;
                     Navigator.push(
                       context,
                       MaterialPageRoute(

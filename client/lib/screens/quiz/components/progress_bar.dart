@@ -1,3 +1,4 @@
+import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:client/controllers/question_controller.dart';
@@ -32,7 +33,6 @@ class ProgressBar extends StatelessWidget {
                   // from 0 to 1 it takes 60s
                   width: constraints.maxWidth * controller.animation.value,
                   decoration: BoxDecoration(
-                    //
                     color: kPrimaryColor,
                     borderRadius: BorderRadius.circular(50),
                   ),
@@ -47,9 +47,9 @@ class ProgressBar extends StatelessWidget {
                     children: [
                       Text(
                         "${(controller.animation.value * 60).round()} sec",
-                        style: const TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
                       ),
-                      // SvgPicture.asset("assets/icons/clock.svg"),
+                      const Icon(BootstrapIcons.stopwatch, color: Colors.black,)
                     ],
                   ),
                 ),

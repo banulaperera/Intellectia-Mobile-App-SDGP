@@ -5,7 +5,7 @@ import 'package:client/util/refresh_token.dart';
 import 'package:http/http.dart' as http;
 import 'package:client/util/local_storage.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
-import 'package:client/util/show_Alert.dart';
+import 'package:client/util/show_alert.dart';
 import 'package:client/util/db_util.dart';
 
 class UserRepository {
