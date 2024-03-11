@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="completed quiz integration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/quiz_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/quiz_screen.dart" afterDir="false" />
@@ -27,6 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
@@ -37,6 +39,18 @@
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
         <option name="accountId" value="c12005b5-20a4-439b-95c1-3afd8d994b10" />
+
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AvishkaPramuditha"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="a9745a62-514e-483c-b761-c15d70ef73e4" />
+
         <option name="url" value="https://github.com/banulaperera/SDGP_PT_Y3_03_Intellectia.git" />
       </UrlAndAccount>
     </option>
@@ -52,6 +66,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -68,14 +83,40 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+    
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "ToolWindowRun.ShowToolbar": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "IN-41-notification__crud__API",
+    "io.flutter.reload.alreadyRun": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "show.migrate.to.gradle.popup": "false",
+    "ts.external.directory.path": "/Users/avishkapramuditha/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external"
+
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components" />
     </key>
   </component>
+
   <component name="RunManager" selected="Flutter.main.dart">
+
+  <component name="RunManager">
+
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/client/lib/main.dart" />
       <method v="2" />
@@ -103,6 +144,7 @@
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
+
     <recent_temporary>
       <list>
         <item itemvalue="Flutter.main.dart" />
@@ -112,6 +154,7 @@
         <item itemvalue="Flutter Test.test whether the user can navigate to the different tabs in the application after logging in" />
       </list>
     </recent_temporary>
+ 
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -150,6 +193,9 @@
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated xml" />

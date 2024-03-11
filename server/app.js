@@ -9,6 +9,7 @@ const userRoutes=require('./routes/user_routes');
 const noteRoutes=require('./routes/note_routes');
 const quizRoutes=require('./routes/quiz_routes');
 const authRoutes=require('./routes/auth_routes');
+const notificationRoutes=require('./routes/notification_routes');
 require('dotenv').config();
 
 
@@ -22,6 +23,8 @@ app.use(`${process.env.BASE_API}/user`,userRoutes);
 app.use(`${process.env.BASE_API}/note`,noteRoutes);
 app.use(`${process.env.BASE_API}/quiz`,quizRoutes);
 app.use(`${process.env.BASE_API}/auth`,authRoutes);
+app.use(`${process.env.BASE_API}/notification`,notificationRoutes);
+
 
 
 
