@@ -22,7 +22,7 @@ class NotificationRepository{
     if (res.statusCode == 200) {
       final resData = jsonDecode(res.body);
       List<Notification> notes = [
-        ...resData['notifications'].map((notification) => Notification.fromJson(notification));
+        ...resData['notifications'].map((notification) => Notification.fromJson(notification))
       ];
       if (notes.isNotEmpty) return notes;
     }
