@@ -4,7 +4,7 @@ import 'package:client/screens/quiz/score/score_screen.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
-import '../models/note_dto.dart';
+import '../models/note.dart';
 import '../repository/note_repository.dart';
 
 class QuestionController extends GetxController
@@ -105,7 +105,7 @@ class QuestionController extends GetxController
   }
 
   fetchQuestions() async {
-    final List<NoteDTO> allNotes = await NoteRepository().getAllNotes() ?? [];
+    final List<Note> allNotes = await NoteRepository().getAllNotes() ?? [];
     if (allNotes.isNotEmpty) {
       allNotes.sort((a, b) => b.createdDate.compareTo(a.createdDate));
       String latestCreatedDate = allNotes.first.content;
