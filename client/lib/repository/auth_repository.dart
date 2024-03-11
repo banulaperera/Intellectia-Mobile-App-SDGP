@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';
-import 'package:client/util/show_Alert.dart';
+import 'package:client/util/show_alert.dart';
 import 'package:http/http.dart'as http;
 
 class AuthRepository{

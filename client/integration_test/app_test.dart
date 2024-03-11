@@ -1,6 +1,5 @@
 import 'package:client/screens/home_page/home_page.dart';
 import 'package:client/screens/login_page.dart';
-import 'package:client/screens/navigation_bar.dart';
 import 'package:client/screens/notification_page/notification_page.dart';
 import 'package:client/screens/quiz/welcome/welcome_screen.dart';
 import 'package:client/screens/signup_page.dart';
@@ -52,7 +51,7 @@ void main() {
           await widgetTester.pumpAndSettle();
 
           // Verify if the HomePage is pushed after tapping the button
-          expect(find.byType(BottomNavigation), findsOneWidget);
+          expect(find.byType(HomePage), findsOneWidget);
         },
       );
 

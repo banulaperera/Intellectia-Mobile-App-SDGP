@@ -79,6 +79,7 @@ class _TileViewWidgetState extends State<TileViewWidget> {
                                   onPressed: () async {
                                     await NoteRepository()
                                         .deleteNote(note.id.toString());
+                                    if (!context.mounted) return;
                                     Navigator.of(context).pop();
                                   },
                                 ),

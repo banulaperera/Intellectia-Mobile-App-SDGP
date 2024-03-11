@@ -4,7 +4,7 @@ import 'package:client/models/questions.dart';
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';
 import 'package:client/util/refresh_token.dart';
-import 'package:client/util/show_Alert.dart';
+import 'package:client/util/show_alert.dart';
 import 'package:http/http.dart' as http;
 
 class QuizRepository {
