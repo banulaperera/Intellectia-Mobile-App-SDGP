@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="BASE URL ADDED">
+    <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="completed quiz integration">
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/components/body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/components/body.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/components/option.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/components/option.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/score/score_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/score/score_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/quiz_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/quiz_controller.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +27,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;banulaperera&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="c12005b5-20a4-439b-95c1-3afd8d994b10" />
+        <option name="url" value="https://github.com/banulaperera/SDGP_PT_Y3_03_Intellectia.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -45,6 +54,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
@@ -130,12 +140,21 @@
       <option name="project" value="LOCAL" />
       <updated>1709709349248</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="completed quiz integration">
+      <option name="closed" value="true" />
+      <created>1710156548580</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710156548580</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated xml" />
+    <MESSAGE value="completed quiz integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed quiz integration" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="../../../../Desktop/SDGP_PT_Y3_03_Intellectia/client/coverage/lcov.info" NAME="tests in login_page_test.dart Coverage Results" MODIFIED="1709617290812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="FlutterCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
