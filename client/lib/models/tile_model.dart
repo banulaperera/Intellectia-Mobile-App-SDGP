@@ -1,8 +1,8 @@
-import 'package:client/models/note_dto.dart';
+import 'package:client/models/note.dart';
 
 class TileModel {
   final String title;
-  final List<NoteDTO> tiles;
+  final List<Note> tiles;
 
   TileModel({
     required this.title,
