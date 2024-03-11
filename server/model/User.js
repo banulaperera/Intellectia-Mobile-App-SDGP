@@ -1,5 +1,6 @@
 const mongoose=require('mongoose');
-const Note=require('./Note')
+const Note=require('./Note');
+const Notification=require('./Notification');
 
 const userSchema=new mongoose.Schema({
     photo:{type:String,default:''},
@@ -12,8 +13,9 @@ const userSchema=new mongoose.Schema({
     level:{type:Number,default:0},
     totalXP:{type:Number,default:0},
     weeklyXP:{type:[Number],default:[0,0,0,0,0,0,0]},
-    notes:[Note]
+    notes:[Note],
+    notifications:[Notification]
 
-})
+});
 
 module.exports=mongoose.model("User",userSchema);
