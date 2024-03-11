@@ -1,4 +1,5 @@
 import 'package:client/constants.dart';
+import 'package:client/screens/quiz/score/score_screen.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -36,30 +37,34 @@ class QuizScreen extends StatelessWidget {
             ),
           );
         } else {
-          return Scaffold(
-            extendBodyBehindAppBar: true,
-            appBar: AppBar(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              actions: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 20,),
-                  child: TextButton(
-                    onPressed: controller.nextQuestion,
-                    child: const Text(
-                      "Skip",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: kPrimaryColor,
+          if(controller.questionNumber.value != controller.questions.length){
+            return Scaffold(
+              extendBodyBehindAppBar: true,
+              appBar: AppBar(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                actions: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20,),
+                    child: TextButton(
+                      onPressed: controller.nextQuestion,
+                      child: const Text(
+                        "Skip",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: kPrimaryColor,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            body: const Body(<dynamic>{}),
-          );
+                ],
+              ),
+              body: const Body(<dynamic>{}),
+            );
+          }else{
+            return const ScoreScreen();
+          }
         }
       },
     );

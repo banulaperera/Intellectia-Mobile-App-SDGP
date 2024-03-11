@@ -28,6 +28,14 @@ class ScoreScreen extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text(
+                "Well Done!",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(color: Colors.grey.shade600, fontSize: 40, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+              ),
+              const SizedBox(height: 25),
               Lottie.asset(
                 'animations/Animation - 1710146206609.json',
                 height: 250,
@@ -50,7 +58,7 @@ class ScoreScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
-                  "${qnController.correctAns * 20}/${qnController.questions.length * 20}",
+                  "${qnController.numOfCorrectAns * 20}/${qnController.questions.length * 20}",
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
