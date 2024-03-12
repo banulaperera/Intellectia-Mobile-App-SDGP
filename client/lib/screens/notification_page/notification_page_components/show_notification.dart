@@ -10,7 +10,7 @@ class ShowNotification extends StatelessWidget {
     required this.list,
   });
 
-  final List<Notifications> list;
+  final List<NotificationM> list;
 
   @override
   Widget build(BuildContext context) {

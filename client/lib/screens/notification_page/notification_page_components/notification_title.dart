@@ -2,7 +2,7 @@ import 'package:client/models/notification_model.dart';
 import 'package:flutter/Material.dart';
 
 class NotificationTitle extends StatelessWidget {
-  final Notifications notifications;
+  final NotificationM notifications;
 
   const NotificationTitle(this.notifications, {super.key});
 
@@ -12,22 +12,22 @@ class NotificationTitle extends StatelessWidget {
       leading: Container(
         height: 40,
         width: 40,
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
-              image: AssetImage(notifications.path), fit: BoxFit.cover),
+              image: AssetImage(''), fit: BoxFit.cover),
         ),
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            notifications.titleName,
+            notifications.title,
             style: const TextStyle(
                 color: Colors.black, fontWeight: FontWeight.w600),
           ),
           Text(
-            notifications.titleTime,
+            notifications.date.toString(),
             style: const TextStyle(
                 fontSize: 12,
                 color: Colors.black45,
@@ -36,7 +36,7 @@ class NotificationTitle extends StatelessWidget {
         ],
       ),
       subtitle: Text(
-        notifications.description,
+        notifications.body,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
       ),

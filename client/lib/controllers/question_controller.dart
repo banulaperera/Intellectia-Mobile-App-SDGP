@@ -56,7 +56,7 @@ class QuestionController extends GetxController
     _pageController = PageController();
   }
 
-  // // called just before the Controller is deleted from memory
+  // called just before the Controller is deleted from memory
   @override
   void onClose() {
     super.onClose();
