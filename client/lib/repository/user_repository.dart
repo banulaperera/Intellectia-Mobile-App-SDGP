@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:client/models/user_model.dart';
 import 'package:client/util/refresh_token.dart';
 import 'package:http/http.dart' as http;

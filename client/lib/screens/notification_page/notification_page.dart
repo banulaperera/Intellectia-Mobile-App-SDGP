@@ -1,4 +1,5 @@
 import 'package:client/constants.dart';
+import 'package:client/controllers/notification_controller.dart';
 import 'package:client/screens/notification_page/notification_page_components/show_notification.dart';
 import 'package:flutter/Material.dart';
 import '../../models/notification_model.dart';
@@ -11,12 +12,13 @@ class NotificationScreen extends StatefulWidget {
 }
 
 class _NotificationScreenState extends State<NotificationScreen> {
-  List<Notifications> newList = [];
-  List<Notifications> oldList = [];
+  List<NotificationM> newList = [];
+  List<NotificationM> oldList = [];
 
   @override
   void initState() {
-    newList = Notifications.listOfNotifications();
+    //need to modify the function to get the list of notifications
+    newList = NotificationController.listOfNotifications();
     oldList = newList;
     super.initState();
   }
