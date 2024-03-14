@@ -1,11 +1,11 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
-import 'package:client/models/tile_model.dart';
-import 'package:client/models/note.dart';
-import 'package:client/repository/note_repository.dart';
-import 'package:client/screens/home_page/home_page_components/tile_view_widget.dart';
+import 'package:client/controllers/note_controller.dart';
 import 'package:client/screens/home_page/home_page_components/note_editor.dart';
+import 'package:client/screens/home_page/home_page_components/tile_view_widget.dart';
+import 'package:client/util/connection_lost.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,70 +16,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<TileModel> filteredNotes = List.empty(growable: true);
-  List<TileModel> tileList = List.empty(growable: true);
-  String moduleName = '';
-
-  @override
-  void initState() {
-    super.initState();
-    fetchNotes();
-  }
-
-  Future<void> fetchNotes() async {
-    final List<Note> allNotes = await NoteRepository().getAllNotes() ?? [];
-    setState(() {
-      Set<String> uniqueModuleNames = <String>{};
-      for (final note in allNotes) {
-        uniqueModuleNames.add(note.moduleName);
-      }
-      filteredNotes.clear();
-      tileList.clear();
-      for (final moduleName in uniqueModuleNames) {
-        List<Note> moduleNotes =
-            allNotes.where((note) => note.moduleName == moduleName).toList();
-        tileList.add(TileModel(title: moduleName, tiles: moduleNotes));
-      }
-      filteredNotes = tileList;
-    });
-  }
-
-  void search(String text) {
-    setState(() {
-      filteredNotes = tileList
-          .where((tile) =>
-              tile.title.toLowerCase().contains(text.toLowerCase()) ||
-              tile.tiles.any((note) =>
-                  note.content.toLowerCase().contains(text.toLowerCase()) ||
-                  note.title.toLowerCase().contains(text.toLowerCase())))
-          .map((tile) {
-        if (tile.title.toLowerCase().contains(text.toLowerCase())) {
-          return TileModel(
-            title: tile.title,
-            tiles: tile.tiles,
-          );
-        } else {
-          return TileModel(
-            title: tile.title,
-            tiles: tile.tiles
-                .where((note) =>
-                    note.content.toLowerCase().contains(text.toLowerCase()) ||
-                    note.title.toLowerCase().contains(text.toLowerCase()))
-                .toList(),
-          );
-        }
-      }).toList();
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    NoteController noteController = Get.put(NoteController());
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 60, 16, 0),
         child: RefreshIndicator(
           color: kPrimaryColor,
-          onRefresh: fetchNotes,
+          onRefresh: () async {
+            await noteController.fetchNotes();
+          },
           child: Column(
             children: [
               const Text(
@@ -93,7 +40,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
               TextField(
                 key: const Key('searchKey'),
-                onChanged: search,
+                onChanged: noteController.search,
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
                       vertical: 12.0, horizontal: 15),
@@ -111,7 +58,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                 child: FutureBuilder<void>(
-                  future: NoteRepository().getAllNotes(),
+                  future: noteController.fetchNotes(),
                   builder:
                       (BuildContext context, AsyncSnapshot<void> snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
@@ -121,12 +68,14 @@ class _HomePageState extends State<HomePage> {
                         ), // Loading animation
                       );
                     } else if (snapshot.hasError) {
+                      return connectionLost();
+                    } else if (noteController.filteredNotes.isEmpty) {
                       return Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Lottie.asset(
-                            'animations/Animation - 1710141039780.json',
-                            height: 250,
+                            'animations/Animation - 1710410924292.json',
+                            height: 120,
                             reverse: true,
                             repeat: true,
                             animate: true,
@@ -135,9 +84,10 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.all(10),
                             child: Text(
                               textAlign: TextAlign.center,
-                              'Connection Lost',
+                              'No Notes Found',
+                              // 'Add Notes to get started!',
                               style: TextStyle(
-                                color: Colors.grey.shade700,
+                                color: Colors.grey.shade400,
                                 fontSize: 16,
                               ),
                             ),
@@ -145,11 +95,15 @@ class _HomePageState extends State<HomePage> {
                         ],
                       );
                     } else {
-                      return ListView(
-                        padding: const EdgeInsets.only(top: 15),
-                        children: filteredNotes
-                            .map((tile) => TileViewWidget(tile: tile))
-                            .toList(),
+                      return GetBuilder<NoteController>(
+                        builder: (builder) {
+                          return ListView(
+                            padding: const EdgeInsets.only(top: 15),
+                            children: noteController.filteredNotes
+                                .map((tile) => TileViewWidget(tile: tile))
+                                .toList(),
+                          );
+                        },
                       );
                     }
                   },

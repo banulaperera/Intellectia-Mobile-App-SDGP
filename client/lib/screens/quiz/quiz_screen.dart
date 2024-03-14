@@ -1,10 +1,12 @@
 import 'package:client/constants.dart';
+import 'package:client/controllers/question_controller.dart';
 import 'package:client/screens/quiz/score/score_screen.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:client/controllers/question_controller.dart';
 import 'package:lottie/lottie.dart';
+
+import '../../util/connection_lost.dart';
 import 'components/body.dart';
 
 class QuizScreen extends StatelessWidget {
@@ -27,17 +29,48 @@ class QuizScreen extends StatelessWidget {
           );
         } else if (snapshot.hasError) {
           return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+            ),
             body: Center(
-              child: Lottie.asset(
-                'animations/Animation - 1710140302732.json',
-                height: 250,
-                repeat: true,
-                animate: true,
+              child: connectionLost(),
+            ),
+          );
+        } else if (controller.questions.isEmpty) {
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+            ),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Lottie.asset(
+                    'animations/Animation - 1710415777357.json',
+                    height: 350,
+                    reverse: true,
+                    repeat: true,
+                    animate: true,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      'Quiz not available',
+                      style: TextStyle(
+                        color: Colors.grey.shade400,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           );
         } else {
-          if(controller.questionNumber.value != controller.questions.length){
+          if (controller.questionNumber.value != controller.questions.length) {
             return Scaffold(
               extendBodyBehindAppBar: true,
               appBar: AppBar(
@@ -45,7 +78,9 @@ class QuizScreen extends StatelessWidget {
                 elevation: 0,
                 actions: [
                   Padding(
-                    padding: const EdgeInsets.only(right: 20,),
+                    padding: const EdgeInsets.only(
+                      right: 20,
+                    ),
                     child: TextButton(
                       onPressed: controller.nextQuestion,
                       child: const Text(
@@ -62,7 +97,7 @@ class QuizScreen extends StatelessWidget {
               ),
               body: const Body(<dynamic>{}),
             );
-          }else{
+          } else {
             return const ScoreScreen();
           }
         }

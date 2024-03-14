@@ -19,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Spacer(flex:2),
-                  Lottie.asset('animations/Animation - 1709312135816.json', height: 300, reverse: true, repeat: true, animate: true,),
+                  Lottie.asset('animations/Animation - 1710413869166.json', height: 380, reverse: true, repeat: true, animate: true,),
                   const Spacer(), //2/6
                   Text(
                     textAlign: TextAlign.center,
@@ -37,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                       padding:
                           const EdgeInsets.all(kDefaultPadding * 0.75), // 15
                       decoration: BoxDecoration(
-                        color: kPrimaryColor,
+                        color: kPrimaryColor.withOpacity(.8),
                         borderRadius: const BorderRadius.all(Radius.circular(12)),
                           boxShadow: [
                       BoxShadow(
