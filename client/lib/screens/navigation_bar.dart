@@ -16,12 +16,6 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigation extends State<BottomNavigation> {
   int _currentNavigationIndex = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    const HomePage();
-  }
-
   final screens = [
     const HomePage(),
     const WelcomeScreen(),
