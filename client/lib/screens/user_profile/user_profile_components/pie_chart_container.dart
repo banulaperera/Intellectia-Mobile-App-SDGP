@@ -5,12 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PieChartContainer extends StatelessWidget {
-  const PieChartContainer({
+  PieChartContainer({
     super.key,
   });
+  final userProfileController = Get.find<UserProfileController>();
+
   @override
   Widget build(BuildContext context) {
-    var userProfileController = Get.find<UserProfileController>();
     return Container(
       decoration: BoxDecoration(
         border: Border.all(width: 2, color: Colors.black.withOpacity(0.15)),
@@ -28,7 +29,7 @@ class PieChartContainer extends StatelessWidget {
                   fontWeight: FontWeight.w600, color: Colors.grey.shade600),
             ),
           ),
-          const PieChartWidget(),
+          PieChartWidget(),
           const SizedBox(
             height: 20,
           ),

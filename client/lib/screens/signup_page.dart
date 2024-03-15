@@ -1,39 +1,19 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
+import 'package:client/controllers/signup_page_controller.dart';
 import 'package:client/repository/user_repository.dart';
 import 'package:client/screens/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../util/show_alert.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class SignupPage extends StatelessWidget {
+  SignupPage({super.key});
 
-  @override
-  State<SignupPage> createState() => _SignupPageState();
-}
-
-class _SignupPageState extends State<SignupPage> {
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
-  final _confirmPasswordController = TextEditingController();
-  var _isObscured = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _isObscured = true;
-  }
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    _confirmPasswordController.dispose();
-    super.dispose();
-  }
+  final SignupPageController signupPageController = Get.put(SignupPageController());
 
   @override
   Widget build(BuildContext context) {
@@ -62,13 +42,14 @@ class _SignupPageState extends State<SignupPage> {
                     key: const ValueKey('signupEmail'),
                     hintText: 'Email',
                     keyboardType: TextInputType.emailAddress,
-                    controller: _emailController,
+                    controller: signupPageController.emailController,
                   ),
                   const SizedBox(height: 25),
-                  TextField(
-                    controller: _passwordController,
+
+                  Obx(() => TextField(
+                    controller: signupPageController.passwordController,
                     keyboardType: TextInputType.visiblePassword,
-                    obscureText: _isObscured,
+                    obscureText: signupPageController.obscureText,
                     obscuringCharacter: '*',
                     style: const TextStyle(
                       color: Colors.black,
@@ -77,13 +58,11 @@ class _SignupPageState extends State<SignupPage> {
                     decoration: InputDecoration(
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.only(right: 12),
-                        icon: _isObscured
+                        icon: signupPageController.obscureText
                             ? const Icon(BootstrapIcons.eye_fill)
                             : const Icon(BootstrapIcons.eye_slash_fill),
                         onPressed: () {
-                          setState(() {
-                            _isObscured = !_isObscured;
-                          });
+                          signupPageController.isObscureText();
                         },
                       ),
                       hintText: 'Password',
@@ -101,18 +80,18 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide:
-                            const BorderSide(color: kPrimaryColor, width: 2.5),
+                        const BorderSide(color: kPrimaryColor, width: 2.5),
                         borderRadius: BorderRadius.circular(60),
                       ),
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 15, horizontal: 25),
                     ),
-                  ),
+                  ),),
                   const SizedBox(height: 25),
-                  TextField(
-                    controller: _confirmPasswordController,
+                  Obx(() => TextField(
+                    controller: signupPageController.confirmPasswordController,
                     keyboardType: TextInputType.visiblePassword,
-                    obscureText: _isObscured,
+                    obscureText: signupPageController.obscureText,
                     obscuringCharacter: '*',
                     style: const TextStyle(
                       color: Colors.black,
@@ -121,13 +100,11 @@ class _SignupPageState extends State<SignupPage> {
                     decoration: InputDecoration(
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.only(right: 12),
-                        icon: _isObscured
+                        icon: signupPageController.obscureText
                             ? const Icon(BootstrapIcons.eye_fill)
                             : const Icon(BootstrapIcons.eye_slash_fill),
                         onPressed: () {
-                          setState(() {
-                            _isObscured = !_isObscured;
-                          });
+                          signupPageController.isObscureText();
                         },
                       ),
                       hintText: 'Confirm Password',
@@ -145,41 +122,18 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide:
-                            const BorderSide(color: kPrimaryColor, width: 2.5),
+                        const BorderSide(color: kPrimaryColor, width: 2.5),
                         borderRadius: BorderRadius.circular(60),
                       ),
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 15, horizontal: 25),
                     ),
-                  ),
+                  ),),
                   const SizedBox(height: 25),
                   LoginScreenButton(
                     label: 'Sign Up',
-                    onPressed: () async {
-                      if (_passwordController.text.isNotEmpty &&
-                          _emailController.text.isNotEmpty &&
-                          _confirmPasswordController.text.isNotEmpty) {
-                        if (_passwordController.text ==
-                            _confirmPasswordController.text) {
-                          bool pass = await UserRepository().register(
-                              _emailController.text, _passwordController.text);
-                          if (pass) {
-                            if (!context.mounted) return;
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => LoginPage(
-                                  signUpEmail: _emailController.text,
-                                ),
-                              ),
-                            );
-                          }
-                        } else {
-                          showError('Passwords do not match');
-                        }
-                      } else {
-                        showError('Please fill all the fields');
-                      }
+                    onPressed: ()  {
+                      signupPageController.signup(context);
                     },
                   ),
                   const SizedBox(height: 25),
@@ -193,49 +147,6 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 
-  SnackBar showSnackBar() {
-    return SnackBar(
-      content: Container(
-        // padding: EdgeInsets.all(12),
-        height: 60,
-        decoration: const BoxDecoration(
-          color: Color(0xFFC72C41),
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-        ),
-        child: const Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              weight: 150,
-              BootstrapIcons.x_circle,
-              color: Colors.white,
-              size: 25,
-            ),
-            SizedBox(width: 25),
-            Text(
-              'Password miss match',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700),
-            ),
-          ],
-        ),
-      ),
-      // content: AwesomeSnackbarContent(
-      //   title: 'Oops!',
-      //   message: 'Password miss match',
-      //
-      //   /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
-      //   contentType: ContentType.failure,
-      // ),
-      behavior: SnackBarBehavior.floating,
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-    );
-  }
-
   Widget _buildLoginNavigation(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -246,10 +157,7 @@ class _SignupPageState extends State<SignupPage> {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const LoginPage()),
-            );
+            Get.off(LoginPage());
           },
           child: const Text(
             'Login',

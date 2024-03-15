@@ -7,18 +7,16 @@ import 'package:client/screens/user_profile/user_profile_components/user_profile
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+
 import '../../controllers/user_profile_controller.dart';
 import '../../util/connection_lost.dart';
 
-class UserProfile extends StatefulWidget {
-  const UserProfile({super.key});
-  @override
-  State<UserProfile> createState() => _UserProfileState();
-}
+class UserProfile extends StatelessWidget {
+  UserProfile({super.key});
 
-class _UserProfileState extends State<UserProfile> {
-  UserProfileController userProfileController =
+  final UserProfileController userProfileController =
       Get.put(UserProfileController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,11 +39,7 @@ class _UserProfileState extends State<UserProfile> {
             padding: const EdgeInsets.only(right: 10),
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MainSettingPage()),
-                );
+                Get.to(const MainSettingPage());
               },
               child: const Row(
                 children: [
@@ -79,7 +73,7 @@ class _UserProfileState extends State<UserProfile> {
             } else {
               return Column(
                 children: [
-                  const UserProfileHeader(),
+                  UserProfileHeader(),
                   const SizedBox(
                     height: 10,
                   ),
@@ -185,8 +179,8 @@ class _UserProfileState extends State<UserProfile> {
                                   Divider(
                                     color: Colors.black.withOpacity(0.15),
                                   ),
-                                  const Padding(
-                                    padding: EdgeInsets.all(20),
+                                  Padding(
+                                    padding: const EdgeInsets.all(20),
                                     child: SizedBox(
                                       height: 200,
                                       child: BarGraph(),
@@ -198,7 +192,7 @@ class _UserProfileState extends State<UserProfile> {
                             const SizedBox(
                               height: 20,
                             ),
-                            const PieChartContainer(),
+                            PieChartContainer(),
                           ],
                         ),
                       ),

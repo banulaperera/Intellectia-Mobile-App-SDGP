@@ -5,7 +5,21 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
+import '../screens/setting_screen/main_setting_page.dart';
+import '../util/show_Alert.dart';
+
 class UserProfileController extends GetxController {
+  final TextEditingController _existingPasswordController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
+
+  TextEditingController get existingPasswordController => _existingPasswordController;
+  TextEditingController get passwordController => _passwordController;
+  TextEditingController get confirmPasswordController => _confirmPasswordController;
+
+  final RxBool _obscureText = true.obs;
+  bool get obscureText => _obscureText.value;
+
   User _user = User(
     photo: '',
     firstName: '',
@@ -18,6 +32,7 @@ class UserProfileController extends GetxController {
     weeklyXP: [],
   );
   User get user => _user;
+
   BarData _barData = BarData(
     mondayExp: 0,
     tueExp: 0,
@@ -28,10 +43,13 @@ class UserProfileController extends GetxController {
     sunExp: 0,
   );
   BarData get barData => _barData;
+
   double _redValue = 0;
   double _greenValue = 0;
+
   List<PieChartSectionData> _pieChartData = [];
   List<PieChartSectionData> get pieChartData => _pieChartData;
+
   @override
   void onInit() {
     fetchUser();
@@ -39,7 +57,9 @@ class UserProfileController extends GetxController {
   }
 
   Future<void> fetchUser() async {
+
     _user = (await UserRepository().getUserDetails())!;
+
     _barData = BarData(
       mondayExp: _user.weeklyXP[0].toDouble(),
       tueExp: _user.weeklyXP[1].toDouble(),
@@ -50,6 +70,7 @@ class UserProfileController extends GetxController {
       sunExp: _user.weeklyXP[6].toDouble(),
     );
     _barData.initializeBarData();
+
     if (_user.correctedQuestions + _user.inCorrectedQuestions == 0) {
       _redValue = 0;
       _greenValue = 0;
@@ -80,7 +101,34 @@ class UserProfileController extends GetxController {
     update();
   }
 
-  void changePassword(String currentPassword, String password) async {
-    await UserRepository().changeUserPassword(currentPassword, password);
+  void isObscureText() {
+    _obscureText.value = !_obscureText.value;
+  }
+
+  Future<void> changePassword(BuildContext context) async {
+    if (_existingPasswordController.text.isEmpty ||
+        _passwordController.text.isEmpty ||
+        _confirmPasswordController.text.isEmpty) {
+      showError('All fields are required');
+    } else {
+      if (_passwordController.text ==
+          _confirmPasswordController.text) {
+        await UserRepository().changeUserPassword(_existingPasswordController.text, _passwordController.text);
+        _existingPasswordController.clear();
+        _passwordController.clear();
+        _confirmPasswordController.clear();
+        Get.off(() => const MainSettingPage());
+      } else {
+        showError('Passwords do not match');
+      }
+    }
+  }
+
+  @override
+  void onClose() {
+    _existingPasswordController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.onClose();
   }
 }

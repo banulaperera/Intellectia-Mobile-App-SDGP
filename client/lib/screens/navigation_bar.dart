@@ -17,10 +17,10 @@ class _BottomNavigation extends State<BottomNavigation> {
   int _currentNavigationIndex = 0;
 
   final screens = [
-    const HomePage(),
+    HomePage(),
     const WelcomeScreen(),
     const NotificationScreen(),
-    const UserProfile(),
+    UserProfile(),
   ];
 
   @override

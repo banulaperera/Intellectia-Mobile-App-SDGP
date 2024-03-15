@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PieChartWidget extends StatelessWidget {
-  const PieChartWidget({
+  PieChartWidget({
     super.key,
   });
 
+  final userProfileController = Get.find<UserProfileController>();
+
   @override
   Widget build(BuildContext context) {
-    var userProfileController = Get.find<UserProfileController>();
     return GetBuilder<UserProfileController>(builder: (controller){
       return SizedBox(
         height: 280,

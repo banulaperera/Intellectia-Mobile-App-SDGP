@@ -4,10 +4,11 @@ import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
 class BarGraph extends StatelessWidget {
-  const BarGraph({super.key});
+  BarGraph({super.key});
+
+  final userProfileController = Get.find<UserProfileController>();
   @override
   Widget build(BuildContext context) {
-    var userProfileController = Get.find<UserProfileController>();
     return GetBuilder<UserProfileController>(
       init: userProfileController,
       builder: (controller) {
