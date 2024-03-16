@@ -6,12 +6,13 @@ import '../repository/note_repository.dart';
 
 class NoteController extends GetxController {
   List<TileModel> _filteredNotes = List.empty(growable: true);
-
   List<TileModel> get filteredNotes => _filteredNotes;
 
   final List<TileModel> _tileList = List.empty(growable: true);
-
   List<TileModel> get titleList => _tileList;
+
+  List<Note> _allNotes = List.empty(growable: true);
+  List<Note> get allNotes => _allNotes;
 
   @override
   void onInit() {
@@ -20,7 +21,7 @@ class NoteController extends GetxController {
   }
 
   Future<void> fetchNotes() async {
-    final List<Note> allNotes = await NoteRepository().getAllNotes() ?? [];
+    _allNotes = await NoteRepository().getAllNotes() ?? [];
     Set<String> uniqueModuleNames = <String>{};
     for (final note in allNotes) {
       uniqueModuleNames.add(note.moduleName);

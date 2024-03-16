@@ -28,8 +28,8 @@ class User {
       "level": level,
       "correctedQuestions": correctedQuestions,
       "inCorrectedQuestions": inCorrectedQuestions,
-      "totalXp": totalXP,
-      "weeklyXp": weeklyXP,
+      "totalXP": totalXP,
+      "weeklyXP": weeklyXP,
     };
   }
 

@@ -6,14 +6,15 @@ import 'progress_bar.dart';
 import 'question_card.dart';
 
 class Body extends StatelessWidget {
-  const Body(
+   Body(
     Set<Object?> set, {
     super.key,
   });
 
+  final QuestionController questionController = Get.put(QuestionController());
+
   @override
   Widget build(BuildContext context) {
-    QuestionController questionController = Get.put(QuestionController());
     return Stack(
       children: [
         SafeArea(

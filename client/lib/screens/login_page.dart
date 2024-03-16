@@ -111,7 +111,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(SignupPage());
+                      Get.to(()  => SignupPage());
                     },
                     child: const Text(
                       key: Key('signupKey'),

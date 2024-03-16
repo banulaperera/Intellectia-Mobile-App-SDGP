@@ -1,6 +1,6 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/screens/setting_screen/goal_setting.dart';
-import 'package:client/screens/user_profile/user_profile_components/change_password.dart';
+import 'package:client/screens/setting_screen/change_password.dart';
 import 'package:flutter/Material.dart';
 import '../../constants.dart';
 import 'account_setting.dart';

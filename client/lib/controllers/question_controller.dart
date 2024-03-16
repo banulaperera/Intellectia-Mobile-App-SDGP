@@ -1,3 +1,4 @@
+import 'package:client/controllers/user_profile_controller.dart';
 import 'package:client/models/questions.dart';
 import 'package:client/repository/quiz_repository.dart';
 import 'package:client/screens/quiz/score/score_screen.dart';
@@ -59,9 +60,9 @@ class QuestionController extends GetxController
   // called just before the Controller is deleted from memory
   @override
   void onClose() {
-    super.onClose();
     _animationController.dispose();
     _pageController.dispose();
+    super.onClose();
   }
 
   void checkAns(Question question, int selectedIndex) {
@@ -96,7 +97,9 @@ class QuestionController extends GetxController
       _animationController.forward().whenComplete(nextQuestion);
     } else {
       // Get package provide us simple way to navigate another page
-      Get.to(ScoreScreen());
+      var userProfileController = Get.find<UserProfileController>();
+      userProfileController.updateWeeklyXP(_numOfCorrectAns, (5 - _numOfCorrectAns));
+      Get.to(() => ScoreScreen());
     }
   }
 
@@ -104,14 +107,16 @@ class QuestionController extends GetxController
     _questionNumber.value = index + 1;
   }
 
-  fetchQuestions() async {
-    final List<Note> allNotes = await NoteRepository().getAllNotes() ?? [];
+  List<Note> allNotes = [];
+
+  Future<void> fetchQuestions() async {
+    allNotes = await NoteRepository().getAllNotes() ?? [];
     if (allNotes.isNotEmpty) {
       allNotes.sort((a, b) => b.createdDate.compareTo(a.createdDate));
       String latestCreatedDate = allNotes.first.content;
-      _questions = (await QuizRepository().generateQuiz(
-          latestCreatedDate))!
-          .toList();
+      _questions =
+          (await QuizRepository().generateQuiz(latestCreatedDate))!.toList();
     }
+    update();
   }
 }

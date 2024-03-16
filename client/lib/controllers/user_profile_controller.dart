@@ -84,6 +84,7 @@ class UserProfileController extends GetxController {
           100;
       _greenValue = double.parse((_greenValue).toStringAsFixed(1));
     }
+
     _pieChartData = [
       PieChartSectionData(value: _redValue, color: Colors.red, radius: 40),
       PieChartSectionData(value: _greenValue, color: Colors.green, radius: 40),
@@ -130,5 +131,14 @@ class UserProfileController extends GetxController {
     _passwordController.dispose();
     _confirmPasswordController.dispose();
     super.onClose();
+  }
+
+  void updateWeeklyXP(int numberOfCorrectQuestions, int numberOfInCorrectQuestions) {
+    _user.correctedQuestions += numberOfCorrectQuestions;
+    _user.inCorrectedQuestions += numberOfInCorrectQuestions;
+    // _user.weeklyXP[DateTime.now().weekday - 1] += dayXp;
+    // _user.totalXP += dayXp;
+    UserRepository().updateUserDetails(_user);
+    update();
   }
 }

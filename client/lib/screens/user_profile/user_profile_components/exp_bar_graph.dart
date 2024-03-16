@@ -10,7 +10,6 @@ class BarGraph extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<UserProfileController>(
-      init: userProfileController,
       builder: (controller) {
         return BarChart(
           BarChartData(

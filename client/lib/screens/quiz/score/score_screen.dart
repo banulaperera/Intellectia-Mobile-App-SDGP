@@ -1,7 +1,10 @@
+import 'package:client/constants.dart';
 import 'package:client/controllers/question_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+
+import '../../navigation_bar.dart';
 
 class ScoreScreen extends StatelessWidget {
   ScoreScreen({super.key});
@@ -16,7 +19,7 @@ class ScoreScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () => Navigator.pop(context)),
+            onPressed: () => Get.to(() => const BottomNavigation(1))),
       ),
       body: Center(
         child: Column(
@@ -45,7 +48,7 @@ class ScoreScreen extends StatelessWidget {
                   child: CircularProgressIndicator(
                     strokeWidth: 10,
                     value: qnController.numOfCorrectAns / 5,
-                    color: Colors.green,
+                    color: kPrimaryColor,
                     backgroundColor: Colors.grey.shade100,
                   ),
                 ),

@@ -174,7 +174,7 @@ class _CreateNoteState extends State<CreateNote> {
                 noteController.addNote(
                     customerModuleNameController.text, title, content);
               }
-              Get.to(const BottomNavigation());
+              Get.to(() => const BottomNavigation(0));
               // goBackToHomePage(
               //     customerModuleNameController.text, title, content);
             },

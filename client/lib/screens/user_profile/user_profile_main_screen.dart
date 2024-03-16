@@ -39,7 +39,7 @@ class UserProfile extends StatelessWidget {
             padding: const EdgeInsets.only(right: 10),
             child: InkWell(
               onTap: () {
-                Get.to(const MainSettingPage());
+                Get.to(() => const MainSettingPage());
               },
               child: const Row(
                 children: [
@@ -84,7 +84,7 @@ class UserProfile extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              width: 400,
+                              width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                     width: 2,

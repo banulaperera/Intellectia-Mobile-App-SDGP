@@ -10,12 +10,12 @@ import '../../util/connection_lost.dart';
 import 'components/body.dart';
 
 class QuizScreen extends StatelessWidget {
-  const QuizScreen({super.key});
+  QuizScreen({super.key});
+
+  final QuestionController controller = Get.put(QuestionController());
 
   @override
   Widget build(BuildContext context) {
-    QuestionController controller = Get.put(QuestionController());
-
     return FutureBuilder(
       future: controller.fetchQuestions(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -95,7 +95,7 @@ class QuizScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              body: const Body(<dynamic>{}),
+              body: Body(const <dynamic>{}),
             );
           } else {
             return ScoreScreen();

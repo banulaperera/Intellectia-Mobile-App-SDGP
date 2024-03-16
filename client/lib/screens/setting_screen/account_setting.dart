@@ -1,12 +1,10 @@
 import 'dart:typed_data';
-
 import 'package:client/constants.dart';
 import 'package:client/controllers/user_profile_controller.dart';
 import 'package:client/screens/setting_screen/setting_screen_components/input_textfield_widget.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-
 import '../../util/image_picker.dart';
 
 class AccountSetting extends StatefulWidget {
@@ -202,7 +200,6 @@ class _AccountSettingState extends State<AccountSetting> {
         if (text == 'CANCEL') {
           Navigator.pop(context);
         } else {
-          final userProfileController = Get.find<UserProfileController>();
           userProfileController.updateUser(firstNameController.text,
               lastNameController.text, emailController.text);
           Navigator.pop(context);

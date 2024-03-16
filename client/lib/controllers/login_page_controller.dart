@@ -19,7 +19,7 @@ class LoginPageController extends GetxController {
       _passwordController.text,
     );
     if (pass) {
-      Get.offAll(const BottomNavigation());
+      Get.offAll(() => const BottomNavigation(0));
     }
   }
 

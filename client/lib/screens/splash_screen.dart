@@ -58,7 +58,7 @@ class SplashScreen extends StatelessWidget {
                   FittedBox(
                     child: GestureDetector(
                       onTap: () {
-                        Get.to(LoginPage());
+                        Get.to(() => LoginPage());
                       },
                       child: Container(
                         margin: const EdgeInsets.only(bottom: 70),

@@ -1,12 +1,10 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:client/controllers/signup_page_controller.dart';
-import 'package:client/repository/user_repository.dart';
 import 'package:client/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../util/show_alert.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
@@ -157,7 +155,7 @@ class SignupPage extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Get.off(LoginPage());
+            Get.off(() => LoginPage());
           },
           child: const Text(
             'Login',
