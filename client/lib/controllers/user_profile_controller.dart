@@ -4,8 +4,6 @@ import 'package:client/repository/user_repository.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
-
-import '../screens/setting_screen/main_setting_page.dart';
 import '../util/show_Alert.dart';
 
 class UserProfileController extends GetxController {
@@ -50,6 +48,11 @@ class UserProfileController extends GetxController {
   List<PieChartSectionData> _pieChartData = [];
   List<PieChartSectionData> get pieChartData => _pieChartData;
 
+  int _xpDifference = 0;
+
+  String _xpDifferenceText = '';
+  String get xpDifferenceText => _xpDifferenceText;
+
   @override
   void onInit() {
     fetchUser();
@@ -89,6 +92,14 @@ class UserProfileController extends GetxController {
       PieChartSectionData(value: _redValue, color: Colors.red, radius: 40),
       PieChartSectionData(value: _greenValue, color: Colors.green, radius: 40),
     ];
+
+    _xpDifference = (_user.weeklyXP[DateTime.now().weekday]) - (_user.weeklyXP[DateTime.now().weekday - 1]);
+    if(_xpDifference < 0) {
+      int positiveValue = _xpDifference.abs();
+      _xpDifferenceText = 'You lost $positiveValue XP than yesterday';
+    }else{
+      _xpDifferenceText = 'You have gain $_xpDifference XP than yesterday';
+    }
     update();
   }
 
@@ -118,7 +129,9 @@ class UserProfileController extends GetxController {
         _existingPasswordController.clear();
         _passwordController.clear();
         _confirmPasswordController.clear();
-        Get.off(() => const MainSettingPage());
+        if (Get.context != null && Get.context!.mounted) {
+          Get.back();
+        }
       } else {
         showError('Passwords do not match');
       }
@@ -133,11 +146,11 @@ class UserProfileController extends GetxController {
     super.onClose();
   }
 
-  void updateWeeklyXP(int numberOfCorrectQuestions, int numberOfInCorrectQuestions) {
+  void updateWeeklyXP(int numberOfCorrectQuestions, int numberOfInCorrectQuestions, int dayXp) {
     _user.correctedQuestions += numberOfCorrectQuestions;
     _user.inCorrectedQuestions += numberOfInCorrectQuestions;
-    // _user.weeklyXP[DateTime.now().weekday - 1] += dayXp;
-    // _user.totalXP += dayXp;
+    _user.weeklyXP[DateTime.now().weekday] += dayXp;
+    _user.totalXP += dayXp;
     UserRepository().updateUserDetails(_user);
     update();
   }

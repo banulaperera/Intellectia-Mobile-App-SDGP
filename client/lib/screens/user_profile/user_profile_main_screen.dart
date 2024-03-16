@@ -113,10 +113,9 @@ class UserProfile extends StatelessWidget {
                                   GetBuilder<UserProfileController>(
                                     builder: (controller) {
                                       return SizedBox(
-                                        width: 100,
                                         child: Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                              MainAxisAlignment.center,
                                           children: [
                                             Lottie.asset(
                                               'animations/Animation - 1709314319942.json',
@@ -145,32 +144,40 @@ class UserProfile extends StatelessWidget {
                                   ),
                                   GetBuilder<UserProfileController>(
                                     builder: (controller) {
-                                      return RichText(
-                                        text: TextSpan(
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyLarge!
-                                                .copyWith(
-                                                    color:
-                                                        Colors.grey.shade700),
-                                            children: [
-                                              const TextSpan(
-                                                  text: 'You have gain '),
-                                              TextSpan(
-                                                  text: '4000 Xp',
-                                                  // text: controller.user.weeklyXP.length > 0 ? (controller.user.weeklyXP[6] - controller.user.weeklyXP[5]).toString() : '0',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .titleMedium!
-                                                      .copyWith(
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                          color: Colors
-                                                              .grey.shade700)),
-                                              const TextSpan(
-                                                  text: ' than yesterday.'),
-                                            ]),
+                                      return Text(
+                                        userProfileController.xpDifferenceText,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge!
+                                            .copyWith(
+                                                color: Colors.grey.shade700),
                                       );
+                                      // return RichText(
+                                      //   text: TextSpan(
+                                      //       style: Theme.of(context)
+                                      //           .textTheme
+                                      //           .bodyLarge!
+                                      //           .copyWith(
+                                      //               color:
+                                      //                   Colors.grey.shade700),
+                                      //       children: [
+                                      //         const TextSpan(
+                                      //             text: 'You have gain '),
+                                      //         TextSpan(
+                                      //             text: '4000 Xp',
+                                      //             // text: controller.user.weeklyXP.length > 0 ? (controller.user.weeklyXP[6] - controller.user.weeklyXP[5]).toString() : '0',
+                                      //             style: Theme.of(context)
+                                      //                 .textTheme
+                                      //                 .titleMedium!
+                                      //                 .copyWith(
+                                      //                     fontWeight:
+                                      //                         FontWeight.w700,
+                                      //                     color: Colors
+                                      //                         .grey.shade700)),
+                                      //         const TextSpan(
+                                      //             text: ' than yesterday.'),
+                                      //       ]),
+                                      // );
                                     },
                                   ),
                                   const SizedBox(
@@ -182,7 +189,7 @@ class UserProfile extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(20),
                                     child: SizedBox(
-                                      height: 200,
+                                      height: 250,
                                       child: BarGraph(),
                                     ),
                                   )

@@ -24,7 +24,7 @@ class PieChartContainer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Text(
-              'Your Progress',
+              'Monthly Progress',
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   fontWeight: FontWeight.w600, color: Colors.grey.shade600),
             ),
