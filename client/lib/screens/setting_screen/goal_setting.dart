@@ -2,10 +2,6 @@ import 'package:client/constants.dart';
 import 'package:client/screens/home_page/home_page.dart';
 import 'package:client/screens/user_profile/user_profile_main_screen.dart';
 import 'package:flutter/Material.dart';
-// import 'package:get/get.dart';
-// import 'package:intl/intl.dart';
-// import 'package:flutter/foundation.dart';
-// import 'package:intl/intl.dart';
 
 class GoalSetting extends StatefulWidget {
   const GoalSetting({super.key});
@@ -230,7 +226,7 @@ class _GoalSettingState extends State<GoalSetting> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (_) => const UserProfile()),
+                              builder: (_) => UserProfile()),
                         );
                       },
                       style: TextButton.styleFrom(
@@ -241,7 +237,7 @@ class _GoalSettingState extends State<GoalSetting> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (_) => const HomePage()),
+                          MaterialPageRoute(builder: (_) => HomePage()),
                         );
                       },
                       style: TextButton.styleFrom(

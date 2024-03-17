@@ -7,12 +7,13 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:lottie/lottie.dart';
 
 class UserProfileHeader extends StatelessWidget {
-  const UserProfileHeader({
+  UserProfileHeader({
     super.key,
   });
+
+  final userProfileController = Get.find<UserProfileController>();
   @override
   Widget build(BuildContext context) {
-    final userProfileController = Get.find<UserProfileController>();
     return Container(
       width: double.infinity,
       height: 200,

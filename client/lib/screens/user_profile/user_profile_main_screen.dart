@@ -7,18 +7,16 @@ import 'package:client/screens/user_profile/user_profile_components/user_profile
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+
 import '../../controllers/user_profile_controller.dart';
 import '../../util/connection_lost.dart';
 
-class UserProfile extends StatefulWidget {
-  const UserProfile({super.key});
-  @override
-  State<UserProfile> createState() => _UserProfileState();
-}
+class UserProfile extends StatelessWidget {
+  UserProfile({super.key});
 
-class _UserProfileState extends State<UserProfile> {
-  UserProfileController userProfileController =
+  final UserProfileController userProfileController =
       Get.put(UserProfileController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,11 +39,7 @@ class _UserProfileState extends State<UserProfile> {
             padding: const EdgeInsets.only(right: 10),
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MainSettingPage()),
-                );
+                Get.to(() => const MainSettingPage());
               },
               child: const Row(
                 children: [
@@ -79,7 +73,7 @@ class _UserProfileState extends State<UserProfile> {
             } else {
               return Column(
                 children: [
-                  const UserProfileHeader(),
+                  UserProfileHeader(),
                   const SizedBox(
                     height: 10,
                   ),
@@ -90,7 +84,7 @@ class _UserProfileState extends State<UserProfile> {
                         child: Column(
                           children: [
                             Container(
-                              width: 400,
+                              width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                     width: 2,
@@ -119,10 +113,9 @@ class _UserProfileState extends State<UserProfile> {
                                   GetBuilder<UserProfileController>(
                                     builder: (controller) {
                                       return SizedBox(
-                                        width: 100,
                                         child: Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                              MainAxisAlignment.center,
                                           children: [
                                             Lottie.asset(
                                               'animations/Animation - 1709314319942.json',
@@ -151,32 +144,40 @@ class _UserProfileState extends State<UserProfile> {
                                   ),
                                   GetBuilder<UserProfileController>(
                                     builder: (controller) {
-                                      return RichText(
-                                        text: TextSpan(
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyLarge!
-                                                .copyWith(
-                                                    color:
-                                                        Colors.grey.shade700),
-                                            children: [
-                                              const TextSpan(
-                                                  text: 'You have gain '),
-                                              TextSpan(
-                                                  text: '4000 Xp',
-                                                  // text: controller.user.weeklyXP.length > 0 ? (controller.user.weeklyXP[6] - controller.user.weeklyXP[5]).toString() : '0',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .titleMedium!
-                                                      .copyWith(
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                          color: Colors
-                                                              .grey.shade700)),
-                                              const TextSpan(
-                                                  text: ' than yesterday.'),
-                                            ]),
+                                      return Text(
+                                        userProfileController.xpDifferenceText,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge!
+                                            .copyWith(
+                                                color: Colors.grey.shade700),
                                       );
+                                      // return RichText(
+                                      //   text: TextSpan(
+                                      //       style: Theme.of(context)
+                                      //           .textTheme
+                                      //           .bodyLarge!
+                                      //           .copyWith(
+                                      //               color:
+                                      //                   Colors.grey.shade700),
+                                      //       children: [
+                                      //         const TextSpan(
+                                      //             text: 'You have gain '),
+                                      //         TextSpan(
+                                      //             text: '4000 Xp',
+                                      //             // text: controller.user.weeklyXP.length > 0 ? (controller.user.weeklyXP[6] - controller.user.weeklyXP[5]).toString() : '0',
+                                      //             style: Theme.of(context)
+                                      //                 .textTheme
+                                      //                 .titleMedium!
+                                      //                 .copyWith(
+                                      //                     fontWeight:
+                                      //                         FontWeight.w700,
+                                      //                     color: Colors
+                                      //                         .grey.shade700)),
+                                      //         const TextSpan(
+                                      //             text: ' than yesterday.'),
+                                      //       ]),
+                                      // );
                                     },
                                   ),
                                   const SizedBox(
@@ -185,10 +186,10 @@ class _UserProfileState extends State<UserProfile> {
                                   Divider(
                                     color: Colors.black.withOpacity(0.15),
                                   ),
-                                  const Padding(
-                                    padding: EdgeInsets.all(20),
+                                  Padding(
+                                    padding: const EdgeInsets.all(20),
                                     child: SizedBox(
-                                      height: 200,
+                                      height: 250,
                                       child: BarGraph(),
                                     ),
                                   )
@@ -198,7 +199,7 @@ class _UserProfileState extends State<UserProfile> {
                             const SizedBox(
                               height: 20,
                             ),
-                            const PieChartContainer(),
+                            PieChartContainer(),
                           ],
                         ),
                       ),

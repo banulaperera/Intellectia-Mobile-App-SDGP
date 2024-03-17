@@ -1,12 +1,10 @@
 import 'dart:typed_data';
-
 import 'package:client/constants.dart';
 import 'package:client/controllers/user_profile_controller.dart';
 import 'package:client/screens/setting_screen/setting_screen_components/input_textfield_widget.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-
 import '../../util/image_picker.dart';
 
 class AccountSetting extends StatefulWidget {
@@ -20,9 +18,6 @@ class _AccountSettingState extends State<AccountSetting> {
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-  TextEditingController existingPasswordController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController confirmPasswordController = TextEditingController();
 
   Uint8List? _image;
 
@@ -38,16 +33,13 @@ class _AccountSettingState extends State<AccountSetting> {
     firstNameController.dispose();
     lastNameController.dispose();
     emailController.dispose();
-    existingPasswordController.dispose();
-    passwordController.dispose();
-    confirmPasswordController.dispose();
     super.dispose();
   }
 
+  final userProfileController = Get.find<UserProfileController>();
+
   @override
   Widget build(BuildContext context) {
-    UserProfileController userProfileController =
-        Get.put(UserProfileController());
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.black,
@@ -80,50 +72,52 @@ class _AccountSettingState extends State<AccountSetting> {
                   children: [
                     _image != null
                         ? Container(
-                      width: 180,
-                      height: 180,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            width: 4,
-                            color: Theme.of(context).scaffoldBackgroundColor),
-                        boxShadow: [
-                          BoxShadow(
-                            spreadRadius: 2,
-                            blurRadius: 10,
-                            color: Colors.black.withOpacity(0.1),
-                            offset: const Offset(0, 10),
-                          ),
-                        ],
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: MemoryImage(_image!),
-                        ),
-                      ),
-                    )
+                            width: 180,
+                            height: 180,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  width: 4,
+                                  color: Theme.of(context)
+                                      .scaffoldBackgroundColor),
+                              boxShadow: [
+                                BoxShadow(
+                                  spreadRadius: 2,
+                                  blurRadius: 10,
+                                  color: Colors.black.withOpacity(0.1),
+                                  offset: const Offset(0, 10),
+                                ),
+                              ],
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: MemoryImage(_image!),
+                              ),
+                            ),
+                          )
                         : Container(
-                      width: 180,
-                      height: 180,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            width: 4,
-                            color: Theme.of(context).scaffoldBackgroundColor),
-                        boxShadow: [
-                          BoxShadow(
-                            spreadRadius: 2,
-                            blurRadius: 10,
-                            color: Colors.black.withOpacity(0.1),
-                            offset: const Offset(0, 10),
+                            width: 180,
+                            height: 180,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  width: 4,
+                                  color: Theme.of(context)
+                                      .scaffoldBackgroundColor),
+                              boxShadow: [
+                                BoxShadow(
+                                  spreadRadius: 2,
+                                  blurRadius: 10,
+                                  color: Colors.black.withOpacity(0.1),
+                                  offset: const Offset(0, 10),
+                                ),
+                              ],
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                    userProfileController.user.photo,
+                                  )),
+                            ),
                           ),
-                        ],
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage(
-                              userProfileController.user.photo,
-                            )),
-                      ),
-                    ),
                     Positioned(
                       bottom: 0,
                       right: 0,
@@ -134,7 +128,9 @@ class _AccountSettingState extends State<AccountSetting> {
                           width: 40,
                           decoration: BoxDecoration(
                             border: Border.all(
-                                width: 4, color: Theme.of(context).scaffoldBackgroundColor),
+                                width: 4,
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor),
                             shape: BoxShape.circle,
                             color: kPrimaryColor,
                           ),
@@ -204,7 +200,6 @@ class _AccountSettingState extends State<AccountSetting> {
         if (text == 'CANCEL') {
           Navigator.pop(context);
         } else {
-          final userProfileController = Get.find<UserProfileController>();
           userProfileController.updateUser(firstNameController.text,
               lastNameController.text, emailController.text);
           Navigator.pop(context);

@@ -8,17 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePage extends StatelessWidget {
+  HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
+  final NoteController noteController = Get.put(NoteController());
 
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    NoteController noteController = Get.put(NoteController());
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 60, 16, 0),

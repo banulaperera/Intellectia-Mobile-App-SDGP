@@ -1,6 +1,7 @@
 import 'package:client/constants.dart';
 import 'package:client/screens/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -57,14 +58,7 @@ class SplashScreen extends StatelessWidget {
                   FittedBox(
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const LoginPage();
-                            },
-                          ),
-                        );
+                        Get.to(() => LoginPage());
                       },
                       child: Container(
                         margin: const EdgeInsets.only(bottom: 70),

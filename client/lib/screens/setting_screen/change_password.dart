@@ -4,34 +4,14 @@ import 'package:client/controllers/user_profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../util/show_Alert.dart';
-import '../../setting_screen/main_setting_page.dart';
+class ChangePassword extends StatelessWidget {
+  ChangePassword({super.key});
 
-class ChangePassword extends StatefulWidget {
-  const ChangePassword({super.key});
 
-  @override
-  State<ChangePassword> createState() => _ChangePasswordState();
-}
-
-class _ChangePasswordState extends State<ChangePassword> {
-  bool _isObscured = true;
-
-  TextEditingController existingPasswordController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController confirmPasswordController = TextEditingController();
-
-  @override
-  void dispose() {
-    existingPasswordController.dispose();
-    passwordController.dispose();
-    confirmPasswordController.dispose();
-    super.dispose();
-  }
+  final userProfileController = Get.find<UserProfileController>();
 
   @override
   Widget build(BuildContext context) {
-    final userProfileController = Get.find<UserProfileController>();
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0,
@@ -68,27 +48,23 @@ class _ChangePasswordState extends State<ChangePassword> {
             ),
             SizedBox(
               height: 70,
-              child: TextFormField(
-                controller: existingPasswordController,
+              child: Obx(() => TextFormField(
+                controller: userProfileController.existingPasswordController,
                 style: const TextStyle(color: Colors.black),
-                obscureText: _isObscured,
+                obscureText: userProfileController.obscureText,
                 decoration: InputDecoration(
                   helperText: 'Enter your current password',
                   helperStyle: const TextStyle(fontSize: 14),
                   suffixIcon: IconButton(
-                    icon: _isObscured
+                    icon: userProfileController.obscureText
                         ? const Icon(BootstrapIcons.eye_fill)
                         : const Icon(BootstrapIcons.eye_slash_fill),
                     onPressed: () {
-                      setState(
-                        () {
-                          _isObscured = !_isObscured;
-                        },
-                      );
+                      userProfileController.isObscureText();
                     },
                   ),
                 ),
-              ),
+              ),)
             ),
             const SizedBox(
               height: 16,
@@ -102,24 +78,22 @@ class _ChangePasswordState extends State<ChangePassword> {
             ),
             SizedBox(
               height: 70,
-              child: TextFormField(
-                controller: passwordController,
+              child: Obx(() => TextFormField(
+                controller: userProfileController.passwordController,
                 style: const TextStyle(color: Colors.black),
-                obscureText: _isObscured,
+                obscureText: userProfileController.obscureText,
                 decoration: InputDecoration(
                   helperText: 'Must be at least 8 characters.',
                   helperStyle: const TextStyle(fontSize: 14),
                   suffixIcon: IconButton(
-                      icon: _isObscured
+                      icon: userProfileController.obscureText
                           ? const Icon(BootstrapIcons.eye_fill)
                           : const Icon(BootstrapIcons.eye_slash_fill),
                       onPressed: () {
-                        setState(() {
-                          _isObscured = !_isObscured;
-                        });
+                        userProfileController.isObscureText();
                       }),
                 ),
-              ),
+              ),)
             ),
             const SizedBox(
               height: 16,
@@ -133,24 +107,22 @@ class _ChangePasswordState extends State<ChangePassword> {
             ),
             SizedBox(
               height: 70,
-              child: TextFormField(
-                controller: confirmPasswordController,
+              child: Obx(() => TextFormField(
+                controller: userProfileController.confirmPasswordController,
                 style: const TextStyle(color: Colors.black),
-                obscureText: _isObscured,
+                obscureText: userProfileController.obscureText,
                 decoration: InputDecoration(
                   helperText: 'Both passwords must match.',
                   helperStyle: const TextStyle(fontSize: 14),
                   suffixIcon: IconButton(
-                      icon: _isObscured
+                      icon: userProfileController.obscureText
                           ? const Icon(BootstrapIcons.eye_fill)
                           : const Icon(BootstrapIcons.eye_slash_fill),
                       onPressed: () {
-                        setState(() {
-                          _isObscured = !_isObscured;
-                        });
+                        userProfileController.isObscureText();
                       }),
                 ),
-              ),
+              ),)
             ),
             const SizedBox(
               height: 40,
@@ -160,21 +132,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 backgroundColor: kPrimaryColor,
               ),
               onPressed: () {
-                if (existingPasswordController.text.isEmpty ||
-                    passwordController.text.isEmpty ||
-                    confirmPasswordController.text.isEmpty) {
-                  showError('All fields are required');
-                } else {
-                  if (passwordController.text ==
-                      confirmPasswordController.text) {
-                    userProfileController.changePassword(
-                        existingPasswordController.text,
-                        passwordController.text);
-                    Get.to(() => const MainSettingPage());
-                  } else {
-                    showError('Passwords do not match');
-                  }
-                }
+                userProfileController.changePassword(context);
               },
               child: const Text(
                 'Change Password',
