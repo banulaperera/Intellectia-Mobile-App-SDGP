@@ -61,43 +61,43 @@ Widget getBottomTiles(double value, TitleMeta titleMeta) {
   switch (value.toInt()) {
     case 1:
       text = Text(
-        'S',
+        'Mo',
         style: style,
       );
       break;
     case 2:
       text = Text(
-        'M',
+        'Tu',
         style: style,
       );
       break;
     case 3:
       text = Text(
-        'T',
+        'We',
         style: style,
       );
       break;
     case 4:
       text = Text(
-        'W',
+        'Th',
         style: style,
       );
       break;
     case 5:
       text = Text(
-        'T',
+        'Fr',
         style: style,
       );
       break;
     case 6:
       text = Text(
-        'F',
+        'Sa',
         style: style,
       );
       break;
     case 7:
       text = Text(
-        'S',
+        'Su',
         style: style,
       );
       break;

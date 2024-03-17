@@ -93,7 +93,7 @@ class UserProfileController extends GetxController {
       PieChartSectionData(value: _greenValue, color: Colors.green, radius: 40),
     ];
 
-    _xpDifference = (_user.weeklyXP[DateTime.now().weekday]) - (_user.weeklyXP[DateTime.now().weekday - 1]);
+    _xpDifference = (_user.weeklyXP[DateTime.now().weekday - 1]) - (_user.weeklyXP[DateTime.now().weekday - 2]);
     if(_xpDifference < 0) {
       int positiveValue = _xpDifference.abs();
       _xpDifferenceText = 'You lost $positiveValue XP than yesterday';
@@ -149,7 +149,7 @@ class UserProfileController extends GetxController {
   void updateWeeklyXP(int numberOfCorrectQuestions, int numberOfInCorrectQuestions, int dayXp) {
     _user.correctedQuestions += numberOfCorrectQuestions;
     _user.inCorrectedQuestions += numberOfInCorrectQuestions;
-    _user.weeklyXP[DateTime.now().weekday] += dayXp;
+    _user.weeklyXP[DateTime.now().weekday - 1] += dayXp;
     _user.totalXP += dayXp;
     UserRepository().updateUserDetails(_user);
     update();
