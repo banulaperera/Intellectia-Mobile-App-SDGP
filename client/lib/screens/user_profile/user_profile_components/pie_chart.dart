@@ -8,10 +8,10 @@ class PieChartWidget extends StatelessWidget {
     super.key,
   });
 
-  final userProfileController = Get.find<UserProfileController>();
 
   @override
   Widget build(BuildContext context) {
+    final userProfileController = Get.find<UserProfileController>();
     return GetBuilder<UserProfileController>(builder: (controller){
       return SizedBox(
         height: 280,

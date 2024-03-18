@@ -11,9 +11,9 @@ class UserProfileHeader extends StatelessWidget {
     super.key,
   });
 
-  final userProfileController = Get.find<UserProfileController>();
   @override
   Widget build(BuildContext context) {
+    final userProfileController = Get.find<UserProfileController>();
     return Container(
       width: double.infinity,
       height: 200,
