@@ -4,5 +4,6 @@ module.exports=new mongoose.Schema({
     title:{type:String},
     body:{type:String},
     type:{type:String},
-    date:{type:Date}
+    date:{type:Date},
+    link:{type:String,default:''}
 });
