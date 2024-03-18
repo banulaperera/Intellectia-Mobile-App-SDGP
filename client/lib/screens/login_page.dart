@@ -1,39 +1,16 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/screens/navigation_bar.dart';
+import 'package:client/controllers/login_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:client/constants.dart';
 import 'package:client/screens/signup_page.dart';
+import 'package:get/get.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
-import 'package:client/repository/user_repository.dart';
 
-class LoginPage extends StatefulWidget {
-  final String? signUpEmail;
+class LoginPage extends StatelessWidget {
+   LoginPage({super.key});
 
-  const LoginPage({super.key, this.signUpEmail});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  TextEditingController _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
-  var _isObscured = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _isObscured = true;
-    _emailController = TextEditingController(text: widget.signUpEmail);
-  }
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
+  final LoginPageController loginPageController = Get.put(LoginPageController());
 
   @override
   Widget build(BuildContext context) {
@@ -56,13 +33,14 @@ class _LoginPageState extends State<LoginPage> {
                 key: const Key('username'),
                 hintText: 'Email',
                 keyboardType: TextInputType.emailAddress,
-                controller: _emailController,
+                controller: loginPageController.emailController,
               ),
               const SizedBox(height: 25),
-              TextField(
+
+              Obx(() => TextField(
                 key: const Key('password'),
-                controller: _passwordController,
-                obscureText: _isObscured,
+                controller: loginPageController.passwordController,
+                obscureText: loginPageController.obscureText,
                 obscuringCharacter: '*',
                 style: const TextStyle(
                   color: Colors.black,
@@ -71,13 +49,11 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: InputDecoration(
                   suffixIcon: IconButton(
                     padding: const EdgeInsets.only(right: 12),
-                    icon: _isObscured
+                    icon: loginPageController.obscureText
                         ? const Icon(BootstrapIcons.eye_fill)
                         : const Icon(BootstrapIcons.eye_slash_fill),
                     onPressed: () {
-                      setState(() {
-                        _isObscured = !_isObscured;
-                      });
+                      loginPageController.isObscureText();
                     },
                   ),
                   hintText: 'Password',
@@ -95,13 +71,14 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide:
-                        const BorderSide(color: kPrimaryColor, width: 2.5),
+                    const BorderSide(color: kPrimaryColor, width: 2.5),
                     borderRadius: BorderRadius.circular(60),
                   ),
                   contentPadding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                  const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                 ),
-              ),
+              ),),
+
               Padding(
                 padding: const EdgeInsets.only(top: 15, bottom: 50),
                 child: GestureDetector(
@@ -120,17 +97,8 @@ class _LoginPageState extends State<LoginPage> {
               LoginScreenButton(
                 key: const Key('loginKey'),
                 label: 'Login',
-                onPressed: () async {
-                  bool pass = await UserRepository()
-                      .signIn(_emailController.text, _passwordController.text);
-                  if (pass) {
-                    if (!context.mounted) return;
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const BottomNavigation()),
-                    );
-                  }
+                onPressed: () {
+                  loginPageController.signIn(context);
                 },
               ),
               const SizedBox(height: 60),
@@ -142,12 +110,8 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(fontSize: 16),
                   ),
                   GestureDetector(
-                    onTap: () async {
-                      await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignupPage()),
-                      );
+                    onTap: () {
+                      Get.to(()  => SignupPage());
                     },
                     child: const Text(
                       key: Key('signupKey'),

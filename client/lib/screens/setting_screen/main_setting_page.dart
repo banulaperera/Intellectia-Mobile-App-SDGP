@@ -1,18 +1,13 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/screens/setting_screen/goal_setting.dart';
+import 'package:client/screens/setting_screen/change_password.dart';
 import 'package:flutter/Material.dart';
-
 import '../../constants.dart';
 import 'account_setting.dart';
 
-class MainSettingPage extends StatefulWidget {
+class MainSettingPage extends StatelessWidget {
   const MainSettingPage({super.key});
 
-  @override
-  State<MainSettingPage> createState() => _MainSettingPageState();
-}
-
-class _MainSettingPageState extends State<MainSettingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +58,7 @@ class _MainSettingPageState extends State<MainSettingPage> {
             buildAccountSettingOption(
                 context, 'Edit Profile', const AccountSetting()),
             buildAccountSettingOption(
-                context, 'Change Password', const AccountSetting()),
+                context, 'Change Password', ChangePassword()),
             buildAccountSettingOption(
                 context, 'Goal setting', const GoalSetting()),
             buildAccountSettingOption(

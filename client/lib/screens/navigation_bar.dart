@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'notification_page/notification_page.dart';
 
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({super.key});
+  final int screenNumber;
+  const BottomNavigation(this.screenNumber, {super.key});
 
   @override
   State<BottomNavigation> createState() => _BottomNavigation();
@@ -16,17 +17,17 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigation extends State<BottomNavigation> {
   int _currentNavigationIndex = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    const HomePage();
-  }
+@override
+void initState() {
+  super.initState();
+  _currentNavigationIndex = widget.screenNumber;
+}
 
   final screens = [
-    const HomePage(),
+    HomePage(),
     const WelcomeScreen(),
     const NotificationScreen(),
-    const UserProfile(),
+    UserProfile(),
   ];
 
   @override

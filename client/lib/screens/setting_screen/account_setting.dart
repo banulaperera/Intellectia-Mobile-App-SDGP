@@ -1,8 +1,11 @@
+import 'dart:typed_data';
 import 'package:client/constants.dart';
+import 'package:client/controllers/user_profile_controller.dart';
 import 'package:client/screens/setting_screen/setting_screen_components/input_textfield_widget.dart';
-import 'package:client/screens/setting_screen/setting_screen_components/profile_image.dart';
-import 'package:client/screens/user_profile/user_profile_main_screen.dart';
 import 'package:flutter/Material.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import '../../util/image_picker.dart';
 
 class AccountSetting extends StatefulWidget {
   const AccountSetting({super.key});
@@ -12,6 +15,29 @@ class AccountSetting extends StatefulWidget {
 }
 
 class _AccountSettingState extends State<AccountSetting> {
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+
+  Uint8List? _image;
+
+  void selectImage() async {
+    Uint8List img = await pickImage(ImageSource.gallery);
+    setState(() {
+      _image = img;
+    });
+  }
+
+  @override
+  void dispose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
+    emailController.dispose();
+    super.dispose();
+  }
+
+  final userProfileController = Get.find<UserProfileController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,44 +67,113 @@ class _AccountSettingState extends State<AccountSetting> {
           },
           child: ListView(
             children: [
-              const Center(
-                child: ProfileImage(),
+              Center(
+                child: Stack(
+                  children: [
+                    _image != null
+                        ? Container(
+                            width: 180,
+                            height: 180,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  width: 4,
+                                  color: Theme.of(context)
+                                      .scaffoldBackgroundColor),
+                              boxShadow: [
+                                BoxShadow(
+                                  spreadRadius: 2,
+                                  blurRadius: 10,
+                                  color: Colors.black.withOpacity(0.1),
+                                  offset: const Offset(0, 10),
+                                ),
+                              ],
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: MemoryImage(_image!),
+                              ),
+                            ),
+                          )
+                        : Container(
+                            width: 180,
+                            height: 180,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  width: 4,
+                                  color: Theme.of(context)
+                                      .scaffoldBackgroundColor),
+                              boxShadow: [
+                                BoxShadow(
+                                  spreadRadius: 2,
+                                  blurRadius: 10,
+                                  color: Colors.black.withOpacity(0.1),
+                                  offset: const Offset(0, 10),
+                                ),
+                              ],
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                    userProfileController.user.photo,
+                                  )),
+                            ),
+                          ),
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: InkWell(
+                        onTap: selectImage,
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                width: 4,
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor),
+                            shape: BoxShape.circle,
+                            color: kPrimaryColor,
+                          ),
+                          child: Icon(
+                            Icons.add_a_photo,
+                            size: 17,
+                            color: Theme.of(context).scaffoldBackgroundColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 60,
+              ),
+              InputTextField(
+                controller: firstNameController,
+                labelText: 'First Name',
+                hintText: userProfileController.user.firstName,
+                obscuredProperty: false,
               ),
               const SizedBox(
                 height: 35,
               ),
-              const InputTextField(
-                labelText: 'First Name',
-                hintText: 'Banula',
-                obscuredProperty: false,
-              ),
-              const InputTextField(
+              InputTextField(
+                controller: lastNameController,
                 labelText: 'Last Name',
-                hintText: 'Perera',
+                hintText: userProfileController.user.lastName,
                 obscuredProperty: false,
-              ),
-              const InputTextField(
-                labelText: 'Email',
-                hintText: 'banulaperera@hc.com',
-                obscuredProperty: false,
-              ),
-              const InputTextField(
-                labelText: 'Confirm Password',
-                hintText: '************',
-                obscuredProperty: true,
-              ),
-              const InputTextField(
-                labelText: 'Password',
-                hintText: '************',
-                obscuredProperty: true,
-              ),
-              const InputTextField(
-                labelText: 'Confirm Password',
-                hintText: '************',
-                obscuredProperty: true,
               ),
               const SizedBox(
-                height: 15,
+                height: 35,
+              ),
+              InputTextField(
+                controller: emailController,
+                labelText: 'Email',
+                hintText: userProfileController.user.email,
+                obscuredProperty: false,
+              ),
+              const SizedBox(
+                height: 35,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,14 +198,11 @@ class _AccountSettingState extends State<AccountSetting> {
           elevation: 5),
       onPressed: () {
         if (text == 'CANCEL') {
-          Navigator.pop(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return const UserProfile();
-              },
-            ),
-          );
+          Navigator.pop(context);
+        } else {
+          userProfileController.updateUser(firstNameController.text,
+              lastNameController.text, emailController.text);
+          Navigator.pop(context);
         }
       },
       child: Text(

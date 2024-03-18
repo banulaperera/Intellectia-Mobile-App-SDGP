@@ -22,12 +22,10 @@ class QuizRepository {
         body: jsonEncode({'content': content}));
 
     Map<String, dynamic> resData = jsonDecode(res.body);
-
     if (res.statusCode == 200) {
       List<Question> questionList = [
         ...resData['questions'].map((question) => Question.fromJson(question))
       ];
-
       return questionList;
     } else {
       showError(resData['Message']);
