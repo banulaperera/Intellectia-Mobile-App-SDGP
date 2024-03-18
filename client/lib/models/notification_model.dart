@@ -4,13 +4,15 @@ class NotificationM {
   String body;
   String type;
   DateTime date;
+  String? link;
 
   NotificationM({
     this.id,
     required this.title,
     required this.body,
     required this.type,
-    required this.date});
+    required this.date,
+    this.link});
 
 
   Map<String, dynamic> toJson() {
@@ -19,6 +21,7 @@ class NotificationM {
       'body': body,
       'type': type,
       'date': date.toIso8601String(),
+      'link':link
     };
   }
 
@@ -30,7 +33,9 @@ class NotificationM {
         title: json['title'] as String,
         body:json['body'] as String,
         type:json['type'] as String,
-        date:DateTime.parse(json['date'] as String).toLocal());
+        date:DateTime.parse(json['date'] as String).toLocal(),
+        link:json['link'] as String);
+
   }
 
 }

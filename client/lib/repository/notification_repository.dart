@@ -63,4 +63,22 @@ class NotificationRepository{
     }
   }
 
+  Future<List<String>?> getYoutubeNotificationLink() async{
+    await refreshToken(await localStorage.getAccessToken());
+    String accessToken = await localStorage.getAccessToken();
+    final res=await http.get(Uri.parse('$baseUrl/notification/youtube-link'),
+        headers: <String, String>{
+          'Content-Type': 'application/json',
+          "Authorization": "bearer $accessToken"
+        });
+
+    if (res.statusCode == 200) {
+      final resData = jsonDecode(res.body);
+      if(resData['link']!=null){
+         return [resData['link'],resData['module']];
+      }
+    }
+    return null;
+  }
+
 }
