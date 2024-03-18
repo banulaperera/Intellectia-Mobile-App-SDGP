@@ -10,12 +10,13 @@ class NotificationService {
       await flutterLocalNotificationsPlugin.initialize(initializationSettings);
     }
 
-    Future<void> showNotification() async{
+    Future<void> showNotification(String title,String body) async{
       const AndroidNotificationDetails androidNotificationDetails=AndroidNotificationDetails("channel1","notification channel",importance: Importance.max,priority: Priority.max);
       const NotificationDetails notificationDetails=NotificationDetails(android: androidNotificationDetails);
 
-      await flutterLocalNotificationsPlugin.show(0,"first", "hi how are you",notificationDetails);
+      await flutterLocalNotificationsPlugin.show(0,title,body,notificationDetails);
     }
+
 
 
 
