@@ -9,12 +9,11 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
-
-  final NoteController noteController = Get.put(NoteController());
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final NoteController noteController = Get.put(NoteController());
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 60, 16, 0),

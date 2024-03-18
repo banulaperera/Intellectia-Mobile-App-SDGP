@@ -2,6 +2,7 @@ import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/screens/setting_screen/goal_setting.dart';
 import 'package:client/screens/setting_screen/change_password.dart';
 import 'package:flutter/Material.dart';
+import 'package:get/get.dart';
 import '../../constants.dart';
 import 'account_setting.dart';
 
@@ -60,7 +61,7 @@ class MainSettingPage extends StatelessWidget {
             buildAccountSettingOption(
                 context, 'Change Password', ChangePassword()),
             buildAccountSettingOption(
-                context, 'Goal setting', const GoalSetting()),
+                context, 'Quiz Preference', const GoalSetting()),
             buildAccountSettingOption(
                 context, 'Privacy and security', const AccountSetting()),
             const SizedBox(
@@ -167,10 +168,7 @@ class MainSettingPage extends StatelessWidget {
       BuildContext context, String title, Widget widget) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => widget),
-        );
+        Get.to(() => widget);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),

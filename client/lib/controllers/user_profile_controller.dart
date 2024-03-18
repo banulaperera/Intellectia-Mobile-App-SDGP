@@ -93,12 +93,18 @@ class UserProfileController extends GetxController {
       PieChartSectionData(value: _greenValue, color: Colors.green, radius: 40),
     ];
 
-    _xpDifference = (_user.weeklyXP[DateTime.now().weekday - 1]) - (_user.weeklyXP[DateTime.now().weekday - 2]);
-    if(_xpDifference < 0) {
-      int positiveValue = _xpDifference.abs();
-      _xpDifferenceText = 'You lost $positiveValue XP than yesterday';
-    }else{
-      _xpDifferenceText = 'You have gain $_xpDifference XP than yesterday';
+    if(DateTime.now().weekday == 1){
+      _xpDifferenceText = 'You have gain 0 XP than yesterday';
+      update();
+      return;
+    } else{
+      _xpDifference = (_user.weeklyXP[DateTime.now().weekday - 1]) - (_user.weeklyXP[DateTime.now().weekday - 2]);
+      if(_xpDifference < 0) {
+        int positiveValue = _xpDifference.abs();
+        _xpDifferenceText = 'You lost $positiveValue XP than yesterday';
+      }else{
+        _xpDifferenceText = 'You have gain $_xpDifference XP than yesterday';
+      }
     }
     update();
   }

@@ -9,10 +9,9 @@ import '../../navigation_bar.dart';
 class ScoreScreen extends StatelessWidget {
   ScoreScreen({super.key});
 
-  final qnController = Get.find<QuestionController>();
-
   @override
   Widget build(BuildContext context) {
+    final qnController = Get.find<QuestionController>();
     return Scaffold(
       appBar: AppBar(
         elevation: 0,

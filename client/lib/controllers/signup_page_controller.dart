@@ -54,6 +54,6 @@ class SignupPageController extends GetxController{
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
-    super.onClose();
+    super.dispose();
   }
 }

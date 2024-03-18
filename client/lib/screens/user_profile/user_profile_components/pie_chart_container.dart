@@ -8,10 +8,10 @@ class PieChartContainer extends StatelessWidget {
   PieChartContainer({
     super.key,
   });
-  final userProfileController = Get.find<UserProfileController>();
 
   @override
   Widget build(BuildContext context) {
+final userProfileController = Get.find<UserProfileController>();
     return Container(
       decoration: BoxDecoration(
         border: Border.all(width: 2, color: Colors.black.withOpacity(0.15)),

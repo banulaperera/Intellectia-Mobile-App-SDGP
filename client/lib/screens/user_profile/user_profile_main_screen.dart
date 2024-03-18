@@ -14,11 +14,10 @@ import '../../util/connection_lost.dart';
 class UserProfile extends StatelessWidget {
   UserProfile({super.key});
 
-  final UserProfileController userProfileController =
-      Get.put(UserProfileController());
-
   @override
   Widget build(BuildContext context) {
+    final UserProfileController userProfileController =
+    Get.put(UserProfileController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
