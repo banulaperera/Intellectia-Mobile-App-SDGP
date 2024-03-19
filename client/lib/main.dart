@@ -11,7 +11,6 @@ GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await NotificationService().initializeNotification();
-  CronJob().showYoutubeNotification();
   runApp(const MyApp());
 }
 
