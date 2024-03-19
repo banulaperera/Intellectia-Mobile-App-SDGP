@@ -14,17 +14,17 @@ jobs:
       - name: Login to docker hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker Image
-        run: docker build -t intellectia/backend  .
+        run: docker build -t intellectiabackend/intellectia  .
       - name: Publish Image to docker hub
-        run: docker push intellectia/backend:latest
+        run: docker push intellectiabackend/intellectia:latest
 
   deploy:
     needs: build
     runs-on: self-hosted
     steps:
       - name: Pull docker image from hub
-        run: docker pull intellectia/backend:latest
+        run: docker pull intellectiabackend/intellectia:latest
       - name: Delete old container
         run: docker rm -f intellectia-backend-container
       - name: Run Docker Container
-        run: docker run -d -p 3000:3000 --name intellectia-backend-container intellectia/backend
+        run: docker run -d -p 3000:3000 --name intellectia-backend-container intellectiabackend/intellectia
