@@ -7,7 +7,7 @@ import 'package:lottie/lottie.dart';
 import '../../navigation_bar.dart';
 
 class ScoreScreen extends StatelessWidget {
-  ScoreScreen({super.key});
+  const ScoreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

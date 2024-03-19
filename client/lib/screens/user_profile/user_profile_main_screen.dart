@@ -12,7 +12,7 @@ import '../../controllers/user_profile_controller.dart';
 import '../../util/connection_lost.dart';
 
 class UserProfile extends StatelessWidget {
-  UserProfile({super.key});
+  const UserProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class UserProfile extends StatelessWidget {
             } else {
               return Column(
                 children: [
-                  UserProfileHeader(),
+                  const UserProfileHeader(),
                   const SizedBox(
                     height: 10,
                   ),
@@ -185,8 +185,8 @@ class UserProfile extends StatelessWidget {
                                   Divider(
                                     color: Colors.black.withOpacity(0.15),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(20),
+                                  const Padding(
+                                    padding: EdgeInsets.all(20),
                                     child: SizedBox(
                                       height: 250,
                                       child: BarGraph(),
@@ -198,7 +198,7 @@ class UserProfile extends StatelessWidget {
                             const SizedBox(
                               height: 20,
                             ),
-                            PieChartContainer(),
+                            const PieChartContainer(),
                           ],
                         ),
                       ),

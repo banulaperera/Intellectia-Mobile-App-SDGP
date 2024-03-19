@@ -10,7 +10,7 @@ import '../../util/connection_lost.dart';
 import 'components/body.dart';
 
 class QuizScreen extends StatelessWidget {
-  QuizScreen({super.key});
+  const QuizScreen({super.key});
 
 
   @override
@@ -95,10 +95,10 @@ class QuizScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              body: Body(const <dynamic>{}),
+              body: const Body(<dynamic>{}),
             );
           } else {
-            return ScoreScreen();
+            return const ScoreScreen();
           }
         }
       },

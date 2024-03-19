@@ -4,7 +4,7 @@ import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
 class BarGraph extends StatelessWidget {
-  BarGraph({super.key});
+  const BarGraph({super.key});
 
 
   @override

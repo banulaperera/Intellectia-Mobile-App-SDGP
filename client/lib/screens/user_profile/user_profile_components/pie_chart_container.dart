@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PieChartContainer extends StatelessWidget {
-  PieChartContainer({
+  const PieChartContainer({
     super.key,
   });
 
@@ -29,7 +29,7 @@ final userProfileController = Get.find<UserProfileController>();
                   fontWeight: FontWeight.w600, color: Colors.grey.shade600),
             ),
           ),
-          PieChartWidget(),
+          const PieChartWidget(),
           const SizedBox(
             height: 20,
           ),
