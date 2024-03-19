@@ -22,7 +22,7 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
-      - name: Pull image from docker hub
+      - name: Pull docker image from hub
         run: docker pull intellectia/backend:latest
       - name: Delete old container
         run: docker rm -f intellectia-backend-container
