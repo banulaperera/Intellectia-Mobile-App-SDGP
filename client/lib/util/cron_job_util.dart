@@ -9,7 +9,7 @@ import '../repository/notification_repository.dart';
 import 'notification_service.dart';
 
 class CronJob {
-  static var currentUserlevel=0;
+  static var currentUserLevel=0;
   final _cronYouTube = Cron();
   final _cronRank = Cron();
 
@@ -25,7 +25,7 @@ class CronJob {
   _processRankNotification() async {
     User? userDetails =  await UserRepository().getUserDetails();
     if(userDetails != null){
-      if(userDetails.level>currentUserlevel){
+      if(userDetails.level>currentUserLevel){
         String title= 'Congratulations..';
         String body ='You have reached level ${userDetails.level}. Keep pushing your limits';
           var notificationM=NotificationM(
@@ -36,7 +36,7 @@ class CronJob {
 
           await NotificationRepository().addNotification(notificationM);
           await NotificationService().showNotification(title,body);
-          currentUserlevel=userDetails.level;
+          currentUserLevel=userDetails.level;
       }
     }
   }
