@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PieChartWidget extends StatelessWidget {
-  PieChartWidget({
+  const PieChartWidget({
     super.key,
   });
 

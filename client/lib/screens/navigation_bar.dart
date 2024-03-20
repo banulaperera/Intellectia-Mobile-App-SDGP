@@ -24,10 +24,10 @@ void initState() {
 }
 
   final screens = [
-    HomePage(),
+    const HomePage(),
     const WelcomeScreen(),
     const NotificationScreen(),
-    UserProfile(),
+    const UserProfile(),
   ];
 
   @override
