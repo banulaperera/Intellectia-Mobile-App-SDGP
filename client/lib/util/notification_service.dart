@@ -1,6 +1,7 @@
 import 'package:client/models/notification_model.dart';
 import 'package:client/repository/notification_repository.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class NotificationService {
   final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
@@ -12,6 +13,7 @@ class NotificationService {
     const InitializationSettings initializationSettings =
         InitializationSettings(android: androidInitializationSettings);
     await _flutterLocalNotificationsPlugin.initialize(initializationSettings);
+    await getPermissionForNotification();
   }
 
 
@@ -65,6 +67,15 @@ class NotificationService {
         priority: Priority.max,
       );
       _showNotification(title, body,androidNotificationDetails);
+    }
+  }
+
+  getPermissionForNotification() async {
+    var isDenied = await Permission.notification.isDenied;
+    if(isDenied){
+       Permission.notification.request();
+    }else{
+      Permission.notification.request();
     }
   }
 }
