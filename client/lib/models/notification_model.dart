@@ -26,7 +26,6 @@ class NotificationM {
   }
 
 
-
   factory NotificationM.fromJson(Map<String, dynamic> json){
     return NotificationM(
         id:json['_id'] as String,
@@ -34,8 +33,18 @@ class NotificationM {
         body:json['body'] as String,
         type:json['type'] as String,
         date:DateTime.parse(json['date'] as String).toLocal(),
-        link:json['link'] as String);
+       link: json['link'] as String?);
+  }
 
+  String get imageResource {
+    switch (type) {
+      case 'rank':
+        return 'assets/thunder.png';
+      case 'youtube':
+        return 'assets/youtube.png';
+      default:
+        return 'assets/rocket.png';
+    }
   }
 
 }

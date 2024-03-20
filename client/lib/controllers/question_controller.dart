@@ -97,9 +97,9 @@ class QuestionController extends GetxController
       _animationController.forward().whenComplete(nextQuestion);
     } else {
       // Get package provide us simple way to navigate another page
-      var userProfileController = Get.find<UserProfileController>();
+      var userProfileController = Get.put(UserProfileController());
       userProfileController.updateWeeklyXP(_numOfCorrectAns, (5 - _numOfCorrectAns),  _numOfCorrectAns * 2000);
-      Get.to(() => ScoreScreen());
+      Get.to(() => const ScoreScreen());
     }
   }
 

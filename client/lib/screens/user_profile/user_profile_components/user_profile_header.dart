@@ -7,7 +7,7 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:lottie/lottie.dart';
 
 class UserProfileHeader extends StatelessWidget {
-  UserProfileHeader({
+  const UserProfileHeader({
     super.key,
   });
 

@@ -12,7 +12,7 @@ import '../../controllers/user_profile_controller.dart';
 import '../../util/connection_lost.dart';
 
 class UserProfile extends StatelessWidget {
-  UserProfile({super.key});
+  const UserProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class UserProfile extends StatelessWidget {
             } else {
               return Column(
                 children: [
-                  UserProfileHeader(),
+                  const UserProfileHeader(),
                   const SizedBox(
                     height: 10,
                   ),
@@ -151,32 +151,6 @@ class UserProfile extends StatelessWidget {
                                             .copyWith(
                                                 color: Colors.grey.shade700),
                                       );
-                                      // return RichText(
-                                      //   text: TextSpan(
-                                      //       style: Theme.of(context)
-                                      //           .textTheme
-                                      //           .bodyLarge!
-                                      //           .copyWith(
-                                      //               color:
-                                      //                   Colors.grey.shade700),
-                                      //       children: [
-                                      //         const TextSpan(
-                                      //             text: 'You have gain '),
-                                      //         TextSpan(
-                                      //             text: '4000 Xp',
-                                      //             // text: controller.user.weeklyXP.length > 0 ? (controller.user.weeklyXP[6] - controller.user.weeklyXP[5]).toString() : '0',
-                                      //             style: Theme.of(context)
-                                      //                 .textTheme
-                                      //                 .titleMedium!
-                                      //                 .copyWith(
-                                      //                     fontWeight:
-                                      //                         FontWeight.w700,
-                                      //                     color: Colors
-                                      //                         .grey.shade700)),
-                                      //         const TextSpan(
-                                      //             text: ' than yesterday.'),
-                                      //       ]),
-                                      // );
                                     },
                                   ),
                                   const SizedBox(
@@ -185,8 +159,8 @@ class UserProfile extends StatelessWidget {
                                   Divider(
                                     color: Colors.black.withOpacity(0.15),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(20),
+                                  const Padding(
+                                    padding: EdgeInsets.all(20),
                                     child: SizedBox(
                                       height: 250,
                                       child: BarGraph(),
@@ -198,7 +172,7 @@ class UserProfile extends StatelessWidget {
                             const SizedBox(
                               height: 20,
                             ),
-                            PieChartContainer(),
+                            const PieChartContainer(),
                           ],
                         ),
                       ),

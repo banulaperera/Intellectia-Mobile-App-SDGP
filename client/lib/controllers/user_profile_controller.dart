@@ -60,9 +60,7 @@ class UserProfileController extends GetxController {
   }
 
   Future<void> fetchUser() async {
-
     _user = (await UserRepository().getUserDetails())!;
-
     _barData = BarData(
       mondayExp: _user.weeklyXP[0].toDouble(),
       tueExp: _user.weeklyXP[1].toDouble(),
@@ -153,11 +151,12 @@ class UserProfileController extends GetxController {
   }
 
   void updateWeeklyXP(int numberOfCorrectQuestions, int numberOfInCorrectQuestions, int dayXp) {
-    _user.correctedQuestions += numberOfCorrectQuestions;
-    _user.inCorrectedQuestions += numberOfInCorrectQuestions;
-    _user.weeklyXP[DateTime.now().weekday - 1] += dayXp;
-    _user.totalXP += dayXp;
-    UserRepository().updateUserDetails(_user);
-    update();
-  }
+  _user.correctedQuestions += numberOfCorrectQuestions;
+  _user.inCorrectedQuestions += numberOfInCorrectQuestions;
+  _user.weeklyXP[DateTime.now().weekday - 1] += dayXp;
+  _user.totalXP += dayXp;
+ _user.level = (_user.totalXP ~/ 10000) + 1;
+  UserRepository().updateUserDetails(_user);
+  update();
+}
 }
