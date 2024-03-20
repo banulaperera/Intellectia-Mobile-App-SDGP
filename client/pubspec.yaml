@@ -48,6 +48,9 @@ dependencies:
   flutter_expanded_tile: ^0.3.7
   image_picker: ^1.0.7
   carousel_slider: ^4.2.1
+  cron: ^0.6.0
+  flutter_local_notifications: ^17.0.0
+  url_launcher: ^6.2.5
   
 dev_dependencies:
   flutter_test:
