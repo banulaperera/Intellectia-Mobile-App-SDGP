@@ -74,8 +74,6 @@ class NotificationService {
     var isDenied = await Permission.notification.isDenied;
     if(isDenied){
        Permission.notification.request();
-    }else{
-      Permission.notification.request();
     }
   }
 }

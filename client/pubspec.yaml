@@ -50,6 +50,8 @@ dependencies:
   cron: ^0.6.0
   flutter_local_notifications: ^17.0.0
   permission_handler: ^11.3.0
+  url_launcher: ^6.2.5
+  carousel_slider: ^4.2.1
   
 dev_dependencies:
   flutter_test:
