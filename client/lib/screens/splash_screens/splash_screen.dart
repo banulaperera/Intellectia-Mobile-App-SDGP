@@ -1,5 +1,5 @@
 import 'package:client/constants.dart';
-import 'package:client/screens/login_page.dart';
+import 'package:client/screens/splash_screens/info_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 30, right: 30),
+        padding: const EdgeInsets.only(left: 30, right: 30, top: 25, bottom: 35),
         child: Column(
           children: [
             Expanded(
@@ -47,7 +47,7 @@ class SplashScreen extends StatelessWidget {
                           text: "'Where education made effortless and fun'",
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 13,
+                            fontSize: 16,
                             letterSpacing: 4,
                             fontStyle: FontStyle.italic,
                           ),
@@ -58,10 +58,9 @@ class SplashScreen extends StatelessWidget {
                   FittedBox(
                     child: GestureDetector(
                       onTap: () {
-                        Get.to(() => LoginPage());
+                        Get.to(() => const InfoScreen(), transition: Transition.fadeIn);
                       },
                       child: Container(
-                        margin: const EdgeInsets.only(bottom: 70),
                         padding: const EdgeInsets.symmetric(
                             vertical: 20, horizontal: 90),
                         decoration: BoxDecoration(
