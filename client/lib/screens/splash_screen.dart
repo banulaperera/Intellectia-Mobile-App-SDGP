@@ -1,5 +1,6 @@
 import 'package:client/constants.dart';
 import 'package:client/screens/login_page.dart';
+import 'package:client/util/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
