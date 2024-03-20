@@ -71,7 +71,7 @@ class _InfoScreenState extends State<InfoScreen> {
                           children: [
                             Lottie.asset(
                               gObj["image"].toString(),
-                              height: MediaQuery.of(context).size.width * 0.5,
+                              height: MediaQuery.of(context).size.width * 0.6,
                               fit: BoxFit.fitWidth,
                             ),
                             const SizedBox(
@@ -111,7 +111,7 @@ class _InfoScreenState extends State<InfoScreen> {
               options: CarouselOptions(
                 autoPlay: false,
                 enlargeCenterPage: true,
-                viewportFraction: 0.7,
+                viewportFraction: 0.75,
                 aspectRatio: 0.74,
                 initialPage: 0,
               ),

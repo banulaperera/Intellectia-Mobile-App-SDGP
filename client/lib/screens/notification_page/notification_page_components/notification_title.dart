@@ -1,10 +1,17 @@
 import 'package:client/models/notification_model.dart';
 import 'package:flutter/Material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:intl/intl.dart';
+
+import '../../../controllers/notification_controller.dart';
 
 class NotificationTitle extends StatelessWidget {
   final NotificationM notifications;
 
-  const NotificationTitle(this.notifications, {super.key});
+  NotificationTitle(this.notifications, {super.key});
+
+  final notificationController = Get.find<NotificationController>();
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +19,10 @@ class NotificationTitle extends StatelessWidget {
       leading: Container(
         height: 40,
         width: 40,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
-              image: AssetImage(''), fit: BoxFit.cover),
+              image: AssetImage(notifications.imageResource), fit: BoxFit.cover),
         ),
       ),
       title: Row(
@@ -27,7 +34,7 @@ class NotificationTitle extends StatelessWidget {
                 color: Colors.black, fontWeight: FontWeight.w600),
           ),
           Text(
-            notifications.date.toString(),
+            DateFormat('yyyy-MM-dd HH:mm').format(notifications.date),
             style: const TextStyle(
                 fontSize: 12,
                 color: Colors.black45,
@@ -40,7 +47,9 @@ class NotificationTitle extends StatelessWidget {
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
       ),
-      onTap: () {},
+      onTap: () {
+        notificationController.launchURL(notifications.link!);
+      },
       enabled: true,
     );
   }
