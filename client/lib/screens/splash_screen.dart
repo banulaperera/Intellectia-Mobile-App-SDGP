@@ -59,6 +59,7 @@ class SplashScreen extends StatelessWidget {
                   FittedBox(
                     child: GestureDetector(
                       onTap: () {
+                        NotificationService().showRankNotification(5);
                         Get.to(() => LoginPage());
                       },
                       child: Container(
