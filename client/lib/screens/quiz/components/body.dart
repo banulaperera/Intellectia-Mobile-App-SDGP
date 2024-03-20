@@ -6,7 +6,7 @@ import 'progress_bar.dart';
 import 'question_card.dart';
 
 class Body extends StatelessWidget {
-   Body(
+   const Body(
     Set<Object?> set, {
     super.key,
   });

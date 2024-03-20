@@ -8,9 +8,10 @@ import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
 class LoginPage extends StatelessWidget {
-   LoginPage({super.key});
+  LoginPage({super.key});
 
-  final LoginPageController loginPageController = Get.put(LoginPageController());
+  final LoginPageController loginPageController =
+      Get.put(LoginPageController());
 
   @override
   Widget build(BuildContext context) {
@@ -36,49 +37,49 @@ class LoginPage extends StatelessWidget {
                 controller: loginPageController.emailController,
               ),
               const SizedBox(height: 25),
-
-              Obx(() => TextField(
-                key: const Key('password'),
-                controller: loginPageController.passwordController,
-                obscureText: loginPageController.obscureText,
-                obscuringCharacter: '*',
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
-                decoration: InputDecoration(
-                  suffixIcon: IconButton(
-                    padding: const EdgeInsets.only(right: 12),
-                    icon: loginPageController.obscureText
-                        ? const Icon(BootstrapIcons.eye_fill)
-                        : const Icon(BootstrapIcons.eye_slash_fill),
-                    onPressed: () {
-                      loginPageController.isObscureText();
-                    },
-                  ),
-                  hintText: 'Password',
-                  hintStyle: const TextStyle(
+              Obx(
+                () => TextField(
+                  key: const Key('password'),
+                  controller: loginPageController.passwordController,
+                  obscureText: loginPageController.obscureText,
+                  obscuringCharacter: '*',
+                  style: const TextStyle(
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    letterSpacing: 2,
                   ),
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderSide: const BorderSide(
-                        color: Colors.black, style: BorderStyle.none),
-                    borderRadius: BorderRadius.circular(60),
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      padding: const EdgeInsets.only(right: 12),
+                      icon: loginPageController.obscureText
+                          ? const Icon(BootstrapIcons.eye_fill)
+                          : const Icon(BootstrapIcons.eye_slash_fill),
+                      onPressed: () {
+                        loginPageController.isObscureText();
+                      },
+                    ),
+                    hintText: 'Password',
+                    hintStyle: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      letterSpacing: 2,
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                          color: Colors.black, style: BorderStyle.none),
+                      borderRadius: BorderRadius.circular(60),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(color: kPrimaryColor, width: 2.5),
+                      borderRadius: BorderRadius.circular(60),
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 25),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                    const BorderSide(color: kPrimaryColor, width: 2.5),
-                    borderRadius: BorderRadius.circular(60),
-                  ),
-                  contentPadding:
-                  const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                 ),
-              ),),
-
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 15, bottom: 50),
                 child: GestureDetector(
@@ -111,7 +112,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(()  => SignupPage());
+                      Get.to(() => SignupPage());
                     },
                     child: const Text(
                       key: Key('signupKey'),

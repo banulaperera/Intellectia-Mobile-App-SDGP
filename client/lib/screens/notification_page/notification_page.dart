@@ -1,30 +1,16 @@
 import 'package:client/constants.dart';
 import 'package:client/controllers/notification_controller.dart';
 import 'package:client/screens/notification_page/notification_page_components/show_notification.dart';
+import 'package:client/util/connection_lost.dart';
 import 'package:flutter/Material.dart';
-import '../../models/notification_model.dart';
+import 'package:get/get.dart';
 
-class NotificationScreen extends StatefulWidget {
+class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
 
   @override
-  State<NotificationScreen> createState() => _NotificationScreenState();
-}
-
-class _NotificationScreenState extends State<NotificationScreen> {
-  List<NotificationM> newList = [];
-  List<NotificationM> oldList = [];
-
-  @override
-  void initState() {
-    //need to modify the function to get the list of notifications
-    newList = NotificationController.listOfNotifications();
-    oldList = newList;
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    NotificationController notificationController = Get.put(NotificationController());
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -40,22 +26,36 @@ class _NotificationScreenState extends State<NotificationScreen> {
           centerTitle: true,
           backgroundColor: Colors.white,
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                showText('New'),
-                ShowNotification(list: newList),
-                const SizedBox(
-                  height: 20,
+        body: FutureBuilder(
+          future: notificationController.fetchNotifications(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(
+                  color: kPrimaryColor,
+                ), // Loading animation
+              );
+            }else if (snapshot.hasError) {
+              return Center(child: connectionLost());
+            }
+            else{
+              return Padding(
+                padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
+                child: SingleChildScrollView(
+                  child: GetBuilder<NotificationController>(
+                    builder: (context) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ShowNotification(list: notificationController.notifications),
+                        ],
+                      );
+                    }
+                  ),
                 ),
-                showText('Old'),
-                ShowNotification(list: oldList)
-              ],
-            ),
-          ),
+              );
+            }
+          }
         ),
       ),
     );

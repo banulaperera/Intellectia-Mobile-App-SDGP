@@ -3,7 +3,6 @@ import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
 import '../models/note.dart';
-import '../repository/note_repository.dart';
 
 class GoalSettingController extends GetxController{
   @override
