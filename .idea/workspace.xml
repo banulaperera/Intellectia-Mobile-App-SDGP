@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="BACKEND DEPLOYMENT">
+      <change afterPath="$PROJECT_DIR$/client/lib/screens/splash_screens/info_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/splash_screens/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_main_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_main_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +69,7 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;IN-28-ui__transitions&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -80,6 +84,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/lib/screens" />
+      <recent name="$PROJECT_DIR$/client/lib/splash_screens" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/client/lib/screens/setting_screen" />
       <recent name="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components" />
@@ -200,7 +206,7 @@
     <MESSAGE value="completed quiz integration" />
     <MESSAGE value="final commit" />
     <MESSAGE value="BACKEND DEPLOYMENT" />
-    <option name="LAST_COMMIT_MESSAGE" value="BACKEND DEPLOYMENT" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="../../../../Desktop/SDGP_PT_Y3_03_Intellectia/client/coverage/lcov.info" NAME="tests in login_page_test.dart Coverage Results" MODIFIED="1709617290812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="FlutterCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
