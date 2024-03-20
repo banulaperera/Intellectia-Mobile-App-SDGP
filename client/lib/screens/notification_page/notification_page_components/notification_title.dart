@@ -1,7 +1,6 @@
 import 'package:client/models/notification_model.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:intl/intl.dart';
 
 import '../../../controllers/notification_controller.dart';
