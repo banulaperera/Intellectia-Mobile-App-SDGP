@@ -1,6 +1,6 @@
 import 'package:client/constants.dart';
-import 'package:client/screens/home_page/home_page.dart';
 import 'package:client/screens/login_page.dart';
+import 'package:client/screens/navigation_bar.dart';
 import 'package:client/screens/splash_screens/splash_screen.dart';
 import 'package:client/util/cron_job_util.dart';
 import 'package:client/util/local_storage.dart';
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         useMaterial3: true,
       ),
-      home: onboardStatus ? const SplashScreen():(tokenExpired ? LoginPage():const HomePage()),
+      home: onboardStatus ? const SplashScreen():(tokenExpired ? LoginPage():const BottomNavigation(0)),
       navigatorKey: navigatorKey,
     );
   }
