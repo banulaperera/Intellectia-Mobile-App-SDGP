@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 import 'package:client/constants.dart';
 import 'package:client/controllers/user_profile_controller.dart';
 import 'package:client/screens/setting_screen/setting_screen_components/input_textfield_widget.dart';
