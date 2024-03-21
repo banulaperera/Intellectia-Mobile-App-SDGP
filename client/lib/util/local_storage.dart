@@ -22,6 +22,12 @@ class LocalStorage{
     sharedPreferences.setBool("onboardStatus",status);
   }
 
+  Future<void> clearUserDetails() async{
+    final sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.clear();
+    setOnboardStatus(false);
+  }
+
   Future<bool> getOnboardStatus() async{
     final sharedPreferences = await SharedPreferences.getInstance();
     return sharedPreferences.getBool("onboardStatus") ?? true;

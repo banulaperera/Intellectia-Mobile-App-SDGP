@@ -13,7 +13,7 @@ Future<void> refreshToken(String accessToken) async{
 
 Future<bool> checkRefreshTokenIsExpired() async {
   final refreshToken = await LocalStorage().getRefreshToken();
-  if(refreshToken!=null){
+  if(refreshToken!=""){
     return JwtDecoder.isExpired(refreshToken);
   }else{
     return true;
