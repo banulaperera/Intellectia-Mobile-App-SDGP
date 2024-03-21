@@ -1,6 +1,7 @@
 import 'package:client/models/bar_data_model.dart';
 import 'package:client/models/user_model.dart';
 import 'package:client/repository/user_repository.dart';
+import 'package:client/util/notification_service.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
@@ -53,6 +54,8 @@ class UserProfileController extends GetxController {
   String _xpDifferenceText = '';
   String get xpDifferenceText => _xpDifferenceText;
 
+  int _previousLevel = 0;
+
   @override
   void onInit() {
     fetchUser();
@@ -104,6 +107,8 @@ class UserProfileController extends GetxController {
         _xpDifferenceText = 'You have gain $_xpDifference XP than yesterday';
       }
     }
+
+    _previousLevel = _user.level;
     update();
   }
 
@@ -156,6 +161,10 @@ class UserProfileController extends GetxController {
   _user.weeklyXP[DateTime.now().weekday - 1] += dayXp;
   _user.totalXP += dayXp;
  _user.level = (_user.totalXP ~/ 10000) + 1;
+ if(_previousLevel < _user.level) {
+   NotificationService().showRankNotification(_user.level);
+  _previousLevel = _user.level;
+ }
   UserRepository().updateUserDetails(_user);
   update();
 }

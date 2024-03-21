@@ -1,12 +1,17 @@
 import 'package:client/constants.dart';
 import 'package:client/screens/splash_screens/splash_screen.dart';
+import 'package:client/util/cron_job_util.dart';
+import 'package:client/util/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await NotificationService().initializeNotification();
+  CronJob().initializeJobs();
   runApp(const MyApp());
 }
 
