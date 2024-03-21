@@ -16,6 +16,7 @@ class NoteService{
             const user=await User.findOne({_id:userID});
             return user.notes;
 
+
         }catch (error){
             throw Error
         }

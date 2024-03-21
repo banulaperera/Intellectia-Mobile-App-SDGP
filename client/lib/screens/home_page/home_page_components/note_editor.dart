@@ -1,8 +1,13 @@
 import 'package:client/constants.dart';
-import 'package:client/models/note_model.dart';
-import 'package:client/screens/home_page/home_page.dart';
+import 'package:client/controllers/ml_model_controller.dart';
+import 'package:client/models/note.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../controllers/note_controller.dart';
+import '../../../util/connection_lost.dart';
+import '../../navigation_bar.dart';
 
 class CreateNote extends StatefulWidget {
   final Note? notes;
@@ -15,17 +20,22 @@ class CreateNote extends StatefulWidget {
 
 class _CreateNoteState extends State<CreateNote> {
   TextEditingController titleController = TextEditingController();
-  TextEditingController bodyController = TextEditingController();
+  TextEditingController contentController = TextEditingController();
+  TextEditingController customerModuleNameController = TextEditingController();
 
   @override
   void initState() {
     if (widget.notes != null) {
       titleController = TextEditingController(text: widget.notes!.title);
-
-      bodyController = TextEditingController(text: widget.notes!.body);
+      contentController = TextEditingController(text: widget.notes!.content);
+      customerModuleNameController =
+          TextEditingController(text: widget.notes!.moduleName);
     }
     super.initState();
   }
+
+  final noteController = Get.find<NoteController>();
+  MlModelController mlModelController = Get.put(MlModelController());
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +48,10 @@ class _CreateNoteState extends State<CreateNote> {
         child: ListView(
           children: [
             TextFormField(
+              key: const Key('title'),
               controller: titleController,
               maxLines: null,
-              style:
-                  const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
               decoration: const InputDecoration(
                 border: InputBorder.none,
                 hintText: 'Title',
@@ -51,7 +61,8 @@ class _CreateNoteState extends State<CreateNote> {
               height: 10,
             ),
             TextFormField(
-              controller: bodyController,
+              key: const Key('content'),
+              controller: contentController,
               maxLines: null,
               style: const TextStyle(
                 fontSize: 16,
@@ -69,15 +80,15 @@ class _CreateNoteState extends State<CreateNote> {
         backgroundColor: kPrimaryColor,
         shape: const CircleBorder(),
         onPressed: () {
-          // if (titleController.text.isEmpty) {
-          //   return;
-          // }
-
-          // if (bodyController.text.isEmpty) {
-          //   return;
-
-          // Navigator.pop(context, [titleController.text, bodyController.text]);
-          moduleNamePopUp(context);
+          if (titleController.text.isEmpty) {
+            return;
+          }
+          if (contentController.text.isEmpty) {
+            return;
+          }
+          mlModelController.getModules(contentController.text);
+          moduleNamePopUp(
+              context, titleController.text, contentController.text);
         },
         child: const Icon(
           Icons.save,
@@ -87,105 +98,104 @@ class _CreateNoteState extends State<CreateNote> {
     );
   }
 
-  // void moduleNamePopUp(BuildContext context) => showDialog(
-  //     context: context,
-  //     builder: (context) => const AlertDialog(
-  //           title: Text('Module Name'),
-  //           content: TextField(
-  //             decoration: InputDecoration(hintText: 'Custom Module Name'),
-  //           ),
-  //           // actions: [TextButton(onPressed: submit, child: Text('Apply'))],
-  //         ));
-
-  void moduleNamePopUp(BuildContext context) => showDialog(
+  void moduleNamePopUp(BuildContext context, String title, String content) {
+    showDialog(
       context: context,
       builder: (context) => SimpleDialog(
-            title: const Text(
-              'Module Name',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            contentPadding: const EdgeInsets.all(25),
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.black),
-                    borderRadius:
-                        const BorderRadius.all(Radius.circular(15.0))),
-                child: SimpleDialogOption(
-                  child: const Text('Option 1'),
-                  onPressed: () {
-                    goBackToHomePage();
-                  },
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.black),
-                    borderRadius:
-                        const BorderRadius.all(Radius.circular(15.0))),
-                child: SimpleDialogOption(
-                  onPressed: () {
-                    goBackToHomePage();
-                  },
-                  child: const Text('Option 2'),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.black),
-                    borderRadius:
-                        const BorderRadius.all(Radius.circular(15.0))),
-                child: SimpleDialogOption(
-                  onPressed: () {
-                    goBackToHomePage();
-                  },
-                  child: const Text('Option 3'),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'Custom Module Name',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              const TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter a module name',
-                  // filled: true,
-                  // fillColor: Colors.grey,
-                  // border: OutlineInputBorder(
-                  //     borderSide: BorderSide.none,
-                  //     borderRadius: BorderRadius.circular(10))
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              FloatingActionButton(
-                onPressed: () {
-                  goBackToHomePage();
-                },
-                backgroundColor: kPrimaryColor,
-                child: const Text(
-                  'Apply',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 252, 252, 252),
-                    fontSize: 16,
-                  ),
-                ),
-              )
-            ],
-          ));
+        backgroundColor: kBackgroundColor,
+        title: const Text('Module Name',
+            style: TextStyle(fontWeight: FontWeight.bold)),
+        contentPadding: const EdgeInsets.all(25),
+        children: [
+          FutureBuilder(
+              future: mlModelController.getModules(content),
+              builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                      child: CircularProgressIndicator(color: kPrimaryColor));
+                } else if (snapshot.hasError) {
+                  return connectionLost();
+                } else {
+                  if (mlModelController.predictedModules.isEmpty) {
+                    return const Center(child: Text('No modules found'));
+                  } else {
+                    return Column(
+                      children: List.generate(
+                        3,
+                            (index) => Container(
+                          margin: const EdgeInsets.only(top: 20),
+                          decoration: BoxDecoration(
+                              border: Border.all(width: 1, color: Colors.black),
+                              borderRadius:
+                              const BorderRadius.all(Radius.circular(15.0))),
+                          child: GetBuilder<MlModelController>(
+                            builder: (context) {
+                              return SimpleDialogOption(
+                                child: Text(
+                                    mlModelController.predictedModules[index]),
+                                onPressed: () {
+                                  if (widget.notes != null) {
+                                    noteController.updateNote(
+                                        widget.notes!.id.toString(),
+                                        widget.notes!.createdDate,
+                                        mlModelController.predictedModules[index],
+                                        title,
+                                        content);
+                                  } else {
+                                    noteController.addNote(
+                                        mlModelController.predictedModules[index],
+                                        title,
+                                        content);
+                                  }
+                                  Get.to(() => const BottomNavigation(0));
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                }
+              }),
+          const SizedBox(height: 20),
+          const Text('Custom Module Name',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+          TextField(
+              controller: customerModuleNameController,
+              decoration:
+                  const InputDecoration(hintText: 'Enter a module name')),
+          const SizedBox(height: 20),
+          FloatingActionButton(
+            onPressed: () {
+              if (widget.notes != null) {
+                noteController.updateNote(
+                    widget.notes!.id.toString(),
+                    widget.notes!.createdDate,
+                    customerModuleNameController.text,
+                    title,
+                    content);
+              } else {
+                noteController.addNote(
+                    customerModuleNameController.text, title, content);
+              }
+              Get.to(() => const BottomNavigation(0));
+            },
+            backgroundColor: kPrimaryColor,
+            child: const Text('Apply',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 252, 252, 252), fontSize: 16)),
+          )
+        ],
+      ),
+    );
+  }
 
-  void goBackToHomePage() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (_) => const HomePage()));
+  @override
+  void dispose() {
+    titleController.dispose();
+    contentController.dispose();
+    customerModuleNameController.dispose();
+    super.dispose();
   }
 }

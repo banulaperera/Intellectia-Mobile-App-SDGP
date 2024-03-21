@@ -1,3 +1,4 @@
+
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
 import 'package:flutter/Material.dart';
@@ -6,11 +7,12 @@ class InputTextField extends StatefulWidget {
   final String labelText;
   final String hintText;
   final bool obscuredProperty;
+  final TextEditingController controller;
   const InputTextField({
     super.key,
     required this.labelText,
     required this.hintText,
-    required this.obscuredProperty,
+    required this.obscuredProperty, required this.controller,
   });
 
   @override
@@ -27,6 +29,7 @@ class _InputTextFieldState extends State<InputTextField> {
         bottom: 35,
       ),
       child: TextField(
+        controller: widget.controller,
         obscureText: widget.obscuredProperty ? isObscured : false,
         decoration: InputDecoration(
           focusedBorder: const UnderlineInputBorder(
@@ -48,9 +51,10 @@ class _InputTextFieldState extends State<InputTextField> {
           contentPadding: const EdgeInsets.only(bottom: 5),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           labelText: widget.labelText,
+          labelStyle: Theme.of(context).textTheme.titleMedium,
           hintText: widget.hintText,
           hintStyle: const TextStyle(
-              fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
+              fontSize: 16, fontWeight: FontWeight.w100, color: Colors.black),
         ),
       ),
     );

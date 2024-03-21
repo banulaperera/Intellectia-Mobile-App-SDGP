@@ -1,5 +1,6 @@
 const mongoose=require('mongoose');
-const Note=require('./Note')
+const Note=require('./Note');
+const Notification=require('./Notification');
 
 const userSchema=new mongoose.Schema({
     photo:{type:String,default:''},
@@ -7,11 +8,14 @@ const userSchema=new mongoose.Schema({
     lastName:{type:String,default:''},
     email:{type:String,required:true},
     password:{type:String},
+    correctedQuestions:{type:Number,default:0},
+    inCorrectedQuestions:{type:Number,default:0},
     level:{type:Number,default:0},
-    noTakenQuiz:{type:Number,default:0},
-    noMissedQuiz:{type:Number,default:0},
-    notes:[Note]
+    totalXP:{type:Number,default:0},
+    weeklyXP:{type:[Number],default:[0,0,0,0,0,0,0]},
+    notes:[Note],
+    notifications:[Notification]
 
-})
+});
 
 module.exports=mongoose.model("User",userSchema);

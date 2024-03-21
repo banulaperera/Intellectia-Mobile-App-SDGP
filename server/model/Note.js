@@ -1,8 +1,9 @@
 const  mongoose=require('mongoose');
 
 module.exports=new mongoose.Schema({
-      moduleName:{type:String,required:true},
+      moduleName:{type:String,required:true,default:""},
       createdDate:{type:Date},
       lastModifiedDate:{type:Date},
-      content:{type:String}
+      title:{type:String,default:""},
+      content:{type:String,default:""}
 })

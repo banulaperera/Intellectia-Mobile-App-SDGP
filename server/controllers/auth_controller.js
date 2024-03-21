@@ -11,7 +11,7 @@ exports.newToken=async (req,res)=> {
                     res.sendStatus(401);
                 }else {
                     const accessToken=jwt.sign({userID:user.userID},process.env.ACCESS_TOKEN_KEY,{expiresIn: "5m"});
-                    res.send({accessToken});
+                    res.status(200).send({accessToken});
                 }
             })
         }

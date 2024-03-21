@@ -3,14 +3,18 @@ import 'package:client/models/notification_model.dart';
 import 'package:client/screens/notification_page/notification_page_components/notification_title.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:get/get.dart';
+
+import '../../../controllers/notification_controller.dart';
 
 class ShowNotification extends StatelessWidget {
-  const ShowNotification({
+  ShowNotification({
     super.key,
     required this.list,
   });
 
-  final List<Notifications> list;
+  final List<NotificationM> list;
+  final notificationController = Get.find<NotificationController>();
 
   @override
   Widget build(BuildContext context) {
@@ -20,21 +24,25 @@ class ShowNotification extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemBuilder: (context, index) {
         return Slidable(
-            endActionPane: ActionPane(
-              extentRatio: .2,
-              motion: const ScrollMotion(),
-              children: [
-                SlidableAction(
-                  onPressed: (context) {},
-                  icon: BootstrapIcons.trash3_fill,
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.red,
-                )
-              ],
-            ),
-            child: NotificationTitle(
-              list[index],
-            ));
+          endActionPane: ActionPane(
+            extentRatio: .2,
+            motion: const ScrollMotion(),
+            children: [
+              SlidableAction(
+                onPressed: (context) async {
+                  await notificationController
+                      .deleteNotification(list[index].id!);
+                },
+                icon: BootstrapIcons.trash3_fill,
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.red.withOpacity(0.5),
+              )
+            ],
+          ),
+          child: NotificationTitle(
+            list[index],
+          ),
+        );
       },
       itemCount: list.length,
       separatorBuilder: (BuildContext context, int index) {

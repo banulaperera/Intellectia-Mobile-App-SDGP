@@ -1,40 +1,17 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/constants.dart';
-import 'package:client/repository/user_repository.dart';
-import 'package:client/screens/navigation_bar.dart';
-import 'package:client/screens/signup_page.dart';
+import 'package:client/controllers/login_page_controller.dart';
 import 'package:flutter/material.dart';
-
+import 'package:client/constants.dart';
+import 'package:client/screens/signup_page.dart';
+import 'package:get/get.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
-class LoginPage extends StatefulWidget {
-  final String? signUpEmail;
+class LoginPage extends StatelessWidget {
+  LoginPage({super.key});
 
-  const LoginPage({super.key, this.signUpEmail});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  TextEditingController _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
-  var _isObscured = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _isObscured = true;
-    _emailController = TextEditingController(text: widget.signUpEmail);
-  }
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
+  final LoginPageController loginPageController =
+      Get.put(LoginPageController());
 
   @override
   Widget build(BuildContext context) {
@@ -54,51 +31,53 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 25),
               LoginSignUpTextField(
+                key: const Key('username'),
                 hintText: 'Email',
                 keyboardType: TextInputType.emailAddress,
-                controller: _emailController,
+                controller: loginPageController.emailController,
               ),
               const SizedBox(height: 25),
-              TextField(
-                controller: _passwordController,
-                obscureText: _isObscured,
-                obscuringCharacter: '*',
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
-                decoration: InputDecoration(
-                  suffixIcon: IconButton(
-                    padding: const EdgeInsets.only(right: 12),
-                    icon: _isObscured
-                        ? const Icon(BootstrapIcons.eye_fill)
-                        : const Icon(BootstrapIcons.eye_slash_fill),
-                    onPressed: () {
-                      setState(() {
-                        _isObscured = !_isObscured;
-                      });
-                    },
-                  ),
-                  hintText: 'Password',
-                  hintStyle: const TextStyle(
+              Obx(
+                () => TextField(
+                  key: const Key('password'),
+                  controller: loginPageController.passwordController,
+                  obscureText: loginPageController.obscureText,
+                  obscuringCharacter: '*',
+                  style: const TextStyle(
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    letterSpacing: 2,
                   ),
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderSide: const BorderSide(
-                        color: Colors.black, style: BorderStyle.none),
-                    borderRadius: BorderRadius.circular(60),
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      padding: const EdgeInsets.only(right: 12),
+                      icon: loginPageController.obscureText
+                          ? const Icon(BootstrapIcons.eye_fill)
+                          : const Icon(BootstrapIcons.eye_slash_fill),
+                      onPressed: () {
+                        loginPageController.isObscureText();
+                      },
+                    ),
+                    hintText: 'Password',
+                    hintStyle: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      letterSpacing: 2,
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                          color: Colors.black, style: BorderStyle.none),
+                      borderRadius: BorderRadius.circular(60),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(color: kPrimaryColor, width: 2.5),
+                      borderRadius: BorderRadius.circular(60),
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 25),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        const BorderSide(color: kPrimaryColor, width: 2.5),
-                    borderRadius: BorderRadius.circular(60),
-                  ),
-                  contentPadding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                 ),
               ),
               Padding(
@@ -117,52 +96,39 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               LoginScreenButton(
+                key: const Key('loginKey'),
                 label: 'Login',
-                onPressed: () async {
-                  bool pass = await UserRepository()
-                      .signIn(_emailController.text, _passwordController.text);
-                  if (pass) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const BottomNavigation()),
-                    );
-                  }
+                onPressed: () {
+                  loginPageController.signIn(context);
                 },
               ),
               const SizedBox(height: 60),
-              _buildSignUpNavigation(context),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Don't have an account? ",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => SignupPage());
+                    },
+                    child: const Text(
+                      key: Key('signupKey'),
+                      'Signup',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 16,
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ),
       ),
-    );
-  }
-
-  Row _buildSignUpNavigation(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text(
-          "Don't have an account? ",
-          style: TextStyle(fontSize: 16),
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SignupPage()),
-            );
-          },
-          child: const Text(
-            'Signup',
-            style: TextStyle(
-              color: Colors.blue,
-              fontSize: 16,
-            ),
-          ),
-        )
-      ],
     );
   }
 }

@@ -45,12 +45,23 @@ dependencies:
   jwt_decoder: ^2.0.1
   flutter_svg: any
   lottie: ^3.1.0
+  flutter_expanded_tile: ^0.3.7
+  image_picker: ^1.0.7
+  cron: ^0.6.0
+  flutter_local_notifications: ^17.0.0
+  permission_handler: ^11.3.0
+  url_launcher: ^6.2.5
+  carousel_slider: ^4.2.1
   
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_driver:
+    sdk: flutter
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^3.0.1
+  integration_test:
+    sdk: flutter
 
 flutter_launcher_icons:
   android: "launcher_icon"
