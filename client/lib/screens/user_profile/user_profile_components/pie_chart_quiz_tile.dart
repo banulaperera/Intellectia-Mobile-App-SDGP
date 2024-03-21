@@ -32,17 +32,23 @@ class QuizTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              height: 45,
-              width: 45,
+              height: 40,
+              width: 40,
               child: Lottie.asset(url),
             ),
-            Text(
-              name,
-              style: const TextStyle(fontWeight: FontWeight.w600),
+            Flexible(
+              child: Text(
+                name,
+                style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600),
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-            Text(
-              quizzes.toString(),
-              style: const TextStyle(fontWeight: FontWeight.w600),
+            Flexible(
+              child: Text(
+                quizzes.toString(),
+                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),

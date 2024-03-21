@@ -22,15 +22,14 @@ class ScoreScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Lottie.asset(
               'animations/Animation - 1710436633486.json',
-              height: 320,
+              height: 300,
               repeat: true,
               animate: true,
             ),
-            // const SizedBox(width: 1000),
             const Text(
               'Your Score: ',
               style: TextStyle(
@@ -59,14 +58,13 @@ class ScoreScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      '${((qnController.numOfCorrectAns / qnController.questions.length) * 100).round()}%',
+                      '${qnController.questions.isNotEmpty ? ((qnController.numOfCorrectAns / qnController.questions.length) * 100).round() : 0}%',
                       style: const TextStyle(fontSize: 25),
                     )
                   ],
                 ),
               ],
             ),
-            const SizedBox(height: 20),
           ],
         ),
       ),

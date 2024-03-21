@@ -31,6 +31,7 @@ class UserProfileController extends GetxController {
     weeklyXP: [],
   );
   User get user => _user;
+  set user(User user) => _user = user;
 
   BarData _barData = BarData(
     mondayExp: 0,
