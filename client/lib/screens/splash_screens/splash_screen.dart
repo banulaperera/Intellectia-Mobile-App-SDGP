@@ -28,6 +28,7 @@ class SplashScreen extends StatelessWidget {
             ),
             Expanded(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   RichText(
                     textAlign: TextAlign.center,
@@ -55,7 +56,6 @@ class SplashScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 40),
                   FittedBox(
                     child: GestureDetector(
                       onTap: () {
@@ -79,18 +79,14 @@ class SplashScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        child: const Row(
-                          children: [
-                            Text(
-                              "Get Started",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 18,
-                                letterSpacing: 3,
-                              ),
-                            ),
-                          ],
+                        child: const Text(
+                          "Get Started",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 18,
+                            letterSpacing: 3,
+                          ),
                         ),
                       ),
                     ),

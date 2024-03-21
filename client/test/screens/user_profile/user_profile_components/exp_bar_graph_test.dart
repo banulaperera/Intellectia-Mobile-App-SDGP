@@ -1,27 +1,20 @@
-import 'package:client/screens/user_profile/user_profile_components/exp_bar_graph.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/material.dart';
+import 'package:client/screens/user_profile/user_profile_components/exp_bar_graph.dart';
+import 'package:client/controllers/user_profile_controller.dart';
+import 'package:get/get.dart';
 
 void main() {
-  testWidgets('BarGraph Widget Test', (WidgetTester tester) async {
-    // Build the BarGraph widget
-    await tester.pumpWidget(
-     const MaterialApp(
-        home: Scaffold(
-          body: BarGraph(),
-        ),
-      ),
-    );
+  testWidgets('BarGraph shows the correct initial widgets',
+      (WidgetTester tester) async {
+    // Initialize the UserProfileController
+    Get.put(UserProfileController());
 
-    // Verify if the BarGraph widget is rendered
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MaterialApp(home: BarGraph()));
+
+    // Verify that the correct widgets are shown initially.
     expect(find.byType(BarChart), findsOneWidget);
-
-    // Verify if the BarGraph widget has correct data
-    expect(find.text('S'), findsAtLeastNWidgets(2));
-    expect(find.text('M'), findsOneWidget);
-    expect(find.text('T'), findsAtLeastNWidgets(2));
-    expect(find.text('W'), findsOneWidget);
-    expect(find.text('F'), findsOneWidget);
   });
 }

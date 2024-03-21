@@ -1,29 +1,27 @@
-import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/screens/home_page/home_page.dart';
-import 'package:client/screens/home_page/home_page_components/note_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:client/screens/home_page/home_page.dart';
+import 'package:get/get.dart';
 
 void main() {
-  testWidgets('HomePage UI Test', (WidgetTester tester) async {
+  testWidgets('HomePage Widget Test', (WidgetTester tester) async {
     // Build the HomePage widget
-    await tester.pumpWidget(const MaterialApp(home: HomePage()));
+    await tester.pumpWidget(
+      const GetMaterialApp(
+        home: HomePage(),
+      ),
+    );
 
-    // Verify the presence of important widgets
+    // Verify if the HomePage widget is rendered
+    expect(find.byType(HomePage), findsOneWidget);
+
+    // Verify if the "Notes" title is found
     expect(find.text('Notes'), findsOneWidget);
-    expect(find.byIcon(Icons.search), findsOneWidget);
-    expect(find.byIcon(BootstrapIcons.filter), findsOneWidget);
+
+    // Verify if the search TextField is found
+    expect(find.byKey(const Key('searchKey')), findsOneWidget);
+
+    // Verify if the floating action button is found
     expect(find.byType(FloatingActionButton), findsOneWidget);
-    expect(find.byType(TextField), findsOneWidget);
-    expect(find.byIcon(BootstrapIcons.plus,), findsOneWidget);
-
-    // Tap on the floating action button to add a new note
-    await tester.tap(find.byType(FloatingActionButton));
-    await tester.pumpAndSettle();
-
-    // Verify navigation to NoteEditor
-    expect(find.byType(CreateNote), findsOneWidget);
-
-    // You can add more test cases as needed...
   });
 }

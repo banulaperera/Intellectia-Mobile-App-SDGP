@@ -1,14 +1,26 @@
+import 'package:client/controllers/user_profile_controller.dart';
+import 'package:client/models/user_model.dart';
+import 'package:client/screens/user_profile/user_profile_components/user_profile_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:client/screens/user_profile/user_profile_components/user_profile_header.dart';
+import 'package:get/get.dart';
 
 void main() {
   testWidgets('UserProfileHeader Test', (WidgetTester tester) async {
-    const String testName = 'user';
-    const String testEmail = 'user@gmail.com';
-    const String testLevel =
-        '90'; //need to test again after connecting the backend
-    // Build the UserProfileHeader
+    // Initialize the UserProfileController with mock data
+    var userProfileController = Get.put(UserProfileController());
+    userProfileController.user = User(
+        photo: '',
+        firstName: 'Test',
+        lastName: 'User',
+        email: 'testuser@gmail.com',
+        level: 1,
+        correctedQuestions: 0,
+        inCorrectedQuestions: 0,
+        totalXP: 0,
+        weeklyXP: []);
+
+    // Build the UserProfileHeader widget
     await tester.pumpWidget(
       const MaterialApp(
         home: Scaffold(
@@ -17,16 +29,16 @@ void main() {
       ),
     );
 
-    // Verify if the UserProfileHeader is rendered
+    // Verify if the UserProfileHeader widget is rendered
     expect(find.byType(UserProfileHeader), findsOneWidget);
 
-    // Verify if the name text is displayed
-    expect(find.text(testName), findsOneWidget);
+    // Verify if the user's name is displayed
+    expect(find.text('Test User'), findsOneWidget);
 
-    // Verify if the email text is displayed
-    expect(find.text(testEmail), findsOneWidget);
+    // Verify if the user's email is displayed
+    expect(find.text('testuser@gmail.com'), findsOneWidget);
 
-    // Verify if the level text is displayed
-    expect(find.text(testLevel), findsOneWidget);
+    // Verify if the user's level is displayed
+    expect(find.text('Level 1'), findsOneWidget);
   });
 }

@@ -17,7 +17,7 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final UserProfileController userProfileController =
-    Get.put(UserProfileController());
+        Get.put(UserProfileController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,

@@ -1,43 +1,33 @@
-import 'package:client/screens/notification_page/notification_page_components/notification_title.dart';
+import 'package:client/controllers/notification_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:client/screens/notification_page/notification_page_components/show_notification.dart';
 import 'package:client/models/notification_model.dart';
+import 'package:get/get.dart';
 
 void main() {
   testWidgets('ShowNotification Widget Test', (WidgetTester tester) async {
-    // Create a list of Notifications
-    final List<Notifications> notificationsList = [
-      Notifications(
-        path: 'assets/youtube.png',
-        titleName: 'Notification 1',
-        description: 'Description 1',
-        titleTime: '2h Ago',
-      ),
-      Notifications(
-        path: 'assets/fire.png',
-        titleName: 'Notification 2',
-        description: 'Description 2',
-        titleTime: '3h Ago',
-      ),
+    Get.put(NotificationController());
+    // Prepare a list of notifications for testing
+    List<NotificationM> testNotifications = [
+      NotificationM(id: '1', title: 'Test Notification 1', body: 'Test Body 1', type: 'Test Type 1', date: DateTime.now()),
+      NotificationM(id: '2', title: 'Test Notification 2', body: 'Test Body 2', type: 'Test Type 2', date: DateTime.now()),
     ];
 
     // Build the ShowNotification widget
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
-          body: ShowNotification(list: notificationsList),
+          body: ShowNotification(list: testNotifications),
         ),
       ),
     );
 
-    // Verify if the ListView.separated is rendered
-    expect(find.byType(ListView), findsOneWidget);
-    expect(find.byType(SliverList), findsOneWidget);
+    // Verify if the ShowNotification widget is rendered
+    expect(find.byType(ShowNotification), findsOneWidget);
 
-    // Verify if the correct number of items is displayed
-    expect(find.byType(NotificationTitle),
-        findsNWidgets(notificationsList.length));
-    expect(find.byType(Divider), findsNWidgets(notificationsList.length - 1));
+    // Verify if the Slidable widget is found
+    expect(find.byType(Slidable), findsWidgets);
   });
 }

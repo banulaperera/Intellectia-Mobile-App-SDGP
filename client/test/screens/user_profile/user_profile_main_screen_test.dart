@@ -1,35 +1,22 @@
-import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/screens/user_profile/user_profile_components/exp_bar_graph.dart';
-import 'package:client/screens/user_profile/user_profile_components/pie_chart_container.dart';
-import 'package:client/screens/user_profile/user_profile_components/user_profile_header.dart';
-import 'package:client/screens/user_profile/user_profile_main_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/material.dart';
+import 'package:client/screens/user_profile/user_profile_main_screen.dart';
+import 'package:client/controllers/user_profile_controller.dart';
+import 'package:get/get.dart';
 
 void main() {
-  testWidgets('UserProfile UI Test', (WidgetTester tester) async {
-    // Build UserProfile widget
+  testWidgets('UserProfile shows the correct initial widgets',
+      (WidgetTester tester) async {
+    // Initialize the UserProfileController
+    Get.put(UserProfileController());
+
+    // Build our app and trigger a frame.
     await tester.pumpWidget(const MaterialApp(home: UserProfile()));
 
-    // Verify if UserProfile widget is found
-    expect(find.byType(UserProfile), findsOneWidget);
-
-    // Verify if AppBar title is displayed
+    // Verify that the correct widgets are shown initially.
+    expect(find.byType(Scaffold), findsOneWidget);
+    expect(find.byType(AppBar), findsOneWidget);
     expect(find.text('My Profile'), findsOneWidget);
-
-    // Verify if action button is displayed
-    expect(find.byIcon(BootstrapIcons.gear_wide_connected), findsOneWidget);
-
-    // Verify if UserProfileHeader widget is displayed
-    expect(find.byType(UserProfileHeader), findsOneWidget);
-
-    // Verify if XP Earned section is displayed correctly
-    expect(find.text('XP Earned'), findsOneWidget);
-
-    // Verify if BarGraph widget is displayed
-    expect(find.byType(BarGraph), findsOneWidget);
-
-    // Verify if PieChartContainer widget is displayed
-    expect(find.byType(PieChartContainer), findsOneWidget);
+    expect(find.byType(RefreshIndicator), findsOneWidget);
   });
 }

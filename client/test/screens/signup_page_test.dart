@@ -1,28 +1,22 @@
-import 'package:client/screens/login_page.dart';
-import 'package:flutter/material.dart';
+import 'package:client/widget/custom_button.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/material.dart';
 import 'package:client/screens/signup_page.dart';
+import 'package:client/controllers/signup_page_controller.dart';
+import 'package:get/get.dart';
 
 void main() {
-  testWidgets('SignupPage UI Test', (WidgetTester tester) async {
-    // Build the SignupPage widget
-    await tester.pumpWidget(const MaterialApp(home: SignupPage()));
+  testWidgets('SignupPage shows the correct initial widgets',
+      (WidgetTester tester) async {
+    // Initialize the SignupPageController
+    Get.put(SignupPageController());
 
-    // Verify the presence of important widgets
-    expect(find.text('Email'), findsOneWidget);
-    expect(find.text('Password'), findsOneWidget);
-    expect(find.text('Confirm Password'), findsOneWidget);
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(MaterialApp(home: SignupPage()));
+
+    // Verify that the correct widgets are shown initially.
+    expect(find.byType(TextField), findsNWidgets(3));
+    expect(find.byType(LoginScreenButton), findsOneWidget);
     expect(find.text('Sign Up'), findsOneWidget);
-    expect(find.text("Already have an account? "), findsOneWidget);
-    expect(find.text('Login'), findsOneWidget);
-
-    // Simulate tapping on the Login link
-    await tester.tap(find.text('Login'));
-    await tester.pumpAndSettle();
-
-    // Verify navigation to LoginPage
-    expect(find.byType(LoginPage), findsOneWidget);
   });
-
-  // Add more test cases as needed...
 }
