@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color.fromRGBO(6, 126, 191, 1);
 const kBackgroundColor = Colors.white;
-const cardColor = Color.fromRGBO(217, 217, 217, 1);
+Color cardColor = Colors.grey.shade200;
 const double appBarTitleSize = 22;
 const kSecondaryColor = Color(0xFF8B94BC);
 const kGreenColor = Color(0xFF6AC259);
