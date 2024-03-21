@@ -17,6 +17,18 @@ class LocalStorage{
     sharedPreferences.setString("refreshToken",refreshToken);
   }
 
+  Future<void> setOnboardStatus(bool status) async{
+    final sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.setBool("onboardStatus",status);
+  }
+
+  Future<bool> getOnboardStatus() async{
+    final sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.getBool("onboardStatus") ?? true;
+  }
+
+
+
   Future<String> getUserID() async{
     final sharedPreferences = await SharedPreferences.getInstance();
     return sharedPreferences.getString("userID") ?? "";
