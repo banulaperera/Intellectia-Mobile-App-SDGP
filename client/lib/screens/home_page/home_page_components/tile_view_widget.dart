@@ -56,6 +56,7 @@ class _TileViewWidgetState extends State<TileViewWidget> {
                           context: context,
                           builder: (BuildContext context) {
                             return AlertDialog(
+                              backgroundColor: kBackgroundColor,
                               title: const Text('Delete Note'),
                               content: const Text(
                                   'Are you sure you want to delete this note?'),
