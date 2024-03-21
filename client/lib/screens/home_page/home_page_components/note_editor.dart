@@ -115,45 +115,47 @@ class _CreateNoteState extends State<CreateNote> {
                       child: CircularProgressIndicator(color: kPrimaryColor));
                 } else if (snapshot.hasError) {
                   return connectionLost();
-                } else if (noteController.filteredNotes.isEmpty) {
-                  return Center(
-                      child: Text('No Notes Found',
-                          style: TextStyle(
-                              color: Colors.grey.shade400, fontSize: 16)));
                 } else {
-                  return Column(
-                    children: List.generate(
+                  if (mlModelController.predictedModules.isEmpty) {
+                    return const Center(child: Text('No modules found'));
+                  } else {
+                    return Column(
+                      children: List.generate(
                         3,
-                        (index) => Container(
-                              margin: const EdgeInsets.only(top: 20),
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 1, color: Colors.black),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(15.0))),
-                              child: GetBuilder<MlModelController>(
-                                  builder: (context) {
-                                return SimpleDialogOption(
-                                  child: Text(mlModelController
-                                      .predictedModules[index]),
-                                  onPressed: () {
-                                    if (widget.notes != null) {
-                                      noteController.updateNote(
-                                          widget.notes!.id.toString(),
-                                          widget.notes!.createdDate,
-                                          mlModelController.predictedModules[index],
-                                          title,
-                                          content);
-                                    } else {
-                                      noteController.addNote(
-                                          mlModelController.predictedModules[index], title, content);
-                                    }
-                                    Get.to(() => const BottomNavigation(0));
-                                  },
-                                );
-                              }),
-                            )),
-                  );
+                            (index) => Container(
+                          margin: const EdgeInsets.only(top: 20),
+                          decoration: BoxDecoration(
+                              border: Border.all(width: 1, color: Colors.black),
+                              borderRadius:
+                              const BorderRadius.all(Radius.circular(15.0))),
+                          child: GetBuilder<MlModelController>(
+                            builder: (context) {
+                              return SimpleDialogOption(
+                                child: Text(
+                                    mlModelController.predictedModules[index]),
+                                onPressed: () {
+                                  if (widget.notes != null) {
+                                    noteController.updateNote(
+                                        widget.notes!.id.toString(),
+                                        widget.notes!.createdDate,
+                                        mlModelController.predictedModules[index],
+                                        title,
+                                        content);
+                                  } else {
+                                    noteController.addNote(
+                                        mlModelController.predictedModules[index],
+                                        title,
+                                        content);
+                                  }
+                                  Get.to(() => const BottomNavigation(0));
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    );
+                  }
                 }
               }),
           const SizedBox(height: 20),

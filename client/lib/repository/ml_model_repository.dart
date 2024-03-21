@@ -12,11 +12,19 @@ class MlModelRepository{
         },
         body: jsonEncode({"text":content}));
 
-    Map<String, dynamic> resData = jsonDecode(res.body);
+    if (res.headers['content-type'] != 'application/json') {
+      return null;
+    }
 
-    if (res.statusCode == 200) {
-     return List<String>.from(resData["prediction"]);
-    } else {
+    try {
+      Map<String, dynamic> resData = jsonDecode(res.body);
+
+      if (res.statusCode == 200) {
+        return List<String>.from(resData["prediction"]);
+      } else {
+        return null;
+      }
+    } catch (e) {
       return null;
     }
   }

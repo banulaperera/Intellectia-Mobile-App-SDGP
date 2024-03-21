@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="BACKEND DEPLOYMENT">
-      <change afterPath="$PROJECT_DIR$/client/lib/controllers/ml_model_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/repository/ml_model_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/repository/ml_model_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/note_editor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/note_editor.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/tile_view_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/tile_view_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +66,7 @@
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "IN-55-model__integration",
+    "git-widget-placeholder": "dev",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia/client/android/app/src/main/res/mipmap-hdpi",
     "node.js.detected.package.eslint": "true",
