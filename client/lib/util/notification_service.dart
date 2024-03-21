@@ -16,32 +16,32 @@ class NotificationService {
     await getPermissionForNotification();
   }
 
-
-  Future<void> _showNotification(String title, String body,AndroidNotificationDetails androidNotificationDetails) async {
-
+  Future<void> _showNotification(String title, String body,
+      AndroidNotificationDetails androidNotificationDetails) async {
     NotificationDetails notificationDetails =
-        NotificationDetails(android:androidNotificationDetails);
+        NotificationDetails(android: androidNotificationDetails);
     await _flutterLocalNotificationsPlugin.show(
         0, title, body, notificationDetails);
   }
 
   showRankNotification(int newLevel) async {
     String title = 'Congratulations..';
-    String body = 'You have reached level ${newLevel}. Keep pushing your limits';
+    String body = 'You have reached level $newLevel. Keep pushing your limits';
     var notificationM = NotificationM(
         title: title, body: body, type: "rank", date: DateTime.now());
 
     await NotificationRepository().addNotification(notificationM);
 
     const AndroidNotificationDetails androidNotificationDetails =
-    AndroidNotificationDetails(
+        AndroidNotificationDetails(
       "channel-1",
       "rank notification",
       importance: Importance.max,
       priority: Priority.max,
+          largeIcon: DrawableResourceAndroidBitmap('@mipmap/thunder'),
     );
 
-    _showNotification(title, body,androidNotificationDetails);
+    _showNotification(title, body, androidNotificationDetails);
   }
 
   showYoutubeNotification() async {
@@ -49,7 +49,7 @@ class NotificationService {
         await NotificationRepository().getYoutubeNotificationLink();
     if (video != null) {
       String title = 'Suggestions';
-      String body = 'New suggestion.check out this video on ${video[1]}';
+      String body = 'New suggestion. check out this video on ${video[1]}';
       var notificationM = NotificationM(
           title: title,
           body: body,
@@ -60,20 +60,21 @@ class NotificationService {
       await NotificationRepository().addNotification(notificationM);
 
       const AndroidNotificationDetails androidNotificationDetails =
-      AndroidNotificationDetails(
+          AndroidNotificationDetails(
         "channel-2",
         "youtube notification",
         importance: Importance.max,
         priority: Priority.max,
+            largeIcon: DrawableResourceAndroidBitmap('@mipmap/thunder'),
       );
-      _showNotification(title, body,androidNotificationDetails);
+      _showNotification(title, body, androidNotificationDetails);
     }
   }
 
   getPermissionForNotification() async {
     var isDenied = await Permission.notification.isDenied;
-    if(isDenied){
-       Permission.notification.request();
+    if (isDenied) {
+      Permission.notification.request();
     }
   }
 }
