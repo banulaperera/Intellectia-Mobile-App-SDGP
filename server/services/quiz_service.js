@@ -8,7 +8,13 @@ exports.generateQuiz = async function (content) {
         const completion = await openai.chat.completions.create({
             messages: [{
                 role: "system",
-                content: `create 5 questions with 4 options and the correct answer with following content and return as Json \n${content}`
+                content: `create 5 questions with 4 options and the correct answer with following content and return as this Json format "questions":[
+    {
+        "question":String,
+        "options":[String],
+        "answer":String
+    }
+]  \n\n${content}`
             }],
             model: "gpt-3.5-turbo",
             response_format: {type: "json_object"},
@@ -61,3 +67,4 @@ exports.updateScheduledQuizDetails= async function (userID,scheduledQuizDetails)
         throw error;
     }
 }
+
