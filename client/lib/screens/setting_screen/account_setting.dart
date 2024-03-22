@@ -3,8 +3,6 @@ import 'package:client/constants.dart';
 import 'package:client/controllers/user_profile_controller.dart';
 import 'package:client/screens/setting_screen/setting_screen_components/input_textfield_widget.dart';
 import 'package:flutter/Material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../util/image_picker.dart';
