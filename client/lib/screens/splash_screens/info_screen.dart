@@ -122,7 +122,7 @@ class _InfoScreenState extends State<InfoScreen> {
               ),
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 35),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
@@ -130,6 +130,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     height: MediaQuery.of(context).size.width * 0.05,
                   ),
                   const Text(
+                    textAlign: TextAlign.center,
                     "What you can do with Intellectia?",
                     style: TextStyle(
                       color: Colors.black,
@@ -146,45 +147,48 @@ class _InfoScreenState extends State<InfoScreen> {
                     ),
                   ),
                   const Spacer(),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.width * 0.05,
-                  ),
-                  FittedBox(
-                    child: GestureDetector(
-                      onTap: () {
-                        Get.to(() => LoginPage(),
-                            transition: Transition.fadeIn);
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 20, horizontal: 90),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: kPrimaryColor,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: const Offset(
-                                0,
-                                4,
-                              ), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: const Row(
-                          children: [
-                            Text(
-                              "Continue",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 18,
-                                letterSpacing: 3,
+                  // SizedBox(
+                  //   height: MediaQuery.of(context).size.width * 0.05,
+                  // ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: FittedBox(
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.to(() => LoginPage(),
+                              transition: Transition.fadeIn);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 90),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: kPrimaryColor,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset: const Offset(
+                                  0,
+                                  4,
+                                ), // changes position of shadow
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
+                          child: const Row(
+                            children: [
+                              Text(
+                                "Continue",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 18,
+                                  letterSpacing: 3,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

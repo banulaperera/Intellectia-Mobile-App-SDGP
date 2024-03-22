@@ -119,6 +119,4 @@ class QuestionController extends GetxController
     }
     update();
   }
-
-
 }

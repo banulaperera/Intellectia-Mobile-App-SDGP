@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="BACKEND DEPLOYMENT">
-      <change afterPath="$PROJECT_DIR$/client/lib/controllers/quiz_preference_setting_controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/models/quiz_preference_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/screens/setting_screen/quiz_preference_setting.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/goal_setting_controller.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/user_profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/user_profile_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/setting_screen/goal_setting.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/setting_screen/main_setting_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/setting_screen/main_setting_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/setting_screen/goal_setting_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/setting_screen/goal_setting_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/pie_chart_container_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/pie_chart_container_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/welcome/welcome_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/welcome/welcome_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/splash_screens/info_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/splash_screens/info_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,8 +108,8 @@
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in option_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/quiz/components/option_test.dart" />
+    <configuration name="tests in info_screen_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/splash_screens/info_screen_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
@@ -133,10 +126,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Flutter.main.dart" />
+        <item itemvalue="Flutter Test.tests in info_screen_test.dart" />
         <item itemvalue="Flutter Test.tests in custom_button_test.dart" />
         <item itemvalue="Flutter Test.tests in question_card_test.dart" />
         <item itemvalue="Flutter Test.tests in progress_bar_test.dart" />
-        <item itemvalue="Flutter Test.tests in option_test.dart" />
       </list>
     </recent_temporary>
   </component>
