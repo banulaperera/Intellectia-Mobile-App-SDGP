@@ -1,10 +1,11 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:client/screens/login_page.dart';
+import 'package:client/screens/setting_screen/goal_setting.dart';
 import 'package:client/screens/setting_screen/change_password.dart';
-import 'package:client/screens/setting_screen/quiz_preference_setting.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
-
 import '../../constants.dart';
+import '../../util/local_storage.dart';
 import 'account_setting.dart';
 
 class MainSettingPage extends StatelessWidget {
@@ -125,7 +126,10 @@ class MainSettingPage extends StatelessWidget {
             ),
             Center(
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await LocalStorage().clearUserDetails();
+                  Get.offAll(()=>LoginPage());
+                },
                 child: const Text(
                   'Sign out',
                   style: TextStyle(

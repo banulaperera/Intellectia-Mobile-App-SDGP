@@ -113,12 +113,13 @@ class UserProfileController extends GetxController {
     update();
   }
 
-  void updateUser(String? firstName, String? lastName, String? email) async {
+  void updateUser(String? firstName, String? lastName, String? email , String? image) async {
     _user
       ..firstName =
           (firstName?.isNotEmpty ?? false) ? firstName! : _user.firstName
       ..lastName = (lastName?.isNotEmpty ?? false) ? lastName! : _user.lastName
-      ..email = (email?.isNotEmpty ?? false) ? email! : _user.email;
+      ..email = (email?.isNotEmpty ?? false) ? email! : _user.email
+      ..photo = (image?.isNotEmpty ?? false) ? image! : _user.photo;
     await UserRepository().updateUserDetails(_user);
     update();
   }

@@ -1,4 +1,4 @@
-import 'dart:typed_data';
+import 'dart:convert';
 import 'package:client/constants.dart';
 import 'package:client/controllers/user_profile_controller.dart';
 import 'package:client/screens/setting_screen/setting_screen_components/input_textfield_widget.dart';
@@ -8,6 +8,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../util/image_picker.dart';
 
 class AccountSetting extends StatefulWidget {
+
   const AccountSetting({super.key});
 
   @override
@@ -19,13 +20,26 @@ class _AccountSettingState extends State<AccountSetting> {
   TextEditingController lastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
-  Uint8List? _image;
+  String? _image;
 
   void selectImage() async {
-    Uint8List img = await pickImage(ImageSource.gallery);
+    String? base64Image;
+    final img = await pickImage(ImageSource.gallery);
+    if(img!=null){
+     base64Image=base64Encode(img);
+    }
+
     setState(() {
-      _image = img;
+      _image = base64Image;
     });
+  }
+
+   getImage(){
+    if(userProfileController.user.photo==""){
+      return const AssetImage('assets/blank_user_image.png');
+    }else{
+      return MemoryImage(base64Decode(userProfileController.user.photo));
+    }
   }
 
   @override
@@ -90,7 +104,7 @@ class _AccountSettingState extends State<AccountSetting> {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: MemoryImage(_image!),
+                                image:MemoryImage(base64Decode(_image!)),
                               ),
                             ),
                           )
@@ -113,9 +127,8 @@ class _AccountSettingState extends State<AccountSetting> {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: AssetImage(
-                                    userProfileController.user.photo,
-                                  )),
+                                  image:getImage()
+                              ),
                             ),
                           ),
                     Positioned(
@@ -201,7 +214,7 @@ class _AccountSettingState extends State<AccountSetting> {
           Navigator.pop(context);
         } else {
           userProfileController.updateUser(firstNameController.text,
-              lastNameController.text, emailController.text);
+              lastNameController.text, emailController.text,_image);
           Navigator.pop(context);
         }
       },

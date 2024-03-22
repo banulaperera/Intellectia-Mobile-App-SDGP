@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:client/constants.dart';
 import 'package:client/controllers/user_profile_controller.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +12,14 @@ class UserProfileHeader extends StatelessWidget {
   const UserProfileHeader({
     super.key,
   });
+
+  getImage(UserProfileController userProfileController){
+    if(userProfileController.user.photo==""){
+      return const AssetImage('assets/blank_user_image.png');
+    }else{
+      return MemoryImage(base64Decode(userProfileController.user.photo));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +40,8 @@ class UserProfileHeader extends StatelessWidget {
             maxRadius: 75,
             minRadius: 75,
             backgroundColor: Colors.grey.shade800,
-            backgroundImage: const AssetImage('assets/blank_user_image.png'),
+            backgroundImage:getImage(userProfileController)
+
           ),
           const SizedBox(
             width: 20,
