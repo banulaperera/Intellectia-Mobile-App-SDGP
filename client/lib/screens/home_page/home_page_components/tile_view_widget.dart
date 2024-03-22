@@ -4,14 +4,15 @@ import 'package:client/models/tile_model.dart';
 import 'package:client/screens/home_page/home_page_components/note_editor.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../../../controllers/note_controller.dart';
 
 class TileViewWidget extends StatefulWidget {
   final TileModel tile;
+
   const TileViewWidget({super.key, required this.tile});
 
   @override
@@ -56,6 +57,7 @@ class _TileViewWidgetState extends State<TileViewWidget> {
                           context: context,
                           builder: (BuildContext context) {
                             return AlertDialog(
+                              backgroundColor: kBackgroundColor,
                               title: const Text('Delete Note'),
                               content: const Text(
                                   'Are you sure you want to delete this note?'),

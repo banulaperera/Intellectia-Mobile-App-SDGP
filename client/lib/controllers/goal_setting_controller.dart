@@ -30,14 +30,16 @@ class GoalSettingController extends GetxController{
   }
 
   Future<void> fetchModuleNames() async {
-    var noteController = Get.find<NoteController>();
-    List<Note> getNote = noteController.allNotes;
-    Set<String> uniqueModuleNames = <String>{};
-    for (final note in getNote) {
-      uniqueModuleNames.add(note.moduleName);
-    }
-    _moduleNames = uniqueModuleNames.toList();
-    moduleSelectedValue = _moduleNames[0];
-    update();
+  var noteController = Get.put(NoteController());
+  List<Note> getNote = noteController.allNotes;
+  Set<String> uniqueModuleNames = <String>{};
+  for (final note in getNote) {
+    uniqueModuleNames.add(note.moduleName);
   }
+  _moduleNames = uniqueModuleNames.toList();
+  if (_moduleNames.isNotEmpty) {
+    moduleSelectedValue = _moduleNames[0];
+  }
+  update();
+}
 }

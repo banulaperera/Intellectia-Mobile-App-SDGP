@@ -5,21 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="BACKEND DEPLOYMENT">
-      <change afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-hdpi/thunder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-mdpi/thunder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-xhdpi/thunder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-xxhdpi/thunder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-xxxhdpi/thunder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SDGP_PT_Y3_03_Intellectia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SDGP_PT_Y3_03_Intellectia.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-14,_20_55_[Changes]/00000000000.xd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-14,_20_55_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-14__20_55__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-hdpi/fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-hdpi/fire.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/assets/fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/controllers/goal_setting_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/goal_setting_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/controllers/user_profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/user_profile_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/tile_view_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/tile_view_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/components/question_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/components/question_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/score/score_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/score/score_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/setting_screen/main_setting_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/setting_screen/main_setting_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/splash_screens/info_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/splash_screens/info_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/screens/splash_screens/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/splash_screens/splash_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/util/db_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/util/db_util.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/util/notification_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/util/notification_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/exp_bar_graph.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/exp_bar_graph.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/pie_chart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/pie_chart.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/pie_chart_quiz_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/pie_chart_quiz_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_main_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_main_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/home_page/home_page_components/note_editor_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/home_page/home_page_components/note_editor_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/home_page/home_page_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/home_page/home_page_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/login_page_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/login_page_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_components/notification_title_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_components/notification_title_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_components/show_notification_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_components/show_notification_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/signup_page_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/signup_page_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/splash_screen_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/exp_bar_graph_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/exp_bar_graph_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/pie_chart_container_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/pie_chart_container_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/pie_chart_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/pie_chart_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/user_profile_header_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/user_profile_header_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_main_screen_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_main_screen_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +96,7 @@
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "IN-46-notifications__local__flutter",
+    "git-widget-placeholder": "IN-33-widget__testing__flutter",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia/client/android/app/src/main/res/mipmap-hdpi",
     "node.js.detected.package.eslint": "true",
@@ -88,6 +106,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "show.migrate.to.gradle.popup": "false",
     "ts.external.directory.path": "/Users/avishkapramuditha/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external"
   }
@@ -113,32 +132,33 @@
       <option name="filePath" value="$PROJECT_DIR$/client/lib/main.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="end to end testing" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="end to end testing" />
-      <option name="testFile" value="$PROJECT_DIR$/client/integration_test/app_test.dart" />
+    <configuration name="tests in custom_button_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/test/widget/custom_button_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="test whether the user can navigate to the different tabs in the application after logging in" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="test whether the user can navigate to the different tabs in the application after logging in" />
-      <option name="testFile" value="$PROJECT_DIR$/client/integration_test/app_test.dart" />
-      <option name="useRegexp" value="true" />
+    <configuration name="tests in option_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/quiz/components/option_test.dart" />
+      <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="testing" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="testing" />
-      <option name="testFile" value="$PROJECT_DIR$/client/integration_test/app_test.dart" />
-      <option name="useRegexp" value="true" />
+    <configuration name="tests in progress_bar_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/quiz/components/progress_bar_test.dart" />
+      <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in app_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/client/integration_test/app_test.dart" />
+    <configuration name="tests in question_card_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/quiz/components/question_card_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Flutter.main.dart" />
+        <item itemvalue="Flutter Test.tests in custom_button_test.dart" />
+        <item itemvalue="Flutter Test.tests in question_card_test.dart" />
+        <item itemvalue="Flutter Test.tests in progress_bar_test.dart" />
+        <item itemvalue="Flutter Test.tests in option_test.dart" />
       </list>
     </recent_temporary>
   </component>
