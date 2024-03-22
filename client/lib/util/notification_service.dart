@@ -1,5 +1,6 @@
 import 'package:client/models/notification_model.dart';
 import 'package:client/repository/notification_repository.dart';
+import 'package:client/util/refresh_token.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -45,29 +46,32 @@ class NotificationService {
   }
 
   showYoutubeNotification() async {
-    List<String>? video =
-        await NotificationRepository().getYoutubeNotificationLink();
-    if (video != null) {
-      String title = 'Suggestions';
-      String body = 'New suggestion. check out this video on ${video[1]}';
-      var notificationM = NotificationM(
-          title: title,
-          body: body,
-          type: "youtube",
-          date: DateTime.now(),
-          link: video[0]);
+    final bool tokenExpired=await checkRefreshTokenIsExpired();
+    if(!tokenExpired){
+      List<String>? video =
+      await NotificationRepository().getYoutubeNotificationLink();
+      if (video != null) {
+        String title = 'Suggestions';
+        String body = 'New suggestion. check out this video on ${video[1]}';
+        var notificationM = NotificationM(
+            title: title,
+            body: body,
+            type: "youtube",
+            date: DateTime.now(),
+            link: video[0]);
 
-      await NotificationRepository().addNotification(notificationM);
+        await NotificationRepository().addNotification(notificationM);
 
-      const AndroidNotificationDetails androidNotificationDetails =
-          AndroidNotificationDetails(
-        "channel-2",
-        "youtube notification",
-        importance: Importance.max,
-        priority: Priority.max,
-            largeIcon: DrawableResourceAndroidBitmap('@mipmap/thunder'),
-      );
-      _showNotification(title, body, androidNotificationDetails);
+        const AndroidNotificationDetails androidNotificationDetails =
+        AndroidNotificationDetails(
+          "channel-2",
+          "youtube notification",
+          importance: Importance.max,
+          priority: Priority.max,
+          largeIcon: DrawableResourceAndroidBitmap('@mipmap/thunder'),
+        );
+        _showNotification(title, body, androidNotificationDetails);
+      }
     }
   }
 
