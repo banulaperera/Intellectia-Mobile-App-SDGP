@@ -12,7 +12,7 @@ void main() {
     Get.put(UserProfileController());
 
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MaterialApp(home: PieChartContainer()));
+    await tester.pumpWidget(const MaterialApp(home: PieChartContainer()));
 
     // Verify that the correct widgets are shown initially.
     expect(find.byType(Container), findsNWidgets(3));

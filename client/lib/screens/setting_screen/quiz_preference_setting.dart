@@ -1,6 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/constants.dart';
-import 'package:client/controllers/goal_setting_controller.dart';
+import 'package:client/controllers/quiz_preference_setting_controller.dart';
+import 'package:client/util/show_Alert.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -18,7 +19,7 @@ class _GoalSettingState extends State<GoalSetting> {
   @override
   Widget build(BuildContext context) {
     final GoalSettingController goalSettingController =
-    Get.put(GoalSettingController());
+        Get.put(GoalSettingController());
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.black,
@@ -202,7 +203,24 @@ class _GoalSettingState extends State<GoalSetting> {
         if (text == 'CANCEL') {
           Get.back();
         } else {
-          Navigator.pop(context);
+          if (_selectedTime == null) {
+            showError('Please select your preferred time');
+          } else {
+            final List<String> timeParts = _selectedTime!.split(':');
+            final int hour = int.parse(timeParts[0]);
+            final int minute = int.parse(timeParts[1].split(' ')[0]);
+
+            // Get the current date
+            final DateTime now = DateTime.now();
+            final DateTime selectedDateTime =
+                DateTime(now.year, now.month, now.day, hour, minute);
+            var goalSettingController = Get.find<GoalSettingController>();
+            goalSettingController.onModuleSelected(
+                goalSettingController.moduleSelectedValue,
+                goalSettingController.frequencySelectedValue,
+                selectedDateTime);
+            Navigator.pop(context);
+          }
         }
       },
       child: Text(

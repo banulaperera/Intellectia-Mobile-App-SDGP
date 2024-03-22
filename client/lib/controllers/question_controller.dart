@@ -99,7 +99,7 @@ class QuestionController extends GetxController
       // Get package provide us simple way to navigate another page
       var userProfileController = Get.put(UserProfileController());
       userProfileController.updateWeeklyXP(_numOfCorrectAns, (5 - _numOfCorrectAns),  _numOfCorrectAns * 2000);
-      Get.to(() => const ScoreScreen());
+      Get.off(() => const ScoreScreen());
     }
   }
 
@@ -119,4 +119,6 @@ class QuestionController extends GetxController
     }
     update();
   }
+
+
 }

@@ -28,7 +28,7 @@ class UserProfileController extends GetxController {
     correctedQuestions: 0,
     inCorrectedQuestions: 0,
     totalXP: 0,
-    weeklyXP: [],
+    weeklyXP: [7],
   );
   User get user => _user;
   set user(User user) => _user = user;
