@@ -1,5 +1,4 @@
 const quizService=require('../services/quiz_service');
-const http = require("http");
 
 exports.generateQuiz=async (req,res)=>{
     try {
