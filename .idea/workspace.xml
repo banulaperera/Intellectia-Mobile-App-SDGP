@@ -5,39 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5be0fcf-cbeb-4541-a025-dacddee157e9" name="Changes" comment="BACKEND DEPLOYMENT">
-      <change beforePath="$PROJECT_DIR$/.idea/SDGP_PT_Y3_03_Intellectia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SDGP_PT_Y3_03_Intellectia.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-14,_20_55_[Changes]/00000000000.xd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-14,_20_55_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-03-14__20_55__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/model/scheduledQuizDetaills.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/goal_setting_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/goal_setting_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/user_profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/user_profile_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/tile_view_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/tile_view_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/components/question_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/components/question_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/score/score_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/score/score_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/setting_screen/main_setting_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/setting_screen/main_setting_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/splash_screens/info_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/splash_screens/info_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/splash_screens/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/splash_screens/splash_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/exp_bar_graph.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/exp_bar_graph.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/pie_chart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/pie_chart.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/pie_chart_quiz_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/pie_chart_quiz_tile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_main_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_main_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/home_page/home_page_components/note_editor_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/home_page/home_page_components/note_editor_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/home_page/home_page_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/home_page/home_page_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/login_page_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/login_page_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_components/notification_title_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_components/notification_title_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_components/show_notification_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_components/show_notification_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/signup_page_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/signup_page_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/splash_screen_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/exp_bar_graph_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/exp_bar_graph_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/pie_chart_container_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/pie_chart_container_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/pie_chart_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/pie_chart_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/user_profile_header_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/user_profile_header_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_main_screen_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_main_screen_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/repository/quiz_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/repository/quiz_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/util/db_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/util/db_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/quiz_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/quiz_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/model/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/quiz_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/quiz_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/quiz_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/quiz_service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Dart File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -96,19 +71,21 @@
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "IN-33-widget__testing__flutter",
+    "git-widget-placeholder": "IN-58-quize__shedule__api",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "/Users/banulaperera/Desktop/SDGP_PT_Y3_03_Intellectia/client/android/app/src/main/res/mipmap-hdpi",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "show.migrate.to.gradle.popup": "false",
-    "ts.external.directory.path": "/Users/avishkapramuditha/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external"
+    "ts.external.directory.path": "/Users/avishkapramuditha/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -127,7 +104,7 @@
       <recent name="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.main.dart">
+  <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/client/lib/main.dart" />
       <method v="2" />
@@ -152,15 +129,6 @@
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Flutter.main.dart" />
-        <item itemvalue="Flutter Test.tests in custom_button_test.dart" />
-        <item itemvalue="Flutter Test.tests in question_card_test.dart" />
-        <item itemvalue="Flutter Test.tests in progress_bar_test.dart" />
-        <item itemvalue="Flutter Test.tests in option_test.dart" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -172,6 +140,7 @@
       <updated>1709349169974</updated>
       <workItem from="1709664027870" duration="3394000" />
       <workItem from="1709701865732" duration="7041000" />
+      <workItem from="1711096041215" duration="8839000" />
     </task>
     <task id="LOCAL-00001" summary="CHANGED AUTH ROUTES">
       <option name="closed" value="true" />
