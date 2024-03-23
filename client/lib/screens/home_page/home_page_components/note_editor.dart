@@ -122,12 +122,12 @@ class _CreateNoteState extends State<CreateNote> {
                     return Column(
                       children: List.generate(
                         3,
-                            (index) => Container(
+                        (index) => Container(
                           margin: const EdgeInsets.only(top: 20),
                           decoration: BoxDecoration(
                               border: Border.all(width: 1, color: Colors.black),
-                              borderRadius:
-                              const BorderRadius.all(Radius.circular(15.0))),
+                              borderRadius: const BorderRadius.all(
+                                  Radius.circular(15.0))),
                           child: GetBuilder<MlModelController>(
                             builder: (context) {
                               return SimpleDialogOption(
@@ -138,12 +138,14 @@ class _CreateNoteState extends State<CreateNote> {
                                     noteController.updateNote(
                                         widget.notes!.id.toString(),
                                         widget.notes!.createdDate,
-                                        mlModelController.predictedModules[index],
+                                        mlModelController
+                                            .predictedModules[index],
                                         title,
                                         content);
                                   } else {
                                     noteController.addNote(
-                                        mlModelController.predictedModules[index],
+                                        mlModelController
+                                            .predictedModules[index],
                                         title,
                                         content);
                                   }

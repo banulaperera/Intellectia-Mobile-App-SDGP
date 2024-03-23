@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:client/constants.dart';
 import 'package:client/controllers/user_profile_controller.dart';
 import 'package:flutter/material.dart';
@@ -13,14 +11,6 @@ class UserProfileHeader extends StatelessWidget {
     super.key,
   });
 
-  getImage(UserProfileController userProfileController){
-    if(userProfileController.user.photo==""){
-      return const AssetImage('assets/blank_user_image.png');
-    }else{
-      return MemoryImage(base64Decode(userProfileController.user.photo));
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final userProfileController = Get.find<UserProfileController>();
@@ -33,67 +23,64 @@ class UserProfileHeader extends StatelessWidget {
           Radius.circular(10),
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            maxRadius: 75,
-            minRadius: 75,
-            backgroundColor: Colors.grey.shade800,
-            backgroundImage:getImage(userProfileController)
-
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          GetBuilder<UserProfileController>(
-            builder: (builder) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '${userProfileController.user.firstName} ${userProfileController.user.lastName}',
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: kBackgroundColor,
-                          fontSize: 18,
-                        ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    userProfileController.user.email,
-                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          fontSize: 14.0,
-                          color: kBackgroundColor,
-                        ),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      // const SizedBox(
-                      //   width: 2,
-                      // ),
-                      Text(
-                        'Level ${userProfileController.user.level}',
-                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                              fontSize: 18.0,
-                              color: kBackgroundColor,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.italic,
-                              letterSpacing: 2,
-                            ),
+      child: GetBuilder<UserProfileController>(builder: (builder) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              maxRadius: 75,
+              minRadius: 75,
+              backgroundColor: Colors.grey.shade800,
+              backgroundImage: userProfileController.getImage(),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '${userProfileController.user.firstName} ${userProfileController.user.lastName}',
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        color: kBackgroundColor,
+                        fontSize: 18,
                       ),
-                      Lottie.asset('animations/Animation - 1709315159426.json',
-                          width: 90, height: 90, reverse: true, repeat: true),
-                    ],
-                  ),
-                ],
-              );
-            },
-          ),
-        ],
-      ),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  userProfileController.user.email,
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        fontSize: 14.0,
+                        color: kBackgroundColor,
+                      ),
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    // const SizedBox(
+                    //   width: 2,
+                    // ),
+                    Text(
+                      'Level ${userProfileController.user.level}',
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                            fontSize: 18.0,
+                            color: kBackgroundColor,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                            letterSpacing: 2,
+                          ),
+                    ),
+                    Lottie.asset('animations/Animation - 1709315159426.json',
+                        width: 90, height: 90, reverse: true, repeat: true),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        );
+      }),
     );
   }
 }

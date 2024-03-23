@@ -10,7 +10,8 @@ class NotificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    NotificationController notificationController = Get.put(NotificationController());
+    NotificationController notificationController =
+        Get.put(NotificationController());
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -27,36 +28,34 @@ class NotificationScreen extends StatelessWidget {
           backgroundColor: Colors.white,
         ),
         body: FutureBuilder(
-          future: notificationController.fetchNotifications(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(
-                child: CircularProgressIndicator(
-                  color: kPrimaryColor,
-                ), // Loading animation
-              );
-            }else if (snapshot.hasError) {
-              return Center(child: connectionLost());
-            }
-            else{
-              return Padding(
-                padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
-                child: SingleChildScrollView(
-                  child: GetBuilder<NotificationController>(
-                    builder: (context) {
+            future: notificationController.fetchNotifications(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: kPrimaryColor,
+                  ), // Loading animation
+                );
+              } else if (snapshot.hasError) {
+                return Center(child: connectionLost());
+              } else {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
+                  child: SingleChildScrollView(
+                    child:
+                        GetBuilder<NotificationController>(builder: (context) {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ShowNotification(list: notificationController.notifications),
+                          ShowNotification(
+                              list: notificationController.notifications),
                         ],
                       );
-                    }
+                    }),
                   ),
-                ),
-              );
-            }
-          }
-        ),
+                );
+              }
+            }),
       ),
     );
   }

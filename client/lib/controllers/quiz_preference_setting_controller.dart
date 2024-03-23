@@ -1,10 +1,12 @@
 import 'package:client/controllers/note_controller.dart';
+import 'package:client/repository/quiz_repository.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
 import '../models/note.dart';
+import '../models/schedule_quiz_details.dart';
 
-class GoalSettingController extends GetxController{
+class GoalSettingController extends GetxController {
   @override
   void onInit() {
     super.onInit();
@@ -14,7 +16,8 @@ class GoalSettingController extends GetxController{
   String moduleSelectedValue = '';
   String frequencySelectedValue = "Once a day";
 
-  List<String> _moduleNames = List.empty(growable: true);
+  final RxList<String> _moduleNames = <String>[].obs;
+
   List<String> get moduleNames => _moduleNames;
 
   List<DropdownMenuItem<String>> get frequencyDropdownItems {
@@ -30,16 +33,23 @@ class GoalSettingController extends GetxController{
   }
 
   Future<void> fetchModuleNames() async {
-  var noteController = Get.put(NoteController());
-  List<Note> getNote = noteController.allNotes;
-  Set<String> uniqueModuleNames = <String>{};
-  for (final note in getNote) {
-    uniqueModuleNames.add(note.moduleName);
+    var noteController = Get.put(NoteController());
+    List<Note> getNote = noteController.allNotes;
+    Set<String> uniqueModuleNames = <String>{};
+    for (final note in getNote) {
+      uniqueModuleNames.add(note.moduleName);
+    }
+    _moduleNames.assignAll(uniqueModuleNames);
+    if (_moduleNames.isNotEmpty) {
+      moduleSelectedValue = _moduleNames[0];
+    }
   }
-  _moduleNames = uniqueModuleNames.toList();
-  if (_moduleNames.isNotEmpty) {
-    moduleSelectedValue = _moduleNames[0];
+
+  void onModuleSelected(String selectedModule, String selectedFrequency,
+      DateTime selectedTime) async {
+    await QuizRepository().addScheduleQuizDetails(ScheduleQuizDetail(
+        preferredModuleName: selectedModule,
+        preferredTime: selectedTime,
+        preferredFrequency: selectedFrequency));
   }
-  update();
-}
 }

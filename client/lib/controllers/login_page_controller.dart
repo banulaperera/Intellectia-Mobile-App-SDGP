@@ -10,7 +10,9 @@ class LoginPageController extends GetxController {
   final RxBool _obscureText = true.obs;
 
   bool get obscureText => _obscureText.value;
+
   TextEditingController get emailController => _emailController;
+
   TextEditingController get passwordController => _passwordController;
 
   Future<void> signIn(BuildContext context) async {
