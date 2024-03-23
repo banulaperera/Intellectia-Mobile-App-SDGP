@@ -16,7 +16,7 @@ GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await NotificationService().initializeNotification();
-  CronJob().initializeJobs();
+  CronJobService().initializeJobs();
   final bool onboardStatus= await LocalStorage().getOnboardStatus();
   final bool tokenExpired=await checkRefreshTokenIsExpired();
   runApp( MyApp(onboardStatus:onboardStatus,tokenExpired:tokenExpired));

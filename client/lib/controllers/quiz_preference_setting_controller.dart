@@ -1,5 +1,6 @@
 import 'package:client/controllers/note_controller.dart';
 import 'package:client/repository/quiz_repository.dart';
+import 'package:client/util/cron_job_util.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
@@ -47,9 +48,20 @@ class GoalSettingController extends GetxController {
 
   void onModuleSelected(String selectedModule, String selectedFrequency,
       DateTime selectedTime) async {
+      CronJobService cronJobService=CronJobService();
     await QuizRepository().addScheduleQuizDetails(ScheduleQuizDetail(
         preferredModuleName: selectedModule,
         preferredTime: selectedTime,
         preferredFrequency: selectedFrequency));
+
+      if(selectedFrequency=="Once a day"){
+        cronJobService.addQuizSchedule("${selectedTime.minute} ${selectedTime.hour} * * *",selectedModule);
+      }else if(selectedFrequency=="Once a week"){
+        cronJobService.addQuizSchedule("${selectedTime.minute} ${selectedTime.hour} * * 3",selectedModule);
+      }else if(selectedFrequency=="Twice a week"){
+        cronJobService.addQuizSchedule("${selectedTime.minute} ${selectedTime.hour} * * 1,5",selectedModule);
+      }else if(selectedFrequency=="Thrice a week"){
+        cronJobService.addQuizSchedule("${selectedTime.minute} ${selectedTime.hour} * * 1,3,6",selectedModule);
+      }
   }
 }

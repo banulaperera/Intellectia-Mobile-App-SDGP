@@ -51,6 +51,4 @@ class LocalStorage{
     return sharedPreferences.getString("refreshToken") ?? "";
   }
 
-
-
 }
