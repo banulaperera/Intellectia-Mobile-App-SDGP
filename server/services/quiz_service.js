@@ -31,14 +31,14 @@ exports.generateQuiz = async function (content) {
 exports.addScheduleQuizDetails = async function (userID,scheduledQuizDetails){
     try{
         const user=await User.findOne({_id:userID});
-        user.scheduledQuiz.push(scheduledQuizDetails);
+        user.scheduledQuiz=scheduledQuizDetails;
         await user.save();
     }catch (error){
         throw error;
     }
 }
 
-exports.getAllScheduledQuizDetails=async function (userID){
+exports.getScheduledQuizDetails=async function (userID){
     try {
         const user=await User.findOne({_id:userID});
         return user.scheduledQuiz;
@@ -47,24 +47,8 @@ exports.getAllScheduledQuizDetails=async function (userID){
     }
 }
 
-exports.deleteScheduledQuizDetails= async function (userID,scheduledQuizDetailsID){
-    try{
-        const user=await User.findOne({_id:userID});
-        user.scheduledQuiz.pull({_id:scheduledQuizDetailsID})
-        await user.save();
-    }catch (error){
-        throw error
-    }
-}
 
-exports.updateScheduledQuizDetails= async function (userID,scheduledQuizDetails){
-    try{
-        await User.findOneAndUpdate(
-            {'scheduledQuiz._id':scheduledQuizDetails._id,_id:userID},
-            {$set:{'scheduledQuiz.$':scheduledQuizDetails}}
-        )
-    }catch (error) {
-        throw error;
-    }
-}
+
+
+
 
