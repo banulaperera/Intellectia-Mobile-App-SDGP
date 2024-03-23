@@ -13,10 +13,10 @@ class UserProfileHeader extends StatelessWidget {
     super.key,
   });
 
-  getImage(UserProfileController userProfileController){
-    if(userProfileController.user.photo==""){
+  getImage(UserProfileController userProfileController) {
+    if (userProfileController.user.photo == "") {
       return const AssetImage('assets/blank_user_image.png');
-    }else{
+    } else {
       return MemoryImage(base64Decode(userProfileController.user.photo));
     }
   }
@@ -33,22 +33,20 @@ class UserProfileHeader extends StatelessWidget {
           Radius.circular(10),
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            maxRadius: 75,
-            minRadius: 75,
-            backgroundColor: Colors.grey.shade800,
-            backgroundImage:getImage(userProfileController)
-
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          GetBuilder<UserProfileController>(
-            builder: (builder) {
-              return Column(
+      child: GetBuilder<UserProfileController>(
+        builder: (builder) {
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                  maxRadius: 75,
+                  minRadius: 75,
+                  backgroundColor: Colors.grey.shade800,
+                  backgroundImage: getImage(userProfileController)),
+              const SizedBox(
+                width: 20,
+              ),
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -89,10 +87,10 @@ class UserProfileHeader extends StatelessWidget {
                     ],
                   ),
                 ],
-              );
-            },
-          ),
-        ],
+              ),
+            ],
+          );
+        }
       ),
     );
   }
