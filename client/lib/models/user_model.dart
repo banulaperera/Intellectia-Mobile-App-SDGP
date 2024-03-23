@@ -8,6 +8,7 @@ class User {
   int inCorrectedQuestions;
   int totalXP;
   List<int> weeklyXP;
+
   User({
     required this.photo,
     required this.firstName,
@@ -19,6 +20,7 @@ class User {
     required this.totalXP,
     required this.weeklyXP,
   });
+
   Map<String, dynamic> toJson() {
     return {
       "photo": photo,

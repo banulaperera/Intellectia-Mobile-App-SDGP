@@ -1,11 +1,14 @@
 import 'dart:async';
+
 import 'package:client/repository/notification_repository.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import '../models/notification_model.dart';
 
 class NotificationController extends GetxController {
   List<NotificationM> _notifications = List.empty(growable: true);
+
   List<NotificationM> get notifications => _notifications;
 
   @override

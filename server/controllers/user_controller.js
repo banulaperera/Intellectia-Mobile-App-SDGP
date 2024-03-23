@@ -51,7 +51,6 @@ exports.updateUserDetails = async (req, res) => {
         const {userID} = req.user;
         const user = req.body
         const userINdb=await UserService.checkUserEmail(user.email);
-        console.log(userINdb);
 
         if (userINdb!=null&&userINdb._id.toString()!==userID){
             res.status(200).json({Message: "The email has already taken by another user"})

@@ -16,7 +16,7 @@ const userSchema=new mongoose.Schema({
     weeklyXP:{type:[Number],default:[0,0,0,0,0,0,0]},
     notes:[Note],
     notifications:[Notification],
-    scheduledQuiz:[ScheduledQuizDetails]
+    scheduledQuiz:ScheduledQuizDetails
 
 });
 

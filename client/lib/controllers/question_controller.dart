@@ -24,18 +24,23 @@ class QuestionController extends GetxController
   List<Question> get questions => _questions;
 
   bool _isAnswered = false;
+
   bool get isAnswered => _isAnswered;
 
   late int _correctAns;
+
   int get correctAns => _correctAns;
 
   late int _selectedAns;
+
   int get selectedAns => _selectedAns;
 
   final RxInt _questionNumber = 1.obs;
+
   RxInt get questionNumber => _questionNumber;
 
   int _numOfCorrectAns = 0;
+
   int get numOfCorrectAns => _numOfCorrectAns;
 
   // called immediately after the widget is allocated memory
@@ -98,8 +103,9 @@ class QuestionController extends GetxController
     } else {
       // Get package provide us simple way to navigate another page
       var userProfileController = Get.put(UserProfileController());
-      userProfileController.updateWeeklyXP(_numOfCorrectAns, (5 - _numOfCorrectAns),  _numOfCorrectAns * 2000);
-      Get.to(() => const ScoreScreen());
+      userProfileController.updateWeeklyXP(
+          _numOfCorrectAns, (5 - _numOfCorrectAns), _numOfCorrectAns * 2000);
+      Get.off(() => const ScoreScreen());
     }
   }
 
@@ -108,7 +114,6 @@ class QuestionController extends GetxController
   }
 
   List<Note> allNotes = [];
-
   Future<void> fetchQuestions() async {
     allNotes = await NoteRepository().getAllNotes() ?? [];
     if (allNotes.isNotEmpty) {

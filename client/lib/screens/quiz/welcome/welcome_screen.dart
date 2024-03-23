@@ -22,6 +22,7 @@ class WelcomeScreen extends StatelessWidget {
                     Lottie.asset('animations/Animation - 1710413869166.json', height: 380, reverse: true, repeat: true, animate: true,),
                     const Spacer(), //2/6
                     Text(
+                      textAlign: TextAlign.center,
                       "Are you ready for the quiz?",
                       style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           color: const Color.fromARGB(255, 6, 6, 6),

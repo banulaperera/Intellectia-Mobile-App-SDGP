@@ -6,18 +6,21 @@ import '../repository/note_repository.dart';
 
 class NoteController extends GetxController {
   List<TileModel> _filteredNotes = List.empty(growable: true);
+
   List<TileModel> get filteredNotes => _filteredNotes;
 
-  final List<TileModel> _tileList = List.empty(growable: true);
+  List<TileModel> _tileList = List.empty(growable: true);
+
   List<TileModel> get titleList => _tileList;
 
   List<Note> _allNotes = List.empty(growable: true);
+
   List<Note> get allNotes => _allNotes;
 
   @override
   void onInit() {
-    super.onInit();
     fetchNotes();
+    super.onInit();
   }
 
   Future<void> fetchNotes() async {
@@ -25,8 +28,8 @@ class NoteController extends GetxController {
     Set<String> uniqueModuleNames = <String>{};
     for (final note in allNotes) {
       uniqueModuleNames.add(note.moduleName);
-      _filteredNotes.clear();
-      _tileList.clear();
+      _filteredNotes = [];
+      _tileList = [];
       for (final moduleName in uniqueModuleNames) {
         List<Note> moduleNotes =
             allNotes.where((note) => note.moduleName == moduleName).toList();
@@ -118,6 +121,13 @@ class NoteController extends GetxController {
           title: title,
           content: content),
     );
+    update();
+  }
+
+  void clearNotes() {
+    _filteredNotes = [];
+    _tileList = [];
+    _allNotes = [];
     update();
   }
 }

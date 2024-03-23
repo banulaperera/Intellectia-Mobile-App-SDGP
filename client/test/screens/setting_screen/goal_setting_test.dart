@@ -1,6 +1,6 @@
-import 'package:client/controllers/goal_setting_controller.dart';
+import 'package:client/controllers/quiz_preference_setting_controller.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:client/screens/setting_screen/goal_setting.dart';
+import 'package:client/screens/setting_screen/quiz_preference_setting.dart';
 import 'package:get/get.dart';
 
 void main() {
