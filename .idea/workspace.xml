@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="196b77b2-d063-4090-9090-6a5712d4522e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/quiz_preference_setting_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/quiz_preference_setting_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/models/quiz_preference_model.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/setting_screen/main_setting_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/setting_screen/main_setting_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/util/db_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/util/db_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/user_profile_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/user_profile_header.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
