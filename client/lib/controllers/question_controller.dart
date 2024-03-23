@@ -114,7 +114,6 @@ class QuestionController extends GetxController
   }
 
   List<Note> allNotes = [];
-  ScheduleQuizDetail? scheduleQuizDetail = ;
   Future<void> fetchQuestions() async {
     allNotes = await NoteRepository().getAllNotes() ?? [];
     if (allNotes.isNotEmpty) {
