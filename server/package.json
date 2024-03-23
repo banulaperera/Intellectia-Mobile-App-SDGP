@@ -18,9 +18,11 @@
     "googleapis": "^134.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.2",
-    "openai": "^4.28.4"
+    "openai": "^4.28.4",
+    "sinon": "^17.0.1"
   },
   "devDependencies": {
+    "mocha": "^10.3.0",
     "nodemon": "^3.0.3"
   }
 }
