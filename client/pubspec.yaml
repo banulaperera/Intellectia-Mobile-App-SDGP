@@ -52,6 +52,7 @@ dependencies:
   permission_handler: ^11.3.0
   url_launcher: ^6.2.5
   carousel_slider: ^4.2.1
+  workmanager: ^0.5.2
   
 dev_dependencies:
   flutter_test:

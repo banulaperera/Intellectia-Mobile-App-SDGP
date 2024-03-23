@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:client/models/note.dart';
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';

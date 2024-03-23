@@ -6,12 +6,15 @@ import '../repository/note_repository.dart';
 
 class NoteController extends GetxController {
   List<TileModel> _filteredNotes = List.empty(growable: true);
+
   List<TileModel> get filteredNotes => _filteredNotes;
 
   final List<TileModel> _tileList = List.empty(growable: true);
+
   List<TileModel> get titleList => _tileList;
 
   List<Note> _allNotes = List.empty(growable: true);
+
   List<Note> get allNotes => _allNotes;
 
   @override

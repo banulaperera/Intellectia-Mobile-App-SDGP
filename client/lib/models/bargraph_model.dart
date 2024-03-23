@@ -1,4 +1,4 @@
-class IndividualBar{
+class IndividualBar {
   final int x;
   final double y;
 

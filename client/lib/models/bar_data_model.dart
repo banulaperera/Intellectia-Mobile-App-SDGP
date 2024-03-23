@@ -21,7 +21,7 @@ class BarData {
 
   List<IndividualBar> barData = [];
 
-  void initializeBarData(){
+  void initializeBarData() {
     barData = [
       IndividualBar(x: 1, y: mondayExp),
       IndividualBar(x: 2, y: tueExp),

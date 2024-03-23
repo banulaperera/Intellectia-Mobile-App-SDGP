@@ -5,7 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="196b77b2-d063-4090-9090-6a5712d4522e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/controllers/login_page_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/login_page_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/controllers/ml_model_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/ml_model_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/controllers/note_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/note_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/controllers/notification_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/notification_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/controllers/quiz_preference_setting_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/quiz_preference_setting_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/controllers/signup_page_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/signup_page_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/controllers/user_profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/user_profile_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/models/bar_data_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/models/bar_data_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/models/bargraph_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/models/bargraph_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/models/note.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/models/note.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/models/notification_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/models/notification_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/models/questions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/models/questions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/models/scheduleQuizDetails.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/models/schedule_quiz_details.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/repository/auth_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/repository/auth_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/repository/ml_model_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/repository/ml_model_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/repository/note_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/repository/note_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/repository/notification_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/repository/notification_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/repository/quiz_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/repository/quiz_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/repository/user_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/repository/user_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/note_editor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/note_editor.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components/notification_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components/notification_title.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/user_profile_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/user_profile/user_profile_components/user_profile_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/util/db_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/util/db_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/quiz_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/quiz_controller.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

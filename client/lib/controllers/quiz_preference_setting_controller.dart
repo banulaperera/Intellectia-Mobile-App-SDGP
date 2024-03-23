@@ -4,7 +4,7 @@ import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
 import '../models/note.dart';
-import '../models/scheduleQuizDetails.dart';
+import '../models/schedule_quiz_details.dart';
 
 class GoalSettingController extends GetxController {
   @override
@@ -13,17 +13,10 @@ class GoalSettingController extends GetxController {
     fetchModuleNames();
   }
 
-  //default values for quiz preference
-  ScheduleQuizDetail _quizPreferenceModel = ScheduleQuizDetail(
- preferredModuleName: '', preferredTime: DateTime.now(), preferredFrequency: '',
-  );
-
-  ScheduleQuizDetail get quizPreferenceModel => _quizPreferenceModel;
-
   String moduleSelectedValue = '';
   String frequencySelectedValue = "Once a day";
 
-  List<String> _moduleNames = List.empty(growable: true);
+  final RxList<String> _moduleNames = <String>[].obs;
 
   List<String> get moduleNames => _moduleNames;
 
@@ -46,21 +39,17 @@ class GoalSettingController extends GetxController {
     for (final note in getNote) {
       uniqueModuleNames.add(note.moduleName);
     }
-    _moduleNames = uniqueModuleNames.toList();
+    _moduleNames.assignAll(uniqueModuleNames);
     if (_moduleNames.isNotEmpty) {
       moduleSelectedValue = _moduleNames[0];
     }
-    update();
   }
 
   void onModuleSelected(String selectedModule, String selectedFrequency,
       DateTime selectedTime) async {
-    _quizPreferenceModel = ScheduleQuizDetail(
+    await QuizRepository().addScheduleQuizDetails(ScheduleQuizDetail(
         preferredModuleName: selectedModule,
         preferredTime: selectedTime,
-        preferredFrequency: selectedFrequency
-    );
-    await QuizRepository().addScheduleQuizDetails(_quizPreferenceModel);
-    update();
+        preferredFrequency: selectedFrequency));
   }
 }

@@ -21,7 +21,8 @@ class NotificationTitle extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
-              image: AssetImage(notifications.imageResource), fit: BoxFit.cover),
+              image: AssetImage(notifications.imageResource),
+              fit: BoxFit.cover),
         ),
       ),
       title: Row(

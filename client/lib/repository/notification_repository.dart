@@ -3,26 +3,27 @@ import 'dart:convert';
 import 'package:client/models/notification_model.dart';
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';
+import 'package:client/util/refresh_token.dart';
 import 'package:client/util/show_Alert.dart';
 import 'package:http/http.dart' as http;
-import 'package:client/util/refresh_token.dart';
 
-class NotificationRepository{
-  LocalStorage localStorage= LocalStorage();
+class NotificationRepository {
+  LocalStorage localStorage = LocalStorage();
 
-  Future<List<NotificationM>?> getAllNotification() async{
+  Future<List<NotificationM>?> getAllNotification() async {
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
-    final res=await http.get(Uri.parse('$baseUrl/notification/all'),
-    headers: <String, String>{
-      'Content-Type': 'application/json',
-      "Authorization": "bearer $accessToken"
-    });
+    final res = await http.get(Uri.parse('$baseUrl/notification/all'),
+        headers: <String, String>{
+          'Content-Type': 'application/json',
+          "Authorization": "bearer $accessToken"
+        });
 
     if (res.statusCode == 200) {
       final resData = jsonDecode(res.body);
       List<NotificationM> notes = [
-        ...resData['notifications'].map((notification) => NotificationM.fromJson(notification))
+        ...resData['notifications']
+            .map((notification) => NotificationM.fromJson(notification))
       ];
       if (notes.isNotEmpty) return notes;
     }
@@ -41,7 +42,7 @@ class NotificationRepository{
 
     Map<String, dynamic> resData = jsonDecode(res.body);
 
-    if (res.statusCode!=200) {
+    if (res.statusCode != 200) {
       showError(resData['Message']);
     }
   }
@@ -58,15 +59,15 @@ class NotificationRepository{
       },
     );
     Map<String, dynamic> resData = jsonDecode(res.body);
-    if (res.statusCode!=200) {
+    if (res.statusCode != 200) {
       showError(resData['Message']);
     }
   }
 
-  Future<List<String>?> getYoutubeNotificationLink() async{
+  Future<List<String>?> getYoutubeNotificationLink() async {
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
-    final res=await http.get(Uri.parse('$baseUrl/notification/youtube-link'),
+    final res = await http.get(Uri.parse('$baseUrl/notification/youtube-link'),
         headers: <String, String>{
           'Content-Type': 'application/json',
           "Authorization": "bearer $accessToken"
@@ -74,11 +75,10 @@ class NotificationRepository{
 
     if (res.statusCode == 200) {
       final resData = jsonDecode(res.body);
-      if(resData['link']!=null){
-         return [resData['link'],resData['module']];
+      if (resData['link'] != null) {
+        return [resData['link'], resData['module']];
       }
     }
     return null;
   }
-
 }

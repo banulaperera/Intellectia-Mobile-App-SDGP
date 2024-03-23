@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:client/models/questions.dart';
-import 'package:client/models/scheduleQuizDetails.dart';
+import 'package:client/models/schedule_quiz_details.dart';
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';
 import 'package:client/util/refresh_token.dart';
@@ -34,7 +34,8 @@ class QuizRepository {
     }
   }
 
-  Future<bool> addScheduleQuizDetails(ScheduleQuizDetail scheduleQuizDetail) async {
+  Future<bool> addScheduleQuizDetails(
+      ScheduleQuizDetail scheduleQuizDetail) async {
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
 
@@ -59,7 +60,8 @@ class QuizRepository {
   Future<ScheduleQuizDetail?> getScheduleQuizDetails() async {
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
-    final res = await http.get(Uri.parse('$baseUrl/quiz/schedule/getAll-details'),
+    final res = await http.get(
+        Uri.parse('$baseUrl/quiz/schedule/get-details'),
         headers: <String, String>{
           'Content-Type': 'application/json',
           "Authorization": "bearer $accessToken"
@@ -67,9 +69,8 @@ class QuizRepository {
 
     if (res.statusCode == 200) {
       final Map<String, dynamic> resData = jsonDecode(res.body);
-         return ScheduleQuizDetail.fromJson(resData);
+      return ScheduleQuizDetail.fromJson(resData);
     }
     return null;
   }
-
 }
