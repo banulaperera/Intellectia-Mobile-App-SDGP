@@ -8,8 +8,37 @@ import '../../constants.dart';
 import '../../util/local_storage.dart';
 import 'account_setting.dart';
 
-class MainSettingPage extends StatelessWidget {
+class MainSettingPage extends StatefulWidget {
   const MainSettingPage({super.key});
+
+  @override
+  State<MainSettingPage> createState() => _MainSettingPageState();
+}
+
+
+class _MainSettingPageState extends State<MainSettingPage> {
+   bool youTubeValueSelected=true;
+   bool  rankValueSelected=true;
+   bool  quizValueSelected=true;
+  @override
+   initState(){
+    initializeNotificationStatus();
+    super.initState();
+  }
+
+   initializeNotificationStatus() async {
+     final localStorage = LocalStorage();
+     final youtubeStatus = await localStorage.getYoutubeNotificationStatus();
+     final quizStatus = await localStorage.getQuizNotificationStatus();
+     final rankStatus = await localStorage.getRankNotificationStatus();
+
+    setState((){
+      youTubeValueSelected= youtubeStatus;
+      rankValueSelected= rankStatus;
+      quizValueSelected= quizStatus;
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -147,6 +176,7 @@ class MainSettingPage extends StatelessWidget {
   }
 
   Row buildNotificationOption(String title) {
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -161,9 +191,28 @@ class MainSettingPage extends StatelessWidget {
         Transform.scale(
           scale: 0.7,
           child: Switch(
-              value: true,
+              value: title=='Video recommendations' ? youTubeValueSelected:(title=='New quiz reminder'? quizValueSelected:rankValueSelected),
               activeTrackColor: kPrimaryColor,
-              onChanged: (bool value) {}),
+              onChanged: (bool value) {
+                 var localStorage = LocalStorage();
+                if(title=='Video recommendations'){
+                  localStorage.setYoutubeNotificationStatus(value);
+                  setState(() {
+                    youTubeValueSelected=value;
+                  });
+                }else if(title=='New quiz reminder'){
+                  localStorage.setQuizNotificationStatus(value);
+                  setState(() {
+                    quizValueSelected=value;
+                  });
+                }else if(title=='Skill up notifications'){
+                  localStorage.setRankNotificationStatus(value);
+                  setState(() {
+                    rankValueSelected=value;
+                  });
+                }
+                // valueSelected=value;
+              }),
         )
       ],
     );

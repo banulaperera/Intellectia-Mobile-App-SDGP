@@ -69,7 +69,7 @@ class LocalStorage{
 
   Future<bool> getRankNotificationStatus() async{
     final sharedPreferences = await SharedPreferences.getInstance();
-    return sharedPreferences.getBool("rankNotificationStatus") ?? false;
+    return sharedPreferences.getBool("rankNotificationStatus") ?? true;
   }
 
   Future<void> setQuizNotificationStatus(bool status) async{
