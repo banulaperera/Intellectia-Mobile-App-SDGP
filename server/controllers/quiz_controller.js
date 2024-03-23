@@ -25,7 +25,7 @@ exports.addScheduledQuizDetails=async (req,res)=>{
 exports.getScheduledQuizDetails=async (req,res)=>{
     try {
         const {userID}=req.user;
-        const  scheduleDetails = await quizService.getAllScheduledQuizDetails(userID);
+        const  scheduleDetails = await quizService.getScheduledQuizDetails(userID);
         res.status(200).json({scheduleDetails});
     }catch (error){
         res.status(400).json({ Message: "The request is not completed "})
