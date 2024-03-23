@@ -56,7 +56,7 @@ class QuizRepository {
     }
   }
 
-  Future<List<ScheduleQuizDetail>?> getAllScheduleQuizDetails() async {
+  Future<List<ScheduleQuizDetail>?> getScheduleQuizDetails() async {
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
     final res = await http.get(Uri.parse('$baseUrl/quiz/schedule/getAll-details'),
@@ -67,55 +67,10 @@ class QuizRepository {
 
     if (res.statusCode == 200) {
       final resData = jsonDecode(res.body);
-      List<ScheduleQuizDetail> scheduleDetails = [
-        ...resData['scheduleDetails'].map((scheduleQuiz) => ScheduleQuizDetail.fromJson(scheduleQuiz))
-      ];
+       final scheduleDetails = resData["scheduleDetails"];
       if (scheduleDetails.isNotEmpty) return scheduleDetails;
     }
     return null;
-  }
-
-  Future<bool> updateScheduleQuizDetails(ScheduleQuizDetail scheduleQuizDetail) async {
-    await refreshToken(await localStorage.getAccessToken());
-    String accessToken = await localStorage.getAccessToken();
-
-    final res = await http.put(Uri.parse('$baseUrl/quiz/schedule/update-details'),
-        headers: <String, String>{
-          'Content-Type': 'application/json',
-          "Authorization": "bearer $accessToken"
-        },
-        body: jsonEncode(scheduleQuizDetail.toJsonWithID()));
-
-    Map<String, dynamic> resData = jsonDecode(res.body);
-
-    if (res.statusCode == 200) {
-      showSuccess(resData['Message']);
-      return true;
-    } else {
-      showError(resData['Message']);
-      return false;
-    }
-  }
-
-  Future<bool> deleteScheduleQuizDetails(String scheduleQuizDetailID) async {
-    await refreshToken(await localStorage.getAccessToken());
-    String accessToken = await localStorage.getAccessToken();
-
-    final res = await http.delete(
-      Uri.parse('$baseUrl/quiz/schedule/delete-details/$scheduleQuizDetailID'),
-      headers: <String, String>{
-        'Content-Type': 'application/json',
-        "Authorization": "bearer $accessToken"
-      },
-    );
-    Map<String, dynamic> resData = jsonDecode(res.body);
-    if (res.statusCode == 200) {
-      showSuccess(resData['Message']);
-      return true;
-    } else {
-      showError(resData['Message']);
-      return false;
-    }
   }
 
 }
