@@ -56,7 +56,7 @@ class QuizRepository {
     }
   }
 
-  Future<List<ScheduleQuizDetail>?> getScheduleQuizDetails() async {
+  Future<ScheduleQuizDetail?> getScheduleQuizDetails() async {
     await refreshToken(await localStorage.getAccessToken());
     String accessToken = await localStorage.getAccessToken();
     final res = await http.get(Uri.parse('$baseUrl/quiz/schedule/getAll-details'),
@@ -66,9 +66,8 @@ class QuizRepository {
         });
 
     if (res.statusCode == 200) {
-      final resData = jsonDecode(res.body);
-       final scheduleDetails = resData["scheduleDetails"];
-      if (scheduleDetails.isNotEmpty) return scheduleDetails;
+      final Map<String, dynamic> resData = jsonDecode(res.body);
+         return ScheduleQuizDetail.fromJson(resData);
     }
     return null;
   }
