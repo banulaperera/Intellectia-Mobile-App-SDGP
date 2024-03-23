@@ -1,13 +1,31 @@
 import 'package:client/constants.dart';
 import 'package:client/controllers/question_controller.dart';
+import 'package:client/util/local_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../navigation_bar.dart';
 
-class ScoreScreen extends StatelessWidget {
+class ScoreScreen extends StatefulWidget {
   const ScoreScreen({super.key});
+  @override
+  State<ScoreScreen> createState() => _ScoreScreenState();
+}
+
+
+
+class _ScoreScreenState extends State<ScoreScreen> {
+
+  @override
+  initState(){
+    setQuizStatus();
+    super.initState();
+  }
+
+  setQuizStatus() async {
+    await LocalStorage().setQuizPageStatus(false);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +36,11 @@ class ScoreScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () => Get.to(() => const BottomNavigation(1))),
+            onPressed: () {
+               Get.to(() => const BottomNavigation(1));
+            }
+
+        ),
       ),
       body: Center(
         child: Column(

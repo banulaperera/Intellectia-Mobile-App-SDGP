@@ -27,6 +27,32 @@ class NotificationService {
         0, title, body, notificationDetails);
   }
 
+  showQuizNotification(String moduleName) async {
+    if(await localStorage.getQuizNotificationStatus()){
+      String title = 'Quiz !!!! ..';
+      String body = 'Your Quiz on $moduleName is available.Please Take the quiz..';
+      var notificationM = NotificationM(
+          title: title, body: body, type: "quiz", date: DateTime.now());
+
+      await NotificationRepository().addNotification(notificationM);
+
+      const AndroidNotificationDetails androidNotificationDetails =
+      AndroidNotificationDetails(
+        "channel-1",
+        "quiz notification",
+        importance: Importance.max,
+        priority: Priority.max,
+        largeIcon: DrawableResourceAndroidBitmap('@mipmap/target'),
+      );
+      _showNotification(title, body, androidNotificationDetails);
+      LocalStorage().setQuizPageStatus(true);
+    }
+
+  }
+
+
+
+
   showRankNotification(int newLevel) async {
     if(await localStorage.getRankNotificationStatus()){
       String title = 'Congratulations..';

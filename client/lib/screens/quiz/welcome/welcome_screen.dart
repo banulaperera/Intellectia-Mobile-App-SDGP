@@ -1,16 +1,69 @@
 import 'package:client/screens/quiz/question_screen.dart';
+import 'package:client/util/local_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:client/constants.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
+
   const WelcomeScreen({super.key});
 
   @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  bool pageStatus=false;
+
+  @override
+  initState(){
+    setPageStatus();
+    super.initState();
+  }
+
+  setPageStatus() async {
+    final status=await LocalStorage().getQuizPageStatus();
+    setState(() {
+      pageStatus=status;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body:true ? null :Stack(
+    return !pageStatus ?
+    Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Lottie.asset(
+              'animations/Animation - 1710415777357.json',
+              height: 350,
+              reverse: true,
+              repeat: true,
+              animate: true,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Text(
+                textAlign: TextAlign.center,
+                'Quiz not available',
+                style: TextStyle(
+                  color: Colors.grey.shade400,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ):Scaffold(
+      body:Stack(
         children: [
           SafeArea(
             child: Padding(
@@ -30,7 +83,9 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                     const Spacer(), // 1/6
                     InkWell(
-                      onTap: () => Get.to(() => const QuizScreen()),
+                      onTap: () {
+                      if(pageStatus) Get.to(() => const QuizScreen());
+                      },
                       child: Container(
                         width: 300,
                         alignment: Alignment.center,

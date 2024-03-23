@@ -25,7 +25,7 @@ class CronJobService {
    addQuizSchedule(String time,moduleName){
     quizCronJob=Cron();
     scheduledModuleName=moduleName;
-    quizCronJob.schedule(Schedule.parse(time), () => null);
+    quizCronJob.schedule(Schedule.parse(time), () async =>await NotificationService().showQuizNotification(moduleName));
    }
 
 

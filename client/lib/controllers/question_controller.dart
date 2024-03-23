@@ -119,9 +119,19 @@ class QuestionController extends GetxController
     if (allNotes.isNotEmpty) {
       allNotes.sort((a, b) => b.createdDate.compareTo(a.createdDate));
       String latestCreatedDate = allNotes.first.content;
+
+      // ScheduleQuizDetail? scheduleQuizDetail=await QuizRepository().getScheduleQuizDetails();
+      // String? scheduledModuleName=scheduleQuizDetail?.preferredModuleName;
+      // String content="";
+      // List<Note> moduleNotes = allNotes.where((note) => note.moduleName==scheduledModuleName).toList();
+      // for (var note in moduleNotes) {
+      //   content+=" ${note.content}";
+      // }
+
       _questions =
           (await QuizRepository().generateQuiz(latestCreatedDate))!.toList();
     }
     update();
   }
+
 }
