@@ -11,7 +11,7 @@ class ScoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final qnController = Get.find<QuestionController>();
+    final qnController = Get.put(QuestionController());
     return Scaffold(
       appBar: AppBar(
         elevation: 0,

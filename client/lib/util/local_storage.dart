@@ -51,4 +51,35 @@ class LocalStorage{
     return sharedPreferences.getString("refreshToken") ?? "";
   }
 
+
+  Future<void> setYoutubeNotificationStatus(bool status) async{
+    final sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.setBool("youtubeNotificationStatus",status);
+  }
+
+  Future<bool> getYoutubeNotificationStatus() async{
+    final sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.getBool("youtubeNotificationStatus") ?? false;
+  }
+
+  Future<void> setRankNotificationStatus(bool status) async{
+    final sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.setBool("rankNotificationStatus",status);
+  }
+
+  Future<bool> getRankNotificationStatus() async{
+    final sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.getBool("rankNotificationStatus") ?? true;
+  }
+
+  Future<void> setQuizNotificationStatus(bool status) async{
+    final sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.setBool("quizNotificationStatus",status);
+  }
+
+  Future<bool> getQuizNotificationStatus() async{
+    final sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.getBool("quizNotificationStatus") ?? false;
+  }
+
 }

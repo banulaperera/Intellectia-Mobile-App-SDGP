@@ -1,5 +1,6 @@
 import 'package:client/models/notification_model.dart';
 import 'package:client/repository/notification_repository.dart';
+import 'package:client/util/local_storage.dart';
 import 'package:client/util/refresh_token.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -7,6 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 class NotificationService {
   final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
+  LocalStorage localStorage=LocalStorage();
 
   Future<void> initializeNotification() async {
     const AndroidInitializationSettings androidInitializationSettings =
@@ -26,53 +28,59 @@ class NotificationService {
   }
 
   showRankNotification(int newLevel) async {
-    String title = 'Congratulations..';
-    String body = 'You have reached level $newLevel. Keep pushing your limits';
-    var notificationM = NotificationM(
-        title: title, body: body, type: "rank", date: DateTime.now());
+    if(await localStorage.getRankNotificationStatus()){
+      String title = 'Congratulations..';
+      String body = 'You have reached level $newLevel. Keep pushing your limits';
+      var notificationM = NotificationM(
+          title: title, body: body, type: "rank", date: DateTime.now());
 
-    await NotificationRepository().addNotification(notificationM);
+      await NotificationRepository().addNotification(notificationM);
 
-    const AndroidNotificationDetails androidNotificationDetails =
-        AndroidNotificationDetails(
-      "channel-1",
-      "rank notification",
-      importance: Importance.max,
-      priority: Priority.max,
-          largeIcon: DrawableResourceAndroidBitmap('@mipmap/thunder'),
-    );
+      const AndroidNotificationDetails androidNotificationDetails =
+      AndroidNotificationDetails(
+        "channel-1",
+        "rank notification",
+        importance: Importance.max,
+        priority: Priority.max,
+        largeIcon: DrawableResourceAndroidBitmap('@mipmap/thunder'),
+      );
 
-    _showNotification(title, body, androidNotificationDetails);
+      _showNotification(title, body, androidNotificationDetails);
+    }
+
   }
 
   showYoutubeNotification() async {
-    final bool tokenExpired=await checkRefreshTokenIsExpired();
-    if(!tokenExpired){
-      List<String>? video =
-      await NotificationRepository().getYoutubeNotificationLink();
-      if (video != null) {
-        String title = 'Suggestions';
-        String body = 'New suggestion. check out this video on ${video[1]}';
-        var notificationM = NotificationM(
-            title: title,
-            body: body,
-            type: "youtube",
-            date: DateTime.now(),
-            link: video[0]);
+    if(await localStorage.getYoutubeNotificationStatus()){
+      final bool tokenExpired=await checkRefreshTokenIsExpired();
+      if(!tokenExpired){
+        List<String>? video =
+        await NotificationRepository().getYoutubeNotificationLink();
+        if (video != null) {
+          String title = 'Suggestions';
+          String body = 'New suggestion. check out this video on ${video[1]}';
+          var notificationM = NotificationM(
+              title: title,
+              body: body,
+              type: "youtube",
+              date: DateTime.now(),
+              link: video[0]);
 
-        await NotificationRepository().addNotification(notificationM);
+          await NotificationRepository().addNotification(notificationM);
 
-        const AndroidNotificationDetails androidNotificationDetails =
-        AndroidNotificationDetails(
-          "channel-2",
-          "youtube notification",
-          importance: Importance.max,
-          priority: Priority.max,
-          largeIcon: DrawableResourceAndroidBitmap('@mipmap/thunder'),
-        );
-        _showNotification(title, body, androidNotificationDetails);
+          const AndroidNotificationDetails androidNotificationDetails =
+          AndroidNotificationDetails(
+            "channel-2",
+            "youtube notification",
+            importance: Importance.max,
+            priority: Priority.max,
+            largeIcon: DrawableResourceAndroidBitmap('@mipmap/thunder'),
+          );
+          _showNotification(title, body, androidNotificationDetails);
+        }
       }
     }
+
   }
 
   getPermissionForNotification() async {
