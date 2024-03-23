@@ -1,7 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/screens/login_page.dart';
-import 'package:client/screens/setting_screen/goal_setting.dart';
 import 'package:client/screens/setting_screen/change_password.dart';
+import 'package:client/screens/setting_screen/quiz_preference_setting.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 import '../../constants.dart';
