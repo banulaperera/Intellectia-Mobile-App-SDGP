@@ -2,9 +2,11 @@
 import 'package:cron/cron.dart';
 import 'notification_service.dart';
 
-class CronJob {
+class CronJobService {
 
   final _cronYouTube = Cron();
+  Cron _quizCronJob = Cron();
+  late String scheduledModuleName;
 
 
   initializeJobs(){
@@ -19,6 +21,13 @@ class CronJob {
   getYouTubeCronJob() {
     return _cronYouTube;
   }
+
+   addQuizSchedule(String time,moduleName){
+    _quizCronJob.close();
+    _quizCronJob=Cron();
+    scheduledModuleName=moduleName;
+    _quizCronJob.schedule(Schedule.parse(time), () async =>await NotificationService().showQuizNotification(moduleName));
+   }
 
 
 }

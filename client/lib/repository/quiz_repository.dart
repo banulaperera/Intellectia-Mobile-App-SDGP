@@ -69,7 +69,7 @@ class QuizRepository {
 
     if (res.statusCode == 200) {
       final Map<String, dynamic> resData = jsonDecode(res.body);
-      return ScheduleQuizDetail.fromJson(resData);
+      return ScheduleQuizDetail.fromJson(resData['scheduleDetails']);
     }
     return null;
   }

@@ -1,15 +1,15 @@
 import 'dart:async';
 
 import 'package:client/repository/notification_repository.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:get/get.dart';
 
 import '../models/notification_model.dart';
 
 class NotificationController extends GetxController {
-  List<NotificationM> _notifications = List.empty(growable: true);
+  final RxList<NotificationM> _notifications = <NotificationM>[].obs;
 
-  List<NotificationM> get notifications => _notifications;
+  List<NotificationM> get notifications => _notifications.toList();
 
   @override
   void onInit() {
@@ -18,15 +18,16 @@ class NotificationController extends GetxController {
   }
 
   Future<void> fetchNotifications() async {
-    _notifications = await NotificationRepository().getAllNotification() ?? [];
-    if (_notifications.isNotEmpty) {
-      _notifications.sort((a, b) => b.date.compareTo(a.date));
+    List<NotificationM> fetchedNotifications = await NotificationRepository().getAllNotification() ?? [];
+    if (fetchedNotifications.isNotEmpty) {
+      fetchedNotifications.sort((a, b) => b.date.compareTo(a.date));
     }
-    update();
+    _notifications.assignAll(fetchedNotifications);
   }
 
   Future<void> deleteNotification(String notificationID) async {
     await NotificationRepository().deleteNote(notificationID);
+    _notifications.removeWhere((element) => element.id == notificationID);
     fetchNotifications();
   }
 

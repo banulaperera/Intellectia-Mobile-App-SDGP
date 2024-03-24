@@ -122,8 +122,8 @@ class _TileViewWidgetState extends State<TileViewWidget> {
                   ),
                   subtitle: Text(
                     note.createdDate == note.lastModifiedDate
-                        ? 'Created: ${DateFormat('EEEE MMM d, yyyy h:mm a').format(note.createdDate.toUtc())}'
-                        : 'Edited: ${DateFormat('EEEE MMM d, yyyy h:mm a').format(note.lastModifiedDate.toUtc())}',
+                        ? 'Created: ${DateFormat('EEEE MMM d, yyyy h:mm a').format(note.createdDate)}'
+                        : 'Edited: ${DateFormat('EEEE MMM d, yyyy h:mm a').format(note.lastModifiedDate)}',
                     style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 11,

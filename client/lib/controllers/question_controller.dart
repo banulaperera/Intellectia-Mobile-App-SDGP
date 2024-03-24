@@ -6,7 +6,9 @@ import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
 import '../models/note.dart';
+import '../models/schedule_quiz_details.dart';
 import '../repository/note_repository.dart';
+import '../util/local_storage.dart';
 
 class QuestionController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -93,7 +95,9 @@ class QuestionController extends GetxController
     });
   }
 
-  void nextQuestion() {
+  var userProfileController = Get.find<UserProfileController>();
+
+  void nextQuestion() async {
     if (_questionNumber.value != _questions.length) {
       _isAnswered = false;
       _pageController.nextPage(
@@ -101,11 +105,12 @@ class QuestionController extends GetxController
       _animationController.reset();
       _animationController.forward().whenComplete(nextQuestion);
     } else {
-      // Get package provide us simple way to navigate another page
-      var userProfileController = Get.put(UserProfileController());
-      userProfileController.updateWeeklyXP(
+      await userProfileController.updateWeeklyXP(
           _numOfCorrectAns, (5 - _numOfCorrectAns), _numOfCorrectAns * 2000);
-      Get.off(() => const ScoreScreen());
+      LocalStorage().setQuizPageStatus(false);
+      await Get.off(ScoreScreen(
+        score: _numOfCorrectAns,
+      ));
     }
   }
 
@@ -114,13 +119,22 @@ class QuestionController extends GetxController
   }
 
   List<Note> allNotes = [];
+
   Future<void> fetchQuestions() async {
     allNotes = await NoteRepository().getAllNotes() ?? [];
     if (allNotes.isNotEmpty) {
-      allNotes.sort((a, b) => b.createdDate.compareTo(a.createdDate));
-      String latestCreatedDate = allNotes.first.content;
-      _questions =
-          (await QuizRepository().generateQuiz(latestCreatedDate))!.toList();
+      ScheduleQuizDetail? scheduleQuizDetail =
+          await QuizRepository().getScheduleQuizDetails();
+
+      String? scheduledModuleName = scheduleQuizDetail?.preferredModuleName;
+      String content = "";
+      List<Note> moduleNotes = allNotes
+          .where((note) => note.moduleName == scheduledModuleName)
+          .toList();
+      for (var note in moduleNotes) {
+        content += " ${note.content}";
+      }
+      _questions = (await QuizRepository().generateQuiz(content))!.toList();
     }
     update();
   }

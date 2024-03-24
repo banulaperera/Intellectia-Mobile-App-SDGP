@@ -1,7 +1,7 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:client/screens/quiz/score/score_screen.dart';
-import 'package:get/get.dart';
 import 'package:client/controllers/question_controller.dart';
+import 'package:client/screens/quiz/score/score_screen.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
 
 void main() {
   testWidgets('ScoreScreen Widget Test', (WidgetTester tester) async {
@@ -11,7 +11,7 @@ void main() {
     // Build the ScoreScreen widget
     await tester.pumpWidget(
       const GetMaterialApp(
-        home: ScoreScreen(),
+        home: ScoreScreen(score: 0,),
       ),
     );
 
