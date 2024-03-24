@@ -10,6 +10,8 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
+        with:
+          files: 'client/**'
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
