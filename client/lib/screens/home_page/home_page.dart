@@ -64,38 +64,42 @@ class HomePage extends StatelessWidget {
                       );
                     } else if (snapshot.hasError) {
                       return connectionLost();
-                    } else if (noteController.filteredNotes.isEmpty) {
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Lottie.asset(
-                            'animations/Animation - 1710410924292.json',
-                            height: 120,
-                            reverse: true,
-                            repeat: true,
-                            animate: true,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Text(
-                              textAlign: TextAlign.center,
-                              'No Notes Found',
-                              // 'Add Notes to get started!',
-                              style: TextStyle(
-                                color: Colors.grey.shade400,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        ],
-                      );
                     } else {
-                      return Obx(() => ListView(
+                      return Obx(() {
+                        if (noteController.filteredNotes.isEmpty) {
+                          return Center(
+                              child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Lottie.asset(
+                                'animations/Animation - 1711288473623.json',
+                                height: 150,
+                                reverse: true,
+                                repeat: true,
+                                animate: true,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: Text(
+                                  'No Notes Found',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey.shade400,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ));
+                        } else {
+                          return ListView(
                             padding: const EdgeInsets.only(top: 15),
                             children: noteController.filteredNotes
                                 .map((tile) => TileViewWidget(tile: tile))
                                 .toList(),
-                          ));
+                          );
+                        }
+                      });
                     }
                   },
                 ),
