@@ -90,16 +90,12 @@ class HomePage extends StatelessWidget {
                         ],
                       );
                     } else {
-                      return GetBuilder<NoteController>(
-                        builder: (builder) {
-                          return ListView(
+                      return Obx(() => ListView(
                             padding: const EdgeInsets.only(top: 15),
                             children: noteController.filteredNotes
                                 .map((tile) => TileViewWidget(tile: tile))
                                 .toList(),
-                          );
-                        },
-                      );
+                          ));
                     }
                   },
                 ),

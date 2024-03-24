@@ -98,7 +98,7 @@ class QuizScreen extends StatelessWidget {
               body: const Body(<dynamic>{}),
             );
           } else {
-            return const ScoreScreen();
+            return ScoreScreen();
           }
         }
       },

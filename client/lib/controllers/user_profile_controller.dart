@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:client/models/bar_data_model.dart';
@@ -29,7 +30,7 @@ class UserProfileController extends GetxController {
 
   bool get obscureText => _obscureText.value;
 
-  User user = User(
+  User _user = User(
     photo: '',
     firstName: '',
     lastName: '',
@@ -38,8 +39,10 @@ class UserProfileController extends GetxController {
     correctedQuestions: 0,
     inCorrectedQuestions: 0,
     totalXP: 0,
-    weeklyXP: [7],
+    weeklyXP: [0, 0, 0, 0, 0, 0, 0],
   );
+
+  User get user => _user;
 
   BarData _barData = BarData(
     mondayExp: 0,
@@ -70,33 +73,33 @@ class UserProfileController extends GetxController {
 
   @override
   void onInit() {
-    fetchUser();
     super.onInit();
+    fetchUser();
   }
 
   Future<void> fetchUser() async {
-    user = (await UserRepository().getUserDetails())!;
+    _user = (await UserRepository().getUserDetails())!;
     _barData = BarData(
-      mondayExp: user.weeklyXP[0].toDouble(),
-      tueExp: user.weeklyXP[1].toDouble(),
-      wensExp: user.weeklyXP[2].toDouble(),
-      thurExp: user.weeklyXP[3].toDouble(),
-      friExp: user.weeklyXP[4].toDouble(),
-      satExp: user.weeklyXP[5].toDouble(),
-      sunExp: user.weeklyXP[6].toDouble(),
+      mondayExp: _user.weeklyXP[0].toDouble(),
+      tueExp: _user.weeklyXP[1].toDouble(),
+      wensExp: _user.weeklyXP[2].toDouble(),
+      thurExp: _user.weeklyXP[3].toDouble(),
+      friExp: _user.weeklyXP[4].toDouble(),
+      satExp: _user.weeklyXP[5].toDouble(),
+      sunExp: _user.weeklyXP[6].toDouble(),
     );
     _barData.initializeBarData();
 
-    if (user.correctedQuestions + user.inCorrectedQuestions == 0) {
+    if (_user.correctedQuestions + _user.inCorrectedQuestions == 0) {
       _redValue = 0;
       _greenValue = 0;
     } else {
-      _redValue = (user.inCorrectedQuestions.toDouble() /
-              (user.correctedQuestions + user.inCorrectedQuestions)) *
+      _redValue = (_user.inCorrectedQuestions.toDouble() /
+              (_user.correctedQuestions + _user.inCorrectedQuestions)) *
           100;
       _redValue = double.parse((_redValue).toStringAsFixed(1));
-      _greenValue = (user.correctedQuestions.toDouble() /
-              (user.correctedQuestions + user.inCorrectedQuestions)) *
+      _greenValue = (_user.correctedQuestions.toDouble() /
+              (_user.correctedQuestions + _user.inCorrectedQuestions)) *
           100;
       _greenValue = double.parse((_greenValue).toStringAsFixed(1));
     }
@@ -111,8 +114,8 @@ class UserProfileController extends GetxController {
       update();
       return;
     } else {
-      _xpDifference = (user.weeklyXP[DateTime.now().weekday - 1]) -
-          (user.weeklyXP[DateTime.now().weekday - 2]);
+      _xpDifference = (_user.weeklyXP[DateTime.now().weekday - 1]) -
+          (_user.weeklyXP[DateTime.now().weekday - 2]);
       if (_xpDifference < 0) {
         int positiveValue = _xpDifference.abs();
         _xpDifferenceText = 'You lost $positiveValue XP than yesterday';
@@ -120,20 +123,19 @@ class UserProfileController extends GetxController {
         _xpDifferenceText = 'You have gain $_xpDifference XP than yesterday';
       }
     }
-
-    _previousLevel = user.level;
+    _previousLevel = _user.level;
     update();
   }
 
   void updateUser(
       String? firstName, String? lastName, String? email, String? image) async {
-    user
+    _user
       ..firstName =
-          (firstName?.isNotEmpty ?? false) ? firstName! : user.firstName
-      ..lastName = (lastName?.isNotEmpty ?? false) ? lastName! : user.lastName
-      ..email = (email?.isNotEmpty ?? false) ? email! : user.email
-      ..photo = (image?.isNotEmpty ?? false) ? image! : user.photo;
-    await UserRepository().updateUserDetails(user);
+          (firstName?.isNotEmpty ?? false) ? firstName! : _user.firstName
+      ..lastName = (lastName?.isNotEmpty ?? false) ? lastName! : _user.lastName
+      ..email = (email?.isNotEmpty ?? false) ? email! : _user.email
+      ..photo = (image?.isNotEmpty ?? false) ? image! : _user.photo;
+    await UserRepository().updateUserDetails(_user);
     update();
   }
 
@@ -162,34 +164,51 @@ class UserProfileController extends GetxController {
     }
   }
 
+  Future<void> updateWeeklyXP (
+      int numberOfCorrectQuestions, int numberOfInCorrectQuestions, int dayXp) async {
+    _user
+        ..correctedQuestions += numberOfCorrectQuestions
+        ..inCorrectedQuestions += numberOfInCorrectQuestions
+        ..weeklyXP[DateTime.now().weekday - 1] += dayXp
+        ..totalXP += dayXp
+        ..level = (_user.totalXP ~/ 10000) + 1;
+    if (_previousLevel < _user.level) {
+      NotificationService().showRankNotification(_user.level);
+      _previousLevel = _user.level;
+    }
+    // _user.correctedQuestions += numberOfCorrectQuestions;
+    // _user.inCorrectedQuestions += numberOfInCorrectQuestions;
+    // _user.weeklyXP[DateTime.now().weekday - 1] += dayXp;
+    // _user.totalXP += dayXp;
+    // _user.level = (_user.totalXP ~/ 10000) + 1;
+    // if (_previousLevel < _user.level) {
+    //   NotificationService().showRankNotification(_user.level);
+    //   _previousLevel = _user.level;
+    // }
+    print(_user.firstName);
+    print(_user.email);
+    print(_user.totalXP);
+    print(_user.level);
+    print(_user.weeklyXP);
+    print(_user.correctedQuestions);
+    print(_user.inCorrectedQuestions);
+    await UserRepository().updateUserDetails(_user);
+    update();
+  }
+
+  getImage() {
+    if (_user.photo.isEmpty) {
+      return const AssetImage('assets/blank_user_image.png');
+    } else {
+      return MemoryImage(base64Decode(_user.photo));
+    }
+  }
+
   @override
   void onClose() {
     _existingPasswordController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
     super.onClose();
-  }
-
-  void updateWeeklyXP(
-      int numberOfCorrectQuestions, int numberOfInCorrectQuestions, int dayXp) {
-    user.correctedQuestions += numberOfCorrectQuestions;
-    user.inCorrectedQuestions += numberOfInCorrectQuestions;
-    user.weeklyXP[DateTime.now().weekday - 1] += dayXp;
-    user.totalXP += dayXp;
-    user.level = (user.totalXP ~/ 10000) + 1;
-    if (_previousLevel < user.level) {
-      NotificationService().showRankNotification(user.level);
-      _previousLevel = user.level;
-    }
-    UserRepository().updateUserDetails(user);
-    update();
-  }
-
-  getImage() {
-    if (user.photo.isEmpty) {
-      return const AssetImage('assets/blank_user_image.png');
-    } else {
-      return MemoryImage(base64Decode(user.photo));
-    }
   }
 }

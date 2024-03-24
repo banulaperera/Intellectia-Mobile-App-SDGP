@@ -1,46 +1,25 @@
 import 'package:client/constants.dart';
 import 'package:client/controllers/question_controller.dart';
-import 'package:client/util/local_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../navigation_bar.dart';
 
-class ScoreScreen extends StatefulWidget {
-  const ScoreScreen({super.key});
-  @override
-  State<ScoreScreen> createState() => _ScoreScreenState();
-}
+class ScoreScreen extends StatelessWidget {
+   ScoreScreen({super.key});
 
-
-
-class _ScoreScreenState extends State<ScoreScreen> {
-
-  @override
-  initState(){
-    setQuizStatus();
-    super.initState();
-  }
-
-  setQuizStatus() async {
-    await LocalStorage().setQuizPageStatus(false);
-  }
+  final qnController = Get.put(QuestionController());
 
   @override
   Widget build(BuildContext context) {
-    final qnController = Get.put(QuestionController());
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {
-               Get.to(() => const BottomNavigation(1));
-            }
-
-        ),
+            onPressed: () => Get.to(() => const BottomNavigation(1))),
       ),
       body: Center(
         child: Column(

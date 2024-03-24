@@ -42,8 +42,7 @@ class NotificationScreen extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
                   child: SingleChildScrollView(
-                    child:
-                        GetBuilder<NotificationController>(builder: (context) {
+                    child: Obx(() {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
