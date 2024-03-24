@@ -48,7 +48,9 @@ class NotificationTitle extends StatelessWidget {
         overflow: TextOverflow.ellipsis,
       ),
       onTap: () {
-        notificationController.launchURL(notifications.link!);
+        if (notifications.link != null) {
+          notificationController.launchURL(notifications.link!);
+        }
       },
       enabled: true,
     );

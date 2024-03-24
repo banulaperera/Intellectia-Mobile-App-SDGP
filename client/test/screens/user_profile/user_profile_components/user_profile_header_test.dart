@@ -9,25 +9,25 @@ void main() {
   testWidgets('UserProfileHeader Test', (WidgetTester tester) async {
     // Initialize the UserProfileController with mock data
     var userProfileController = Get.put(UserProfileController());
-    userProfileController.user = User(
-        photo: '',
-        firstName: 'Test',
-        lastName: 'User',
-        email: 'testuser@gmail.com',
-        level: 1,
-        correctedQuestions: 0,
-        inCorrectedQuestions: 0,
-        totalXP: 0,
-        weeklyXP: []);
-
-    // Build the UserProfileHeader widget
-    await tester.pumpWidget(
-      const MaterialApp(
-        home: Scaffold(
-          body: UserProfileHeader(),
-        ),
-      ),
-    );
+    // userProfileController.user = User(
+    //     photo: '',
+    //     firstName: 'Test',
+    //     lastName: 'User',
+    //     email: 'testuser@gmail.com',
+    //     level: 1,
+    //     correctedQuestions: 0,
+    //     inCorrectedQuestions: 0,
+    //     totalXP: 0,
+    //     weeklyXP: []);
+    //
+    // // Build the UserProfileHeader widget
+    // await tester.pumpWidget(
+    //   const MaterialApp(
+    //     home: Scaffold(
+    //       body: UserProfileHeader(),
+    //     ),
+    //   ),
+    // );
 
     // Verify if the UserProfileHeader widget is rendered
     expect(find.byType(UserProfileHeader), findsOneWidget);

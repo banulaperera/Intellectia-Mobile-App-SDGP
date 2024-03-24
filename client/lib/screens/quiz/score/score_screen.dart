@@ -7,11 +7,12 @@ import 'package:lottie/lottie.dart';
 import '../../navigation_bar.dart';
 
 class ScoreScreen extends StatelessWidget {
-  const ScoreScreen({super.key});
+   ScoreScreen({super.key});
+
+  final qnController = Get.put(QuestionController());
 
   @override
   Widget build(BuildContext context) {
-    final qnController = Get.put(QuestionController());
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
