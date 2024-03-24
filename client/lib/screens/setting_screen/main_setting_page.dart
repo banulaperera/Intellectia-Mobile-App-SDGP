@@ -2,11 +2,13 @@ import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/controllers/note_controller.dart';
 import 'package:client/screens/login_page.dart';
 import 'package:client/screens/setting_screen/change_password.dart';
+import 'package:client/screens/setting_screen/privacy_security_page.dart';
 import 'package:client/screens/setting_screen/quiz_preference_setting.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 import '../../constants.dart';
 import '../../util/local_storage.dart';
+import 'about_us_page.dart';
 import 'account_setting.dart';
 
 class MainSettingPage extends StatefulWidget {
@@ -95,7 +97,7 @@ class _MainSettingPageState extends State<MainSettingPage> {
             buildAccountSettingOption(
                 context, 'Quiz Preference', const GoalSetting()),
             buildAccountSettingOption(
-                context, 'Privacy and security', const AccountSetting()),
+                context, 'Privacy and security', const PrivacySecurity()),
             const SizedBox(
               height: 50,
             ),
@@ -150,7 +152,7 @@ class _MainSettingPageState extends State<MainSettingPage> {
               height: 15,
             ),
             buildAccountSettingOption(
-                context, 'About us', const AccountSetting()),
+                context, 'About us', const AboutUs()),
             const SizedBox(
               height: 50,
             ),
