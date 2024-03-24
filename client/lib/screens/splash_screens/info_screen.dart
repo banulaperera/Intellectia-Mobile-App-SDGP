@@ -43,6 +43,8 @@ class _InfoScreenState extends State<InfoScreen> {
     },
   ];
 
+  bool _isButtonPressed = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -154,6 +156,16 @@ class _InfoScreenState extends State<InfoScreen> {
                     padding: const EdgeInsets.only(bottom: 20),
                     child: FittedBox(
                       child: GestureDetector(
+                        onTapDown: (details) {
+                          setState(() {
+                            _isButtonPressed = true;
+                          });
+                        },
+                        onTapUp: (details) {
+                          setState(() {
+                            _isButtonPressed = false;
+                          });
+                        },
                         onTap: () {
                           Get.to(() => LoginPage(),
                               transition: Transition.fadeIn);
@@ -163,7 +175,7 @@ class _InfoScreenState extends State<InfoScreen> {
                               vertical: 20, horizontal: 90),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: kPrimaryColor,
+                            color: _isButtonPressed ? kPrimaryColor.withOpacity(0.8) : kPrimaryColor,
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
