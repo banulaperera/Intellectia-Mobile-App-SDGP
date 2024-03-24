@@ -32,7 +32,7 @@ class QuizScreen extends StatelessWidget {
               elevation: 0,
             ),
             body: Center(
-              child: connectionLost(),
+              child: Text(snapshot.error.toString()),
             ),
           );
         } else if (controller.questions.isEmpty) {

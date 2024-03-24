@@ -6,20 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="196b77b2-d063-4090-9090-6a5712d4522e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/note_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/note_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/notification_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/notification_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/quiz_preference_setting_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/quiz_preference_setting_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/user_profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/user_profile_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/tile_view_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page/home_page_components/tile_view_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components/notification_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components/notification_title.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/repository/quiz_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/repository/quiz_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/question_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/question_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/score/score_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/score/score_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/util/cron_job_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/util/cron_job_util.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/util/db_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/util/db_util.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/quiz/score/score_screen_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/quiz/score/score_screen_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/user_profile_header_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/user_profile/user_profile_components/user_profile_header_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,33 +50,39 @@
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
-  <component name="RunManager" selected="Flutter.main.dart">
-    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
-      <option name="filePath" value="$PROJECT_DIR$/client/lib/main.dart" />
-      <method v="2" />
-    </configuration>
-    <configuration name="end to end testing" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="end to end testing" />
-      <option name="testFile" value="$PROJECT_DIR$/client/integration_test/app_test.dart" />
+  <component name="RunManager" selected="Flutter Test.tests in question_screen_test.dart">
+    <configuration name="tests in account_setting_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/setting_screen/account_setting_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in info_screen_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/splash_screens/info_screen_test.dart" />
+    <configuration name="tests in change_password_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/setting_screen/change_password_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in splash_screen_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/splash_screens/splash_screen_test.dart" />
+    <configuration name="tests in goal_setting_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/setting_screen/goal_setting_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in input_textfield_widget_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/setting_screen/setting_screen_components/input_textfield_widget_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in question_screen_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/quiz/question_screen_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter.main.dart" />
-        <item itemvalue="Flutter Test.tests in info_screen_test.dart" />
-        <item itemvalue="Flutter Test.tests in splash_screen_test.dart" />
-        <item itemvalue="Flutter Test.end to end testing" />
+        <item itemvalue="Flutter Test.tests in question_screen_test.dart" />
+        <item itemvalue="Flutter Test.tests in input_textfield_widget_test.dart" />
+        <item itemvalue="Flutter Test.tests in account_setting_test.dart" />
+        <item itemvalue="Flutter Test.tests in change_password_test.dart" />
+        <item itemvalue="Flutter Test.tests in goal_setting_test.dart" />
       </list>
     </recent_temporary>
   </component>
