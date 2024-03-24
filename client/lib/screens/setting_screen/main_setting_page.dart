@@ -1,13 +1,47 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/screens/setting_screen/goal_setting.dart';
+import 'package:client/controllers/note_controller.dart';
+import 'package:client/screens/login_page.dart';
 import 'package:client/screens/setting_screen/change_password.dart';
+import 'package:client/screens/setting_screen/privacy_security_page.dart';
+import 'package:client/screens/setting_screen/quiz_preference_setting.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 import '../../constants.dart';
+import '../../util/local_storage.dart';
+import 'about_us_page.dart';
 import 'account_setting.dart';
 
-class MainSettingPage extends StatelessWidget {
+class MainSettingPage extends StatefulWidget {
   const MainSettingPage({super.key});
+
+  @override
+  State<MainSettingPage> createState() => _MainSettingPageState();
+}
+
+
+class _MainSettingPageState extends State<MainSettingPage> {
+   bool youTubeValueSelected=true;
+   bool  rankValueSelected=true;
+   bool  quizValueSelected=true;
+  @override
+   initState(){
+    initializeNotificationStatus();
+    super.initState();
+  }
+
+   initializeNotificationStatus() async {
+     final localStorage = LocalStorage();
+     final youtubeStatus = await localStorage.getYoutubeNotificationStatus();
+     final quizStatus = await localStorage.getQuizNotificationStatus();
+     final rankStatus = await localStorage.getRankNotificationStatus();
+
+    setState((){
+      youTubeValueSelected= youtubeStatus;
+      rankValueSelected= rankStatus;
+      quizValueSelected= quizStatus;
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +97,7 @@ class MainSettingPage extends StatelessWidget {
             buildAccountSettingOption(
                 context, 'Quiz Preference', const GoalSetting()),
             buildAccountSettingOption(
-                context, 'Privacy and security', const AccountSetting()),
+                context, 'Privacy and security', const PrivacySecurity()),
             const SizedBox(
               height: 50,
             ),
@@ -118,13 +152,17 @@ class MainSettingPage extends StatelessWidget {
               height: 15,
             ),
             buildAccountSettingOption(
-                context, 'About us', const AccountSetting()),
+                context, 'About us', const AboutUs()),
             const SizedBox(
               height: 50,
             ),
             Center(
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await LocalStorage().clearUserDetails();
+                  Get.find<NoteController>().clearNotes();
+                  Get.offAll(()=>LoginPage());
+                },
                 child: const Text(
                   'Sign out',
                   style: TextStyle(
@@ -142,6 +180,7 @@ class MainSettingPage extends StatelessWidget {
   }
 
   Row buildNotificationOption(String title) {
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -156,9 +195,28 @@ class MainSettingPage extends StatelessWidget {
         Transform.scale(
           scale: 0.7,
           child: Switch(
-              value: true,
+              value: title=='Video recommendations' ? youTubeValueSelected:(title=='New quiz reminder'? quizValueSelected:rankValueSelected),
               activeTrackColor: kPrimaryColor,
-              onChanged: (bool value) {}),
+              onChanged: (bool value) {
+                 var localStorage = LocalStorage();
+                if(title=='Video recommendations'){
+                  localStorage.setYoutubeNotificationStatus(value);
+                  setState(() {
+                    youTubeValueSelected=value;
+                  });
+                }else if(title=='New quiz reminder'){
+                  localStorage.setQuizNotificationStatus(value);
+                  setState(() {
+                    quizValueSelected=value;
+                  });
+                }else if(title=='Skill up notifications'){
+                  localStorage.setRankNotificationStatus(value);
+                  setState(() {
+                    rankValueSelected=value;
+                  });
+                }
+                // valueSelected=value;
+              }),
         )
       ],
     );

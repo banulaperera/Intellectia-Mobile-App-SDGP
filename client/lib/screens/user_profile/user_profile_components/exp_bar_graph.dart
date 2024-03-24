@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 class BarGraph extends StatelessWidget {
   const BarGraph({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     final userProfileController = Get.find<UserProfileController>();

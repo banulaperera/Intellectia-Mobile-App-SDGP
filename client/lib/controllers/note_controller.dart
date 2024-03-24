@@ -5,23 +5,26 @@ import '../models/tile_model.dart';
 import '../repository/note_repository.dart';
 
 class NoteController extends GetxController {
-  List<TileModel> _filteredNotes = List.empty(growable: true);
+  final _filteredNotes = <TileModel>[].obs;
+
   List<TileModel> get filteredNotes => _filteredNotes;
 
-  final List<TileModel> _tileList = List.empty(growable: true);
+  final _tileList = <TileModel>[].obs;
+
   List<TileModel> get titleList => _tileList;
 
-  List<Note> _allNotes = List.empty(growable: true);
+  final _allNotes = <Note>[].obs;
+
   List<Note> get allNotes => _allNotes;
 
   @override
   void onInit() {
-    super.onInit();
     fetchNotes();
+    super.onInit();
   }
 
   Future<void> fetchNotes() async {
-    _allNotes = await NoteRepository().getAllNotes() ?? [];
+    _allNotes.value = await NoteRepository().getAllNotes() ?? [];
     Set<String> uniqueModuleNames = <String>{};
     for (final note in allNotes) {
       uniqueModuleNames.add(note.moduleName);
@@ -32,13 +35,12 @@ class NoteController extends GetxController {
             allNotes.where((note) => note.moduleName == moduleName).toList();
         _tileList.add(TileModel(title: moduleName, tiles: moduleNotes));
       }
-      _filteredNotes = _tileList;
-      update();
+      _filteredNotes.assignAll(_tileList);
     }
   }
 
   void search(String text) {
-    _filteredNotes = _tileList
+    _filteredNotes.assignAll(_tileList
         .where((tile) =>
             tile.title.toLowerCase().contains(text.toLowerCase()) ||
             tile.tiles.any((note) =>
@@ -60,8 +62,7 @@ class NoteController extends GetxController {
               .toList(),
         );
       }
-    }).toList();
-    update();
+    }).toList());
   }
 
   void addNote(String moduleName, String title, String content) async {
@@ -85,17 +86,25 @@ class NoteController extends GetxController {
           content: content),
     );
     await fetchNotes();
-    update();
   }
 
   void deleteNoteById(String id) async {
-    for (var tile in _filteredNotes) {
-      tile.tiles.removeWhere((note) => note.id == id);
+  var filteredNotesCopy = List<TileModel>.from(_filteredNotes);
+  for (var tile in filteredNotesCopy) {
+    var tilesCopy = List<Note>.from(tile.tiles);
+    for (var note in tilesCopy) {
+      if (note.id == id) {
+        tile.tiles.remove(note);
+        if (tile.tiles.isEmpty) {
+          _filteredNotes.remove(tile);
+        }
+        break;
+      }
     }
-    await NoteRepository().deleteNote(id);
-    await fetchNotes();
-    update();
   }
+  await NoteRepository().deleteNote(id);
+  await fetchNotes();
+}
 
   void updateNote(String id, DateTime createdDate, String moduleName,
       String title, String content) {
@@ -118,6 +127,11 @@ class NoteController extends GetxController {
           title: title,
           content: content),
     );
-    update();
+  }
+
+  void clearNotes() {
+    _filteredNotes.clear();
+    _tileList.clear();
+    _allNotes.clear();
   }
 }

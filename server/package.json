@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "npx mocha tests/auth_controller.test.js tests/note_controller.test.js tests/notification_controller.test.js tests/quiz_controller.test.js tests/user_controller.test.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,9 +19,11 @@
     "googleapis": "^134.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.2",
-    "openai": "^4.28.4"
+    "openai": "^4.28.4",
+    "sinon": "^17.0.1"
   },
   "devDependencies": {
+    "mocha": "^10.3.0",
     "nodemon": "^3.0.3"
   }
 }

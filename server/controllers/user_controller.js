@@ -50,12 +50,20 @@ exports.updateUserDetails = async (req, res) => {
     try {
         const {userID} = req.user;
         const user = req.body
-        await UserService.updateUserDetails(userID, user);
-        res.status(200).json({Message: "User Updated"})
+        const userINdb=await UserService.checkUserEmail(user.email);
+
+        if (userINdb!=null&&userINdb._id.toString()!==userID){
+            res.status(200).json({Message: "The email has already taken by another user"})
+        }else{
+            await UserService.updateUserDetails(userID, user);
+            res.status(200).json({Message: "User Updated"})
+        }
+
     } catch (e) {
         res.status(401).json({Message: "Something Went Wrong !.... "})
     }
 }
+
 exports.getUserDetails = async (req, res) => {
     try {
         const {userID} = req.user;

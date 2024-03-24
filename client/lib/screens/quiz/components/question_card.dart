@@ -1,20 +1,19 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:client/controllers/question_controller.dart';
 import 'package:client/models/questions.dart';
- 
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import '../../../../../constants.dart';
 import 'option.dart';
- 
+
 class QuestionCard extends StatelessWidget {
   const QuestionCard({
-    super.key,
-    // it means we have to pass this
+    super.key, // it means we have to pass this
     required this.question,
   });
- 
+
   final Question question;
- 
+
   @override
   Widget build(BuildContext context) {
     QuestionController controller = Get.put(QuestionController());

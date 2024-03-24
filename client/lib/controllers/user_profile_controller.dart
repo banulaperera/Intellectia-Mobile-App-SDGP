@@ -1,21 +1,33 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:client/models/bar_data_model.dart';
 import 'package:client/models/user_model.dart';
 import 'package:client/repository/user_repository.dart';
+import 'package:client/util/notification_service.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
+
 import '../util/show_Alert.dart';
 
 class UserProfileController extends GetxController {
-  final TextEditingController _existingPasswordController = TextEditingController();
+  final TextEditingController _existingPasswordController =
+      TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
-  TextEditingController get existingPasswordController => _existingPasswordController;
+  TextEditingController get existingPasswordController =>
+      _existingPasswordController;
+
   TextEditingController get passwordController => _passwordController;
-  TextEditingController get confirmPasswordController => _confirmPasswordController;
+
+  TextEditingController get confirmPasswordController =>
+      _confirmPasswordController;
 
   final RxBool _obscureText = true.obs;
+
   bool get obscureText => _obscureText.value;
 
   User _user = User(
@@ -27,8 +39,9 @@ class UserProfileController extends GetxController {
     correctedQuestions: 0,
     inCorrectedQuestions: 0,
     totalXP: 0,
-    weeklyXP: [],
+    weeklyXP: [0, 0, 0, 0, 0, 0, 0],
   );
+
   User get user => _user;
 
   BarData _barData = BarData(
@@ -40,29 +53,32 @@ class UserProfileController extends GetxController {
     satExp: 0,
     sunExp: 0,
   );
+
   BarData get barData => _barData;
 
   double _redValue = 0;
   double _greenValue = 0;
 
   List<PieChartSectionData> _pieChartData = [];
+
   List<PieChartSectionData> get pieChartData => _pieChartData;
 
   int _xpDifference = 0;
 
   String _xpDifferenceText = '';
+
   String get xpDifferenceText => _xpDifferenceText;
+
+  int _previousLevel = 0;
 
   @override
   void onInit() {
-    fetchUser();
     super.onInit();
+    fetchUser();
   }
 
   Future<void> fetchUser() async {
-
     _user = (await UserRepository().getUserDetails())!;
-
     _barData = BarData(
       mondayExp: _user.weeklyXP[0].toDouble(),
       tueExp: _user.weeklyXP[1].toDouble(),
@@ -93,28 +109,32 @@ class UserProfileController extends GetxController {
       PieChartSectionData(value: _greenValue, color: Colors.green, radius: 40),
     ];
 
-    if(DateTime.now().weekday == 1){
+    if (DateTime.now().weekday == 1) {
       _xpDifferenceText = 'You have gain 0 XP than yesterday';
       update();
       return;
-    } else{
-      _xpDifference = (_user.weeklyXP[DateTime.now().weekday - 1]) - (_user.weeklyXP[DateTime.now().weekday - 2]);
-      if(_xpDifference < 0) {
+    } else {
+      _xpDifference = (_user.weeklyXP[DateTime.now().weekday - 1]) -
+          (_user.weeklyXP[DateTime.now().weekday - 2]);
+      if (_xpDifference < 0) {
         int positiveValue = _xpDifference.abs();
         _xpDifferenceText = 'You lost $positiveValue XP than yesterday';
-      }else{
+      } else {
         _xpDifferenceText = 'You have gain $_xpDifference XP than yesterday';
       }
     }
+    _previousLevel = _user.level;
     update();
   }
 
-  void updateUser(String? firstName, String? lastName, String? email) async {
+  void updateUser(
+      String? firstName, String? lastName, String? email, String? image) async {
     _user
       ..firstName =
           (firstName?.isNotEmpty ?? false) ? firstName! : _user.firstName
       ..lastName = (lastName?.isNotEmpty ?? false) ? lastName! : _user.lastName
-      ..email = (email?.isNotEmpty ?? false) ? email! : _user.email;
+      ..email = (email?.isNotEmpty ?? false) ? email! : _user.email
+      ..photo = (image?.isNotEmpty ?? false) ? image! : _user.photo;
     await UserRepository().updateUserDetails(_user);
     update();
   }
@@ -129,9 +149,9 @@ class UserProfileController extends GetxController {
         _confirmPasswordController.text.isEmpty) {
       showError('All fields are required');
     } else {
-      if (_passwordController.text ==
-          _confirmPasswordController.text) {
-        await UserRepository().changeUserPassword(_existingPasswordController.text, _passwordController.text);
+      if (_passwordController.text == _confirmPasswordController.text) {
+        await UserRepository().changeUserPassword(
+            _existingPasswordController.text, _passwordController.text);
         _existingPasswordController.clear();
         _passwordController.clear();
         _confirmPasswordController.clear();
@@ -144,20 +164,35 @@ class UserProfileController extends GetxController {
     }
   }
 
+  Future<void> updateWeeklyXP (
+      int numberOfCorrectQuestions, int numberOfInCorrectQuestions, int dayXp) async {
+    _user
+        ..correctedQuestions += numberOfCorrectQuestions
+        ..inCorrectedQuestions += numberOfInCorrectQuestions
+        ..weeklyXP[DateTime.now().weekday - 1] += dayXp
+        ..totalXP += dayXp
+        ..level = (_user.totalXP ~/ 10000) + 1;
+    await UserRepository().updateUserDetails(_user);
+    if (_previousLevel < _user.level) {
+      NotificationService().showRankNotification(_user.level);
+      _previousLevel = _user.level;
+    }
+    update();
+  }
+
+  getImage() {
+    if (_user.photo.isEmpty) {
+      return const AssetImage('assets/blank_user_image.png');
+    } else {
+      return MemoryImage(base64Decode(_user.photo));
+    }
+  }
+
   @override
   void onClose() {
     _existingPasswordController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
     super.onClose();
-  }
-
-  void updateWeeklyXP(int numberOfCorrectQuestions, int numberOfInCorrectQuestions, int dayXp) {
-    _user.correctedQuestions += numberOfCorrectQuestions;
-    _user.inCorrectedQuestions += numberOfInCorrectQuestions;
-    _user.weeklyXP[DateTime.now().weekday - 1] += dayXp;
-    _user.totalXP += dayXp;
-    UserRepository().updateUserDetails(_user);
-    update();
   }
 }

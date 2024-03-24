@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 const Note=require('./Note');
 const Notification=require('./Notification');
+const ScheduledQuizDetails=require('./scheduledQuizDetaills');
 
 const userSchema=new mongoose.Schema({
     photo:{type:String,default:''},
@@ -14,7 +15,8 @@ const userSchema=new mongoose.Schema({
     totalXP:{type:Number,default:0},
     weeklyXP:{type:[Number],default:[0,0,0,0,0,0,0]},
     notes:[Note],
-    notifications:[Notification]
+    notifications:[Notification],
+    scheduledQuiz:ScheduledQuizDetails
 
 });
 
