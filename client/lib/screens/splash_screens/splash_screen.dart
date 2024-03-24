@@ -4,9 +4,15 @@ import 'package:client/util/local_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  bool _isButtonPressed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +70,16 @@ class SplashScreen extends StatelessWidget {
 
   GestureDetector _buildGetStartedButton(BuildContext context) {
     return GestureDetector(
+      onTapDown: (details) {
+        setState(() {
+          _isButtonPressed = true;
+        });
+      },
+      onTapUp: (details) {
+        setState(() {
+          _isButtonPressed = false;
+        });
+      },
       onTap: () async {
         await LocalStorage().setOnboardStatus(false);
         Get.to(() => const InfoScreen(), transition: Transition.fadeIn);
@@ -72,7 +88,7 @@ class SplashScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 90),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: kPrimaryColor,
+          color: _isButtonPressed ? kPrimaryColor.withOpacity(0.8) : kPrimaryColor,
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.5),

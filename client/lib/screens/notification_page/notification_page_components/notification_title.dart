@@ -34,7 +34,7 @@ class NotificationTitle extends StatelessWidget {
                 color: Colors.black, fontWeight: FontWeight.w600),
           ),
           Text(
-            DateFormat('yyyy-MM-dd HH:mm').format(notifications.date),
+            DateFormat('yyyy-MM-dd HH:mm a').format(notifications.date.toUtc()),
             style: const TextStyle(
                 fontSize: 12,
                 color: Colors.black45,

@@ -2,21 +2,39 @@ import 'package:flutter/Material.dart';
 
 import '../constants.dart';
 
-class LoginScreenButton extends StatelessWidget {
-  const LoginScreenButton({super.key, required this.label, required this.onPressed});
+class LoginScreenButton extends StatefulWidget {
+  const LoginScreenButton(
+      {super.key, required this.label, required this.onPressed});
 
   final String label;
   final VoidCallback onPressed;
 
   @override
+  State<LoginScreenButton> createState() => _LoginScreenButtonState();
+}
+
+class _LoginScreenButtonState extends State<LoginScreenButton> {
+  bool _isButtonPressed = false;
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onPressed,
+      onTapDown: (details) {
+        setState(() {
+          _isButtonPressed = true;
+        });
+      },
+      onTapUp: (details) {
+        setState(() {
+          _isButtonPressed = false;
+        });
+      },
+      onTap: widget.onPressed,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(60),
-          color: kPrimaryColor,
+          color: _isButtonPressed ? kPrimaryColor.withOpacity(0.8) : kPrimaryColor,
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.5),
@@ -28,7 +46,7 @@ class LoginScreenButton extends StatelessWidget {
         ),
         alignment: Alignment.center,
         child: Text(
-          label,
+          widget.label,
           style: const TextStyle(
             color: Colors.white,
             fontFamily: 'Poppins',

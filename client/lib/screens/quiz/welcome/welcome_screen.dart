@@ -32,6 +32,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     return !pageStatus
         ? Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+        elevation: 0,
+        backgroundColor: kBackgroundColor,
+      ),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
