@@ -1,14 +1,12 @@
 import 'package:client/controllers/user_profile_controller.dart';
-import 'package:client/models/user_model.dart';
 import 'package:client/screens/user_profile/user_profile_components/user_profile_header.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 
 void main() {
   testWidgets('UserProfileHeader Test', (WidgetTester tester) async {
     // Initialize the UserProfileController with mock data
-    var userProfileController = Get.put(UserProfileController());
+    // var userProfileController = Get.put(UserProfileController());
     // userProfileController.user = User(
     //     photo: '',
     //     firstName: 'Test',

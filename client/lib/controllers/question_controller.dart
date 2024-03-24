@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 import '../models/note.dart';
 import '../repository/note_repository.dart';
+import '../util/local_storage.dart';
 
 class QuestionController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -92,8 +93,9 @@ class QuestionController extends GetxController
       nextQuestion();
     });
   }
+  var userProfileController = Get.find<UserProfileController>();
 
-  void nextQuestion() {
+  void nextQuestion() async {
     if (_questionNumber.value != _questions.length) {
       _isAnswered = false;
       _pageController.nextPage(
@@ -101,11 +103,10 @@ class QuestionController extends GetxController
       _animationController.reset();
       _animationController.forward().whenComplete(nextQuestion);
     } else {
-      var userProfileController = Get.find<UserProfileController>();
-      print(_numOfCorrectAns);
-      userProfileController.updateWeeklyXP(
+      await userProfileController.updateWeeklyXP(
           _numOfCorrectAns, (5 - _numOfCorrectAns), _numOfCorrectAns * 2000);
-      Get.to(() =>  ScoreScreen());
+      LocalStorage().setQuizPageStatus(false);
+      await Get.off(ScoreScreen(score: _numOfCorrectAns,));
     }
   }
 

@@ -3,7 +3,6 @@ import 'package:client/repository/quiz_repository.dart';
 import 'package:client/util/cron_job_util.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 
 import '../models/note.dart';
 import '../models/schedule_quiz_details.dart';

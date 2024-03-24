@@ -5,15 +5,15 @@ import '../models/tile_model.dart';
 import '../repository/note_repository.dart';
 
 class NoteController extends GetxController {
-  var _filteredNotes = <TileModel>[].obs;
+  final _filteredNotes = <TileModel>[].obs;
 
   List<TileModel> get filteredNotes => _filteredNotes;
 
-  var _tileList = <TileModel>[].obs;
+  final _tileList = <TileModel>[].obs;
 
   List<TileModel> get titleList => _tileList;
 
-  var _allNotes = <Note>[].obs;
+  final _allNotes = <Note>[].obs;
 
   List<Note> get allNotes => _allNotes;
 

@@ -172,27 +172,11 @@ class UserProfileController extends GetxController {
         ..weeklyXP[DateTime.now().weekday - 1] += dayXp
         ..totalXP += dayXp
         ..level = (_user.totalXP ~/ 10000) + 1;
+    await UserRepository().updateUserDetails(_user);
     if (_previousLevel < _user.level) {
       NotificationService().showRankNotification(_user.level);
       _previousLevel = _user.level;
     }
-    // _user.correctedQuestions += numberOfCorrectQuestions;
-    // _user.inCorrectedQuestions += numberOfInCorrectQuestions;
-    // _user.weeklyXP[DateTime.now().weekday - 1] += dayXp;
-    // _user.totalXP += dayXp;
-    // _user.level = (_user.totalXP ~/ 10000) + 1;
-    // if (_previousLevel < _user.level) {
-    //   NotificationService().showRankNotification(_user.level);
-    //   _previousLevel = _user.level;
-    // }
-    print(_user.firstName);
-    print(_user.email);
-    print(_user.totalXP);
-    print(_user.level);
-    print(_user.weeklyXP);
-    print(_user.correctedQuestions);
-    print(_user.inCorrectedQuestions);
-    await UserRepository().updateUserDetails(_user);
     update();
   }
 

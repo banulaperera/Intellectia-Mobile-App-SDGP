@@ -10,8 +10,8 @@ void main() {
 
     // Build the ScoreScreen widget
     await tester.pumpWidget(
-      GetMaterialApp(
-        home: ScoreScreen(),
+      const GetMaterialApp(
+        home: ScoreScreen(score: 0,),
       ),
     );
 
