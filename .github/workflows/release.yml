@@ -11,7 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         with:
-          path: SDGP_PT_Y3_03_Intellectia/client
+          files: 'client/**'
+      - name: Move mobile app files to root
+        run: |          
+          ls -lah          
+          shopt -s dotglob          
+          mv SDGP_PT_Y3_03_Intellectia/client/* .          
+          rm -rf SDGP_PT_Y3_03_Intellectia          
+          ls -lah
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
