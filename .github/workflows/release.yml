@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         with:
-          files: 'client/**'
+          path: SDGP_PT_Y3_03_Intellectia/client
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
