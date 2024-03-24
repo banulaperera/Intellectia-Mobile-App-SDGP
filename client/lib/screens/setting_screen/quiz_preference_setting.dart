@@ -187,7 +187,7 @@ class _GoalSettingState extends State<GoalSetting> {
     );
     if (result != null) {
       setState(() {
-        _selectedTime = result.format(context);
+        _selectedTime = '${result.hour}:${result.minute.toString().padLeft(2, '0')}';
       });
     }
   }

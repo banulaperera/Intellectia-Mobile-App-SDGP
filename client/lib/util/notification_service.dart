@@ -28,6 +28,7 @@ class NotificationService {
   }
 
   showQuizNotification(String moduleName) async {
+    LocalStorage().setQuizPageStatus(true);
     if(await localStorage.getQuizNotificationStatus()){
       String title = 'Quiz !!!! ..';
       String body = 'Your Quiz on $moduleName is available.Please Take the quiz..';
@@ -45,7 +46,6 @@ class NotificationService {
         largeIcon: DrawableResourceAndroidBitmap('@mipmap/target'),
       );
       _showNotification(title, body, androidNotificationDetails);
-      LocalStorage().setQuizPageStatus(true);
     }
 
   }
