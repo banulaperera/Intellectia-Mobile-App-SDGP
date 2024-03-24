@@ -89,12 +89,22 @@ class NoteController extends GetxController {
   }
 
   void deleteNoteById(String id) async {
-    for (var tile in _filteredNotes) {
-      tile.tiles.removeWhere((note) => note.id == id);
+  var filteredNotesCopy = List<TileModel>.from(_filteredNotes);
+  for (var tile in filteredNotesCopy) {
+    var tilesCopy = List<Note>.from(tile.tiles);
+    for (var note in tilesCopy) {
+      if (note.id == id) {
+        tile.tiles.remove(note);
+        if (tile.tiles.isEmpty) {
+          _filteredNotes.remove(tile);
+        }
+        break;
+      }
     }
-    await NoteRepository().deleteNote(id);
-    await fetchNotes();
   }
+  await NoteRepository().deleteNote(id);
+  await fetchNotes();
+}
 
   void updateNote(String id, DateTime createdDate, String moduleName,
       String title, String content) {

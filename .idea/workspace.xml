@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="196b77b2-d063-4090-9090-6a5712d4522e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/question_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/repository/quiz_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/repository/quiz_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/quiz/question_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/quiz/question_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/controllers/note_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/controllers/note_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/home_page/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/home_page/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/screens/setting_screen/quiz_preference_setting.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/setting_screen/quiz_preference_setting.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +48,16 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "IN-57-goal__setting__page__integration",
+    "git-widget-placeholder": "IN-61-code__enhancement",
     "io.flutter.reload.alreadyRun": "true",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
-  <component name="RunManager" selected="Flutter Test.tests in question_screen_test.dart">
+  <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/client/lib/main.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="tests in account_setting_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testFile" value="$PROJECT_DIR$/client/test/screens/setting_screen/account_setting_test.dart" />
       <option name="useRegexp" value="false" />
@@ -58,11 +65,6 @@
     </configuration>
     <configuration name="tests in change_password_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testFile" value="$PROJECT_DIR$/client/test/screens/setting_screen/change_password_test.dart" />
-      <option name="useRegexp" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tests in goal_setting_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/setting_screen/goal_setting_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
@@ -78,11 +80,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Flutter Test.tests in question_screen_test.dart" />
         <item itemvalue="Flutter Test.tests in input_textfield_widget_test.dart" />
         <item itemvalue="Flutter Test.tests in account_setting_test.dart" />
         <item itemvalue="Flutter Test.tests in change_password_test.dart" />
-        <item itemvalue="Flutter Test.tests in goal_setting_test.dart" />
       </list>
     </recent_temporary>
   </component>

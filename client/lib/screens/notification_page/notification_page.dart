@@ -39,20 +39,36 @@ class NotificationScreen extends StatelessWidget {
               } else if (snapshot.hasError) {
                 return Center(child: connectionLost());
               } else {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
-                  child: SingleChildScrollView(
-                    child: Obx(() {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                return Obx(() {
+                  if (notificationController.notifications.isEmpty) {
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          ShowNotification(
-                              list: notificationController.notifications),
+                          Text(
+                            'No Notifications',
+                            style: TextStyle( color: Colors.grey.shade400,
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ),
                         ],
-                      );
-                    }),
-                  ),
-                );
+                      ),
+                    );
+                  } else {
+                    return Padding(
+                      padding:
+                          const EdgeInsets.only(right: 20, left: 20, top: 15),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ShowNotification(
+                                list: notificationController.notifications),
+                          ],
+                        ),
+                      ),
+                    );
+                  }
+                });
               }
             }),
       ),

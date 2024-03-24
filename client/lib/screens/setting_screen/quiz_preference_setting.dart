@@ -26,6 +26,7 @@ class _GoalSettingState extends State<GoalSetting> {
         centerTitle: true,
         backgroundColor: kBackgroundColor,
         elevation: 0,
+        scrolledUnderElevation: 0,
         title: const Text(
           'Quiz Preference',
           style: TextStyle(
@@ -187,7 +188,8 @@ class _GoalSettingState extends State<GoalSetting> {
     );
     if (result != null) {
       setState(() {
-        _selectedTime = '${result.hour}:${result.minute.toString().padLeft(2, '0')}';
+        _selectedTime =
+            '${result.hour}:${result.minute.toString().padLeft(2, '0')}';
       });
     }
   }
@@ -215,6 +217,10 @@ class _GoalSettingState extends State<GoalSetting> {
             final DateTime selectedDateTime =
                 DateTime(now.year, now.month, now.day, hour, minute);
             var goalSettingController = Get.find<GoalSettingController>();
+            if (goalSettingController.moduleSelectedValue.isEmpty) {
+              showError('Please select a module');
+              return;
+            }
             goalSettingController.onModuleSelected(
                 goalSettingController.moduleSelectedValue,
                 goalSettingController.frequencySelectedValue,
