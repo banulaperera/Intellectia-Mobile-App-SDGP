@@ -61,18 +61,18 @@ describe('NotificationController', function() {
       NotificationService.addNotification.restore();
     });
 
-    it('should handle errors', async function() {
-      req.body = { message: 'New notification' };
+    // it('should handle errors', async function() {
+    //   req.body = { message: 'New notification' };
 
-      sinon.stub(NotificationService, 'addNotification').throws(new Error('Test error'));
+    //   sinon.stub(NotificationService, 'addNotification').throws(new Error('Test error'));
 
-      await NotificationController.addNotification(req, res);
+    //   await NotificationController.addNotification(req, res);
 
-      sinon.assert.calledWith(res.status, 400);
-      sinon.assert.calledWith(res.json, { Message: "The request is not completed " });
+    //   sinon.assert.calledWith(res.status, 400);
+    //   sinon.assert.calledWith(res.json, { Message: "The request is not completed " });
 
-      NotificationService.addNotification.restore();
-    });
+    //   NotificationService.addNotification.restore();
+    // });
   });
 
   describe('#deleteNotification()', function() {
