@@ -100,7 +100,7 @@ class NotificationService {
             "youtube notification",
             importance: Importance.max,
             priority: Priority.max,
-            largeIcon: DrawableResourceAndroidBitmap('@mipmap/thunder'),
+            largeIcon: DrawableResourceAndroidBitmap('@mipmap/youtube'),
           );
           _showNotification(title, body, androidNotificationDetails);
         }

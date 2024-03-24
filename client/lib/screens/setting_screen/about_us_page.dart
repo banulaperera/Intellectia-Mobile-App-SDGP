@@ -66,11 +66,11 @@ class AboutUs extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10.0),
-        _buildTeamMemberItem(context, 'Banula Perera', '20212085 (IIT)/ W1871527 (UoW)', 'assets/owner_images/banula.jpeg'),
-        _buildTeamMemberItem(context, 'Hirushi Amarasinghe', '20212009 (IIT) / W1871464 (UoW)', 'assets/owner_images/hirushi.jpeg'),
-        _buildTeamMemberItem(context, 'Avishka Pramuditha', '20212085 (IIT)/W1871523 (UoW)', 'assets/owner_images/avishka.jpeg'),
-        _buildTeamMemberItem(context, 'Kavisha Kumarage', '20212061 (IIT) / W1871507 (UoW)', 'assets/owner_images/kavisha.jpeg'),
-        _buildTeamMemberItem(context, 'Nethunil Lakshitha', '20212066 (IIT) / W1871512 (UoW)', 'assets/owner_images/Nethunil.jpeg'),
+        _buildTeamMemberItem(context, 'Banula Perera', 'banula.20212085@iit.ac.lk', 'assets/owner_images/banula.jpeg'),
+        _buildTeamMemberItem(context, 'Hirushi Amarasinghe', 'hirushi.20212009@iit.ac.lk', 'assets/owner_images/hirushi.jpeg'),
+        _buildTeamMemberItem(context, 'Avishka Pramuditha', 'avishka.20212079@iit.ac.lk', 'assets/owner_images/avishka.jpeg'),
+        _buildTeamMemberItem(context, 'Kavisha Kumarage', 'kavisha.20212061@iit.ac.lk', 'assets/owner_images/kavisha.jpeg'),
+        _buildTeamMemberItem(context, 'Nethunil Lakshitha', 'nethunil.20212066@iit.ac.lk', 'assets/owner_images/Nethunil.jpeg'),
       ],
     );
   }
