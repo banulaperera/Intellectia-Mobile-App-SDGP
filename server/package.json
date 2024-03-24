@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "npx mocha tests/auth_controller.test.js tests/note_controller.test.js tests/notification_controller.test.js tests/quiz_controller.test.js tests/user_controller.test.js"
   },
   "author": "",
   "license": "ISC",

@@ -18,8 +18,19 @@ jobs:
       - name: Publish Image to docker hub
         run: docker push intellectiabackend/intellectia:latest
 
-  deploy:
+  test:
     needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+      - name: Pull Server image from docker hub
+        run: docker pull intellectiabackend/intellectia:latest
+      - name: Run tests on the built server Docker image
+        run: docker run --rm intellectiabackend/intellectia npm run test
+
+  deploy:
+    needs: [build, test]
     runs-on: self-hosted
     steps:
       - name: Pull docker image from hub
