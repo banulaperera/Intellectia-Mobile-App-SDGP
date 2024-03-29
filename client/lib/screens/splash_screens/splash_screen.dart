@@ -1,4 +1,4 @@
-import 'package:client/constants.dart';
+import 'package:client/util/constants.dart';
 import 'package:client/screens/splash_screens/info_screen.dart';
 import 'package:client/util/local_storage.dart';
 import 'package:flutter/material.dart';
@@ -13,33 +13,38 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   bool _isButtonPressed = false;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(30),
-        child: Column(
-          children: [
-            Expanded(
-              flex: 2,
-              child: Image.asset("assets/undraw_taking_notes_re_bnaf (1) 1.png", fit: BoxFit.scaleDown),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Scaffold(
+          body: Padding(
+            padding: EdgeInsets.all(constraints.maxWidth * 0.03), // 3% of screen width
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Image.asset("assets/undraw_taking_notes_re_bnaf (1) 1.png", fit: BoxFit.scaleDown),
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      _buildRichText(constraints),
+                      _buildGetStartedButton(context, constraints),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _buildRichText(),
-                  _buildGetStartedButton(context),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      }
     );
   }
 
-  RichText _buildRichText() {
+  RichText _buildRichText(BoxConstraints constraints) {
     return RichText(
       textAlign: TextAlign.center,
       text: const TextSpan(
@@ -68,7 +73,7 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
-  GestureDetector _buildGetStartedButton(BuildContext context) {
+  GestureDetector _buildGetStartedButton(BuildContext context, BoxConstraints constraints) {
     return GestureDetector(
       onTapDown: (details) {
         setState(() {
@@ -85,7 +90,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Get.to(() => const InfoScreen(), transition: Transition.fadeIn);
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 90),
+        padding: EdgeInsets.symmetric(vertical: constraints.maxHeight * 0.02, horizontal: constraints.maxWidth * 0.2), // 2% of screen height and 20% of screen width
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: _isButtonPressed ? kPrimaryColor.withOpacity(0.8) : kPrimaryColor,

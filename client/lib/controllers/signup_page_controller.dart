@@ -40,10 +40,11 @@ class SignupPageController extends GetxController {
           Get.off(LoginPage());
         }
       } else {
-        showError('Passwords do not match');
+        CustomSnackBar.showError('Password Mismatch',
+            'Password and Confirm Password should be the same');
       }
     } else {
-      showError('Please fill all the fields');
+      CustomSnackBar.showError('Error', 'Please fill all the fields');
     }
   }
 

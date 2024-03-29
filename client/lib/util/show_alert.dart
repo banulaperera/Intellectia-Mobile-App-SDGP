@@ -1,82 +1,49 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/main.dart';
 import 'package:flutter/material.dart';
 
 
-  showError(message){
-  final snackBar = SnackBar(
-    content: Container(
-      // padding: EdgeInsets.all(12),
-      height: 45,
-      decoration: const BoxDecoration(
-        color: Colors.red,
-        borderRadius: BorderRadius.all(Radius.circular(15)),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(
-            weight: 150,
-            BootstrapIcons.x_circle,
-            color: Colors.white,
-            size: 25,
-          ),
-          const SizedBox(width: 25),
-          Text(
-            message,
-            style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w700
-            ),
-          ),
-        ],
-      ),
-    ),
-    duration: const Duration(seconds: 1),
-    behavior: SnackBarBehavior.floating,
-    backgroundColor: Colors.transparent,
-    elevation: 0,
-  );
-  ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(snackBar);
-}
+import 'package:get/get.dart';
 
-showSuccess(message){
-  final snackBar = SnackBar(
-    content: Container(
-      // padding: EdgeInsets.all(12),
-      height: 45,
-      decoration: const BoxDecoration(
-        color: Colors.green,
-        borderRadius: BorderRadius.all(Radius.circular(15)),
+class CustomSnackBar {
+  static void showError(String title, String message) {
+    Get.snackbar(
+      title,
+      message,
+      titleText: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15), // Set your desired padding for title
+        child: Text(title),
       ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(
-            weight: 150,
-            BootstrapIcons.check2_circle,
-            color: Colors.white,
-            size: 25,
-          ),
-          const SizedBox(width: 25),
-          Text(
-            message,
-            style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w700
-            ),
-          ),
-        ],
+      messageText: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15), // Set your desired padding for message
+        child: Text(message),
       ),
-    ),
-    duration: const Duration(seconds: 1),
-    behavior: SnackBarBehavior.floating,
-    backgroundColor: Colors.transparent,
-    elevation: 0,
-  );
-  ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(snackBar);
+      colorText: Colors.black,
+      backgroundColor: Colors.red.shade400,
+      snackPosition: SnackPosition.BOTTOM,
+      margin: const EdgeInsets.all(30),
+    );
+  }
+
+  static void showSuccess(String title, String message) {
+    Get.snackbar(
+      title,
+      message,
+      titleText: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15), // Set your desired padding for title
+        child: Text(title),
+      ),
+      messageText: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15), // Set your desired padding for message
+        child: Text(message),
+      ),
+      icon: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15),
+        child: Icon(BootstrapIcons.info_circle_fill, color: Colors.black),
+      ),
+      colorText: Colors.black,
+      backgroundColor: Colors.green.shade400,
+      snackPosition: SnackPosition.BOTTOM,
+      margin: const EdgeInsets.all(30),
+    );
+  }
 }

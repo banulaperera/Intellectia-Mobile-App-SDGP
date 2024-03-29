@@ -1,12 +1,14 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/constants.dart';
 import 'package:client/controllers/note_controller.dart';
 import 'package:client/screens/home_page/home_page_components/note_editor.dart';
 import 'package:client/screens/home_page/home_page_components/tile_view_widget.dart';
 import 'package:client/util/connection_lost.dart';
+import 'package:client/util/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+
+import '../../util/screen_dimension.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,9 +16,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final NoteController noteController = Get.put(NoteController());
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 60, 16, 0),
+        padding:
+            EdgeInsets.fromLTRB(width * 0.04, height * 0.07, width * 0.04, 0),
+        // 4% of screen width and 7% of screen height
         child: RefreshIndicator(
           color: kPrimaryColor,
           onRefresh: () async {
@@ -32,13 +40,14 @@ class HomePage extends StatelessWidget {
                   letterSpacing: 2,
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: height * 0.02), // 2% of screen height
               TextField(
                 key: const Key('searchKey'),
                 onChanged: noteController.search,
                 decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(
-                      vertical: 12.0, horizontal: 15),
+                  contentPadding: EdgeInsets.symmetric(
+                      vertical: height * 0.01, horizontal: width * 0.04),
+                  // 1% of screen height and 4% of screen width
                   hintText: "Search",
                   suffixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
@@ -73,13 +82,15 @@ class HomePage extends StatelessWidget {
                             children: <Widget>[
                               Lottie.asset(
                                 'animations/Animation - 1711288473623.json',
-                                height: 150,
+                                height: height * 0.15,
+                                // 15% of screen height
                                 reverse: true,
                                 repeat: true,
                                 animate: true,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(10),
+                                padding: EdgeInsets.all(width * 0.025),
+                                // 2.5% of screen width
                                 child: Text(
                                   'No Notes Found',
                                   style: TextStyle(
@@ -93,7 +104,8 @@ class HomePage extends StatelessWidget {
                           ));
                         } else {
                           return ListView(
-                            padding: const EdgeInsets.only(top: 15),
+                            padding: EdgeInsets.only(top: height * 0.015),
+                            // 1.5% of screen height
                             children: noteController.filteredNotes
                                 .map((tile) => TileViewWidget(tile: tile))
                                 .toList(),

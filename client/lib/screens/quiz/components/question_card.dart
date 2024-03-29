@@ -3,7 +3,7 @@ import 'package:client/models/questions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../constants.dart';
+import '../../../util/constants.dart';
 import 'option.dart';
 
 class QuestionCard extends StatelessWidget {

@@ -4,6 +4,8 @@ import 'package:client/screens/user_profile/user_profile_components/pie_chart_qu
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../util/screen_dimension.dart';
+
 class PieChartContainer extends StatelessWidget {
   const PieChartContainer({
     super.key,
@@ -11,7 +13,11 @@ class PieChartContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-final userProfileController = Get.find<UserProfileController>();
+    final userProfileController = Get.find<UserProfileController>();
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Container(
       decoration: BoxDecoration(
         border: Border.all(width: 2, color: Colors.black.withOpacity(0.15)),
@@ -22,7 +28,7 @@ final userProfileController = Get.find<UserProfileController>();
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: EdgeInsets.only(top: height * 0.02), // 2% of screen height
             child: Text(
               'Monthly Progress',
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -30,11 +36,11 @@ final userProfileController = Get.find<UserProfileController>();
             ),
           ),
           const PieChartWidget(),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: height * 0.02, // 2% of screen height
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
+            padding: EdgeInsets.symmetric(horizontal: width * 0.125), // 12.5% of screen width
             child: GetBuilder<UserProfileController>(
               builder: (builder) {
                 return QuizTile(
@@ -46,7 +52,7 @@ final userProfileController = Get.find<UserProfileController>();
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: width * 0.125, vertical: height * 0.02), // 12.5% of screen width and 2% of screen height
             child: GetBuilder<UserProfileController>(
               builder: (builder) {
                 return QuizTile(

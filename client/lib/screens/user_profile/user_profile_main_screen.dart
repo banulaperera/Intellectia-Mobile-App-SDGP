@@ -1,5 +1,5 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/constants.dart';
+import 'package:client/util/constants.dart';
 import 'package:client/screens/setting_screen/main_setting_page.dart';
 import 'package:client/screens/user_profile/user_profile_components/exp_bar_graph.dart';
 import 'package:client/screens/user_profile/user_profile_components/pie_chart_container.dart';
@@ -10,6 +10,7 @@ import 'package:lottie/lottie.dart';
 
 import '../../controllers/user_profile_controller.dart';
 import '../../util/connection_lost.dart';
+import '../../util/screen_dimension.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
@@ -18,6 +19,11 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     final UserProfileController userProfileController =
         Get.put(UserProfileController());
+
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -35,7 +41,7 @@ class UserProfile extends StatelessWidget {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 10),
+            padding: EdgeInsets.only(right: width * 0.02),
             child: InkWell(
               onTap: () {
                 Get.to(() => const MainSettingPage());
@@ -73,13 +79,13 @@ class UserProfile extends StatelessWidget {
               return Column(
                 children: [
                   const UserProfileHeader(),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: height * 0.01,
                   ),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(horizontal: width * 0.02),
                         child: Column(
                           children: [
                             Container(
@@ -95,7 +101,7 @@ class UserProfile extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.only(top: 10),
+                                    padding: EdgeInsets.only(top: height * 0.01),
                                     child: Text(
                                       'XP Earned',
                                       style: Theme.of(context)
@@ -106,8 +112,8 @@ class UserProfile extends StatelessWidget {
                                               color: Colors.grey.shade600),
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 10,
+                                  SizedBox(
+                                    height: height * 0.01,
                                   ),
                                   GetBuilder<UserProfileController>(
                                     builder: (controller) {
@@ -118,8 +124,8 @@ class UserProfile extends StatelessWidget {
                                           children: [
                                             Lottie.asset(
                                               'animations/Animation - 1709314319942.json',
-                                              width: 35,
-                                              height: 35,
+                                              width: width * 0.1,
+                                              height: height * 0.1,
                                             ),
                                             Text(
                                               controller.user.totalXP
@@ -138,8 +144,8 @@ class UserProfile extends StatelessWidget {
                                       );
                                     },
                                   ),
-                                  const SizedBox(
-                                    height: 10,
+                                  SizedBox(
+                                    height: height * 0.01, // 1% of screen height
                                   ),
                                   GetBuilder<UserProfileController>(
                                     builder: (controller) {
@@ -153,24 +159,24 @@ class UserProfile extends StatelessWidget {
                                       );
                                     },
                                   ),
-                                  const SizedBox(
-                                    height: 10,
+                                  SizedBox(
+                                    height: height * 0.01, // 1% of screen height
                                   ),
                                   Divider(
                                     color: Colors.black.withOpacity(0.15),
                                   ),
-                                  const Padding(
-                                    padding: EdgeInsets.all(20),
+                                  Padding(
+                                    padding: EdgeInsets.all(width * 0.05), // 5% of screen width
                                     child: SizedBox(
-                                      height: 250,
-                                      child: BarGraph(),
+                                      height: height * 0.35,
+                                      child: const BarGraph(),
                                     ),
                                   )
                                 ],
                               ),
                             ),
-                            const SizedBox(
-                              height: 20,
+                            SizedBox(
+                              height: height * 0.02, // 2% of screen height
                             ),
                             const PieChartContainer(),
                           ],

@@ -1,6 +1,6 @@
 import 'package:flutter/Material.dart';
 
-import '../constants.dart';
+import '../util/constants.dart';
 
 class LoginScreenButton extends StatefulWidget {
   const LoginScreenButton(

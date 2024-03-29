@@ -1,10 +1,12 @@
-import 'package:client/constants.dart';
+import 'package:client/util/constants.dart';
 import 'package:client/controllers/user_profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:lottie/lottie.dart';
+
+import '../../../util/screen_dimension.dart';
 
 class UserProfileHeader extends StatelessWidget {
   const UserProfileHeader({
@@ -14,9 +16,13 @@ class UserProfileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userProfileController = Get.find<UserProfileController>();
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Container(
       width: double.infinity,
-      height: 200,
+      height: height * 0.25,
       decoration: const BoxDecoration(
         color: kPrimaryColor,
         borderRadius: BorderRadius.all(
@@ -28,8 +34,8 @@ class UserProfileHeader extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              maxRadius: 75,
-              minRadius: 75,
+              maxRadius: width * 0.15,
+              minRadius: width * 0.15,
               backgroundColor: Colors.grey.shade800,
               backgroundImage: userProfileController.getImage(),
             ),
@@ -44,14 +50,14 @@ class UserProfileHeader extends StatelessWidget {
                   '${userProfileController.user.firstName} ${userProfileController.user.lastName}',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
                         color: kBackgroundColor,
-                        fontSize: 18,
+                        fontSize: width * 0.045,
                       ),
                 ),
                 const SizedBox(height: 10),
                 Text(
                   userProfileController.user.email,
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                        fontSize: 14.0,
+                        fontSize: width * 0.035,
                         color: kBackgroundColor,
                       ),
                 ),
@@ -59,13 +65,10 @@ class UserProfileHeader extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    // const SizedBox(
-                    //   width: 2,
-                    // ),
                     Text(
                       'Level ${userProfileController.user.level}',
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                            fontSize: 18.0,
+                            fontSize: width * 0.045, // 4.5% of screen width
                             color: kBackgroundColor,
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.italic,
@@ -73,7 +76,8 @@ class UserProfileHeader extends StatelessWidget {
                           ),
                     ),
                     Lottie.asset('animations/Animation - 1709315159426.json',
-                        width: 90, height: 90, reverse: true, repeat: true),
+                        width: width * 0.225,
+                        reverse: true, repeat: true),
                   ],
                 ),
               ],

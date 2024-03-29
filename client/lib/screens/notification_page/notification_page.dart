@@ -1,9 +1,11 @@
-import 'package:client/constants.dart';
+import 'package:client/util/constants.dart';
 import 'package:client/controllers/notification_controller.dart';
 import 'package:client/screens/notification_page/notification_page_components/show_notification.dart';
 import 'package:client/util/connection_lost.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
+
+import '../../util/screen_dimension.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -12,6 +14,11 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     NotificationController notificationController =
         Get.put(NotificationController());
+
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -55,8 +62,11 @@ class NotificationScreen extends StatelessWidget {
                     );
                   } else {
                     return Padding(
-                      padding:
-                          const EdgeInsets.only(right: 20, left: 20, top: 15),
+                      padding: EdgeInsets.only(
+                        right: width * 0.05, // 5% of screen width
+                        left: width * 0.05, // 5% of screen width
+                        top: height * 0.02, // 2% of screen height
+                      ),
                       child: SingleChildScrollView(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
