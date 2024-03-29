@@ -2,8 +2,10 @@ import 'dart:convert';
 
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';
-import 'package:client/util/show_alert.dart';
 import 'package:http/http.dart' as http;
+
+import '../util/show_Alert.dart';
+
 
 class AuthRepository {
   Future<void> refreshToken() async {
@@ -16,7 +18,8 @@ class AuthRepository {
       final Map<String, dynamic> data = jsonDecode(res.body);
       await LocalStorage().setAccessToken(data['accessToken']);
     } else {
-      showError("Unable to generate Token ....!");
+      CustomSnackBar.
+      showError('Error',"Unable to generate Token ....!");
     }
   }
 }

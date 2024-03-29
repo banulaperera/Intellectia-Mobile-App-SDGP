@@ -1,10 +1,12 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/constants.dart';
 import 'package:client/controllers/quiz_preference_setting_controller.dart';
-import 'package:client/util/show_Alert.dart';
+import 'package:client/util/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+
+import '../../util/screen_dimension.dart';
+import '../../util/show_Alert.dart';
 
 class GoalSetting extends StatefulWidget {
   const GoalSetting({super.key});
@@ -20,6 +22,11 @@ class _GoalSettingState extends State<GoalSetting> {
   Widget build(BuildContext context) {
     final GoalSettingController goalSettingController =
         Get.put(GoalSettingController());
+
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.black,
@@ -37,7 +44,7 @@ class _GoalSettingState extends State<GoalSetting> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: EdgeInsets.all(width * 0.075), // 7.5% of screen width
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -46,7 +53,7 @@ class _GoalSettingState extends State<GoalSetting> {
                 'Tailor Your Learning Experience Customize Your Quiz Preferences',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: width * 0.045, // 4.5% of screen width
                   fontWeight: FontWeight.bold,
                   color: Colors.grey.shade600,
                 ),
@@ -54,7 +61,7 @@ class _GoalSettingState extends State<GoalSetting> {
               const SizedBox(height: 10),
               Lottie.asset(
                 'animations/Animation - 1710747144874.json',
-                height: 250,
+                height: height * 0.3125, // 31.25% of screen height
                 reverse: true,
                 repeat: true,
                 animate: true,
@@ -94,7 +101,8 @@ class _GoalSettingState extends State<GoalSetting> {
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       surfaceTintColor: kBackgroundColor,
-                      fixedSize: const Size(200, 45),
+                      fixedSize: Size(width * 0.5, height * 0.05625),
+                      // 50% of screen width and 5.625% of screen height
                       foregroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -137,16 +145,22 @@ class _GoalSettingState extends State<GoalSetting> {
     required List<DropdownMenuItem<String>> items,
     required Function(String?) onChanged,
   }) {
+    ScreenDimensions.init(context);
+    double width = ScreenDimensions.screenWidth;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           label,
-          style: const TextStyle(fontSize: 16, color: kPrimaryColor),
+          style: TextStyle(
+              fontSize: width * 0.04,
+              color: kPrimaryColor), // 4% of screen width
         ),
         const SizedBox(height: 10),
         Container(
-          padding: const EdgeInsets.only(left: 16, right: 16),
+          padding: EdgeInsets.symmetric(horizontal: width * 0.04),
+          // 4% of screen width
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             border: Border.all(color: Colors.black, width: 1),
@@ -196,17 +210,23 @@ class _GoalSettingState extends State<GoalSetting> {
 
   OutlinedButton bottomButton(
       Color backgroundColor, String text, Color textColor) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
           backgroundColor: backgroundColor,
-          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+          padding: EdgeInsets.symmetric(
+              horizontal: width * 0.125, vertical: height * 0.01875),
+          // 12.5% of screen width and 1.875% of screen height
           elevation: 5),
       onPressed: () {
         if (text == 'CANCEL') {
           Get.back();
         } else {
           if (_selectedTime == null) {
-            showError('Please select your preferred time');
+            CustomSnackBar.showError('Error', 'Please select your preferred time');
           } else {
             final List<String> timeParts = _selectedTime!.split(':');
             final int hour = int.parse(timeParts[0]);
@@ -218,7 +238,7 @@ class _GoalSettingState extends State<GoalSetting> {
                 DateTime(now.year, now.month, now.day, hour, minute);
             var goalSettingController = Get.find<GoalSettingController>();
             if (goalSettingController.moduleSelectedValue.isEmpty) {
-              showError('Please select a module');
+              CustomSnackBar.showError('Error', 'Please select a module');
               return;
             }
             goalSettingController.onModuleSelected(
@@ -231,7 +251,10 @@ class _GoalSettingState extends State<GoalSetting> {
       },
       child: Text(
         text,
-        style: TextStyle(fontSize: 14, letterSpacing: 2, color: textColor),
+        style: TextStyle(
+            fontSize: width * 0.035,
+            letterSpacing: 2,
+            color: textColor), // 3.5% of screen width
       ),
     );
   }

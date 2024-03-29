@@ -3,12 +3,17 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 
+import '../../../util/screen_dimension.dart';
+
 class BarGraph extends StatelessWidget {
   const BarGraph({super.key});
 
   @override
   Widget build(BuildContext context) {
     final userProfileController = Get.find<UserProfileController>();
+    ScreenDimensions.init(context);
+    double width = ScreenDimensions.screenWidth;
+
     return GetBuilder<UserProfileController>(
       builder: (controller) {
         return BarChart(
@@ -41,7 +46,7 @@ class BarGraph extends StatelessWidget {
                       BarChartRodData(
                           toY: e.y,
                           color: Colors.orangeAccent,
-                          width: 25,
+                          width: width * 0.05, // 5% of screen width
                           borderRadius: BorderRadius.circular(4)),
                     ],
                   ),

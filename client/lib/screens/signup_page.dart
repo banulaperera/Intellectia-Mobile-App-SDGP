@@ -1,10 +1,11 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/constants.dart';
+import 'package:client/util/constants.dart';
 import 'package:client/controllers/signup_page_controller.dart';
 import 'package:client/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../util/screen_dimension.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
@@ -15,6 +16,10 @@ class SignupPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Scaffold(
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -22,7 +27,7 @@ class SignupPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: height * 0.4, // 40% of screen height
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/logo_image.jpeg"),
@@ -31,7 +36,7 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
+              padding: EdgeInsets.symmetric(horizontal: width * 0.05), // 5% of screen width
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -81,8 +86,9 @@ class SignupPage extends StatelessWidget {
                         const BorderSide(color: kPrimaryColor, width: 2.5),
                         borderRadius: BorderRadius.circular(60),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 15, horizontal: 25),
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: height * 0.015, // 1.5% of screen height
+                          horizontal: width * 0.05), // 5% of screen width
                     ),
                   ),),
                   const SizedBox(height: 25),
@@ -123,8 +129,9 @@ class SignupPage extends StatelessWidget {
                         const BorderSide(color: kPrimaryColor, width: 2.5),
                         borderRadius: BorderRadius.circular(60),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 15, horizontal: 25),
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: height * 0.015, // 1.5% of screen height
+                          horizontal: width * 0.05), // 5% of screen width
                     ),
                   ),),
                   const SizedBox(height: 25),

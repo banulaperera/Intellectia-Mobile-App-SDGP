@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 import '../../../controllers/notification_controller.dart';
+import '../../../util/screen_dimension.dart';
 
 class NotificationTitle extends StatelessWidget {
   final NotificationM notifications;
@@ -14,10 +15,14 @@ class NotificationTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return ListTile(
       leading: Container(
-        height: 40,
-        width: 40,
+        height: height * 0.05, // 5% of screen height
+        width: width * 0.1, // 10% of screen width
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
@@ -30,13 +35,15 @@ class NotificationTitle extends StatelessWidget {
         children: [
           Text(
             notifications.title,
-            style: const TextStyle(
-                color: Colors.black, fontWeight: FontWeight.w600),
+            style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w600,
+                fontSize: width * 0.04), // 4% of screen width
           ),
           Text(
             DateFormat('yyyy-MM-dd HH:mm a').format(notifications.date.toUtc()),
-            style: const TextStyle(
-                fontSize: 12,
+            style: TextStyle(
+                fontSize: width * 0.025, // 3% of screen width
                 color: Colors.black45,
                 fontStyle: FontStyle.italic),
           ),
@@ -46,6 +53,9 @@ class NotificationTitle extends StatelessWidget {
         notifications.body,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
+        style: TextStyle(
+          fontSize: width * 0.035, // 3.5% of screen width
+        ),
       ),
       onTap: () {
         if (notifications.link != null) {

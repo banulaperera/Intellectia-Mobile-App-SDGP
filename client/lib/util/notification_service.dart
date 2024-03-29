@@ -30,8 +30,8 @@ class NotificationService {
   showQuizNotification(String moduleName) async {
     LocalStorage().setQuizPageStatus(true);
     if(await localStorage.getQuizNotificationStatus()){
-      String title = 'Quiz !!!! ..';
-      String body = 'Your Quiz on $moduleName is available.Please Take the quiz..';
+      String title = 'Quiz is Ready..';
+      String body = 'Your Quiz on $moduleName is available. Please Take the quiz.';
       var notificationM = NotificationM(
           title: title, body: body, type: "quiz", date: DateTime.now());
 

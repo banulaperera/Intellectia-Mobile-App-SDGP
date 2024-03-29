@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:client/constants.dart';
+import 'package:client/util/constants.dart';
 import 'package:client/screens/login_page.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
@@ -47,170 +47,187 @@ class _InfoScreenState extends State<InfoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Center(
-              child: CarouselSlider(
-                items: lottieFiles
-                    .map(
-                      (gObj) => Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [
-                              kPrimaryColor,
-                              kPrimaryColor.withOpacity(0.5),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        padding: EdgeInsets.symmetric(
-                            vertical: MediaQuery.of(context).size.width * 0.1,
-                            horizontal: 25),
-                        alignment: Alignment.center,
-                        child: FittedBox(
-                          child: Column(
-                            children: [
-                              Lottie.asset(
-                                gObj["image"].toString(),
-                                height: MediaQuery.of(context).size.width * 0.6,
-                                fit: BoxFit.fitWidth,
+    return LayoutBuilder(builder: (context, constraints) {
+      return Scaffold(
+        backgroundColor: kBackgroundColor,
+        body: SafeArea(
+          child: Stack(
+            children: [
+              Center(
+                child: CarouselSlider(
+                  items: lottieFiles
+                      .map(
+                        (gObj) => LayoutBuilder(
+                          builder: (context, constraints) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: [
+                                    kPrimaryColor,
+                                    kPrimaryColor.withOpacity(0.5),
+                                  ],
+                                ),
+                                borderRadius: BorderRadius.circular(20),
                               ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              Text(
-                                gObj["title"].toString(),
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
+                              padding: EdgeInsets.symmetric(
+                                  vertical: constraints.maxWidth * 0.1,
+                                  // 10% of parent width
+                                  horizontal: constraints.maxWidth * 0.03),
+                              // 3% of parent width
+                              alignment: Alignment.center,
+                              child: FittedBox(
+                                child: Column(
+                                  children: [
+                                    Lottie.asset(
+                                      gObj["image"].toString(),
+                                      height: constraints.maxWidth * 0.6,
+                                      // 60% of parent width
+                                      fit: BoxFit.fitWidth,
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    Text(
+                                      gObj["title"].toString(),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Container(
+                                      width: constraints.maxWidth * 0.1,
+                                      // 10% of parent width
+                                      height: 1,
+                                      color: Colors.white,
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      gObj["subtitle"].toString(),
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.1,
-                                height: 1,
-                                color: Colors.white,
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                textAlign: TextAlign.center,
-                                gObj["subtitle"].toString(),
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ],
-                          ),
+                            );
+                          },
                         ),
-                      ),
-                    )
-                    .toList(),
-                carouselController: buttonCarouselController,
-                options: CarouselOptions(
-                  autoPlay: false,
-                  enlargeCenterPage: true,
-                  viewportFraction: 0.75,
-                  aspectRatio: 0.74,
-                  initialPage: 0,
+                      )
+                      .toList(),
+                  carouselController: buttonCarouselController,
+                  options: CarouselOptions(
+                    autoPlayCurve: Curves.easeInOut,
+                    autoPlay: true,
+                    enlargeCenterPage: true,
+                    viewportFraction: 0.75,
+                    aspectRatio: 0.74,
+                    initialPage: 0,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.width * 0.05,
-                  ),
-                  const Text(
-                    textAlign: TextAlign.center,
-                    "What you can do with Intellectia?",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
+              Container(
+                padding: EdgeInsets.symmetric(
+                    horizontal: constraints.maxWidth * 0.03),
+                // 3% of screen width
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height:
+                          constraints.maxHeight * 0.05, // 5% of screen height
                     ),
-                  ),
-                  const Text(
-                    textAlign: TextAlign.center,
-                    "It will help you to know more about us and\n our services.",
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
+                    const Text(
+                      textAlign: TextAlign.center,
+                      "What you can do with Intellectia?",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
-                  ),
-                  const Spacer(),
-                  // SizedBox(
-                  //   height: MediaQuery.of(context).size.width * 0.05,
-                  // ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: FittedBox(
-                      child: GestureDetector(
-                        onTapDown: (details) {
-                          setState(() {
-                            _isButtonPressed = true;
-                          });
-                        },
-                        onTapUp: (details) {
-                          setState(() {
-                            _isButtonPressed = false;
-                          });
-                        },
-                        onTap: () {
-                          Get.to(() => LoginPage(),
-                              transition: Transition.fadeIn);
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 20, horizontal: 90),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: _isButtonPressed ? kPrimaryColor.withOpacity(0.8) : kPrimaryColor,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 5,
-                                blurRadius: 7,
-                                offset: const Offset(
-                                  0,
-                                  4,
-                                ), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: const Row(
-                            children: [
-                              Text(
-                                "Continue",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 18,
-                                  letterSpacing: 3,
+                    const Text(
+                      textAlign: TextAlign.center,
+                      "It will help you to know more about us and\n our services.",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const Spacer(),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          bottom: constraints.maxHeight *
+                              0.02), // 2% of screen height
+                      child: FittedBox(
+                        child: GestureDetector(
+                          onTapDown: (details) {
+                            setState(() {
+                              _isButtonPressed = true;
+                            });
+                          },
+                          onTapUp: (details) {
+                            setState(() {
+                              _isButtonPressed = false;
+                            });
+                          },
+                          onTap: () {
+                            Get.to(() => LoginPage(),
+                                transition: Transition.fadeIn);
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: constraints.maxHeight * 0.02,
+                                horizontal: constraints.maxWidth * 0.2),
+                            // 2% of screen height and 20% of screen width
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: _isButtonPressed
+                                  ? kPrimaryColor.withOpacity(0.8)
+                                  : kPrimaryColor,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                  offset: const Offset(
+                                    0,
+                                    4,
+                                  ), // changes position of shadow
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
+                            child: const Row(
+                              children: [
+                                Text(
+                                  "Continue",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 18,
+                                    letterSpacing: 3,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            )
-          ],
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

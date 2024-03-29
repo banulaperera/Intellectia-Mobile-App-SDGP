@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 
 import '../util/show_Alert.dart';
 
+
 class UserProfileController extends GetxController {
   final TextEditingController _existingPasswordController =
       TextEditingController();
@@ -147,7 +148,7 @@ class UserProfileController extends GetxController {
     if (_existingPasswordController.text.isEmpty ||
         _passwordController.text.isEmpty ||
         _confirmPasswordController.text.isEmpty) {
-      showError('All fields are required');
+      CustomSnackBar.showError('Error', 'All fields are required');
     } else {
       if (_passwordController.text == _confirmPasswordController.text) {
         await UserRepository().changeUserPassword(
@@ -159,7 +160,7 @@ class UserProfileController extends GetxController {
           Get.back();
         }
       } else {
-        showError('Passwords do not match');
+        CustomSnackBar.showError('Error', 'Password and Confirm Password should be the same');
       }
     }
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/Material.dart';
-import '../constants.dart';
+import '../util/constants.dart';
 
 class LoginSignUpTextField extends StatelessWidget {
   const LoginSignUpTextField({super.key, required  this.hintText, required this.keyboardType, required this.controller});
@@ -10,6 +10,9 @@ class LoginSignUpTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return TextField(
       controller: controller,
       style: const TextStyle(
@@ -34,7 +37,9 @@ class LoginSignUpTextField extends StatelessWidget {
           borderSide: const BorderSide(color: kPrimaryColor, width: 2.5),
           borderRadius: BorderRadius.circular(60),
         ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+        contentPadding: EdgeInsets.symmetric(
+            vertical: screenHeight * 0.015, // 1.5% of screen height
+            horizontal: screenWidth * 0.05), // 5% of screen width
       ),
       keyboardType: keyboardType,
     );

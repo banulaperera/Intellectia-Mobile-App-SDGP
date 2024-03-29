@@ -6,8 +6,10 @@ import 'package:client/screens/setting_screen/privacy_security_page.dart';
 import 'package:client/screens/setting_screen/quiz_preference_setting.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
-import '../../constants.dart';
+
+import '../../util/constants.dart';
 import '../../util/local_storage.dart';
+import '../../util/screen_dimension.dart';
 import 'about_us_page.dart';
 import 'account_setting.dart';
 
@@ -18,33 +20,36 @@ class MainSettingPage extends StatefulWidget {
   State<MainSettingPage> createState() => _MainSettingPageState();
 }
 
-
 class _MainSettingPageState extends State<MainSettingPage> {
-   bool youTubeValueSelected=true;
-   bool  rankValueSelected=true;
-   bool  quizValueSelected=true;
+  bool youTubeValueSelected = true;
+  bool rankValueSelected = true;
+  bool quizValueSelected = true;
+
   @override
-   initState(){
+  initState() {
     initializeNotificationStatus();
     super.initState();
   }
 
-   initializeNotificationStatus() async {
-     final localStorage = LocalStorage();
-     final youtubeStatus = await localStorage.getYoutubeNotificationStatus();
-     final quizStatus = await localStorage.getQuizNotificationStatus();
-     final rankStatus = await localStorage.getRankNotificationStatus();
+  initializeNotificationStatus() async {
+    final localStorage = LocalStorage();
+    final youtubeStatus = await localStorage.getYoutubeNotificationStatus();
+    final quizStatus = await localStorage.getQuizNotificationStatus();
+    final rankStatus = await localStorage.getRankNotificationStatus();
 
-    setState((){
-      youTubeValueSelected= youtubeStatus;
-      rankValueSelected= rankStatus;
-      quizValueSelected= quizStatus;
+    setState(() {
+      youTubeValueSelected = youtubeStatus;
+      rankValueSelected = rankStatus;
+      quizValueSelected = quizStatus;
     });
-
   }
 
   @override
   Widget build(BuildContext context) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.black,
@@ -61,10 +66,10 @@ class _MainSettingPageState extends State<MainSettingPage> {
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.only(
-          top: 25,
-          left: 25,
-          right: 25,
+        padding: EdgeInsets.only(
+          top: height * 0.025, // 2.5% of screen height
+          left: width * 0.025, // 2.5% of screen width
+          right: width * 0.025, // 2.5% of screen width
         ),
         child: ListView(
           children: [
@@ -151,8 +156,7 @@ class _MainSettingPageState extends State<MainSettingPage> {
             const SizedBox(
               height: 15,
             ),
-            buildAccountSettingOption(
-                context, 'About us', const AboutUs()),
+            buildAccountSettingOption(context, 'About us', const AboutUs()),
             const SizedBox(
               height: 50,
             ),
@@ -161,7 +165,7 @@ class _MainSettingPageState extends State<MainSettingPage> {
                 onPressed: () async {
                   await LocalStorage().clearUserDetails();
                   Get.find<NoteController>().clearNotes();
-                  Get.offAll(()=>LoginPage());
+                  Get.offAll(() => LoginPage());
                 },
                 child: const Text(
                   'Sign out',
@@ -180,6 +184,7 @@ class _MainSettingPageState extends State<MainSettingPage> {
   }
 
   Row buildNotificationOption(String title) {
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -187,7 +192,7 @@ class _MainSettingPageState extends State<MainSettingPage> {
         Text(
           title,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: screenWidth * 0.04, // 4% of screen width
             fontWeight: FontWeight.w500,
             color: Colors.grey[600],
           ),
@@ -195,24 +200,28 @@ class _MainSettingPageState extends State<MainSettingPage> {
         Transform.scale(
           scale: 0.7,
           child: Switch(
-              value: title=='Video recommendations' ? youTubeValueSelected:(title=='New quiz reminder'? quizValueSelected:rankValueSelected),
+              value: title == 'Video recommendations'
+                  ? youTubeValueSelected
+                  : (title == 'New quiz reminder'
+                      ? quizValueSelected
+                      : rankValueSelected),
               activeTrackColor: kPrimaryColor,
               onChanged: (bool value) {
-                 var localStorage = LocalStorage();
-                if(title=='Video recommendations'){
+                var localStorage = LocalStorage();
+                if (title == 'Video recommendations') {
                   localStorage.setYoutubeNotificationStatus(value);
                   setState(() {
-                    youTubeValueSelected=value;
+                    youTubeValueSelected = value;
                   });
-                }else if(title=='New quiz reminder'){
+                } else if (title == 'New quiz reminder') {
                   localStorage.setQuizNotificationStatus(value);
                   setState(() {
-                    quizValueSelected=value;
+                    quizValueSelected = value;
                   });
-                }else if(title=='Skill up notifications'){
+                } else if (title == 'Skill up notifications') {
                   localStorage.setRankNotificationStatus(value);
                   setState(() {
-                    rankValueSelected=value;
+                    rankValueSelected = value;
                   });
                 }
                 // valueSelected=value;
@@ -224,19 +233,24 @@ class _MainSettingPageState extends State<MainSettingPage> {
 
   GestureDetector buildAccountSettingOption(
       BuildContext context, String title, Widget widget) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return GestureDetector(
       onTap: () {
         Get.to(() => widget);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.symmetric(vertical: height * 0.01),
+        // 1% of screen height
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               title,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: width * 0.04, // 4% of screen width
                 fontWeight: FontWeight.w500,
                 color: Colors.grey[600],
               ),
