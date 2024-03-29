@@ -192,7 +192,7 @@ class _MainSettingPageState extends State<MainSettingPage> {
         Text(
           title,
           style: TextStyle(
-            fontSize: screenWidth * 0.04, // 4% of screen width
+            fontSize: screenWidth * 0.035,
             fontWeight: FontWeight.w500,
             color: Colors.grey[600],
           ),
