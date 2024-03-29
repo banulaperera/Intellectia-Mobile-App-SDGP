@@ -117,10 +117,7 @@ class _GoalSettingState extends State<GoalSetting> {
                           fontSize: 16,
                         ),
                         _selectedTime != null ? _selectedTime! : 'Select Time'),
-                    // style: ElevatedButton.styleFrom(
-                    //   padding: const EdgeInsets.symmetric(
-                    //       horizontal: 40, vertical: 10),
-                    // ),
+
                   ),
                 ],
               ),
@@ -218,7 +215,7 @@ class _GoalSettingState extends State<GoalSetting> {
       style: OutlinedButton.styleFrom(
           backgroundColor: backgroundColor,
           padding: EdgeInsets.symmetric(
-              horizontal: width * 0.125, vertical: height * 0.01875),
+              horizontal: width * 0.1, vertical: height * 0.01875),
           // 12.5% of screen width and 1.875% of screen height
           elevation: 5),
       onPressed: () {

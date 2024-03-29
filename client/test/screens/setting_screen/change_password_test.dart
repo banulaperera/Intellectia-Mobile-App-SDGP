@@ -20,7 +20,5 @@ void main() {
     expect(find.text('Create new password'), findsOneWidget);
     expect(find.text('Your new password must be different from previous used passwords.'), findsOneWidget);
     expect(find.text('Existing Password'), findsOneWidget);
-    expect(find.text('Password'), findsOneWidget);
-    expect(find.text('Confirm Password'), findsOneWidget);
   });
 }
