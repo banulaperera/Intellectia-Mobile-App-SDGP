@@ -1,4 +1,4 @@
-import 'package:client/constants.dart';
+import 'package:client/util/constants.dart';
 import 'package:client/screens/quiz/question_screen.dart';
 import 'package:client/util/local_storage.dart';
 import 'package:flutter/material.dart';

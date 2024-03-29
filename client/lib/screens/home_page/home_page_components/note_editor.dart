@@ -1,12 +1,13 @@
-import 'package:client/constants.dart';
 import 'package:client/controllers/ml_model_controller.dart';
 import 'package:client/models/note.dart';
+import 'package:client/util/constants.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/note_controller.dart';
 import '../../../util/connection_lost.dart';
+import '../../../util/screen_dimension.dart';
 import '../../navigation_bar.dart';
 
 class CreateNote extends StatefulWidget {
@@ -40,12 +41,18 @@ class _CreateNoteState extends State<CreateNote> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 40, 16, 0),
+        padding:
+            EdgeInsets.fromLTRB(width * 0.04, height * 0.07, width * 0.04, 0),
+        // 4% of screen width and 7% of screen height
         child: Form(
           key: _formKey,
           child: ListView(
@@ -61,9 +68,7 @@ class _CreateNoteState extends State<CreateNote> {
                   hintText: 'Title',
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: height * 0.02), // 2% of screen height
               TextFormField(
                 key: const Key('content'),
                 controller: contentController,
@@ -85,7 +90,8 @@ class _CreateNoteState extends State<CreateNote> {
         backgroundColor: kPrimaryColor,
         shape: const CircleBorder(),
         onPressed: () {
-          if (titleController.text.isNotEmpty && contentController.text.isNotEmpty) {
+          if (titleController.text.isNotEmpty &&
+              contentController.text.isNotEmpty) {
             mlModelController.getModules(contentController.text);
             moduleNamePopUp(
                 context, titleController.text, contentController.text);

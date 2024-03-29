@@ -1,7 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/constants.dart';
 import 'package:client/models/tile_model.dart';
 import 'package:client/screens/home_page/home_page_components/note_editor.dart';
+import 'package:client/util/constants.dart';
 import 'package:flutter/Material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 import '../../../controllers/note_controller.dart';
+import '../../../util/screen_dimension.dart';
 
 class TileViewWidget extends StatefulWidget {
   final TileModel tile;
@@ -22,8 +23,13 @@ class TileViewWidget extends StatefulWidget {
 class _TileViewWidgetState extends State<TileViewWidget> {
   @override
   Widget build(BuildContext context) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Container(
-      margin: const EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: height * 0.01),
+      // 1% of screen height
       decoration: BoxDecoration(
         color: cardColor,
         borderRadius: BorderRadius.circular(10),
@@ -140,8 +146,10 @@ class _TileViewWidgetState extends State<TileViewWidget> {
                       ),
                     );
                   },
-                  contentPadding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                  contentPadding: EdgeInsets.symmetric(
+                      vertical: height * 0.01,
+                      horizontal: width *
+                          0.04), // 1% of screen height and 4% of screen width
                 ),
               ),
             )

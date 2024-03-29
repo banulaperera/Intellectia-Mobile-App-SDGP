@@ -4,8 +4,9 @@ import 'package:client/models/notification_model.dart';
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';
 import 'package:client/util/refresh_token.dart';
-import 'package:client/util/show_Alert.dart';
 import 'package:http/http.dart' as http;
+
+import '../util/show_Alert.dart';
 
 class NotificationRepository {
   LocalStorage localStorage = LocalStorage();
@@ -43,7 +44,7 @@ class NotificationRepository {
     Map<String, dynamic> resData = jsonDecode(res.body);
 
     if (res.statusCode != 200) {
-      showError(resData['Message']);
+      CustomSnackBar.showError('Error', resData['Message']);
     }
   }
 
@@ -60,7 +61,7 @@ class NotificationRepository {
     );
     Map<String, dynamic> resData = jsonDecode(res.body);
     if (res.statusCode != 200) {
-      showError(resData['Message']);
+      CustomSnackBar.showError('Error', resData['Message']);
     }
   }
 

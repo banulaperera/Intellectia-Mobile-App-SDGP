@@ -5,8 +5,10 @@ import 'package:client/models/schedule_quiz_details.dart';
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';
 import 'package:client/util/refresh_token.dart';
-import 'package:client/util/show_alert.dart';
 import 'package:http/http.dart' as http;
+
+import '../util/show_Alert.dart';
+
 
 class QuizRepository {
   LocalStorage localStorage = LocalStorage();
@@ -29,7 +31,7 @@ class QuizRepository {
       ];
       return questionList;
     } else {
-      showError(resData['Message']);
+      CustomSnackBar.showError('Error', resData['Message']);
       return null;
     }
   }
@@ -49,10 +51,11 @@ class QuizRepository {
     Map<String, dynamic> resData = jsonDecode(res.body);
 
     if (res.statusCode == 200) {
-      showSuccess(resData['Message']);
+      CustomSnackBar.showSuccess('Success', resData['Message']);
       return true;
     } else {
-      showError(resData['Message']);
+      CustomSnackBar.
+      showError('Error', resData['Message']);
       return false;
     }
   }

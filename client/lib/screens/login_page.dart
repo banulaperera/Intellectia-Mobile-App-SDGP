@@ -1,9 +1,10 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:client/controllers/login_page_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:client/constants.dart';
+import 'package:client/util/constants.dart';
 import 'package:client/screens/signup_page.dart';
 import 'package:get/get.dart';
+import '../util/screen_dimension.dart';
 import '../widget/custom_button.dart';
 import '../widget/custom_text_field.dart';
 
@@ -15,15 +16,19 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Scaffold(
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
+          padding: EdgeInsets.symmetric(horizontal: width * 0.05), // 5% of screen width
           child: Column(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.4,
+                height: height * 0.4, // 40% of screen height
                 child: Image.asset(
                   "assets/logo_image.jpeg",
                   fit: BoxFit.contain,
@@ -49,7 +54,6 @@ class LoginPage extends StatelessWidget {
                   ),
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
-                      padding: const EdgeInsets.only(right: 12),
                       icon: loginPageController.obscureText
                           ? const Icon(BootstrapIcons.eye_fill)
                           : const Icon(BootstrapIcons.eye_slash_fill),
@@ -75,13 +79,14 @@ class LoginPage extends StatelessWidget {
                           const BorderSide(color: kPrimaryColor, width: 2.5),
                       borderRadius: BorderRadius.circular(60),
                     ),
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 25),
+                    contentPadding: EdgeInsets.symmetric(
+                        vertical: height * 0.015, // 1.5% of screen height
+                        horizontal: width * 0.05), // 2.5% of screen width
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15, bottom: 50),
+                padding: EdgeInsets.only(top: height * 0.015, bottom: height * 0.05), // 1.5% and 5% of screen height
                 child: GestureDetector(
                   onTap: () {
                     // Handle forgot password

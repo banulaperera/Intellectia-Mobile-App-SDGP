@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../../util/screen_dimension.dart';
+
 class QuizTile extends StatelessWidget {
   final String url;
   final String name;
@@ -15,8 +17,12 @@ class QuizTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.all(width * 0.025), // 2.5% of screen width
       decoration: BoxDecoration(
         border: Border.all(
           width: 2,
@@ -27,26 +33,26 @@ class QuizTile extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(right: 20, left: 10),
+        padding: EdgeInsets.symmetric(horizontal: width * 0.05), // 5% of screen width
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              height: 40,
-              width: 40,
+              height: height * 0.05, // 5% of screen height
+              width: width * 0.1, // 10% of screen width
               child: Lottie.asset(url),
             ),
             Flexible(
               child: Text(
                 name,
-                style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: width * 0.025, fontWeight: FontWeight.w600), // 3.5% of screen width
                 overflow: TextOverflow.ellipsis,
               ),
             ),
             Flexible(
               child: Text(
                 quizzes.toString(),
-                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: width * 0.04, fontWeight: FontWeight.w600), // 4% of screen width
                 overflow: TextOverflow.ellipsis,
               ),
             ),

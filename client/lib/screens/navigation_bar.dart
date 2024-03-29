@@ -1,9 +1,10 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
-import 'package:client/constants.dart';
+import 'package:client/util/constants.dart';
 import 'package:client/screens/home_page/home_page.dart';
 import 'package:client/screens/quiz/welcome/welcome_screen.dart';
 import 'package:client/screens/user_profile/user_profile_main_screen.dart';
 import 'package:flutter/material.dart';
+import '../util/screen_dimension.dart';
 import 'notification_page/notification_page.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -17,11 +18,11 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigation extends State<BottomNavigation> {
   int _currentNavigationIndex = 0;
 
-@override
-void initState() {
-  super.initState();
-  _currentNavigationIndex = widget.screenNumber;
-}
+  @override
+  void initState() {
+    super.initState();
+    _currentNavigationIndex = widget.screenNumber;
+  }
 
   final screens = [
     const HomePage(),
@@ -32,6 +33,11 @@ void initState() {
 
   @override
   Widget build(BuildContext context) {
+    ScreenDimensions.init(context);
+    double width = ScreenDimensions.screenWidth;
+    double selectedIconSize = width < 400 ? 25 : 30;
+    double unselectedIconSize = width < 400 ? 20 : 25;
+
     return Scaffold(
       body: screens[_currentNavigationIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -40,9 +46,8 @@ void initState() {
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.black54,
         selectedFontSize: 13,
-        selectedIconTheme: const IconThemeData(size: 30, color: Colors.white),
-        unselectedIconTheme:
-            const IconThemeData(size: 25, color: Colors.black45),
+        selectedIconTheme: IconThemeData(size: selectedIconSize, color: Colors.white),
+        unselectedIconTheme: IconThemeData(size: unselectedIconSize, color: Colors.black45),
         backgroundColor: kPrimaryColor,
         elevation: 10,
         items: const <BottomNavigationBarItem>[

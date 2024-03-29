@@ -4,9 +4,10 @@ import 'package:client/models/user_model.dart';
 import 'package:client/util/db_util.dart';
 import 'package:client/util/local_storage.dart';
 import 'package:client/util/refresh_token.dart';
-import 'package:client/util/show_alert.dart';
 import 'package:http/http.dart' as http;
 import 'package:jwt_decoder/jwt_decoder.dart';
+
+import '../util/show_Alert.dart';
 
 class UserRepository {
   final localStorage = LocalStorage();
@@ -23,10 +24,10 @@ class UserRepository {
       localStorage.setUserID(userID);
       localStorage.setAccessToken(data["accessToken"]);
       localStorage.setRefreshToken(data["refreshToken"]);
-      showSuccess(data["Message"]);
+      CustomSnackBar.showSuccess('Success', data["Message"]);
       return true;
     } else {
-      showError(data["Message"]);
+      CustomSnackBar.showError('Error', data["Message"]);
       return false;
     }
   }
@@ -37,10 +38,10 @@ class UserRepository {
         body: jsonEncode({"email": email, "password": password}));
     final Map<String, dynamic> data = jsonDecode(res.body);
     if (res.statusCode == 200) {
-      showSuccess(data["Message"]);
+      CustomSnackBar.showSuccess('Success', data["Message"]);
       return true;
     } else {
-      showError(data["Message"]);
+      CustomSnackBar.showError('Error', data["Message"]);
       return false;
     }
   }
@@ -74,7 +75,7 @@ class UserRepository {
         body: jsonEncode(user.toJson()));
     final Map<String, dynamic> data = jsonDecode(res.body);
     if (res.statusCode != 200) {
-      showError(data["Message"]);
+      CustomSnackBar.showSuccess('Success', data["Message"]);
     }
   }
 
@@ -91,9 +92,9 @@ class UserRepository {
             {"currentPassword": currentPassword, "newPassword": newPassword}));
     final Map<String, dynamic> data = jsonDecode(res.body);
     if (res.statusCode == 200) {
-      showSuccess(data["Message"]);
+      CustomSnackBar.showSuccess('Success', data["Message"]);
     } else {
-      showError(data["Message"]);
+      CustomSnackBar.showError('Error', data["Message"]);
     }
   }
 }

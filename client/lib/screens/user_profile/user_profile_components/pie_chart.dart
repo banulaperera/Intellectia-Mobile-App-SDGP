@@ -3,6 +3,8 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../util/screen_dimension.dart';
+
 class PieChartWidget extends StatelessWidget {
   const PieChartWidget({
     super.key,
@@ -11,17 +13,21 @@ class PieChartWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userProfileController = Get.find<UserProfileController>();
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return GetBuilder<UserProfileController>(
       builder: (controller) {
         return SizedBox(
-          height: 280,
+          height: height * 0.35, // 35% of screen height
           child: Stack(
             children: [
               PieChart(
                 PieChartData(
                   startDegreeOffset: -90,
                   sectionsSpace: 3,
-                  centerSpaceRadius: 80,
+                  centerSpaceRadius: width * 0.2, // 20% of screen width
                   sections: userProfileController.pieChartData,
                 ),
               ),
@@ -34,7 +40,7 @@ class PieChartWidget extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium!
-                          .copyWith(fontWeight: FontWeight.w600),
+                          .copyWith(fontWeight: FontWeight.w600, fontSize: width * 0.05), // 5% of screen width
                     )
                   ],
                 ),

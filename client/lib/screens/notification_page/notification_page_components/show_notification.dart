@@ -6,6 +6,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/notification_controller.dart';
+import '../../../util/screen_dimension.dart';
 
 class ShowNotification extends StatelessWidget {
   ShowNotification({
@@ -18,10 +19,14 @@ class ShowNotification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return ListView.separated(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.zero,
+      padding: EdgeInsets.symmetric(vertical: height * 0.01, horizontal: width * 0.001),
       itemBuilder: (context, index) {
         return Slidable(
           endActionPane: ActionPane(

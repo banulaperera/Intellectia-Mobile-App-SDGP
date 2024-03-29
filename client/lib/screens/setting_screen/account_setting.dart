@@ -1,11 +1,12 @@
 import 'dart:convert';
-import 'package:client/constants.dart';
+import 'package:client/util/constants.dart';
 import 'package:client/controllers/user_profile_controller.dart';
 import 'package:client/screens/setting_screen/setting_screen_components/input_textfield_widget.dart';
 import 'package:flutter/Material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../util/image_picker.dart';
+import '../../util/screen_dimension.dart';
 
 class AccountSetting extends StatefulWidget {
 
@@ -54,27 +55,27 @@ class _AccountSettingState extends State<AccountSetting> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenDimensions.init(context);
+    double height = ScreenDimensions.screenHeight;
+    double width = ScreenDimensions.screenWidth;
+
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.black,
         centerTitle: true,
         backgroundColor: kBackgroundColor,
         scrolledUnderElevation: 0.0,
-        title: const Text(
+        title: Text(
           'Edit Profile',
           style: TextStyle(
-            fontSize: appBarTitleSize,
+            fontSize: width * 0.05, // 5% of screen width
             fontWeight: FontWeight.w500,
             letterSpacing: 2,
           ),
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.only(
-          top: 25,
-          left: 25,
-          right: 25,
-        ),
+        padding: EdgeInsets.all(width * 0.05), // 5% of screen width
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -86,8 +87,8 @@ class _AccountSettingState extends State<AccountSetting> {
                   children: [
                     _image != null
                         ? Container(
-                            width: 180,
-                            height: 180,
+                            width: width * 0.45, // 45% of screen width
+                            height: height * 0.25, // 25% of screen height
                             decoration: BoxDecoration(
                               border: Border.all(
                                   width: 4,
@@ -109,8 +110,8 @@ class _AccountSettingState extends State<AccountSetting> {
                             ),
                           )
                         : Container(
-                            width: 180,
-                            height: 180,
+                            width: width * 0.45, // 45% of screen width
+                            height: height * 0.25, // 25% of screen height
                             decoration: BoxDecoration(
                               border: Border.all(
                                   width: 4,
@@ -137,8 +138,8 @@ class _AccountSettingState extends State<AccountSetting> {
                       child: InkWell(
                         onTap: selectImage,
                         child: Container(
-                          height: 40,
-                          width: 40,
+                          height: height * 0.05, // 5% of screen height
+                          width: width * 0.1, // 10% of screen width
                           decoration: BoxDecoration(
                             border: Border.all(
                                 width: 4,
@@ -149,7 +150,7 @@ class _AccountSettingState extends State<AccountSetting> {
                           ),
                           child: Icon(
                             Icons.add_a_photo,
-                            size: 17,
+                            size: width * 0.05, // 5% of screen width
                             color: Theme.of(context).scaffoldBackgroundColor,
                           ),
                         ),
@@ -158,8 +159,8 @@ class _AccountSettingState extends State<AccountSetting> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 60,
+              SizedBox(
+                height: height * 0.05, // 5% of screen height
               ),
               InputTextField(
                 controller: firstNameController,
@@ -167,8 +168,8 @@ class _AccountSettingState extends State<AccountSetting> {
                 hintText: userProfileController.user.firstName,
                 obscuredProperty: false,
               ),
-              const SizedBox(
-                height: 35,
+              SizedBox(
+                height: height * 0.05, // 5% of screen height
               ),
               InputTextField(
                 controller: lastNameController,
@@ -176,8 +177,8 @@ class _AccountSettingState extends State<AccountSetting> {
                 hintText: userProfileController.user.lastName,
                 obscuredProperty: false,
               ),
-              const SizedBox(
-                height: 35,
+              SizedBox(
+                height: height * 0.05, // 5% of screen height
               ),
               InputTextField(
                 controller: emailController,
@@ -185,14 +186,14 @@ class _AccountSettingState extends State<AccountSetting> {
                 hintText: userProfileController.user.email,
                 obscuredProperty: false,
               ),
-              const SizedBox(
-                height: 35,
+              SizedBox(
+                height: height * 0.05, // 5% of screen height
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  bottomButton(kBackgroundColor, 'CANCEL', Colors.black),
-                  bottomButton(kPrimaryColor, ' SAVE ', kBackgroundColor),
+                  bottomButton(kBackgroundColor, 'CANCEL', Colors.black, context),
+                  bottomButton(kPrimaryColor, ' SAVE ', kBackgroundColor, context),
                 ],
               )
             ],
@@ -203,11 +204,13 @@ class _AccountSettingState extends State<AccountSetting> {
   }
 
   OutlinedButton bottomButton(
-      Color backgroundColor, String text, Color textColor) {
+      Color backgroundColor, String text, Color textColor, BuildContext context) {
+    ScreenDimensions.init(context);
+    double width = ScreenDimensions.screenWidth;
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
           backgroundColor: backgroundColor,
-          padding: const EdgeInsets.symmetric(horizontal: 40),
+          padding: EdgeInsets.symmetric(horizontal: width * 0.1), // 10% of screen width
           elevation: 5),
       onPressed: () {
         if (text == 'CANCEL') {
@@ -220,7 +223,7 @@ class _AccountSettingState extends State<AccountSetting> {
       },
       child: Text(
         text,
-        style: TextStyle(fontSize: 14, letterSpacing: 2, color: textColor),
+        style: TextStyle(fontSize: width * 0.04, letterSpacing: 2, color: textColor), // 4% of screen width
       ),
     );
   }
