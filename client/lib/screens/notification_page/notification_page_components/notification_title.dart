@@ -21,8 +21,8 @@ class NotificationTitle extends StatelessWidget {
 
     return ListTile(
       leading: Container(
-        height: height * 0.05, // 5% of screen height
-        width: width * 0.1, // 10% of screen width
+        height: height * 0.06,
+        width: width * 0.1,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
@@ -38,12 +38,12 @@ class NotificationTitle extends StatelessWidget {
             style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.w600,
-                fontSize: width * 0.04), // 4% of screen width
+                fontSize: width * 0.035),
           ),
           Text(
-            DateFormat('yyyy-MM-dd HH:mm a').format(notifications.date.toUtc()),
+            DateFormat('HH:mm a').format(notifications.date.toUtc()),
             style: TextStyle(
-                fontSize: width * 0.025, // 3% of screen width
+                fontSize: width * 0.025,
                 color: Colors.black45,
                 fontStyle: FontStyle.italic),
           ),
@@ -54,7 +54,7 @@ class NotificationTitle extends StatelessWidget {
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
         style: TextStyle(
-          fontSize: width * 0.035, // 3.5% of screen width
+          fontSize: width * 0.035,
         ),
       ),
       onTap: () {

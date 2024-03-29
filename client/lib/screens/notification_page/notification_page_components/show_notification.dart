@@ -26,7 +26,7 @@ class ShowNotification extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.symmetric(vertical: height * 0.01, horizontal: width * 0.001),
+      padding: EdgeInsets.symmetric(vertical: height * 0.01, horizontal: width * 0.02),
       itemBuilder: (context, index) {
         return Slidable(
           endActionPane: ActionPane(
