@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="196b77b2-d063-4090-9090-6a5712d4522e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components/notification_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components/notification_title.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components/show_notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/notification_page/notification_page_components/show_notification.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/setting_screen/main_setting_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/setting_screen/main_setting_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/screens/setting_screen/quiz_preference_setting.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/screens/setting_screen/quiz_preference_setting.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_components/notification_title_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/notification_page/notification_page_components/show_notification_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/test/screens/setting_screen/change_password_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/test/screens/setting_screen/change_password_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +49,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;IN-63-front__end__responsiveness&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
@@ -68,10 +61,9 @@
       <recent name="$PROJECT_DIR$/client/.github/workflows" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter Test.tests in show_notification_test.dart">
-    <configuration name="tests in change_password_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/client/test/screens/setting_screen/change_password_test.dart" />
-      <option name="useRegexp" value="false" />
+  <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/client/lib/main.dart" />
       <method v="2" />
     </configuration>
     <configuration name="tests in goal_setting_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
@@ -96,11 +88,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Flutter Test.tests in show_notification_test.dart" />
         <item itemvalue="Flutter Test.tests in notification_title_test.dart" />
         <item itemvalue="Flutter Test.tests in main_setting_page_test.dart" />
         <item itemvalue="Flutter Test.tests in goal_setting_test.dart" />
-        <item itemvalue="Flutter Test.tests in change_password_test.dart" />
       </list>
     </recent_temporary>
   </component>
