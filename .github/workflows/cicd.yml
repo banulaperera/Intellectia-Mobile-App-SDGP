@@ -8,20 +8,26 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ACCESS_TOKEN_KEY: ${{ secrets.ACCESS_TOKEN_KEY }}
+      BASE_API: ${{ secrets.BASE_API }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      REFRESH_TOKEN_KEY: ${{ secrets.REFRESH_TOKEN_KEY }}
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4
       - name: Login to docker hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker Image
-        run: docker build -t intellectiabackend/intellectia  ./server
-        with:
-          secrets: |
-            "ACCESS_TOKEN_KEY=${{ secrets.ACCESS_TOKEN_KEY }}"
-            "BASE_API=${{ secrets.BASE_API }}"
-            "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}"
-            "REFRESH_TOKEN_KEY=${{ secrets.REFRESH_TOKEN_KEY }}"
-            "YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }}"
+        run: |
+          docker build \
+            --build-arg ACCESS_TOKEN_KEY="${{ secrets.ACCESS_TOKEN_KEY }}" \
+            --build-arg BASE_API="${{ secrets.BASE_API }}" \
+            --build-arg OPENAI_API_KEY="${{ secrets.OPENAI_API_KEY }}" \
+            --build-arg REFRESH_TOKEN_KEY="${{ secrets.REFRESH_TOKEN_KEY }}" \
+            --build-arg YOUTUBE_API_KEY="${{ secrets.YOUTUBE_API_KEY }}" \
+            -t intellectiabackend/intellectia  ./server
       - name: Publish Image to docker hub
         run: docker push intellectiabackend/intellectia:latest
 
