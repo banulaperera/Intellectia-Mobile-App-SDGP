@@ -1,14 +1,18 @@
 FROM node:20.11-alpine3.19
-RUN --mount=type=secret,id=ACCESS_TOKEN_KEY \
-  cat /run/secrets/ACCESS_TOKEN_KEY
-RUN --mount=type=secret,id=BASE_API \
-  cat /run/secrets/BASE_API
-RUN --mount=type=secret,id=OPENAI_API_KEY \
-  cat /run/secrets/OPENAI_API_KEY
-RUN --mount=type=secret,id=REFRESH_TOKEN_KEY \
-  cat /run/secrets/REFRESH_TOKEN_KEY
-RUN --mount=type=secret,id=YOUTUBE_API_KEY \
-  cat /run/secrets/YOUTUBE_API_KEY
+ARG ACCESS_TOKEN_KEY
+ENV ACCESS_TOKEN_KEY=$ACCESS_TOKEN_KEY
+
+ARG BASE_API
+ENV BASE_API=$BASE_API
+
+ARG OPENAI_API_KEY
+ENV OPENAI_API_KEY=$OPENAI_API_KEY
+
+ARG REFRESH_TOKEN_KEY
+ENV REFRESH_TOKEN_KEY=$REFRESH_TOKEN_KEY
+
+ARG YOUTUBE_API_KEY
+ENV YOUTUBE_API_KEY=$YOUTUBE_API_KEY
 WORKDIR /app
 COPY package.json .
 RUN npm install
