@@ -75,6 +75,24 @@
       <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/client/android/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/client/linux/flutter/ephemeral" />
+      <excludeFolder url="file://$MODULE_DIR$/client/macos/Flutter/ephemeral" />
+      <excludeFolder url="file://$MODULE_DIR$/client/windows/flutter/ephemeral" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/cliui/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/gaxios/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/gcp-metadata/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/google-auth-library/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/googleapis-common/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/googleapis/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/gtoken/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/mongoose/node_modules/gaxios/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/mongoose/node_modules/gcp-metadata/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/simple-update-notifier/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/y18n/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/yargs-parser/build" />
+      <excludeFolder url="file://$MODULE_DIR$/server/node_modules/yargs/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
