@@ -1,120 +1,175 @@
-Introduction
+***
 
-Welcome to the user manual for Intellectia. This document is intended to provide you with all the information you need to get started with and use the software effectively.
+# Intellectia : The Smart Study Assistant
 
+**Intellectia** is an all-in-one educational app designed to revolutionize the way university students organize, revise, and gamify their studies. Leveraging AI, machine learning, and a modern cross-platform tech stack, Intellectia empowers users to upload notes, auto-organize them, receive personalized quiz reminders, and track academic progress — all with an engaging gamified experience.
 
-System Requirement 
+> 🚩 **This project was developed as part of the Software Development Group Project module at the Informatic Institute of Technology (IIT) and University of Westminster.**
 
-Before installing Intellectia, please make sure your mobile device meets the following requirements:
+***
 
-•	Operating system: Mobile device with Android OS version above Android 10.
-•	Processor: Octa-core (2x2.2 GHz Cortex-A76 & 6x2.0 GHz Cortex-A55) similar or above.
-•	RAM: 2GB or above.
-•	Hard disk space: minimum 150MB.
+## 🎯 Overview
 
+**Intellectia** is engineered to solve the core challenges facing students in higher education:
 
-Installation instruction
+- **Struggling to revise uploaded notes efficiently?**
+- **Tired of pre-built material that doesn’t fit your syllabus?**
+- **Want instant quizzes and personalized feedback – without endless manual planning?**
 
-To install Intellectia, please follow these steps:
+Intellectia answers these needs with features like:
+- Custom note-uploading and auto-modularization via ML/NLP
+- Smart, flexible quiz scheduling and instant corrections
+- Progress tracking and gamified levels
+- Study material suggestions and reminders
+- Cross-platform Android and (future) iOS support
 
-Through marketing website:
+***
 
-•	Go to the marketing website of Intellectia https://intellectia.netlify.app and click on the Download button in the left corner. This will enable you to download the APK of the Intellectia application. 
-•	Next, you can open the APK file by going to My Files//Downloads and selecting the downloaded APK file. 
-•	Allow the necessary security permissions and install the application as you will be prompted. 
+## ✨ Key Features
 
-Through PlayStore:
+- **Flexible Note-Taking & Modularization**  
+  Upload notes at your own pace; Intellectia uses AI to auto-sort and suggest suitable modules[2][3].
 
-https://play.google.com/store/apps/details?id=com.sdgp.intellectia  
+- **Automated Quiz Generation**  
+  Instantly create quizzes from your own notes or from external resources on request. Schedule reminders to stay on track[2][3].
 
-The PlayStore version of Intellectia is currently in the testing phase. Once the testing has been completed, the application will be available for public use. 
+- **Immediate Feedback**  
+  Answer quizzes and get feedback instantly to boost recall and identify knowledge gaps.
 
+- **Performance Tracking & Gamification**  
+  Earn points, track levels, and stay motivated with a progressive achievement system.
 
-User Interface Overview
+- **Study Recommendations**  
+  AI-powered suggestions for extra material tailored to the subjects you’re tackling.
 
- 
+- **Cross-Platform Availability**  
+  Built with Flutter and Node.js, optimized for Android, with future iOS support.
 
+- **Personalized Learning**  
+  Progress tracking, adaptive learning paths, and self-assessment for targeted improvement.
 
-•	This is the sign up page of the application. Once user sign up by giving email and password, he/she will be directed into the login page.  
+***
 
- 
+## 🏗️ Technology Stack
 
-•	This is the login page of the application. Once a user enters the email and password used to sign in previously, he/she will be able to log in to the application. 
+| Layer          | Technology                                                                                                                                                                 |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Front-End      | Flutter, Figma (UI/UX Design)                                                                                                                                             |
+| Back-End       | Node.js, Python (ML server), Express.js                                                                                                                                   |
+| AI/ML          | Python, SVM, BERT (NLP), Pytorch, Custom ML models                                                                                                                        |
+| Database       | SQL                                                                                                                                                                       |
+| APIs           | OpenAI GPT-4 (quiz/answer gen), DALL-E (AI art), Custom modules                                                                                                            |
+| Tools & IDEs   | Android Studio, VS Code, Postman, Draw.io, Trello, Google Drive, Zotero, MindView, Git/GitHub                                                                             |
+| DevOps         | Git, Trello, Project Management with Scrum                                                                                                                                |
+| Documentation  | Google Docs, Canva, README, Project Reports                                                                                                                               |
 
+***
 
- 
+## 🚀 Getting Started
 
-•	This is the dashboard of Intellectia application. The notes entered by the user and the related modules will be displayed here. Further, users can search for modules in this page. 
+### Prerequisites
 
- 
+- Flutter SDK (>=3.2.1)
+- Node.js (>=16.x)
+- Python (for ML model server)
+- SQL database (>=16.0)
+- Android Studio / Emulator
 
-•	Once a user take down a note and click on the Save option, this pop up will appear, prompting the user to select a module name from the list of the suggested module names by the ML model. Or else, user can give a customised module name for the particular note. 
+### Installation
 
+Clone this repository:
+```bash
+git clone https://github.com/your-username/intellectia.git
+cd intellectia
+```
+Install dependencies and set up the environment using the provided guides in `/docs` and `/backend`.
 
- 
+### Quick Start Demo
 
+1. **Run the backend server**  
+   See `/backend/README.md` for details.
 
-•	This is a page of the Quiz. Once a user schedules a quiz from a selected module, the quiz will appear during the selected time. Then the user can go ahead and do the quiz. 
+2. **Launch the frontend**  
+   Open `/frontend` in Android Studio and run on a device or emulator.
 
+3. **Create an account and explore:**
+   - Upload notes and modularize
+   - Schedule quizzes
+   - Review your dashboard
 
- 
+***
 
-•	This is the profile page of the user. This page consists of the performance charts of the user, which depicts the XP points earned by the user for each day and a chart which shows the correct and incorrect answers of each quiz. 
+## 🎥 Demo Video
 
+Experience Intellectia in action:
+[Watch Demo]
 
-Using Intellectia
-
-To use Intellectia, please follow these steps:
-
-Step 01:
-
-•	Launch the application and create the account. Then Login
-
-Step 02 – Adding notes to the application
-
-•	Click the ‘+’ icon in the dashboard.
-•	Enter the note title and the content of the note.
-
-Step 03  - Modularization of the content 
-
-•	Click the save icon, which is located in the note editor.
-•	Then, a pop-up will appear, prompting the user to select a module name from the list of the suggested module names by the ML model. Or else, the user can give a customised module name for the particular note.
-
-Step 04 – Generate quizzes 
-
-•	Click on My Profile, which is located on the bottom navigation bar.
-•	Go to the settings page in My Profile.
-•	Click quiz preference, which is located in the Account section of the settings page.
-•	Select the module in which you want to generate quizzes and the time you prefer.
-•	Click the apply button to save the changes.
-•	Then quiz will appear during the scheduled time. Further, a notification will also be shown to remind the user about the scheduled quiz.
-
-Step 05 – Change the password
-
-•	Click my profile, which is located on the bottom navigation bar.
-•	Go to the settings page in My Profile.
-•	Click Change password, which is located in the Account section of the settings page.
-•	Provide your current password and the new password.
-•	Click the apply icon to save the changes.
-Step 06 – Update user profile
-
-•	Click my profile, which is located on the bottom navigation bar.
-•	Go to the settings page, which is located on my profile.
-•	Click on the Edit Profile option. 
-•	On the Edit Profile page, the user can edit the first name, last name, profile picture and email address. 
-•	Once clicking the Apply Changes, the changes made will be saved into the system. 
-
-
-Troubleshooting
-
-If you encounter any issues while using Intellectia, please refer to this section for troubleshooting advice. If the issue persists, please contact support
-
-•	To resolve the issue, you can try performing the following steps: first, let's navigate to the settings of your mobile device and select "Apps". From there, look for "Intellectia" and click on it. Next, click on the "Force Stop" button under Intellectia and then clear the caches and data in the application. Once this is done, we can try re-launching the application to see if the issue has been resolved.
-•	One possible solution to some issues you might be experiencing is to uninstall the Intellectia application and then re-install it.
+https://github.com/user-attachments/assets/8c261544-7a3e-4243-ab1a-583053420543
 
 
-Contacting Support
 
-If you need further assistance with Intellectia, please contact our support team at intellectia.service@gmail.com 
+***
 
- 
+## 📚 Project Background
+
+Intellectia was envisaged as a solution to the gap in educational apps:  
+- Most competitors are limited to pre-built materials (often the same common subjects).
+- Few offer *true customization*, *automated quiz generation*, or *ML-based modularization*.
+- Our aim: *Put the learner in the driver’s seat with their own materials, instant feedback, and a fun, motivating platform.*[2][3]
+
+**Developed for:**  
+> Software Development Group Project (5COSC021C)  
+> Informatic Institute of Technology (IIT) in collaboration with University of Westminster
+
+Team Intellectia:
+- Banula Perera – Team Leader
+- Nethunil Fernando
+- Avishka Pramuditha
+- Kavisha Charith Kumarage
+
+***
+
+## 📦 Features at a Glance
+
+- User modularization and custom note upload
+- ML/NLP-based auto-categorization (BERT, SVM)
+- Gamified learning progression
+- Smart quiz scheduler and reminders
+- Instant quiz feedback and analytics
+- Point, level, and reward system
+- Cross-platform compatibility (Android, web backend)
+
+***
+
+## 📄 Academic & Technology Documentation
+
+- [Project Proposal][2]
+- [Design and Documentation][3]
+- [Sprint Backlogs, Methodology, Risk Plan and more in `/docs/`]
+
+***
+
+## 📜 License
+
+This project is open source and available under the **Apache 2.0 License**.  
+See [`LICENSE.md`](LICENSE.md) for full license text[2][3].
+
+***
+
+## 🤝 Contributing
+
+Contributions, suggestions, and feature requests are welcome. Please see the [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+***
+
+## ⭐ Acknowledgments
+
+- Module Leader: Banuka Athuraliya
+- IIT Academic & Support Staff
+- Parents and mentors for their invaluable support
+
+***
+
+> **Choose Intellectia as your educational partner, and make your study experience efficient, effective, and fun!**
+
+***
