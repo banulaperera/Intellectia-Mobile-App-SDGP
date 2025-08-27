@@ -28,10 +28,10 @@ Intellectia answers these needs with features like:
 ## ✨ Key Features
 
 - **Flexible Note-Taking & Modularization**  
-  Upload notes at your own pace; Intellectia uses AI to auto-sort and suggest suitable modules[2][3].
+  Upload notes at your own pace; Intellectia uses AI to auto-sort and suggest suitable modules.
 
 - **Automated Quiz Generation**  
-  Instantly create quizzes from your own notes or from external resources on request. Schedule reminders to stay on track[2][3].
+  Instantly create quizzes from your own notes or from external resources on request. Schedule reminders to stay on track.
 
 - **Immediate Feedback**  
   Answer quizzes and get feedback instantly to boost recall and identify knowledge gaps.
@@ -115,7 +115,7 @@ https://github.com/user-attachments/assets/8c261544-7a3e-4243-ab1a-583053420543
 Intellectia was envisaged as a solution to the gap in educational apps:  
 - Most competitors are limited to pre-built materials (often the same common subjects).
 - Few offer *true customization*, *automated quiz generation*, or *ML-based modularization*.
-- Our aim: *Put the learner in the driver’s seat with their own materials, instant feedback, and a fun, motivating platform.*[2][3]
+- Our aim: *Put the learner in the driver’s seat with their own materials, instant feedback, and a fun, motivating platform.*
 
 **Developed for:**  
 > Software Development Group Project (5COSC021C)  
@@ -152,7 +152,7 @@ Team Intellectia:
 ## 📜 License
 
 This project is open source and available under the **Apache 2.0 License**.  
-See [`LICENSE.md`](LICENSE.md) for full license text[2][3].
+See [`LICENSE.md`](LICENSE.md) for full license text.
 
 ***
 
