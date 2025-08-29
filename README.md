@@ -139,16 +139,6 @@ Team Intellectia:
 - Point, level, and reward system
 - Cross-platform compatibility (Android, web backend)
 
-***
-
-## 📄 Academic & Technology Documentation
-
-- [Project Proposal][2]
-- [Design and Documentation][3]
-- [Sprint Backlogs, Methodology, Risk Plan and more in `/docs/`]
-
-***
-
 ## 📜 License
 
 This project is open source and available under the **Apache 2.0 License**.  
